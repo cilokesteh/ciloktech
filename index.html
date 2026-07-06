@@ -537,6 +537,8 @@ const revealObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(x => revealObs.observe(x));
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+window.addEventListener('DOMContentLoaded', () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' }));
 </script>
 </body>
 </html>
