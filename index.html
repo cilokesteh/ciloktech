@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CILOK TECH // DIGITAL OPERATOR</title>
+<meta name="description" content="Full-spectrum digital operator. Website, bot, dashboard, scraping, automation, AI, crypto.">
+<style>
+:root {
+  --bg: #03050a;
+  --surface: #0a0d16;
+  --surface-2: #111622;
+  --border: rgba(0, 255, 200, 0.12);
+  --neon1: #00ffc8;
+  --neon2: #ff00aa;
+  --neon3: #00a8ff;
+  --neon4: #ffaa00;
+  --text: #e6e8f0;
+  --muted: #7a82a0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(800px 600px at 10% 0%, rgba(0,255,200,0.12), transparent 55%),
+    radial-gradient(900px 700px at 110% 10%, rgba(0,168,255,0.10), transparent 55%),
+    linear-gradient(180deg, #03050a, #060a12 40%, #03050a);
+  color: var(--text);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+a { color: var(--neon3); text-decoration: none; }
+a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* scanline + grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 1px, transparent 1px, transparent 3px);
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,200,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* top commander bar */
+.topbar {
+  position: fixed;
+  top: 14px; left: 20px; right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(10,13,22,0.8);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 0 30px rgba(0,255,200,0.08), 0 10px 30px rgba(0,0,0,0.5);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px var(--neon1);
+}
+.brand .logo {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--neon1), var(--neon3));
+  box-shadow: 0 0 14px var(--neon1);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #001a14; font-weight: 900;
+}
+.topnav { display: flex; gap: 6px; align-items: center; }
+.topnav a {
+  color: #b8bcc4;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all .3s;
+}
+.topnav a:hover, .topnav a.active { color: #fff; background: rgba(255,255,255,0.08); text-decoration: none; box-shadow: 0 0 0 1px rgba(0,255,200,0.25); }
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+
+/* hero */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: 140px 0 90px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 30px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  padding: 8px 16px;
+  background: rgba(0,255,200,0.1);
+  color: var(--neon1);
+  border: 1px solid rgba(0,255,200,0.35);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--neon1);
+  box-shadow: 0 0 24px rgba(0,255,200,0.18);
+  animation: pulseBadge 3s ease-in-out infinite;
+}
+@keyframes pulseBadge {
+  0%,100% { box-shadow: 0 0 24px rgba(0,255,200,0.18); }
+  50% { box-shadow: 0 0 40px rgba(0,255,200,0.4); }
+}
+.hero-title {
+  margin-top: 18px;
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--neon2), -1px -1px 0 var(--neon1);
+  letter-spacing: -0.7px;
+}
+.hero-desc {
+  margin-top: 16px;
+  color: #c5c8ce;
+  font-size: 1.05rem;
+  max-width: 540px;
+}
+.hero-tags { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+.tag {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: #d0d3db;
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: 0 0 14px rgba(0,255,200,0.06);
+  transition: all .3s;
+}
+.tag:hover { border-color: rgba(0,255,200,0.4); color: #fff; box-shadow: 0 0 20px rgba(0,255,200,0.15); }
+.hero-cta { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px; border: none;
+  font-weight: 700; font-size: 0.95rem;
+  cursor: pointer; transition: all .3s;
+}
+.pill.primary { background: linear-gradient(135deg, var(--neon1), #00d4aa); color: #001914; box-shadow: 0 10px 30px rgba(0,255,200,0.3); }
+.pill.primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,255,200,0.45); text-decoration: none; }
+.pill.ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.25); }
+.pill.ghost:hover { border-color: #fff; transform: translateY(-2px); text-decoration: none; box-shadow: 0 0 24px rgba(0,255,200,0.15); }
+.pill.direct { background: var(--neon2); color: #fff; box-shadow: 0 10px 30px rgba(255,0,170,0.3); }
+.pill.direct:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255,0,170,0.45); text-decoration: none; }
+
+/* Terminal card */
+.terminal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow), inset 0 0 60px rgba(0,255,200,0.03);
+  backdrop-filter: blur(10px);
+}
+.terminal-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.dot-row { display: flex; gap: 6px; }
+.dot-row span { width: 10px; height: 10px; border-radius: 50%; background: #1f2937; }
+.dot-row span.live { background: var(--neon1); box-shadow: 0 0 8px var(--neon1); animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.chip { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2); color: #ccc; font-size: 0.78rem; font-weight: 600; }
+.terminal-lines { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.82rem; color: var(--neon1); line-height: 1.6; }
+.terminal-lines .line { margin-bottom: 4px; }
+.terminal-lines .time { color: #444; }
+.terminal-lines .ok { color: var(--neon1); }
+.terminal-lines .warn { color: var(--neon4); }
+.terminal-lines .err { color: var(--neon2); }
+
+/* Dock */
+.dock {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin: 10px 0;
+}
+.dock-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #b8bcc4;
+  transition: all .3s;
+}
+.dock-item:hover { transform: translateY(-3px); border-color: rgba(0,255,200,0.4); color: #fff; box-shadow: 0 0 24px rgba(0,255,200,0.15); }
+.dock-icon { font-size: 1.5rem; margin-bottom: 6px; display: block; }
+
+/* Sections */
+.section { padding: 60px 0; position: relative; z-index: 1; }
+.section-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0,255,200,0.1);
+  color: var(--neon1);
+  border: 1px solid rgba(0,255,200,0.35);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(0,255,200,0.12);
+}
+.section-title {
+  margin-top: 16px;
+  font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.4px;
+}
+.section-desc { margin-top: 10px; color: var(--muted); font-size: 0.96rem; max-width: 640px; }
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+  backdrop-filter: blur(10px);
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon1), transparent);
+  transition: left .55s;
+}
+.skill-card:hover::before { left: 100%; }
+.skill-card:hover { transform: translateY(-4px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 30px rgba(0,255,200,0.15); }
+.skill-card h3 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; }
+.skill-card p { color: #b8bcc4; font-size: 0.9rem; }
+.skill-card .meta { color: var(--muted); font-size: 0.78rem; margin-top: 10px; }
+
+/* Showcase */
+.showcase-tabs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 22px 0 18px; }
+.tab {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: #c9ccd4;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tab.active { background: linear-gradient(135deg, rgba(0,255,200,0.15), rgba(0,168,255,0.15)); color: #fff; border-color: rgba(0,255,200,0.5); box-shadow: 0 0 20px rgba(0,255,200,0.2); }
+.tab:hover { border-color: rgba(0,255,200,0.4); color: #fff; }
+.showcase-panel { display: none; animation: fade .35s ease; }
+.showcase-panel.active { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon1), transparent);
+  transition: left .55s;
+}
+.project-card:hover::before { left: 100%; }
+.project-card:hover { border-color: rgba(0,255,200,0.35); transform: translateY(-3px); }
+.project-card h4 { color: #fff; font-size: 1.05rem; margin-bottom: 6px; }
+.project-card p { color: #b8bcc4; font-size: 0.9rem; }
+.project-card .use { margin-top: 8px; color: #a6aab4; font-size: 0.82rem; font-style: italic; }
+.tech { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.tech-tag { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border); font-size: 0.75rem; color: #c9ccd4; background: var(--surface-2); }
+
+/* Pricing */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px; }
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  transition: all .3s;
+}
+.price-card:hover { border-color: rgba(0,255,200,0.35); transform: translateY(-3px); box-shadow: 0 0 24px rgba(0,255,200,0.12); }
+.price-card .n { color: #b8bcc4; font-size: 0.9rem; margin-bottom: 4px; }
+.price-card .p { color: var(--neon1); font-weight: 900; font-size: 1.05rem; text-shadow: 0 0 8px rgba(0,255,200,0.35); }
+
+/* Contact */
+.contact-wrap { margin-top: 18px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  text-align: center;
+  transition: all .3s;
+}
+.contact-card:hover { border-color: var(--neon2); box-shadow: 0 0 28px rgba(255,0,170,0.2); transform: translateY(-3px); }
+.contact-card .label { color: var(--muted); font-size: 0.82rem; margin-bottom: 4px; }
+.contact-card .val { color: #fff; font-weight: 700; font-size: 1rem; }
+.contact-card a { color: var(--neon2); }
+
+footer { border-top: 1px solid var(--border); padding: 16px 0; color: #5a5f68; font-size: 0.8rem; text-align: center; position: relative; z-index: 1; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: all .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* hex bg deco */
+.hex-deco {
+  position: absolute;
+  width: 220px; height: 220px;
+  border: 1px solid rgba(0,255,200,0.12);
+  transform: rotate(45deg);
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  box-shadow: 0 0 30px rgba(0,255,200,0.08);
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 110px; }
+  .dock { grid-template-columns: repeat(3, 1fr); }
+  .topnav { display: none; }
+  .nav-toggle { display: block; }
+  .topnav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 16px; right: 16px; padding: 12px; background: rgba(10,13,22,0.95); border: 1px solid var(--border); border-radius: 16px; }
+}
+@media (max-width: 520px) {
+  .dock { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+  <a href="#beranda" class="brand"><span class="logo">C</span> CILOK TECH</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  <nav class="topnav" id="topNav">
+    <a href="#layanan">Layanan</a>
+    <a href="#skillset">Arsenal</a>
+    <a href="#harga">Harga</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</div>
+
+<section class="hero container" id="beranda">
+  <div>
+    <div class="hero-badge">⬢ FULL-SPECTRUM DIGITAL OPERATOR</div>
+    <h1 class="hero-title">Bikin sistem yang <span style="color:var(--neon1)">jalan sendiri</span>, tanpa ribet kamu urus</h1>
+    <p class="hero-desc">Website, bot, dashboard, scraping, automation, AI, crypto tools. Gue handle engineering nya — kamu tinggal dapetin hasilnya.</p>
+    <div class="hero-tags">
+      <span class="tag">Web Dev</span>
+      <span class="tag">Telegram Bot</span>
+      <span class="tag">Dashboard</span>
+      <span class="tag">Scraping</span>
+      <span class="tag">Automation</span>
+      <span class="tag">AI Workflow</span>
+      <span class="tag">Crypto Tools</span>
+      <span class="tag">Browser Automation</span>
+    </div>
+    <div class="hero-cta">
+      <a class="pill primary" href="#kontak">Minta Bantuan</a>
+      <a class="pill direct" href="https://t.me/redacted" target="_blank" rel="noopener">➜ Telegram @ciloktech</a>
+    </div>
+  </div>
+  <div class="terminal-card">
+    <div class="terminal-header">
+      <div class="dot-row"><span></span><span class="live"></span><span></span></div>
+      <div class="chip">CilokTech v2.0</div>
+    </div>
+    <div class="terminal-lines">
+      <div class="line"><span class="time">[sys]</span> modules loaded: web, bot, automation, ai, crypto</div>
+      <div class="line"><span class="ok">[ok]</span> Deployment stack ready</div>
+      <div class="line"><span class="ok">[ok]</span> Monitoring online</div>
+      <div class="line"><span class="warn">[warn]</span> Some OAuth flows blocked from VPS</div>
+      <div class="line"><span class="ok">[ok]</span> Telegram alerts active</div>
+      <div class="line"><span class="err">[err]</span> Unauthorized ops: disabled</div>
+      <div class="line"><span class="time">[status]</span> Available for new ops</div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="dock">
+    <div class="dock-item"><span class="dock-icon">🌐</span>Website</div>
+    <div class="dock-item"><span class="dock-icon">🤖</span>Bot</div>
+    <div class="dock-item"><span class="dock-icon">📊</span>Dashboard</div>
+    <div class="dock-item"><span class="dock-icon">🕷</span>Scraping</div>
+    <div class="dock-item"><span class="dock-icon">⚡</span>Automation</div>
+    <div class="dock-item"><span class="dock-icon">🧠</span>AI/LLM</div>
+    <div class="dock-item"><span class="dock-icon">⛓</span>Crypto</div>
+    <div class="dock-item"><span class="dock-icon">🧩</span>Playwright</div>
+    <div class="dock-item"><span class="dock-icon">🔧</span>DevOps</div>
+    <div class="dock-item"><span class="dock-icon">📦</span>Deploy</div>
+    <div class="dock-item"><span class="dock-icon">🗄</span>Database</div>
+    <div class="dock-item"><span class="dock-icon">🛡</span>Security Research</div>
+  </div>
+</div>
+
+<section class="section" id="layanan">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">// Layanan</span>
+      <h2 class="section-title">Yang Bisa Dibantuin</h2>
+      <p class="section-desc">Pilih sesuai kebutuhan, gue urus implementasi sampai jalan.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>🌐 Website / Web App</h3><p>Landing page, company profile, admin panel, dashboard. HTML/React/Next.js + Node/Python.</p><div class="meta">Statis, dinamis, deploy VPS</div></div>
+      <div class="skill-card"><h3>🤖 Telegram Bot</h3><p>Notifikasi, auto-claim, scanner, voting, automation 24/7.</p><div class="meta">Python, Node.js, API</div></div>
+      <div class="skill-card"><h3>📊 Dashboard</h3><p>Real-time monitoring server/provider/log dengan auto-refresh.</p><div class="meta">Realtime, logging, alert</div></div>
+      <div class="skill-card"><h3>🕷 Scraping</h3><p>Ambil data dari web/API, olah jadi report atau file siap pakai.</p><div class="meta">Tracking, watch, automation</div></div>
+      <div class="skill-card"><h3>⚡ Automation</h3><p>Bot massal, batch processing, cron pipelines.</p><div class="meta">Cron, error recovery</div></div>
+      <div class="skill-card"><h3>🧠 AI / Workflow</h3><p>Agent AI, RAG, workflow LLM, retrieval.</p><div class="meta">Private-first, no data leak</div></div>
+      <div class="skill-card"><h3>⛓ Crypto Tools</h3><p>Wallet generation, DeFi, token scanner, airdrop tools.</p><div class="meta">Multi-chain, secure</div></div>
+      <div class="skill-card"><h3>🧩 Browser Automation</h3><p>Playwright, undetected headless, session automation, OAuth helpers.</p><div class="meta">Desktop/headless, reliable</div></div>
+      <div class="skill-card"><h3>🔧 DevOps</h3><p>VPS setup, nginx, systemd, CI/CD, migration kits.</p><div class="meta">Linux, Docker, deploy</div></div>
+      <div class="skill-card"><h3>📦 Deploy & Hosting</h3><p>GitHub Pages, Vercel, Netlify, manual VPS.</p><div class="meta">Publish fast</div></div>
+      <div class="skill-card"><h3>🗄 Database & Data</h3><p>SQLite, PostgreSQL, JSON stores, migration.</p><div class="meta">Backup, schema, migrate</div></div>
+      <div class="skill-card"><h3>🛡 Security Research</h3><p>Penetration testing, auth analysis, enumerations (authorized only).</p><div class="meta">Ethical, scoped, authorized</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skillset" style="background:linear-gradient(180deg, transparent, rgba(0,255,200,0.04), transparent);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">// Arsenal</span>
+      <h2 class="section-title">Contoh Kemampuan</h2>
+      <p class="section-desc">Kategori dan use-case yang bisa gue kerjakan.</p>
+    </div>
+    <div class="showcase-tabs">
+      <button class="tab active" data-tab="tab-all">SEMUA</button>
+      <button class="tab" data-tab="tab-web">WEB</button>
+      <button class="tab" data-tab="tab-bot">BOT</button>
+      <button class="tab" data-tab="tab-data">DATA</button>
+      <button class="tab" data-tab="tab-ai">AI</button>
+      <button class="tab" data-tab="tab-crypto">CRYPTO</button>
+      <button class="tab" data-tab="tab-infra">INFRA</button>
+    </div>
+
+    <div id="tab-all" class="showcase-panel active">
+      <div class="project-grid">
+        <div class="project-card">
+          <h4>Website / Landing</h4>
+          <p>Branding site yang responsif dan cepat di deploy.</p>
+          <div class="use">Use-case: personal, brand, UMKM, SaaS.</div>
+          <div class="tech"><span class="tech-tag">HTML</span><span class="tech-tag">React</span><span class="tech-tag">Next.js</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Telegram Bot</h4>
+          <p>Notifikasi, auto-claim, scanner, voting.</p>
+          <div class="use">Use-case: alert, management, tracking.</div>
+          <div class="tech"><span class="tech-tag">Python</span><span class="tech-tag">Node.js</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Dashboard Monitoring</h4>
+          <p>Control center real-time VPS/server/operasional.</p>
+          <div class="use">Use-case: server health, metrics, logs.</div>
+          <div class="tech"><span class="tech-tag">Dashboard</span><span class="tech-tag">Live API</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Scraping & Report</h4>
+          <p>Ambil data web/API, olah jadi report siap pakai.</p>
+          <div class="use">Use-case: price tracking, watch.</div>
+          <div class="tech"><span class="tech-tag">Scraping</span><span class="tech-tag">API</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Automation</h4>
+          <p>Bot massal, batch pipeline, cron jobs.</p>
+          <div class="use">Use-case: scheduler, workflows.</div>
+          <div class="tech"><span class="tech-tag">Cron</span><span class="tech-tag">Playwright</span></div>
+        </div>
+        <div class="project-card">
+          <h4>AI / Workflow</h4>
+          <p>Agent AI, RAG, workflow LLM.</p>
+          <div class="use">Use-case: assistant, summarizer.</div>
+          <div class="tech"><span class="tech-tag">AI</span><span class="tech-tag">LLM</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Crypto Tools</h4>
+          <p>Wallet, token scanner, DeFi helper.</p>
+          <div class="use">Use-case: airdrop, monitoring.</div>
+          <div class="tech"><span class="tech-tag">Crypto</span><span class="tech-tag">Web3</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Browser Automation</h4>
+          <p>Headless browser, session handling, OAuth helper.</p>
+          <div class="use">Use-case: login automation, QA.</div>
+          <div class="tech"><span class="tech-tag">Playwright</span><span class="tech-tag">Automation</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Deploy & Hosting</h4>
+          <p>Publish site ke GitHub Pages, Vercel, atau VPS.</p>
+          <div class="use">Use-case: fast go-live.</div>
+          <div class="tech"><span class="tech-tag">CI/CD</span><span class="tech-tag">Hosting</span></div>
+        </div>
+        <div class="project-card">
+          <h4>Security Research</h4>
+          <p>Auth analysis, recon, enumeration pada scope authorized.</p>
+          <div class="use">Use-case: penetration test scoped.</div>
+          <div class="tech"><span class="tech-tag">Recon</span><span class="tech-tag">Auth</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-web" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>Website / Landing</h4><p>Branding site responsif.</p><div class="use">Use-case: brand, produk.</div><div class="tech"><span class="tech-tag">HTML</span><span class="tech-tag">React</span></div></div>
+        <div class="project-card"><h4>Admin Panel</h4><p>Manajemen data + operasi.</p><div class="use">Use-case: internal, analytics.</div><div class="tech"><span class="tech-tag">Next.js</span><span class="tech-tag">Node</span></div></div>
+      </div>
+    </div>
+    <div id="tab-bot" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>Telegram Bot</h4><p>Alert, automation, scanner.</p><div class="use">Use-case: support, tracking.</div><div class="tech"><span class="tech-tag">Python</span><span class="tech-tag">Telegram</span></div></div>
+        <div class="project-card"><h4>Bot Massal</h4><p>Batch job + scheduler.</p><div class="use">Use-case: cron, bulk action.</div><div class="tech"><span class="tech-tag">Automation</span></div></div>
+      </div>
+    </div>
+    <div id="tab-data" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>Scraping & Report</h4><p>Ambil data dan olah report.</p><div class="use">Use-case: tracking, watch.</div><div class="tech"><span class="tech-tag">Scraping</span><span class="tech-tag">API</span></div></div>
+      </div>
+    </div>
+    <div id="tab-ai" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>AI Agent / Workflow</h4><p>Agent, RAG, workflow.</p><div class="use">Use-case: assistant, summarizer.</div><div class="tech"><span class="tech-tag">AI</span><span class="tech-tag">LLM</span></div></div>
+      </div>
+    </div>
+    <div id="tab-crypto" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>Crypto Tools</h4><p>Wallet, scanner, DeFi helper.</p><div class="use">Use-case: airdrop, monitoring.</div><div class="tech"><span class="tech-tag">Crypto</span><span class="tech-tag">Web3</span></div></div>
+      </div>
+    </div>
+    <div id="tab-infra" class="showcase-panel">
+      <div class="project-grid">
+        <div class="project-card"><h4>Deploy & Hosting</h4><p>Publish site fast.</p><div class="use">Use-case: fast go-live.</div><div class="tech"><span class="tech-tag">CI/CD</span></div></div>
+        <div class="project-card"><h4>Security Research</h4><p>Authorized pentest + recon.</p><div class="use">Use-case: scoped engagement.</div><div class="tech"><span class="tech-tag">Recon</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="harga">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">// Paket</span>
+      <h2 class="section-title">Harga</h2>
+      <p class="section-desc">Estimasi kasar. Bisanego sesuai scope dan timeline.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card"><div class="n">Website statis / landing</div><div class="p">Rp 150rb - 400rb</div></div>
+      <div class="price-card"><div class="n">Website dinamis / dashboard</div><div class="p">Rp 400rb - 1,2jt</div></div>
+      <div class="price-card"><div class="n">Telegram bot custom</div><div class="p">Rp 200rb - 800rb</div></div>
+      <div class="price-card"><div class="n">Automation / scraping tools</div><div class="p">Rp 250rb - 900rb</div></div>
+      <div class="price-card"><div class="n">AI agent / workflow</div><div class="p">Rp 500rb - 1,5jt</div></div>
+      <div class="price-card"><div class="n">Maintenance bulanan</div><div class="p">Rp 150rb - 300rb/bln</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kontak">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">// Kontak</span>
+      <h2 class="section-title">Hubungi Cilok Tech</h2>
+      <p class="section-desc">Klik langsung buka chat Telegram, atau kirim pesan lewat form.</p>
+    </div>
+    <div class="contact-wrap">
+      <a class="contact-card" href="https://t.me/redacted" target="_blank" rel="noopener">
+        <div class="label">TELEGRAM</div>
+        <div class="val">@ciloktech</div>
+      </a>
+      <a class="contact-card" href="https://t.me/redacted?text=Halo%20Cilok%20Tech%2C%20saya%20mau%20tanya%20tentang%20jasa%20digital" target="_blank" rel="noopener">
+        <div class="label">CHAT LANGSUNG</div>
+        <div class="val">➜ Open Telegram</div>
+      </a>
+    </div>
+    <form id="contactForm" style="max-width:760px;margin:18px auto 0; display:grid; gap:12px;">
+      <input id="nameInput" placeholder="Nama kamu" required style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--surface); color:var(--text); outline:none; font-family:inherit;">
+      <input id="userInput" placeholder="Username Telegram kamu" required style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--surface); color:var(--text); outline:none; font-family:inherit;">
+      <textarea rows="5" id="msgInput" placeholder="Ceritain kebutuhan project..." required style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--surface); color:var(--text); outline:none; font-family:inherit;"></textarea>
+      <button type="submit" class="pill primary" style="width:100%; justify-content:center;">Kirim ke Telegram</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© CILOK TECH — Digital Operator • <a href="https://t.me/redacted">@ciloktech</a></div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const topNav = document.getElementById('topNav');
+navToggle?.addEventListener('click', () => topNav.classList.toggle('open'));
+document.querySelectorAll('#topNav a').forEach(a => a.addEventListener('click', () => topNav.classList.remove('open')));
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.showcase-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById(btn.dataset.tab);
+    if (target) target.classList.add('active');
+  });
+});
+
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); revealObs.unobserve(en.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(x => revealObs.observe(x));
+
+document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('nameInput').value.trim();
+  const user = document.getElementById('userInput').value.trim();
+  const msg = document.getElementById('msgInput').value.trim();
+  if (!name || !user || !msg) return;
+  const text = encodeURIComponent(`Halo Cilok Tech\nNama: ${name}\nTelegram: ${user}\nPesan: ${msg}`);
+  window.open(`https://t.me/redacted?text=${text}`, '_blank');
+});
+</script>
+</body>
+</html>
