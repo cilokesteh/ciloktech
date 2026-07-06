@@ -404,7 +404,7 @@ footer { border-top: 1px solid var(--border); padding: 16px 0; color: #5a5f68; f
     </div>
     <div class="hero-cta">
       <a class="pill primary" href="#kontak">Minta Bantuan</a>
-      <a class="pill direct" href="https://t.me/redacted" target="_blank" rel="noopener">➜ Telegram @ciloktech</a>
+      <a class="pill direct" href="https://t.me/redacted" target="_blank" rel="noopener">➜ Telegram @cilokesteh</a>
     </div>
   </div>
   <div class="terminal-card">
@@ -507,17 +507,21 @@ footer { border-top: 1px solid var(--border); padding: 16px 0; color: #5a5f68; f
     <div class="section-header">
       <span class="section-badge">// Kontak</span>
       <h2 class="section-title">Hubungi Cilok Tech</h2>
-      <p class="section-desc">Klik langsung buka chat Telegram, atau kirim pesan lewat form.</p>
+      <p class="section-desc">Klik langsung buka chat di Telegram atau WhatsApp.</p>
     </div>
     <div class="contact-wrap">
       <a class="contact-card" href="https://t.me/redacted" target="_blank" rel="noopener">
         <div class="label">TELEGRAM</div>
-        <div class="val">@ciloktech</div>
+        <div class="val">@cilokesteh</div>
       </a>
-      <a class="contact-card" href="https://t.me/redacted?text=Halo%20Cilok%20Tech%2C%20saya%20mau%20tanya%20tentang%20jasa%20digital" target="_blank" rel="noopener">
-        <div class="label">CHAT LANGSUNG</div>
-        <div class="val">➜ Open Telegram</div>
+      <a class="contact-card" href="https://wa.me/628137355599" target="_blank" rel="noopener">
+        <div class="label">WHATSAPP</div>
+        <div class="val">0813-7355-599</div>
       </a>
+      <button id="copyWa" class="contact-card" style="background:transparent; cursor:pointer; border:1px solid var(--border);" onclick="navigator.clipboard.writeText('628137355599').then(()=>{const t=document.getElementById('copyWa'); t.querySelector('.val').textContent='Tersalin!'; setTimeout(()=>t.querySelector('.val').textContent='Salin Nomor', 1500);})">
+        <div class="label">SALIN</div>
+        <div class="val">Salin Nomor</div>
+      </button>
     </div>
     <form id="contactForm" style="max-width:760px;margin:18px auto 0; display:grid; gap:12px;">
       <input id="nameInput" placeholder="Nama kamu" required style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); background:var(--surface); color:var(--text); outline:none; font-family:inherit;">
