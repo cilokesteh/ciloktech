@@ -368,7 +368,9 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
   padding: 22px;
   position: relative;
   overflow: hidden;
-  transition: all .3s;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 .skill-card::before {
   content: '';
@@ -392,20 +394,20 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
   -webkit-mask-composite: xor;
           mask-composite: exclude;
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .25s ease;
   z-index: 2;
-  animation: borderSpin 3s linear infinite;
+  animation: none;
 }
 .skill-card:hover::after,
 .skill-card:active::after,
-.skill-card.touched::after { opacity: 1; }
-.skill-card:hover { transform: translateY(-4px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 30px rgba(0,255,200,0.15); background-position: -60% 0%, 0 0; }
+.skill-card.touched::after { opacity: 1; animation: borderSpin 3s linear infinite; }
+.skill-card:hover { transform: translateY(-4px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 22px rgba(0,255,200,0.12); }
 .skill-card:active,
 .skill-card.touched {
   transform: translateY(-4px) scale(0.99);
-  border-color: rgba(0,255,200,0.65);
-  box-shadow: 0 0 48px rgba(0,255,200,0.32), inset 0 0 22px rgba(0,255,200,0.10);
-  background-position: -60% 0%, 0 0;
+  border-color: rgba(0,255,200,0.6);
+  box-shadow: 0 0 30px rgba(0,255,200,0.2), inset 0 0 14px rgba(0,255,200,0.06);
+  will-change: transform;
 }
 .skill-card:active::after,
 .skill-card.touched::after { opacity: 1; }
