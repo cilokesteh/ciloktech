@@ -373,12 +373,14 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
 .skill-card::before {
   content: '';
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0,255,200,0.12), transparent);
-  transition: left .5s;
+  top: 0; left: 0;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,255,200,0.55), rgba(255,0,170,0.35), transparent);
+  transform: translateX(-180%);
+  pointer-events: none;
+  z-index: 3;
 }
-.skill-card:hover::before { left: 100%; }
+.skill-card:hover::before { transform: translateX(180%); }
 .skill-card::after {
   content: '';
   position: absolute;
@@ -386,6 +388,7 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
   background: radial-gradient(circle at 50% 0%, rgba(0,255,200,0.08), transparent 60%);
   opacity: 0;
   transition: opacity .3s;
+  z-index: 2;
 }
 .skill-card:hover::after { opacity: 1; }
 .skill-card:hover { transform: translateY(-4px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 30px rgba(0,255,200,0.15); background-position: -60% 0%, 0 0; }
@@ -400,8 +403,7 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
 .skill-card.touched::after { opacity: 1; }
 .skill-card:active::before,
 .skill-card.touched::before {
-  left: 100%;
-  animation: sweepNeon .6s ease-out;
+  animation: sweepNeon .7s ease-out;
 }
 .skill-card h3 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; letter-spacing: .3px; }
 .skill-card p { color: #c8cbd4; font-size: 0.9rem; line-height: 1.55; }
@@ -430,7 +432,7 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
 }
 .skill-marquee .track span::before { content: '› '; color: var(--neon2); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes sweepNeon { from { left: -100%; } to { left: 100%; } }
+@keyframes sweepNeon { from { transform: translateX(-180%); } to { transform: translateX(180%); } }
 
 /* ===== Price ===== */
 .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px; }
