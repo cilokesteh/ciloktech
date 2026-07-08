@@ -181,13 +181,13 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
 .hero {
   position: relative;
   z-index: 1;
-  padding: 150px 0 80px;
+  padding: 130px 0 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 82vh;
+  min-height: 70vh;
 }
 .hero-badge {
   display: inline-flex;
@@ -256,6 +256,27 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
   max-width: 560px;
   margin-left: auto; margin-right: auto;
 }
+
+/* ===== Flying robot ===== */
+.flying-robot {
+  position: absolute;
+  top: -8px; right: 2%;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 0 14px rgba(0,255,200,0.45));
+  animation: robotFly 9s ease-in-out infinite;
+}
+@keyframes robotFly {
+  0%   { transform: translate(0,0) rotate(-5deg); }
+  25%  { transform: translate(34px,-28px) rotate(4deg); }
+  50%  { transform: translate(64px,10px) rotate(-3deg); }
+  75%  { transform: translate(22px,32px) rotate(5deg); }
+  100% { transform: translate(0,0) rotate(-5deg); }
+}
+.flying-robot .flame { animation: flameFlicker .22s steps(2) infinite; transform-origin: 60px 118px; }
+@keyframes flameFlicker { 0%,100% { opacity:.95; transform: scaleY(1); } 50% { opacity:.45; transform: scaleY(.65); } }
+.flying-robot .eye { animation: eyePulse 2.4s ease-in-out infinite; }
+@keyframes eyePulse { 0%,100% { opacity:1; } 50% { opacity:.55; } }
 
 /* ===== Sections ===== */
 .section { padding: 60px 0; position: relative; z-index: 1; }
@@ -433,6 +454,34 @@ footer { border-top: 1px solid var(--border); padding: 16px 0; color: #5a5f68; f
 </div>
 
 <section class="hero container" id="beranda">
+  <div class="flying-robot" aria-hidden="true">
+    <svg viewBox="0 0 120 150" width="92" height="115">
+      <!-- jetpack thruster flame -->
+      <path class="flame" d="M48 120 q12 30 24 0 q-12 -10 -24 0z" fill="#00ffc8"/>
+      <path class="flame" d="M52 120 q8 20 16 0 q-8 -6 -16 0z" fill="#ffaa00"/>
+      <!-- jetpack nozzles -->
+      <rect x="46" y="112" width="9" height="10" rx="3" fill="#111622" stroke="#00a8ff" stroke-width="1.5"/>
+      <rect x="65" y="112" width="9" height="10" rx="3" fill="#111622" stroke="#00a8ff" stroke-width="1.5"/>
+      <!-- arms -->
+      <rect x="24" y="64" width="11" height="30" rx="5.5" fill="#111622" stroke="#00ffc8" stroke-width="1.5"/>
+      <rect x="85" y="64" width="11" height="30" rx="5.5" fill="#111622" stroke="#00ffc8" stroke-width="1.5"/>
+      <!-- body -->
+      <rect x="37" y="58" width="46" height="54" rx="11" fill="#111622" stroke="#00ffc8" stroke-width="2"/>
+      <rect x="46" y="72" width="28" height="20" rx="5" fill="#0a0d16" stroke="#00a8ff" stroke-width="1.2"/>
+      <circle cx="54" cy="82" r="2.4" fill="#ff00aa"/>
+      <circle cx="66" cy="82" r="2.4" fill="#00ffc8"/>
+      <!-- head -->
+      <rect x="41" y="20" width="38" height="36" rx="9" fill="#0a0d16" stroke="#00a8ff" stroke-width="2"/>
+      <!-- antenna -->
+      <line x1="60" y1="20" x2="60" y2="6" stroke="#ff00aa" stroke-width="2"/>
+      <circle cx="60" cy="4" r="3.2" fill="#ff00aa"/>
+      <!-- eyes -->
+      <circle class="eye" cx="52" cy="38" r="5.2" fill="#00ffc8"/>
+      <circle class="eye" cx="68" cy="38" r="5.2" fill="#00ffc8"/>
+      <!-- mouth -->
+      <rect x="52" y="48" width="16" height="3" rx="1.5" fill="#00a8ff"/>
+    </svg>
+  </div>
   <div>
     <div class="hero-badge">⬢ FULL-SPECTRUM DIGITAL OPERATOR</div>
     <h1 class="hero-title">Sistem yang <span class="flip-wrap"><span class="flip-word" id="flipWord">otomatis</span></span><br>tanpa kamu yang urus</h1>
