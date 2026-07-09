@@ -339,15 +339,15 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
    di HP low-end (RAM 4) -> layar blank + scroll freeze. */
 .js-reveal .reveal {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateX(-24px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
 .js-reveal .reveal.visible {
   opacity: 1;
   transform: translateX(0);
 }
-/* per-grid stagger via --d (diset JS dari index dlm grid) */
-.js-reveal .reveal { transition-delay: calc(var(--d, 0) * 0.12s); }
+/* per-grid stagger via --d (diset JS dari index dlm grid) — pendek + capped biar gak freeze */
+.js-reveal .reveal { transition-delay: calc(var(--d, 0) * 0.07s); }
 .section-badge {
   display: inline-block;
   padding: 8px 16px;
@@ -798,6 +798,7 @@ setInterval(() => {
   var cards = document.querySelectorAll('.skill-card');
   cards.forEach(function(card){
     function handleMove(e){
+      if (!card.classList.contains('visible')) return; // jangan tilt pas reveal lg jalan
       var rect = card.getBoundingClientRect();
       var touch = e.touches ? e.touches[0] : e;
       var x = (touch.clientX - rect.left) / rect.width - 0.5;
@@ -806,6 +807,7 @@ setInterval(() => {
       card.style.transition = 'transform 0.15s ease-out';
     }
     function handleLeave(){
+      if (!card.classList.contains('visible')) return;
       card.style.transform = '';
       card.style.transition = 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
     }
@@ -868,7 +870,7 @@ setInterval(() => {
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function(el){ io.observe(el); });
   } else {
     reveals.forEach(function(el){ el.classList.add('visible'); });
