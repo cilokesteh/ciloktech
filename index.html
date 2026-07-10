@@ -283,6 +283,31 @@ a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
    NOTE: jangan pakai will-change di banyak elemen — bikin GPU layer meledak
    di HP low-end (RAM 4) -> layar blank + scroll freeze. */
 /* Smooth reveal from left — GPU-friendly */
+
+/* ===== Wayang Antasena neon cyberpunk ===== */
+.wayang-right, .wayang-left, .wayang-layanan {
+  opacity: 1;
+  position: absolute;
+  z-index: 6;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.wayang-layanan {
+  position: absolute;
+  right: 5%;
+  top: 14%;
+  z-index: 5;
+  opacity: 0.85;
+}
+@keyframes wayangFloat {
+  0%, 100% { transform: translateY(0) scaleX(-1); }
+  50% { transform: translateY(-14px) scaleX(-1); }
+}
+@media (max-width: 768px) and (pointer: coarse) {
+  .wayang-right, .wayang-left, .wayang-layanan {
+    display: none !important;
+  }
+}
 .js-reveal .reveal {
   opacity: 0;
   transform: translateX(-24px);
@@ -507,13 +532,18 @@ body, .skill-card, .project-card, .contact-icon { touch-action: manipulation; }
     transition-duration: 0.001ms !important;
   }
 }
-/* HP lemah (max-width + coarse pointer) -> disable heavy animations */
+/* HP lemah (max-width + coarse pointer) -> only disable animations, NOT display */
 @media (max-width: 768px) and (pointer: coarse) {
-  .wayang-right, .wayang-left, .wayang-layanan,
-  .skill-marquee .track, .batik-bg, .grid-floor, .scanline,
-  .wayang-right, .wayang-kiri {
+  .wayang-right, .wayang-left, .wayang-layanan {
     animation: none !important;
-    display: none !important;
+    display: block !important;
+  }
+  .batik-bg {
+    animation: none !important;
+    opacity: 0.1 !important;
+  }
+  .skill-marquee .track, .scanline {
+    animation: none !important;
   }
   body::before, body::after {
     animation: none !important;
