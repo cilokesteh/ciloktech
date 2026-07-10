@@ -78,643 +78,847 @@ body::after {
   inset: 0;
   z-index: 90;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    rgba(0,255,200,0.06) 3px,
-    rgba(0,255,200,0.06) 4px
-  );
-  animation: scanline 2.2s linear infinite;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0px, rgba(0,0,0,0.22) 1px, transparent 1px, transparent 3px);
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  animation: scanFlicker 5s steps(60) infinite;
 }
-@keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(300px); } }
+@keyframes scanFlicker { 0%,100% { opacity:.34 } 48% { opacity:.42 } 50% { opacity:.3 } 52% { opacity:.44 } }
+a { color: var(--neon3); text-decoration: none; }
+a:hover { color: var(--neon1); text-shadow: 0 0 8px var(--neon1); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* ===== Header / Navbar ===== */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(3,5,10,0.82);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
+.holo-text {
+  background: linear-gradient(90deg, #fff, var(--neon1), var(--neon2), var(--neon3), #fff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: holoText 6s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(0,255,200,0.3));
 }
-.nav {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 18px 24px;
+@keyframes holoText { to { background-position: 300% 0; } }
+
+/* ===== Topbar ===== */
+.topbar {
+  position: fixed;
+  top: 14px; left: 20px; right: 20px;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(10,13,22,0.8);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 0 30px rgba(0,255,200,0.08), 0 10px 30px rgba(0,0,0,0.5);
 }
-.logo {
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
-  font-size: 22px;
-  letter-spacing: 2px;
-  color: var(--neon1);
-  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px var(--neon1);
 }
-.logo span { color: var(--neon2); }
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
+.brand .logo {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--neon1), var(--neon3));
+  box-shadow: 0 0 14px var(--neon1);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #001a14; font-weight: 900;
 }
-.nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--neon1); }
+.brand-name { position: relative; display: inline-block; }
 
-/* ===== Hero Section ===== */
+.glitch { position: relative; }
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute; left: 0; top: 0; width: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  color: var(--neon2);
+  clip-path: inset(0 0 55% 0);
+  animation: glitchTop 2.6s infinite linear alternate;
+  text-shadow: -2px 0 var(--neon2);
+}
+.glitch::after {
+  color: var(--neon3);
+  clip-path: inset(55% 0 0 0);
+  animation: glitchBot 2.1s infinite linear alternate;
+  text-shadow: 2px 0 var(--neon3);
+}
+@keyframes glitchTop {
+  0%,100% { transform: translate(0,0); }
+  20% { transform: translate(-2px,-1px); }
+  40% { transform: translate(2px,1px); }
+  60% { transform: translate(-1px,0); }
+  80% { transform: translate(1px,-1px); }
+}
+@keyframes glitchBot {
+  0%,100% { transform: translate(0,0); }
+  25% { transform: translate(2px,1px); }
+  50% { transform: translate(-2px,-1px); }
+  75% { transform: translate(1px,1px); }
+}
+
+.topnav { display: flex; gap: 6px; align-items: center; }
+.topnav a {
+  color: #b8bcc4;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all .3s;
+}
+.topnav a:hover { color: #fff; background: rgba(255,255,255,0.08); text-decoration: none; box-shadow: 0 0 0 1px rgba(0,255,200,0.25); }
+.nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+
+/* ===== Hero ===== */
 .hero {
-  min-height: 92vh;
+  position: relative;
+  z-index: 1;
+  padding: 130px 0 70px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: 120px 24px 60px;
-  z-index: 10;
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
   text-align: center;
-  position: relative;
-  z-index: 2;
+  min-height: 70vh;
 }
-
-/* Wayang Antasena - Neon Cyberpunk */
-.wayang {
-  position: absolute;
-  top: 14%;
-  z-index: 6;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 12px rgba(255,0,170,0.35));
-  transition: transform .4s ease, filter .4s ease;
-}
-.wayang-kiri { left: 4%; }
-.wayang-kanan { right: 4%; }
-
-.wayang:hover {
-  transform: scale(1.04);
-  filter: drop-shadow(0 0 22px rgba(255,0,170,0.55));
-}
-
-.wayang-kiri { animation: wayangFloat 9s ease-in-out infinite; }
-.wayang-kanan { animation: wayangFloat 11s ease-in-out infinite; }
-
-@keyframes wayangFloat {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
-}
-
-/* Mobile: wayang tetap kelihatan tapi static */
-@media (max-width: 768px) and (pointer: coarse) {
-  .wayang { animation: none !important; opacity: 0.85; }
-}
-
 .hero-badge {
-  display: inline-block;
-  background: rgba(0,255,200,0.08);
-  border: 1px solid var(--neon1);
+  display: inline-flex;
+  padding: 8px 16px;
+  background: rgba(0,255,200,0.1);
   color: var(--neon1);
-  font-size: 12px;
-  padding: 6px 16px;
+  border: 1px solid rgba(0,255,200,0.35);
   border-radius: 999px;
-  margin-bottom: 22px;
-  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--neon1);
+  box-shadow: 0 0 24px rgba(0,255,200,0.18);
+  animation: pulseBadge 3s ease-in-out infinite, neonFlicker 6s infinite;
+}
+@keyframes pulseBadge {
+  0%,100% { box-shadow: 0 0 24px rgba(0,255,200,0.18); }
+  50% { box-shadow: 0 0 40px rgba(0,255,200,0.4); }
+}
+@keyframes neonFlicker {
+  0%,18%,22%,25%,53%,57%,100% { opacity:1; }
+  20% { opacity:.4; } 24% { opacity:.7; }
+  55% { opacity:.5; }
 }
 .hero-title {
+  margin-top: 18px;
   font-family: 'Orbitron', sans-serif;
-  font-size: clamp(42px, 7vw, 72px);
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 4.8vw, 3.2rem);
   font-weight: 900;
-  margin-bottom: 22px;
+  line-height: 1.12;
   color: #fff;
+  letter-spacing: -0.7px;
+  max-width: 900px;
 }
-.hero-title .flip-wrap {
+.accent { color: var(--neon1); }
+
+/* ===== FLIP WORD (hanya 3 kata: otomatis, mandiri, 24/7) ===== */
+.flip-wrap {
   display: inline-block;
-  position: relative;
-  color: var(--neon2);
+  vertical-align: baseline;
+  height: 1.15em;
+  overflow: hidden;
+  perspective: 400px;
 }
 .flip-word {
   display: inline-block;
-  transition: all .4s cubic-bezier(0.23,1,0.32,1);
+  color: var(--neon1);
+  text-shadow: 0 0 14px rgba(0,255,200,0.6);
+  transform-origin: 50% 50%;
+  animation: flipCycle 3.2s cubic-bezier(.6,.05,.3,1) infinite;
+}
+.flip-word .num7 { margin-left: 2px; }
+.flip-word span { display: inline-block; }
+@keyframes flipCycle {
+  0%   { transform: rotateX(0deg);   opacity: 1; }
+  18%  { transform: rotateX(0deg);   opacity: 1; }
+  28%  { transform: rotateX(90deg);  opacity: 0; }
+  30%  { transform: rotateX(-90deg); opacity: 0; }
+  40%  { transform: rotateX(0deg);   opacity: 1; }
+  88%  { transform: rotateX(0deg);   opacity: 1; }
+  98%  { transform: rotateX(90deg);  opacity: 0; }
+  100% { transform: rotateX(90deg);  opacity: 0; }
 }
 .hero-desc {
-  max-width: 620px;
-  margin: 0 auto 42px;
-  font-size: 17px;
-  color: var(--muted);
-  line-height: 1.65;
+  margin-top: 18px;
+  color: #c5c8ce;
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin-left: auto; margin-right: auto;
 }
 
-/* Flip word */
-.flip-wrap { position: relative; display: inline-block; }
-.flip-wrap::after {
-  content: '';
+/* ===== Flying robot (hero) — terbang kanan-kiri + zoom in/out ===== */
+.flying-robot {
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--neon2), var(--neon1));
-  opacity: .6;
+  top: 2%; right: 2%;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 0 20px rgba(0,255,200,0.5)) drop-shadow(0 0 40px rgba(0,255,200,0.15));
+  animation: robotFly 12s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes robotFly {
+  0%   { transform: translate(0,0) scale(1) rotate(-4deg); }
+  20%  { transform: translate(-12vw,-30px) scale(1.18) rotate(6deg); }
+  40%  { transform: translate(-22vw,10px) scale(0.82) rotate(-5deg); }
+  60%  { transform: translate(-8vw,40px) scale(1.1) rotate(4deg); }
+  80%  { transform: translate(8vw,-20px) scale(0.92) rotate(-6deg); }
+  100% { transform: translate(0,0) scale(1) rotate(-4deg); }
+}
+.flying-robot .flame1 { animation: flameFlicker .18s steps(2) infinite; transform-origin: 50% 100%; }
+.flying-robot .flame2 { animation: flameFlicker .18s steps(2) infinite 0.09s; transform-origin: 50% 100%; }
+.flying-robot .eye { animation: eyePulse 2.4s ease-in-out infinite; }
+@keyframes eyePulse { 0%,100% { opacity:1; } 50% { opacity:.55; } }
+
+/* ===== Flying robot 2 (hero kiri) — mirror animation ===== */
+.flying-robot2 {
+  position: absolute;
+  top: 16%; left: 2%;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 0 20px rgba(255,0,170,0.5)) drop-shadow(0 0 40px rgba(255,0,170,0.15));
+  animation: robotFly2 14s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes robotFly2 {
+  0%   { transform: translate(0,0) scale(1) rotate(4deg); }
+  20%  { transform: translate(12vw,-24px) scale(0.85) rotate(-6deg); }
+  40%  { transform: translate(22vw,14px) scale(1.15) rotate(5deg); }
+  60%  { transform: translate(8vw,38px) scale(0.9) rotate(-4deg); }
+  80%  { transform: translate(-8vw,-18px) scale(1.08) rotate(6deg); }
+  100% { transform: translate(0,0) scale(1) rotate(4deg); }
+}
+.flying-robot2 .flame1 { animation: flameFlicker .18s steps(2) infinite; transform-origin: 50% 100%; }
+.flying-robot2 .flame2 { animation: flameFlicker .18s steps(2) infinite 0.09s; transform-origin: 50% 100%; }
+.flying-robot2 .eye { animation: eyePulse 2.4s ease-in-out infinite; }
+
+/* ===== Robot di atas section Layanan ===== */
+.robot-layanan {
+  position: absolute;
+  right: 5%; top: 14%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.95;
+  transform: translateZ(0);
+  filter: drop-shadow(0 0 18px rgba(255,0,170,0.7));
+  animation: robotFloat2 8s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes robotFloat2 {
+  0%   { transform: translate(0,0) scale(1) rotate(0deg); }
+  25%  { transform: translate(-40px,-30px) scale(1.2) rotate(-6deg); }
+  50%  { transform: translate(20px,20px) scale(0.85) rotate(5deg); }
+  75%  { transform: translate(-25px,35px) scale(1.1) rotate(-4deg); }
+  100% { transform: translate(0,0) scale(1) rotate(0deg); }
 }
 
-/* ===== Button ===== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 32px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all .2s;
-  border: 1px solid var(--neon1);
-  background: transparent;
-  color: var(--neon1);
-}
-.btn:hover {
-  background: var(--neon1);
-  color: #03050a;
-  box-shadow: 0 0 20px rgba(0,255,200,0.4);
-}
-.btn.primary {
-  background: var(--neon1);
-  color: #03050a;
-  border-color: var(--neon1);
-}
-.btn.primary:hover {
-  background: #fff;
-  color: #03050a;
+/* ===== Sections ===== */
+.section { 
+  padding: 70px 0; 
+  position: relative; 
+  z-index: 1;
+  background: linear-gradient(180deg, transparent, rgba(3,5,10,0.55), transparent);
 }
 
-/* ===== Section ===== */
-.section {
-  padding: 92px 24px;
-  position: relative;
-  z-index: 10;
+/* ===== Scroll reveal animations — appear from left ===== */
+/* progressive enhancement: opacity:0 cuma aktif kalau body punya class js-reveal
+   (ditambahin JS). Kalau JS gagal, section tetap kelihatan.
+   NOTE: jangan pakai will-change di banyak elemen — bikin GPU layer meledak
+   di HP low-end (RAM 4) -> layar blank + scroll freeze. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
-.container {
-  max-width: 1180px;
-  margin: 0 auto;
+.js-reveal .reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
-.section-header {
-  text-align: center;
-  margin-bottom: 52px;
-}
+/* per-grid stagger via --d (diset JS dari index dlm grid) */
+.js-reveal .reveal { transition-delay: calc(var(--d, 0) * 0.12s); }
 .section-badge {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--neon2);
-  display: block;
-  margin-bottom: 8px;
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0,255,200,0.1);
+  color: var(--neon1);
+  border: 1px solid rgba(0,255,200,0.35);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(0,255,200,0.12);
+  animation: neonFlicker 7s infinite;
 }
 .section-title {
+  margin-top: 16px;
   font-family: 'Orbitron', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  margin-bottom: 12px;
+  font-size: clamp(1.4rem, 3.4vw, 1.9rem);
+  font-weight: 900;
+  letter-spacing: -0.4px;
 }
-.section-desc {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 520px;
-  margin: 0 auto;
-}
+.section-title.holo { background: linear-gradient(90deg, #fff, var(--neon1), var(--neon2), var(--neon3), #b400ff, #fff); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; animation: holoText 6s linear infinite; filter: drop-shadow(0 0 10px rgba(0,255,200,0.3)); }
+.section-desc { margin-top: 12px; color: #c8cbd4; font-size: 1rem; max-width: 640px; line-height: 1.6; }
 
-/* ===== Grid Layanan ===== */
-.grid {
+/* ===== Skills ===== */
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
+  margin-top: 28px;
 }
-.card {
-  background: var(--surface);
+.skill-card {
+  background:
+    linear-gradient(115deg, transparent 35%, rgba(255,0,170,0.07) 46%, rgba(0,168,255,0.07) 54%, rgba(0,255,200,0.05) 60%, transparent 72%),
+    var(--surface);
+  background-size: 260% 260%, 100% 100%;
+  background-position: 160% 0%, 0 0;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 26px;
-  transition: transform .3s, box-shadow .3s, border-color .3s;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-  border-color: var(--neon1);
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,255,200,0.55), rgba(255,0,170,0.35), transparent);
+  transform: translateX(-180%);
+  pointer-events: none;
+  z-index: 3;
 }
-.card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  color: #fff;
+.skill-card:hover::before { transform: translateX(180%); }
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: conic-gradient(from 0deg, transparent 0%, var(--neon1) 12%, var(--neon2) 24%, transparent 38%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .25s ease;
+  z-index: 2;
+  animation: none;
 }
-.card p {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.65;
+.skill-card:hover::after,
+.skill-card:active::after,
+.skill-card.touched::after { opacity: 1; animation: borderSpin 3s linear infinite; }
+.skill-card:hover { transform: translateY(-4px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 22px rgba(0,255,200,0.12); }
+.skill-card:active,
+.skill-card.touched {
+  transform: translateY(-4px) scale(0.99);
+  border-color: rgba(0,255,200,0.6);
+  box-shadow: 0 0 30px rgba(0,255,200,0.2), inset 0 0 14px rgba(0,255,200,0.06);
+  will-change: transform;
 }
+.skill-card:active::after,
+.skill-card.touched::after { opacity: 1; }
+.skill-card:active::before,
+.skill-card.touched::before {
+  animation: sweepNeon .7s ease-out;
+}
+.skill-card h3 { color: #fff; font-size: 1.05rem; margin-bottom: 8px; letter-spacing: .3px; }
+.skill-card p { color: #c8cbd4; font-size: 0.9rem; line-height: 1.55; }
 
-/* ===== Harga ===== */
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+/* ===== Skill marquee (teks口诀 di bawah card) ===== */
+.skill-marquee {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
+.skill-marquee .track {
+  display: inline-flex;
+  gap: 24px;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+}
+.skill-marquee .track span {
+  font-size: 0.76rem;
+  color: var(--neon1);
+  text-shadow: 0 0 6px rgba(0,255,200,0.45);
+  letter-spacing: 1px;
+  padding: 2px 0;
+}
+.skill-marquee .track span::before { content: '› '; color: var(--neon2); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes sweepNeon { from { transform: translateX(-180%); } to { transform: translateX(180%); } }
+
+/* ===== Price ===== */
+.price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 18px; }
 .price-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  position: relative;
+  border-radius: var(--radius-sm);
+  padding: 18px;
   transition: all .3s;
 }
-.price-card.popular {
-  border-color: var(--neon1);
-  box-shadow: 0 0 0 1px var(--neon1);
-}
-.price-card.popular::before {
-  content: "PALING DIMINTA";
-  position: absolute;
-  top: -11px;
-  right: 24px;
-  background: var(--neon1);
-  color: #03050a;
-  font-size: 10px;
-  padding: 2px 14px;
-  border-radius: 999px;
-  font-weight: 700;
-}
-.price {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 42px;
-  font-weight: 800;
-  margin: 18px 0 6px;
-}
-.price span {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--muted);
-}
+.price-card:hover { border-color: rgba(0,255,200,0.35); transform: translateY(-3px); box-shadow: 0 0 24px rgba(0,255,200,0.12); }
+.price-card .n { color: #b8bcc4; font-size: 0.9rem; margin-bottom: 4px; }
+.price-card .p { color: var(--neon1); font-weight: 900; font-size: 1.05rem; text-shadow: 0 0 8px rgba(0,255,200,0.35); }
 
-/* ===== Kontak ===== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-.contact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 26px;
-  text-align: center;
-}
+/* ===== Contact ===== */
+.contact-wrap { margin-top: 18px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .contact-icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(0,255,200,0.08);
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 18px;
+  width: 56px; height: 56px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all .3s;
 }
+.contact-icon:hover { transform: translateY(-3px); border-color: rgba(0,255,200,0.4); box-shadow: 0 0 24px rgba(0,255,200,0.15); }
+.contact-icon svg { display: block; }
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 42px 24px;
-  color: var(--muted);
-  font-size: 13px;
+/* ===== Global status ticker ===== */
+.status-ticker {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,255,200,0.03);
+  overflow: hidden;
+  padding: 10px 0;
+  margin-top: 20px;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.status-ticker .track {
+  display: inline-flex; gap: 40px; white-space: nowrap;
+  font-size: 0.8rem; color: var(--neon1); letter-spacing: 1px;
+  animation: marquee 22s linear infinite;
+}
+.status-ticker .track span { text-shadow: 0 0 6px rgba(0,255,200,0.4); }
+.status-ticker .track span b { color: var(--neon2); }
+
+footer { border-top: 1px solid var(--border); padding: 16px 0; color: #5a5f68; font-size: 0.8rem; text-align: center; position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .topnav { display: none; }
+  .nav-toggle { display: block; }
+  .topnav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 16px; right: 16px; padding: 12px; background: rgba(10,13,22,0.95); border: 1px solid var(--border); border-radius: 16px; }
+}
+@media (max-width: 520px) {
+  .price-grid { grid-template-columns: 1fr; }
+  /* matiin animasi fixed-layer berat biar Android gak lag */
+  body::before,
+  body::after,
+  .batik-bg { animation: none !important; }
+  .flying-robot,
+  .flying-robot2,
+  .robot-layanan { animation-duration: 20s !important; }
+}
+@keyframes borderSpin { to { transform: rotate(360deg); } }
+/* ===== Neon glow on touch — ripple dari titik sentuhan ===== */
+body, .skill-card, .project-card, .contact-icon { touch-action: manipulation; }
+.touch-neon {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,200,0.35) 0%, rgba(0,255,200,0.1) 30%, transparent 70%);
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  z-index: 9999;
+  animation: neonTouchRipple 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@keyframes neonTouchRipple {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 0.8; }
+  50%  { opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hero-title { font-size: 42px; }
-  .wayang { display: none; }
+/* ===== PERFORMANCE GUARD: matiin animasi berat biar HP low-end gak blank/lag ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+/* HP lemah (max-width + coarse pointer) -> matiin animasi background berat */
+@media (max-width: 768px) and (pointer: coarse) {
+  .flying-robot, .flying-robot2, .skill-marquee .track, .batik-bg, .grid-floor, .scanline {
+    animation: none !important;
+  }
+  .flying-robot, .flying-robot2 { display: none !important; }
 }
 </style>
 </head>
 <body>
 
-<!-- Background effects -->
 <div class="batik-bg"></div>
 
-<!-- Navbar -->
-<header>
-  <nav class="nav">
-    <a href="#" class="logo">CILOK<span>TECH</span></a>
-    <ul class="nav-links">
-      <li><a href="#layanan">Layanan</a></li>
-      <li><a href="#harga">Harga</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
+<div class="topbar" id="topbar">
+  <a href="#beranda" class="brand"><span class="logo">C</span> <span class="brand-name glitch" data-text="CILOK TECH">CILOK TECH</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  <nav class="topnav" id="topNav">
+    <a href="#layanan">Layanan</a>
+    <a href="#harga">Harga</a>
+    <a href="#kontak">Kontak</a>
   </nav>
-</header>
+</div>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-inner">
-
-    <!-- WAYANG ANTASENA - KIRI -->
-    <div class="wayang wayang-kiri" aria-hidden="true">
-      <svg viewBox="0 0 200 320" width="120" height="190" xmlns="http://www.w3.org/2000/svg">
-        <!-- Neon aura -->
-        <circle cx="100" cy="160" r="88" fill="none" stroke="#ff00aa" stroke-width="0.8" opacity="0.4">
-          <animate attributeName="r" values="82;96;82" dur="2.8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="160" r="78" fill="none" stroke="#00ffc8" stroke-width="0.6" opacity="0.3">
-          <animate attributeName="r" values="72;88;72" dur="3.6s" repeatCount="indefinite"/>
-        </circle>
-
-        <g fill="none" stroke="#00ffc8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Antasena headgear (mahkota + tanduk cyber) -->
-          <path d="M100 14 L72 38 L82 52 L118 52 L128 38 Z" fill="#0a0d16"/>
-          <path d="M100 14 L100 4 M82 30 L70 16 M118 30 L130 16" stroke="#ff00aa" stroke-width="2"/>
-          <!-- Tanduk cyberpunk -->
-          <path d="M76 42 L62 22" stroke="#ff00aa"/>
-          <path d="M124 42 L138 22" stroke="#ff00aa"/>
-          <circle cx="62" cy="22" r="3" fill="#ff00aa"/>
-          <circle cx="138" cy="22" r="3" fill="#ff00aa"/>
-
-          <!-- Wajah Antasena -->
-          <path d="M82 54 Q100 68 118 54 L124 92 Q100 108 76 92 Z" fill="#0a0d16"/>
-          
-          <!-- Mata neon -->
-          <circle cx="90" cy="72" r="4.2" fill="#ff00aa"/>
-          <circle cx="110" cy="72" r="4.2" fill="#00ffc8"/>
-          <circle cx="90" cy="72" r="1.8" fill="#fff"/>
-          <circle cx="110" cy="72" r="1.8" fill="#fff"/>
-
-          <!-- Circuit di wajah -->
-          <path d="M90 80 L90 88 M110 80 L110 88 M100 82 L100 90" stroke="#00a8ff" stroke-width="1.4"/>
-
-          <!-- Tubuh Antasena -->
-          <path d="M78 92 Q58 112 62 142 Q42 152 48 182 Q38 212 62 228 Q58 268 100 280 Q142 268 138 228 Q162 212 152 182 Q158 152 138 142 Q142 112 122 92 Z" fill="#080b14"/>
-
-          <!-- Neon batik pattern di dada -->
-          <path d="M100 104 Q68 132 76 172 Q88 218 100 268" stroke="#ff00aa" stroke-width="1.6" opacity="0.8"/>
-          <path d="M100 104 Q132 132 124 172 Q112 218 100 268" stroke="#00ffc8" stroke-width="1.6" opacity="0.8"/>
-          <path d="M68 148 Q100 168 132 148" stroke="#00a8ff" stroke-width="1.2" opacity="0.7"/>
-          <path d="M64 188 Q100 208 136 188" stroke="#00a8ff" stroke-width="1.2" opacity="0.7"/>
-
-          <!-- Lengan -->
-          <path d="M62 142 Q30 162 36 208" stroke-width="3.2"/>
-          <path d="M138 142 Q170 162 164 208" stroke-width="3.2"/>
-
-          <!-- Tangan (cakram neon) -->
-          <circle cx="36" cy="212" r="9" fill="#0a0d16" stroke="#ff00aa" stroke-width="2"/>
-          <circle cx="164" cy="212" r="9" fill="#0a0d16" stroke="#00ffc8" stroke-width="2"/>
-          <circle cx="36" cy="212" r="4" fill="#ff00aa"/>
-          <circle cx="164" cy="212" r="4" fill="#00ffc8"/>
-
-          <!-- Selendang neon -->
-          <path d="M66 158 Q100 178 134 158" stroke="#ffdd44" stroke-width="2.2" opacity="0.85"/>
-
-          <!-- Tongkat bawah -->
-          <line x1="100" y1="280" x2="100" y2="318" stroke="#ff00aa" stroke-width="3"/>
-          <circle cx="100" cy="318" r="5" fill="#ff00aa"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- WAYANG ANTASENA - KANAN (mirror) -->
-    <div class="wayang wayang-kanan" aria-hidden="true">
-      <svg viewBox="0 0 200 320" width="110" height="175" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);">
-        <circle cx="100" cy="160" r="88" fill="none" stroke="#00ffc8" stroke-width="0.8" opacity="0.4">
-          <animate attributeName="r" values="82;96;82" dur="3.2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="100" cy="160" r="78" fill="none" stroke="#ff00aa" stroke-width="0.6" opacity="0.3">
-          <animate attributeName="r" values="72;88;72" dur="4s" repeatCount="indefinite"/>
-        </circle>
-
-        <g fill="none" stroke="#00a8ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M100 14 L72 38 L82 52 L118 52 L128 38 Z" fill="#0a0d16"/>
-          <path d="M100 14 L100 4 M82 30 L70 16 M118 30 L130 16" stroke="#00ffc8" stroke-width="2"/>
-          <path d="M76 42 L62 22" stroke="#00ffc8"/>
-          <path d="M124 42 L138 22" stroke="#00ffc8"/>
-          <circle cx="62" cy="22" r="3" fill="#00ffc8"/>
-          <circle cx="138" cy="22" r="3" fill="#00ffc8"/>
-
-          <path d="M82 54 Q100 68 118 54 L124 92 Q100 108 76 92 Z" fill="#0a0d16"/>
-          <circle cx="90" cy="72" r="4.2" fill="#00ffc8"/>
-          <circle cx="110" cy="72" r="4.2" fill="#ff00aa"/>
-          <circle cx="90" cy="72" r="1.8" fill="#fff"/>
-          <circle cx="110" cy="72" r="1.8" fill="#fff"/>
-          <path d="M90 80 L90 88 M110 80 L110 88 M100 82 L100 90" stroke="#ff00aa" stroke-width="1.4"/>
-
-          <path d="M78 92 Q58 112 62 142 Q42 152 48 182 Q38 212 62 228 Q58 268 100 280 Q142 268 138 228 Q162 212 152 182 Q158 152 138 142 Q142 112 122 92 Z" fill="#080b14"/>
-          <path d="M100 104 Q68 132 76 172 Q88 218 100 268" stroke="#00ffc8" stroke-width="1.6" opacity="0.8"/>
-          <path d="M100 104 Q132 132 124 172 Q112 218 100 268" stroke="#ff00aa" stroke-width="1.6" opacity="0.8"/>
-          <path d="M68 148 Q100 168 132 148" stroke="#ff00aa" stroke-width="1.2" opacity="0.7"/>
-          <path d="M64 188 Q100 208 136 188" stroke="#ff00aa" stroke-width="1.2" opacity="0.7"/>
-
-          <path d="M62 142 Q30 162 36 208" stroke-width="3.2"/>
-          <path d="M138 142 Q170 162 164 208" stroke-width="3.2"/>
-
-          <circle cx="36" cy="212" r="9" fill="#0a0d16" stroke="#00ffc8" stroke-width="2"/>
-          <circle cx="164" cy="212" r="9" fill="#0a0d16" stroke="#ff00aa" stroke-width="2"/>
-          <circle cx="36" cy="212" r="4" fill="#00ffc8"/>
-          <circle cx="164" cy="212" r="4" fill="#ff00aa"/>
-
-          <path d="M66 158 Q100 178 134 158" stroke="#ffdd44" stroke-width="2.2" opacity="0.85"/>
-          <line x1="100" y1="280" x2="100" y2="318" stroke="#00ffc8" stroke-width="3"/>
-          <circle cx="100" cy="318" r="5" fill="#00ffc8"/>
-        </g>
-      </svg>
-    </div>
-
-    <div>
-      <div class="hero-badge">⬢ FULL-SPECTRUM DIGITAL OPERATOR</div>
-      <h1 class="hero-title">Sistem yang <span class="flip-wrap"><span class="flip-word" id="flipWord">otomatis</span></span><br>tanpa kamu yang urus</h1>
-      <p class="hero-desc">Website, bot, dashboard, scraping, automation, AI, crypto tools. Gue handle engineering-nya — kamu tinggal terima hasilnya.</p>
-      
-      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-        <a href="#layanan" class="btn primary">Lihat Layanan</a>
-        <a href="#kontak" class="btn">Hubungi Gue</a>
-      </div>
-    </div>
+<section class="hero container" id="beranda">
+    <div class="flying-robot2" aria-hidden="true">
+    <svg viewBox="0 0 140 180" width="88" height="114">
+      <!-- glow aura -->
+      <circle cx="70" cy="80" r="55" fill="none" stroke="#ff00aa" stroke-width="0.4" opacity="0.3">
+        <animate attributeName="r" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- jetpack thrusters (tubular) -->
+      <rect x="40" y="118" width="14" height="20" rx="4" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="86" y="118" width="14" height="20" rx="4" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <!-- THRUST FLAMES -->
+      <ellipse class="flame1" cx="47" cy="144" rx="10" ry="8" fill="#ff6600" opacity="0.9"/>
+      <ellipse class="flame2" cx="47" cy="146" rx="6" ry="5" fill="#ffdd44" opacity="0.7"/>
+      <ellipse class="flame1" cx="93" cy="144" rx="10" ry="8" fill="#ff6600" opacity="0.9"/>
+      <ellipse class="flame2" cx="93" cy="146" rx="6" ry="5" fill="#ffdd44" opacity="0.7"/>
+      <!-- legs (tube) -->
+      <rect x="44" y="108" width="12" height="14" rx="5" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="84" y="108" width="12" height="14" rx="5" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <!-- arms -->
+      <rect x="22" y="62" width="12" height="36" rx="6" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="106" y="62" width="12" height="36" rx="6" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <!-- hands -->
+      <circle cx="28" cy="102" r="5" fill="#0c0c18" stroke="#ff00aa" stroke-width="1"/>
+      <circle cx="112" cy="102" r="5" fill="#0c0c18" stroke="#ff00aa" stroke-width="1"/>
+      <!-- body (rounded hexagon-like) -->
+      <rect x="38" y="48" width="64" height="66" rx="16" fill="#0c0c18" stroke="#ff00aa" stroke-width="2"/>
+      <!-- chest screen -->
+      <rect x="50" y="58" width="40" height="24" rx="6" fill="#060612" stroke="#00ffc8" stroke-width="1"/>
+      <line x1="58" y1="65" x2="82" y2="65" stroke="#00ffc8" stroke-width="1" opacity="0.6"/>
+      <line x1="58" y1="70" x2="76" y2="70" stroke="#00a8ff" stroke-width="1" opacity="0.5"/>
+      <line x1="58" y1="75" x2="80" y2="75" stroke="#ff00aa" stroke-width="1" opacity="0.4"/>
+      <!-- neck -->
+      <rect x="60" y="38" width="20" height="14" rx="3" fill="#0c0c18" stroke="#ff00aa" stroke-width="1.5"/>
+      <!-- head (rounded) -->
+      <rect x="42" y="6" width="56" height="36" rx="12" fill="#0c0c18" stroke="#ff00aa" stroke-width="2"/>
+      <!-- visor (full-width) -->
+      <rect x="48" y="12" width="44" height="14" rx="6" fill="#060612" stroke="#00ffc8" stroke-width="1"/>
+      <circle class="eye" cx="58" cy="19" r="4" fill="#ff00aa"/>
+      <circle class="eye" cx="82" cy="19" r="4" fill="#ff00aa"/>
+      <!-- antenna -->
+      <line x1="70" y1="6" x2="70" y2="-2" stroke="#00a8ff" stroke-width="2"/>
+      <circle cx="70" cy="-3" r="3" fill="#00a8ff">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+  <div class="flying-robot" aria-hidden="true">
+    <svg viewBox="0 0 140 180" width="100" height="130">
+      <!-- glow aura -->
+      <circle cx="70" cy="80" r="55" fill="none" stroke="#00ffc8" stroke-width="0.4" opacity="0.3">
+        <animate attributeName="r" values="50;60;50" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- jetpack thrusters (tubular) -->
+      <rect x="40" y="118" width="14" height="20" rx="4" fill="#0c0c18" stroke="#00a8ff" stroke-width="1.5"/>
+      <rect x="86" y="118" width="14" height="20" rx="4" fill="#0c0c18" stroke="#00a8ff" stroke-width="1.5"/>
+      <!-- THRUST FLAMES -->
+      <ellipse class="flame1" cx="47" cy="144" rx="10" ry="8" fill="#00ffc8" opacity="0.9"/>
+      <ellipse class="flame2" cx="47" cy="146" rx="6" ry="5" fill="#ffaa00" opacity="0.7"/>
+      <ellipse class="flame1" cx="93" cy="144" rx="10" ry="8" fill="#00ffc8" opacity="0.9"/>
+      <ellipse class="flame2" cx="93" cy="146" rx="6" ry="5" fill="#ffaa00" opacity="0.7"/>
+      <!-- legs (tube) -->
+      <rect x="44" y="108" width="12" height="14" rx="5" fill="#0c0c18" stroke="#00ffc8" stroke-width="1.5"/>
+      <rect x="84" y="108" width="12" height="14" rx="5" fill="#0c0c18" stroke="#00ffc8" stroke-width="1.5"/>
+      <!-- arms -->
+      <rect x="22" y="62" width="12" height="36" rx="6" fill="#0c0c18" stroke="#00ffc8" stroke-width="1.5"/>
+      <rect x="106" y="62" width="12" height="36" rx="6" fill="#0c0c18" stroke="#00ffc8" stroke-width="1.5"/>
+      <!-- hands -->
+      <circle cx="28" cy="102" r="5" fill="#0c0c18" stroke="#00ffc8" stroke-width="1"/>
+      <circle cx="112" cy="102" r="5" fill="#0c0c18" stroke="#00ffc8" stroke-width="1"/>
+      <!-- body (rounded hexagon-like) -->
+      <rect x="38" y="48" width="64" height="66" rx="16" fill="#0c0c18" stroke="#00ffc8" stroke-width="2"/>
+      <!-- chest screen -->
+      <rect x="50" y="58" width="40" height="24" rx="6" fill="#060612" stroke="#00a8ff" stroke-width="1"/>
+      <line x1="58" y1="65" x2="82" y2="65" stroke="#00ffc8" stroke-width="1" opacity="0.6"/>
+      <line x1="58" y1="70" x2="76" y2="70" stroke="#ff00aa" stroke-width="1" opacity="0.5"/>
+      <line x1="58" y1="75" x2="80" y2="75" stroke="#00a8ff" stroke-width="1" opacity="0.4"/>
+      <!-- neck -->
+      <rect x="60" y="38" width="20" height="14" rx="3" fill="#0c0c18" stroke="#00ffc8" stroke-width="1.5"/>
+      <!-- head (rounded) -->
+      <rect x="42" y="6" width="56" height="36" rx="12" fill="#0c0c18" stroke="#00ffc8" stroke-width="2"/>
+      <!-- visor (full-width) -->
+      <rect x="48" y="12" width="44" height="14" rx="6" fill="#060612" stroke="#00a8ff" stroke-width="1"/>
+      <circle class="eye" cx="58" cy="19" r="4" fill="#00ffc8"/>
+      <circle class="eye" cx="82" cy="19" r="4" fill="#00a8ff"/>
+      <!-- antenna -->
+      <line x1="70" y1="6" x2="70" y2="-2" stroke="#ff00aa" stroke-width="2"/>
+      <circle cx="70" cy="-3" r="3" fill="#ff00aa">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+  <div>
+    <div class="hero-badge">⬢ FULL-SPECTRUM DIGITAL OPERATOR</div>
+    <h1 class="hero-title">Sistem yang <span class="flip-wrap"><span class="flip-word" id="flipWord">otomatis</span></span><br>tanpa kamu yang urus</h1>
+    <p class="hero-desc">Website, bot, dashboard, scraping, automation, AI, crypto tools. Gue handle engineering-nya — kamu tinggal terima hasilnya.</p>
   </div>
 </section>
 
-<!-- Layanan -->
 <section class="section" id="layanan">
+  <div class="robot-layanan" aria-hidden="true">
+    <svg viewBox="0 0 120 150" width="74" height="92">
+      <path class="flame" d="M48 120 q12 30 24 0 q-12 -10 -24 0z" fill="#ff00aa"/>
+      <path class="flame" d="M52 120 q8 20 16 0 q-8 -6 -16 0z" fill="#00ffc8"/>
+      <rect x="46" y="112" width="9" height="10" rx="3" fill="#111622" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="65" y="112" width="9" height="10" rx="3" fill="#111622" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="24" y="64" width="11" height="30" rx="5.5" fill="#111622" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="85" y="64" width="11" height="30" rx="5.5" fill="#111622" stroke="#ff00aa" stroke-width="1.5"/>
+      <rect x="37" y="58" width="46" height="54" rx="11" fill="#111622" stroke="#ff00aa" stroke-width="2"/>
+      <rect x="46" y="72" width="28" height="20" rx="5" fill="#0a0d16" stroke="#00ffc8" stroke-width="1.2"/>
+      <circle cx="54" cy="82" r="2.4" fill="#00a8ff"/>
+      <circle cx="66" cy="82" r="2.4" fill="#ff00aa"/>
+      <rect x="41" y="20" width="38" height="36" rx="9" fill="#0a0d16" stroke="#00ffc8" stroke-width="2"/>
+      <line x1="60" y1="20" x2="60" y2="6" stroke="#00a8ff" stroke-width="2"/>
+      <circle cx="60" cy="4" r="3.2" fill="#00a8ff"/>
+      <circle class="eye" cx="52" cy="38" r="5.2" fill="#ff00aa"/>
+      <circle class="eye" cx="68" cy="38" r="5.2" fill="#ff00aa"/>
+      <rect x="52" y="48" width="16" height="3" rx="1.5" fill="#00ffc8"/>
+    </svg>
+  </div>
   <div class="container">
     <div class="section-header reveal">
       <span class="section-badge">// Layanan</span>
       <h2 class="section-title holo">Yang Bisa Dibantuin</h2>
       <p class="section-desc">Pilih sesuai kebutuhan, gue urus implementasi sampai jalan.</p>
     </div>
-
-    <div class="grid">
-      <div class="card reveal">
-        <h3>🌐 Website & Landing Page</h3>
-        <p>Website company, landing page produk, portfolio, atau sistem internal. Design + development + deployment.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🤖 Bot & Automation</h3>
-        <p>Telegram bot, Discord bot, WhatsApp bot, scraping, auto-posting, auto-claim, monitoring, dll.</p>
-      </div>
-      <div class="card reveal">
-        <h3>📊 Dashboard & Admin Panel</h3>
-        <p>Dashboard monitoring, admin panel, analytics, real-time data, visualisasi, dan internal tools.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🕷️ Web Scraping & Data</h3>
-        <p>Scraping data dari website, API integration, data pipeline, export ke Excel/CSV/Google Sheet.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🧠 AI & Automation Tools</h3>
-        <p>Integrasi OpenAI, Claude, Grok, local LLM, atau custom AI workflow sesuai kebutuhan bisnis.</p>
-      </div>
-      <div class="card reveal">
-        <h3>💎 Crypto & Web3 Tools</h3>
-        <p>Token scanner, rugcheck automation, wallet tracker, auto-sniper, DeFi dashboard, on-chain tools.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🔧 Browser Automation</h3>
-        <p>Automasi browser (Puppeteer/Playwright), auto-login, auto-form, auto-click, testing, dll.</p>
-      </div>
-      <div class="card reveal">
-        <h3>🛠️ Custom Development</h3>
-        <p>Project khusus yang tidak masuk kategori di atas. Ceritain aja kebutuhannya, gue sesuaikan.</p>
-      </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><h3>🌐 Website / Web App</h3><p>Landing page, company profile, admin panel, dashboard. HTML/React/Next.js + Node/Python.</p><div class="skill-marquee"><div class="track"><span>WEB APP</span><span>STATIS</span><span>DINAMIS</span><span>DEPLOY VPS</span><span>RESPONSIVE</span><span>SSR</span><span>WEB APP</span><span>STATIS</span><span>DINAMIS</span><span>DEPLOY VPS</span><span>RESPONSIVE</span><span>SSR</span></div></div></div>
+      <div class="skill-card reveal"><h3>🤖 Telegram Bot</h3><p>Notifikasi, auto-claim, scanner, voting, automation 24/7.</p><div class="skill-marquee"><div class="track"><span>BOT</span><span>PYTHON</span><span>NODE.JS</span><span>24/7</span><span>ALERT</span><span>AUTO-CLAIM</span><span>BOT</span><span>PYTHON</span><span>NODE.JS</span><span>24/7</span><span>ALERT</span><span>AUTO-CLAIM</span></div></div></div>
+      <div class="skill-card reveal"><h3>📊 Dashboard</h3><p>Real-time monitoring server/provider/log dengan auto-refresh.</p><div class="skill-marquee"><div class="track"><span>REALTIME</span><span>CHARTS</span><span>ALERTS</span><span>LOGS</span><span>METRICS</span><span>LIVE API</span><span>REALTIME</span><span>CHARTS</span><span>ALERTS</span><span>LOGS</span><span>METRICS</span><span>LIVE API</span></div></div></div>
+      <div class="skill-card reveal"><h3>🕷 Scraping & Report</h3><p>Ambil data dari web/API, olah jadi report atau file siap pakai.</p><div class="skill-marquee"><div class="track"><span>TRACKING</span><span>API</span><span>PARSE</span><span>EXPORT</span><span>WATCH</span><span>SCRAPE</span><span>TRACKING</span><span>API</span><span>PARSE</span><span>EXPORT</span><span>WATCH</span><span>SCRAPE</span></div></div></div>
+      <div class="skill-card reveal"><h3>⚡ Automation</h3><p>Bot massal, batch processing, cron pipelines.</p><div class="skill-marquee"><div class="track"><span>CRON</span><span>BATCH</span><span>PLAYWRIGHT</span><span>PIPELINE</span><span>MASS</span><span>SCHEDULER</span><span>CRON</span><span>BATCH</span><span>PLAYWRIGHT</span><span>PIPELINE</span><span>MASS</span><span>SCHEDULER</span></div></div></div>
+      <div class="skill-card reveal"><h3>🧠 AI / Workflow</h3><p>Agent AI, RAG, workflow LLM, retrieval.</p><div class="skill-marquee"><div class="track"><span>RAG</span><span>AGENT</span><span>LLM</span><span>SUMMARIZER</span><span>RETRIEVAL</span><span>PRIVATE</span><span>RAG</span><span>AGENT</span><span>LLM</span><span>SUMMARIZER</span><span>RETRIEVAL</span><span>PRIVATE</span></div></div></div>
+      <div class="skill-card reveal"><h3>⛓ Crypto Tools</h3><p>Wallet generation, DeFi, token scanner, airdrop tools.</p><div class="skill-marquee"><div class="track"><span>MULTI-CHAIN</span><span>DEFI</span><span>SCANNER</span><span>AIRDROP</span><span>WALLET</span><span>WEB3</span><span>MULTI-CHAIN</span><span>DEFI</span><span>SCANNER</span><span>AIRDROP</span><span>WALLET</span><span>WEB3</span></div></div></div>
+      <div class="skill-card"><h3>🧩 Browser Automation</h3><p>Playwright, undetected headless, session automation, OAuth helpers.</p><div class="skill-marquee"><div class="track"><span>HEADLESS</span><span>DESKTOP</span><span>OAUTH</span><span>SESSION</span><span>QA</span><span>UNDETECTED</span><span>HEADLESS</span><span>DESKTOP</span><span>OAUTH</span><span>SESSION</span><span>QA</span><span>UNDETECTED</span></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- Harga -->
-<section class="section" id="harga" style="background: rgba(0,0,0,0.3);">
+<section class="section" id="harga">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-badge">// Harga</span>
-      <h2 class="section-title holo">Transparan & Fleksibel</h2>
-      <p class="section-desc">Harga disesuaikan dengan kompleksitas project. Semua sudah termasuk development + deployment.</p>
+      <span class="section-badge">// Paket</span>
+      <h2 class="section-title holo">Harga</h2>
+      <p class="section-desc">Estimasi kasar. Bisa nego sesuai scope dan timeline.</p>
     </div>
-
     <div class="price-grid">
-      <div class="price-card reveal">
-        <h3>Starter</h3>
-        <div class="price">Rp 1.5jt <span>/project</span></div>
-        <p style="color:var(--muted); margin-bottom:18px;">Website sederhana, landing page, bot basic, scraping 1 sumber.</p>
-        <ul style="color:var(--muted); font-size:14px; line-height:1.8; margin-bottom:24px;">
-          <li>✓ 1-3 halaman</li>
-          <li>✓ Hosting + domain</li>
-          <li>✓ Revisi 2x</li>
-          <li>✓ Maintenance 1 bulan</li>
-        </ul>
-        <a href="#kontak" class="btn" style="width:100%;">Pilih Starter</a>
-      </div>
-
-      <div class="price-card popular reveal">
-        <h3>Professional</h3>
-        <div class="price">Rp 3.5jt <span>/project</span></div>
-        <p style="color:var(--muted); margin-bottom:18px;">Website kompleks, dashboard, bot dengan fitur lengkap, scraping multi sumber.</p>
-        <ul style="color:var(--muted); font-size:14px; line-height:1.8; margin-bottom:24px;">
-          <li>✓ Unlimited halaman</li>
-          <li>✓ Dashboard / Admin panel</li>
-          <li>✓ Bot + automation</li>
-          <li>✓ Revisi 4x</li>
-          <li>✓ Maintenance 3 bulan</li>
-        </ul>
-        <a href="#kontak" class="btn primary" style="width:100%;">Pilih Professional</a>
-      </div>
-
-      <div class="price-card reveal">
-        <h3>Enterprise</h3>
-        <div class="price">Custom <span>/project</span></div>
-        <p style="color:var(--muted); margin-bottom:18px;">Project besar, sistem kompleks, integrasi banyak platform, atau maintenance jangka panjang.</p>
-        <ul style="color:var(--muted); font-size:14px; line-height:1.8; margin-bottom:24px;">
-          <li>✓ Custom requirement</li>
-          <li>✓ Full source code</li>
-          <li>✓ Priority support</li>
-          <li>✓ SLA & maintenance</li>
-          <li>✓ Training & dokumentasi</li>
-        </ul>
-        <a href="#kontak" class="btn" style="width:100%;">Diskusi Project</a>
-      </div>
+      <div class="price-card reveal"><div class="n">Website statis / landing</div><div class="p">Rp 150rb - 400rb</div></div>
+      <div class="price-card reveal"><div class="n">Website dinamis / dashboard</div><div class="p">Rp 400rb - 1,2jt</div></div>
+      <div class="price-card reveal"><div class="n">Telegram bot custom</div><div class="p">Rp 200rb - 800rb</div></div>
+      <div class="price-card reveal"><div class="n">Automation / scraping tools</div><div class="p">Rp 250rb - 900rb</div></div>
+      <div class="price-card reveal"><div class="n">AI agent / workflow</div><div class="p">Rp 500rb - 1,5jt</div></div>
+      <div class="price-card reveal"><div class="n">Maintenance bulanan</div><div class="p">Rp 150rb - 300rb/bln</div></div>
     </div>
   </div>
 </section>
 
-<!-- Kontak -->
 <section class="section" id="kontak">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-badge">// Kontak</span>
-      <h2 class="section-title holo">Mau Kerja Sama?</h2>
-      <p class="section-desc">Langsung chat aja. Gue biasanya balas dalam 1-2 jam (kecuali lagi tidur).</p>
+      <h2 class="section-title holo">Hubungi Cilok Tech</h2>
+      <p class="section-desc">Klik icon untuk langsung buka chat di Telegram.</p>
     </div>
-
-    <div class="contact-grid">
-      <div class="contact-card reveal">
-        <div class="contact-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00ffc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </div>
-        <h3>WhatsApp</h3>
-        <p style="margin:12px 0 20px; color:var(--muted);">628xxx-xxxx-xxxx</p>
-        <a href="#" class="btn" style="width:100%;">Chat di WA</a>
-      </div>
-
-      <div class="contact-card reveal">
-        <div class="contact-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00ffc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </div>
-        <h3>GitHub</h3>
-        <p style="margin:12px 0 20px; color:var(--muted);">github.com/cilokesteh</p>
-        <a href="https://github.com/cilokesteh" target="_blank" class="btn" style="width:100%;">Lihat Repo</a>
-      </div>
-
-      <div class="contact-card reveal">
-        <div class="contact-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00ffc8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        </div>
-        <h3>Email</h3>
-        <p style="margin:12px 0 20px; color:var(--muted);">cilokesteh@gmail.com</p>
-        <a href="mailto:cilokesteh@gmail.com" class="btn" style="width:100%;">Kirim Email</a>
-      </div>
+    <div class="contact-wrap reveal">
+      <a class="contact-icon" href="https://t.me/cilokesteh" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="11" fill="#2AABEE"/>
+          <path d="M9.78 14.34l-1.06 3.43c.16.45.5.56.9.35l2.46-1.86 4.82 3.55c.88.49 1.52.24 1.78-.82l3.23-15.2c.32-1.46-.55-2.13-1.5-1.77L4.2 10.9c-1.4.54-1.39 1.34-.25 1.7l3.86 1.2 8.96-5.65c.42-.26.8-.12.49.16" fill="#fff"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
+<div class="status-ticker">
+  <div class="track">
+    <span>SYSTEM <b>ONLINE</b></span><span>STATUS: <b>AVAILABLE</b></span><span>UPTIME 99.9%</span><span>TELEGRAM ALERTS <b>ACTIVE</b></span><span>MONITORING <b>LIVE</b></span><span>NEW OPS <b>OPEN</b></span><span>DEPLOY PIPELINE <b>READY</b></span>
+    <span>SYSTEM <b>ONLINE</b></span><span>STATUS: <b>AVAILABLE</b></span><span>UPTIME 99.9%</span><span>TELEGRAM ALERTS <b>ACTIVE</b></span><span>MONITORING <b>LIVE</b></span><span>NEW OPS <b>OPEN</b></span><span>DEPLOY PIPELINE <b>READY</b></span>
+  </div>
+</div>
+
 <footer>
-  <p>© 2026 Cilokesteh • Built with obsession &amp; caffeine</p>
+  <div class="container">© CILOK TECH — Digital Operator · <a href="https://t.me/cilokesteh" target="_blank" rel="noopener">@cilokesteh</a></div>
 </footer>
 
 <script>
-// Flip word animation
-const flipWord = document.getElementById('flipWord');
-const words = ['otomatis', 'mandiri', '24/7'];
-let index = 0;
+const navToggle = document.getElementById('navToggle');
+const topNav = document.getElementById('topNav');
+navToggle?.addEventListener('click', () => topNav.classList.toggle('open'));
+document.querySelectorAll('#topNav a').forEach(a => a.addEventListener('click', () => topNav.classList.remove('open')));
 
+/* flip word cycler — hanya 3 kata */
+const flipWords = ['otomatis', 'mandiri', '24/7'];
+const flipEl = document.getElementById('flipWord');
+let flipIdx = 0;
 setInterval(() => {
-  index = (index + 1) % words.length;
-  flipWord.style.opacity = '0';
-  setTimeout(() => {
-    flipWord.textContent = words[index];
-    flipWord.style.opacity = '1';
-  }, 280);
-}, 2400);
+  flipIdx = (flipIdx + 1) % flipWords.length;
+  flipEl.style.animation = 'none';
+  void flipEl.offsetWidth;
+  flipEl.style.animation = '';
+  const w = flipWords[flipIdx];
+  if (w === '24/7') {
+    flipEl.innerHTML = '24/<span class="num7">7</span>';
+  } else {
+    flipEl.innerHTML = w;
+  }
+}, 3200);
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+/* smooth 3D tilt on touch devices */
+(function(){
+  /* 3D tilt on skill cards — touch + mouse */
+  var cards = document.querySelectorAll('.skill-card');
+  cards.forEach(function(card){
+    function handleMove(e){
+      var rect = card.getBoundingClientRect();
+      var touch = e.touches ? e.touches[0] : e;
+      var x = (touch.clientX - rect.left) / rect.width - 0.5;
+      var y = (touch.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = 'translateY(-6px) perspective(600px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)';
+      card.style.transition = 'transform 0.15s ease-out';
     }
+    function handleLeave(){
+      card.style.transform = '';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
+    }
+    card.addEventListener('touchmove', handleMove, {passive:true});
+    card.addEventListener('touchend', handleLeave);
+    card.addEventListener('touchcancel', handleLeave);
+    card.addEventListener('mouseleave', handleLeave);
   });
-}, { threshold: 0.1 });
+})();
 
-reveals.forEach(el => observer.observe(el));
+/* 3D tilt on project cards — touch + mouse */
+(function(){
+  var cards = document.querySelectorAll('.project-card');
+  cards.forEach(function(card){
+    function handleMove(e){
+      var rect = card.getBoundingClientRect();
+      var touch = e.touches ? e.touches[0] : e;
+      var x = (touch.clientX - rect.left) / rect.width - 0.5;
+      var y = (touch.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = 'translateY(-8px) perspective(600px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg)';
+      card.style.transition = 'transform 0.15s ease-out';
+    }
+    function handleLeave(){
+      card.style.transform = '';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
+    }
+    card.addEventListener('touchmove', handleMove, {passive:true});
+    card.addEventListener('touchend', handleLeave);
+    card.addEventListener('touchcancel', handleLeave);
+    card.addEventListener('mouseleave', handleLeave);
+  });
+})();
+
+
+/* scroll reveal — per-grid stagger + sekali lewat (gak reset biar gak blank) */
+(function(){
+  var reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+  document.body.classList.add('js-reveal');
+
+  // set per-grid stagger:
+  // - section-header = delay 0 (muncul pertama)
+  // - tiap card dlm grid = delay 1,2,3... (muncul setelah header, berurutan)
+  document.querySelectorAll('.section-header.reveal').forEach(function(h){
+    h.style.setProperty('--d', 0);
+  });
+  ['.skills-grid', '.price-grid', '.contact-wrap'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(grid){
+      var kids = grid.querySelectorAll('.reveal');
+      kids.forEach(function(k, i){ k.style.setProperty('--d', i + 1); });
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        // HANYA tambah visible, jangan hapus -> scroll up gak blank
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  }
+})();
+
+/* force scroll to top on every load — fixes refresh-not-returning-to-top bug */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+function forceTop() {
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.scrollTo(0, 0); // no smooth/instant — biar gak konflik dgn scroll-behavior CSS
+}
+window.addEventListener('DOMContentLoaded', forceTop);
+window.addEventListener('load', forceTop);
+
+/* touch feedback untuk skill-card di mobile — toggle class .touched biar efek neon konsisten */
+(function(){
+  var cards = document.querySelectorAll('.skill-card');
+  function addTouch(e){ e.currentTarget.classList.add('touched'); }
+  function remTouch(e){ e.currentTarget.classList.remove('touched'); }
+  cards.forEach(function(c){
+    c.addEventListener('touchstart', addTouch, {passive:true});
+    c.addEventListener('touchend', remTouch, {passive:true});
+    c.addEventListener('touchcancel', remTouch, {passive:true});
+  });
+})();
+
+/* neon glow on touch — ripple from every touch point (tap + drag) */
+(function(){
+  var lastSpawn = 0;
+  function spawn(x, y){
+    var now = Date.now();
+    if (now - lastSpawn < 40) return; // throttle 40ms (~25fps) biar gak numpuk di HP lemah
+    lastSpawn = now;
+    var el = document.createElement('div');
+    el.className = 'touch-neon';
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+    document.body.appendChild(el);
+    el.addEventListener('animationend', function(){ el.remove(); });
+  }
+  document.addEventListener('touchstart', function(e){
+    var t = e.touches[0];
+    if (t) spawn(t.clientX, t.clientY);
+  }, {passive: true});
+  document.addEventListener('touchmove', function(e){
+    var t = e.touches[0];
+    if (t) spawn(t.clientX, t.clientY);
+  }, {passive: true});
+})();
 </script>
-
 </body>
 </html>
