@@ -6,6 +6,45 @@
 <title>Cilok Tech | Jasa Bot Telegram, Website, Dashboard & Automation</title>
 <meta name="description" content="Jasa digital operator: bot Telegram, website, dashboard monitoring, automation, scraping, AI workflow, dan crypto tools. Fast delivery, hasil jalan, support included.">
 <meta name="keywords" content="jasa bot telegram, jasa website, jasa dashboard, automation, scraping, AI workflow, digital operator, cilok tech">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<script>
+  function trackEvent(name, params){
+    params = params || {};
+    if (typeof gtag === 'function') gtag('event', name, params);
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a[href]');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (href.indexOf('t.me/cilokesteh') !== -1) trackEvent('cta_click', {button: 'telegram', section: el.closest('section')?.id || 'unknown'});
+    if (href.indexOf('#proyek') !== -1) trackEvent('cta_click', {button: 'lihat_hasil', section: 'beranda'});
+    if (href.indexOf('#testimoni') !== -1) trackEvent('nav_click', {link: 'testimoni'});
+    if (href.indexOf('#harga') !== -1) trackEvent('nav_click', {link: 'harga'});
+    if (href.indexOf('#layanan') !== -1) trackEvent('nav_click', {link: 'layanan'});
+    if (href.indexOf('#kontak') !== -1) trackEvent('nav_click', {link: 'kontak'});
+  });
+  if ('IntersectionObserver' in window) {
+    var sections = ['#proyek', '#testimoni', '#harga'];
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          trackEvent('section_view', {section: entry.target.id});
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.25});
+    sections.forEach(function(id){
+      var el = document.querySelector('section#' + id.replace('#',''));
+      if (el) io.observe(el);
+    });
+  }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
