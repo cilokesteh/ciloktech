@@ -11,18 +11,26 @@
       <stop offset="100%" stop-color="#8a7448"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="0.5" result="b"/>
+      <feGaussianBlur stdDeviation="0.3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   <!-- Outer gold ring -->
   <circle cx="32" cy="32" r="30" fill="url(#ringGrad)"/>
   <!-- Inner dark cavity -->
-  <circle cx="32" cy="32" r="24.5" fill="#0b0a08"/>
-  <!-- C: arc on left, opening right -->
-  <path d="M 40 22 A 11 11 0 1 0 40 42" stroke="url(#ctGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
-  <!-- T: vertical stem -->
-  <line x1="33" y1="23" x2="33" y2="41" stroke="url(#ctGrad)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
-  <!-- T: horizontal crossbar through middle -->
-  <line x1="28" y1="32" x2="42" y2="32" stroke="url(#ctGrad)" stroke-width="3.5" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="25" fill="#0b0a08"/>
+  <!-- C: thick crescent on left -->
+  <path d="
+    M 42 16
+    A 16 16 0 1 0 42 48
+    L 36 42
+    A 10 10 0 1 1 36 22
+    Z
+  " fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- T stem: vertical at far right -->
+  <rect x="40" y="14" width="5" height="36" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- Top crossbar (T crossbar): from C opening to T stem -->
+  <rect x="28" y="15" width="17" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- Bottom crossbar (C arm): wider, from inside C to past T stem -->
+  <rect x="22" y="30" width="28" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
 </svg>
