@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="bgGrad" cx="38%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#e8d5ab"/>
+      <stop offset="55%" stop-color="#c8a96a"/>
+      <stop offset="100%" stop-color="#8a7448"/>
+    </radialGradient>
+    <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6c8"/>
+      <stop offset="50%" stop-color="#c8a96a"/>
+      <stop offset="100%" stop-color="#8a7448"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Outer gold disc -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)"/>
+  <!-- Inner dark cavity -->
+  <circle cx="32" cy="32" r="25" fill="#0b0a08"/>
+  <!-- Clean C monogram — thick arc, opening right -->
+  <path d="M 43 20 A 14 14 0 1 0 43 44" stroke="url(#cGrad)" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+  <!-- Accent dot top-right -->
+  <circle cx="43" cy="17" r="2.2" fill="#e8d5ab" filter="url(#glow)"/>
+</svg>
