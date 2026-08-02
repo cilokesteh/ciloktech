@@ -19,18 +19,14 @@
   <circle cx="32" cy="32" r="30" fill="url(#ringGrad)"/>
   <!-- Inner dark cavity -->
   <circle cx="32" cy="32" r="25" fill="#0b0a08"/>
-  <!-- C: thick crescent on left -->
-  <path d="
-    M 42 16
-    A 16 16 0 1 0 42 48
-    L 36 42
-    A 10 10 0 1 1 36 22
-    Z
-  " fill="url(#ctGrad)" filter="url(#glow)"/>
-  <!-- T stem: vertical at far right -->
-  <rect x="40" y="14" width="5" height="36" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
-  <!-- Top crossbar (T crossbar): from C opening to T stem -->
-  <rect x="28" y="15" width="17" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
-  <!-- Bottom crossbar (C arm): wider, from inside C to past T stem -->
-  <rect x="22" y="30" width="28" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- C: thick crescent arc, outer edge merging into ring -->
+  <path d="M 32 8 A 22 22 0 1 0 32 56" stroke="url(#ctGrad)" stroke-width="16" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+  <!-- C top arm -->
+  <rect x="23" y="16.5" width="23" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- C bottom arm -->
+  <rect x="19" y="42" width="17" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- T crossbar: x29-63 -->
+  <rect x="29" y="29" width="34" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- T stem: x54-59, y8-54 -->
+  <rect x="54" y="8" width="5" height="46" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
 </svg>
