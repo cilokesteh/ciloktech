@@ -318,6 +318,23 @@ a:hover { color: var(--gold-light); }
   box-shadow: 0 22px 50px rgba(0,0,0,0.45);
 }
 .skill-card:hover::before { opacity: 1; }
+.glow-card { position: relative; }
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  padding: 1.5px;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(232,213,171,0.95) 12deg, transparent 40deg, transparent 180deg, rgba(200,169,106,0.7) 192deg, transparent 220deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  animation: borderSpin 3.2s linear infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(200,169,106,0.6));
+}
+@keyframes borderSpin { to { transform: rotate(360deg); } }
 .skill-card h3 {
   color: #fff;
   font-family: var(--serif);
@@ -642,7 +659,7 @@ gtag('config', 'G-XXXXXXXXXX');
         </div>
       </div>
       <!-- Card 2: Web App & Dashboard -->
-      <div class="skill-card reveal">
+      <div class="skill-card glow-card reveal">
         <span class="card-icon">📊</span>
         <h3>Web App &amp; Dashboard</h3>
         <p>POS system, admin panel, dashboard monitoring, CRM. Full-stack development dengan real-time data, chart, dan laporan otomatis.</p>
