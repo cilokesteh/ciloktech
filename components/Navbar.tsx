@@ -20,6 +20,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // reset all anchors + scroll to top + refresh state
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -29,7 +39,12 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
+        <button
+          onClick={handleHomeClick}
+          className="flex items-center gap-2.5 group cursor-pointer"
+          aria-label="Kembali ke beranda"
+          title="Kembali ke beranda — CilokTech"
+        >
           <img
             src="/logo.jpg"
             alt="Cilok Tech"
@@ -42,7 +57,7 @@ export default function Navbar() {
           <span className="hidden sm:inline-flex ml-1 text-[10px] font-bold tracking-widest uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-2 py-0.5 rounded-full">
             WEB.ID
           </span>
-        </a>
+        </button>
 
         <div className="hidden md:flex items-center gap-5">
           {links.map((l) => (
@@ -79,6 +94,13 @@ export default function Navbar() {
 
       {open && (
         <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+          <button
+            onClick={handleHomeClick}
+            className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5"
+          >
+            🏠 Beranda
+            <span className="text-gray-300 dark:text-white/20">↺</span>
+          </button>
           {links.map((l) => (
             <a
               key={l.href}

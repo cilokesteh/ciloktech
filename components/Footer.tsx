@@ -1,16 +1,30 @@
+"use client";
+
 export default function Footer() {
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#050507] text-gray-400 py-12 px-6 border-t border-white/[0.06] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="space-y-4 max-w-[320px]">
-            <div className="flex items-center gap-2.5">
-              <img src="/logo.jpg" alt="Cilok Tech" className="h-7 w-7 rounded-full object-cover" />
+            <button
+              onClick={handleHomeClick}
+              className="flex items-center gap-2.5 group cursor-pointer"
+              aria-label="Kembali ke atas"
+            >
+              <img src="/logo.jpg" alt="Cilok Tech" className="h-7 w-7 rounded-full object-cover group-hover:ring-2 group-hover:ring-white/20 transition" />
               <span className="text-white font-extrabold text-[16px] tracking-tight">Cilok Tech</span>
               <span className="text-[10px] font-bold tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full">
                 WEB.ID
               </span>
-            </div>
+            </button>
             <p className="text-[13px] leading-relaxed">
               Jasa pembuatan website & web app profesional — cepat, aman, SEO-ready, fokus konversi. Dari UMKM sampai startup.
             </p>
@@ -25,6 +39,7 @@ export default function Footer() {
             <div>
               <div className="text-white font-bold mb-4 text-[13px] tracking-wide uppercase">Navigasi</div>
               <nav className="space-y-3 text-[13px]">
+                <button onClick={handleHomeClick} className="block hover:text-white transition text-left">Beranda</button>
                 <a href="#layanan" className="block hover:text-white transition">Layanan</a>
                 <a href="#portofolio" className="block hover:text-white transition">Portofolio</a>
                 <a href="#harga" className="block hover:text-white transition">Harga</a>
@@ -45,9 +60,9 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3 text-[11.5px] text-gray-600">
           <div>© 2026 Cilok Tech — ciloktech.web.id • Dibangun dengan Next.js 15 & Tailwind • Host di Vercel</div>
           <div className="flex items-center gap-4">
-            <span>⚡ &lt;1s LCP</span>
+            <button onClick={handleHomeClick} className="hover:text-white transition flex items-center gap-1">↑ Kembali ke atas</button>
             <span>•</span>
-            <span>🔒 SSL + Security Header</span>
+            <span>⚡ &lt;1s LCP</span>
             <span>•</span>
             <span>🇮🇩 Indonesia</span>
           </div>
