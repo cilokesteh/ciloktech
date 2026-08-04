@@ -5,10 +5,22 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "Harga Jasa Website — Penjelasan Lengkap & Transparan",
+  title: "Harga Jasa Website — Penjelasan Lengkap & Transparan | One-Man Studio",
   description:
-    "Kenapa CilokTech bandrol Rp 2.5jt untuk kualitas senilai Rp 7jt? Breakdown transparan, comparison dengan freelance pemula vs agency, dan apa yang lo dapet. Tanpa hidden fee.",
+    "Kenapa One-Man Studio CilokTech bandrol Rp 2.5jt untuk kualitas Rp 7jt? Breakdown transparan, comparison freelance vs agency, + kalkulator rugi website lemot. Tanpa hidden fee.",
   alternates: { canonical: "https://ciloktech.web.id/harga" },
+  openGraph: {
+    title: "Harga Jasa Website — Breakdown Jujur One-Man Studio",
+    description: "Kualitas Rp 7jt, gue jual Rp 2.5jt. Kenapa bisa? One-man studio senior tanpa kantor & PM. Plus kalkulator rugi website.",
+    url: "https://ciloktech.web.id/harga",
+    images: [
+      {
+        url: "https://ciloktech.web.id/api/og?title=Harga%20Jasa%20Website%20—%20Kualitas%20Rp%207jt%2C%20Gue%20Jual%20Rp%202.5jt&subtitle=HARGA%20JUJUR%20•%20ONE-MAN%20STUDIO&tag=ciloktech.web.id%2Fharga&type=harga",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 const comparison = [
@@ -221,15 +233,18 @@ export default function HargaPage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-[28px] md:text-[42px] font-extrabold tracking-tight text-gray-900 dark:text-white leading-[0.9]">Masih mikir<br/><span className="text-gray-400">2.5jt mahal?</span></h2>
             <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-5 max-w-[520px] mx-auto leading-relaxed">
-              Hitung gini: kalo website naikin 1 customer tambahan per minggu senilai Rp 500rb — dalam 5 minggu udah balik modal. Sisanya profit terus. Website murah yang gak konversi = rugi selamanya.
+              Hitung gini: kalo website naikin 1 customer tambahan per minggu senilai Rp 500rb — dalam 5 minggu udah balik modal. Sisanya profit terus. Website murah yang gak konversi = rugi selamanya. Hitung rugi lo sekarang di kalkulator.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/kalkulator" className="px-8 py-4 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-400 transition text-sm">
+                🧮 Hitung Rugi Website Lo →
+              </Link>
               <a href="https://t.me/ciloktech?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%202.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-sm">
                 🚀 Gas — Ambil Paket Rp 2.5jt
               </a>
-              <Link href="/#harga" className="px-8 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-white/10 transition text-sm">
-                Balik lihat paket
-              </Link>
+            </div>
+            <div className="mt-4 flex justify-center">
+              <Link href="/#harga" className="text-[13px] text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">Balik lihat paket</Link>
             </div>
             <div className="mt-6 text-[11px] text-gray-400">Konsultasi gratis 15 menit — kalo gak cocok gak usah lanjut, santai.</div>
           </div>

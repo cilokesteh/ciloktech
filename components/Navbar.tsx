@@ -10,7 +10,8 @@ const navLinks: NavLink[] = [
   { href: "/#layanan", label: "Layanan", type: "anchor" },
   { href: "/#portofolio", label: "Portofolio", type: "anchor" },
   { href: "/#harga", label: "Harga", type: "anchor" },
-  { href: "/harga", label: "Breakdown", type: "page", highlight: true },
+  { href: "/kalkulator", label: "Kalkulator", type: "page", highlight: true },
+  { href: "/harga", label: "Breakdown", type: "page" },
   { href: "/blog", label: "Blog", type: "page" },
 ];
 

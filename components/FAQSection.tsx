@@ -8,11 +8,11 @@ const faqs = [
   },
   {
     q: "Apakah source code diberikan?",
-    a: "Ya, repo private GitHub + dokumentasi. Lo pegang full ownership. Kalo butuh deploy sendiri atau pindah hosting kapan aja bisa, gak ada vendor lock-in.",
+    a: "Ya, repo private GitHub + dokumentasi. Lo pegang full ownership. Kalo butuh deploy sendiri atau pindah hosting kapan aja bisa, gak ada vendor lock-in. One-man studio — source tetap milik lo.",
   },
   {
     q: "Pakai teknologi apa?",
-    a: "Next.js 15, React 19, Tailwind, Firebase/Supabase/Postgres sesuai kebutuhan. Hosting Vercel + Cloudflare. Stack modern, cepat, aman, dan gampang di-maintain tim lain.",
+    a: "Next.js 15, React 19, Tailwind v4, Firebase/Supabase/Postgres sesuai kebutuhan. Hosting Vercel + Cloudflare. Stack modern 111kB First Load, <1s LCP, 98 Lighthouse, aman by default.",
   },
   {
     q: "Bisa revisi berapa kali?",
@@ -26,17 +26,53 @@ const faqs = [
     q: "Cara bayar gimana?",
     a: "DP 50% untuk mulai, pelunasan setelah go-live dan lo approve. Bisa transfer bank / QRIS. Untuk retainer bulanan sistem langganan.",
   },
+  {
+    q: "Kenapa sebut one-man studio?",
+    a: "Karena CilokTech emang dikerjain 1 orang senior full-stack — tanpa kantor, tanpa PM, tanpa sales. Lo chat langsung sama builder-nya. Kenapa bisa murah? Gak ada overhead kantor & meeting muter-muter, tapi kualitas agency Rp 7jt.",
+  },
+  {
+    q: "Kenapa harga 2.5jt, bukan 500rb?",
+    a: "Website 500rb itu template bajakan, gak SEO, lemot, kena hack, source dikunci. 2.5jt di CilokTech itu custom Next.js, SEO lengkap, <1s LCP, source milik lo, maintenance 3 bulan. Hitung pakai kalkulator di /kalkulator — website lemot bisa rugi Rp 10jt+/bulan.",
+  },
 ];
 
 export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(0);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <section className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300" id="faq">
+      {/* FAQ JSON-LD — rich snippet Google */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://ciloktech.web.id/" },
+              { "@type": "ListItem", position: 2, name: "FAQ", item: "https://ciloktech.web.id/#faq" },
+            ],
+          }),
+        }}
+      />
+
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">
-            FAQ
+            FAQ • One-Man Studio
           </div>
           <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
             Pertanyaan yang sering
@@ -53,6 +89,7 @@ export default function FAQSection() {
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left"
+                aria-expanded={open === i}
               >
                 <span className="text-[14px] md:text-[15px] font-bold text-gray-900 dark:text-white pr-4">{f.q}</span>
                 <span
