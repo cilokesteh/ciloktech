@@ -4,11 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const links = [
+type NavLink = { href: string; label: string; type: "anchor" | "page"; highlight?: boolean };
+
+const navLinks: NavLink[] = [
   { href: "/#layanan", label: "Layanan", type: "anchor" },
   { href: "/#portofolio", label: "Portofolio", type: "anchor" },
   { href: "/#harga", label: "Harga", type: "anchor" },
-  { href: "/harga", label: "Breakdown", type: "page" },
+  { href: "/harga", label: "Breakdown", type: "page", highlight: true },
   { href: "/blog", label: "Blog", type: "page" },
 ];
 
@@ -27,9 +29,7 @@ export default function Navbar() {
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (isHome) {
-      if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname);
-      }
+      if (window.location.hash) history.replaceState(null, "", window.location.pathname);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       window.location.href = "/";
@@ -45,42 +45,54 @@ export default function Navbar() {
           : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
+        {/* WORDMARK — ONE-MAN STUDIO */}
         <button
           onClick={handleHomeClick}
-          className="flex items-center gap-2.5 group cursor-pointer"
-          aria-label="Kembali ke beranda"
-          title="Kembali ke beranda — CilokTech"
+          className="flex items-center gap-3 group cursor-pointer"
+          aria-label="Kembali ke beranda — CilokTech One-Man Studio"
+          title="CilokTech — One-Man Studio"
         >
-          <img
-            src="/logo.jpg"
-            alt="Cilok Tech"
-            className="h-8 w-8 rounded-full object-cover ring-1 ring-gray-200 dark:ring-white/10 group-hover:ring-cyan-300 transition"
-          />
-          <span className="font-extrabold text-[19px] tracking-tight">
-            <span className="text-gray-900 dark:text-white">Cilok</span>
-            <span className="text-cyan-600 dark:text-cyan-400">Tech</span>
-          </span>
-          <span className="hidden sm:inline-flex ml-1 text-[10px] font-bold tracking-widest uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-2 py-0.5 rounded-full">
-            WEB.ID
-          </span>
+          <div className="relative">
+            <img
+              src="/logo.jpg"
+              alt="Cilok Tech One-Man Studio"
+              className="h-[34px] w-[34px] rounded-full object-cover ring-1 ring-gray-200 dark:ring-white/10 group-hover:ring-cyan-300 transition shadow-sm"
+            />
+            <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-white dark:border-[#0a0a0a]" />
+          </div>
+          <div className="flex flex-col items-start leading-none text-left">
+            <div className="flex items-baseline gap-[1px]">
+              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-gray-900 dark:text-white">Cilok</span>
+              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-cyan-600 dark:text-cyan-400">Tech</span>
+              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-black tracking-[0.14em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-[6px] py-[2px] rounded-full leading-none -translate-y-[1px]">WEB.ID</span>
+            </div>
+            <div className="flex items-center gap-1.5 mt-[3px]">
+              <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400">ONE-MAN STUDIO</span>
+              <span className="hidden sm:block w-px h-2.5 bg-gray-200 dark:bg-white/10" />
+              <span className="hidden sm:block text-[9px] font-medium tracking-wide text-gray-400 dark:text-white/40">SENIOR FULL-STACK</span>
+            </div>
+          </div>
         </button>
 
-        <div className="hidden md:flex items-center gap-4">
-          {links.map((l) => {
+        {/* DESKTOP */}
+        <div className="hidden md:flex items-center gap-0.5">
+          {navLinks.map((l) => {
             const active = pathname === l.href || (l.type === "page" && pathname.startsWith(l.href));
             if (l.type === "page") {
               return (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`text-[13px] font-medium px-2.5 py-1 rounded-full transition ${
+                  className={`text-[13px] font-medium px-3 py-1.5 rounded-full transition ${
                     active
                       ? "bg-gray-900 dark:bg-white text-white dark:text-black"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                      : l.highlight
+                      ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/40 hover:bg-amber-100"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                   }`}
                 >
-                  {l.label}
+                  {l.highlight ? `💰 ${l.label}` : l.label}
                 </Link>
               );
             }
@@ -88,23 +100,25 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cyan-600 dark:after:bg-cyan-400 after:transition-all hover:after:w-full transition"
+                className="text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition"
               >
-                {l.label.replace("Breakdown", "Harga")}
+                {l.label}
               </a>
             );
           })}
-          <div className="flex items-center gap-2 ml-1">
+          <div className="w-px h-5 bg-gray-200 dark:bg-white/10 mx-2" />
+          <div className="flex items-center gap-2">
             <ThemeToggle />
             <a
               href="https://t.me/ciloktech"
-              className="px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black text-[13.5px] font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 hover:shadow-lg hover:shadow-gray-900/20 transition-all active:scale-[0.98]"
+              className="px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black text-[13.5px] font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-1.5"
             >
-              Konsultasi Gratis
+              Konsultasi Gratis <span className="text-[11px] opacity-60">↗</span>
             </a>
           </div>
         </div>
 
+        {/* MOBILE */}
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
           <button
@@ -118,35 +132,24 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 max-h-[80vh] overflow-y-auto">
+          <div className="flex items-center gap-2 mb-3 px-1">
+            <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400">ONE-MAN STUDIO</span>
+            <span className="w-1 h-1 bg-emerald-400 rounded-full animate-pulse" />
+            <span className="text-[10px] text-gray-500">Available • Balas &lt;2 jam</span>
+          </div>
           <button
             onClick={handleHomeClick}
             className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5"
           >
-            🏠 Beranda
-            <span className="text-gray-300 dark:text-white/20">↺</span>
+            🏠 Beranda <span className="text-gray-300 dark:text-white/20">↺</span>
           </button>
-          <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
-            Layanan <span className="text-gray-300">›</span>
-          </Link>
-          <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
-            Portofolio <span className="text-gray-300">›</span>
-          </Link>
-          <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
-            Harga <span className="text-gray-300">›</span>
-          </Link>
-          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">
-            💰 Breakdown Harga <span className="text-amber-400">→</span>
-          </Link>
-          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">
-            📝 Blog <span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">Baru</span>
-          </Link>
-          <a
-            href="https://t.me/ciloktech"
-            className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl"
-          >
-            💬 Chat di Telegram
-          </a>
+          <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Layanan <span className="text-gray-300">›</span></Link>
+          <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Portofolio <span className="text-gray-300">›</span></Link>
+          <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Harga <span className="text-gray-300">›</span></Link>
+          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">💰 Breakdown Harga <span className="text-amber-400">→</span></Link>
+          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 Blog <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">11 Artikel</span><span className="text-green-500 text-[10px]">●</span></span></Link>
+          <a href="https://t.me/ciloktech" className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 Chat di Telegram — One-Man Studio</a>
         </div>
       )}
     </nav>
