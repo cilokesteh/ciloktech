@@ -55,6 +55,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: "https://ciloktech.web.id" },
+  verification: {
+    google: "TRo05EJYLO8cjVxoSrKeyuh-4Z4Ne5d8V-WK92OjS5Q",
+  },
 };
 
 export const viewport = {
