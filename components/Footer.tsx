@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-[#050507] text-gray-400 py-12 px-6 border-t border-white/[0.06] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-10">
-          <div className="space-y-4 max-w-[320px]">
+          <div className="space-y-4 max-w-[340px]">
             <button
               onClick={handleHomeClick}
               className="flex items-center gap-2.5 group cursor-pointer"
@@ -26,9 +26,12 @@ export default function Footer() {
               </span>
             </button>
             <p className="text-[13px] leading-relaxed">
-              Jasa pembuatan website & web app profesional — cepat, aman, SEO-ready, fokus konversi. Dari UMKM sampai startup.
+              One-man studio — jasa pembuatan website & web app profesional. Cepat, aman, SEO-ready, fokus konversi. Tanpa kantor, tanpa PM, langsung ke builder. Dari UMKM sampai startup.
             </p>
-            <div className="flex gap-2 pt-2">
+            <div className="inline-flex items-center gap-2 text-[11px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full">
+              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /> One-man studio • Senior full-stack • Indonesia
+            </div>
+            <div className="flex gap-2 pt-1">
               <a href="https://t.me/ciloktech" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✈</a>
               <a href="https://github.com/cilokesteh" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">G</a>
               <a href="mailto:hi@ciloktech.my.id" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✉</a>
@@ -51,7 +54,7 @@ export default function Footer() {
               <div className="space-y-3 text-[13px]">
                 <a href="https://t.me/ciloktech" className="block hover:text-white transition">Telegram @ciloktech</a>
                 <a href="mailto:hi@ciloktech.my.id" className="block hover:text-white transition">hi@ciloktech.my.id</a>
-                <div className="text-gray-600 text-xs mt-4 leading-relaxed">Balas &lt;2 jam<br/>Senin–Minggu</div>
+                <div className="text-gray-600 text-xs mt-4 leading-relaxed">Balas &lt;2 jam<br/>Senin–Minggu<br/>One-man ops</div>
               </div>
             </div>
           </div>
@@ -59,14 +62,14 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col gap-2">
           <div className="text-center text-[12.5px] text-gray-500 tracking-wide">
-            © 2026 Cilok Tech — ciloktech.web.id
+            © 2026 Cilok Tech — ciloktech.web.id • One-man studio
           </div>
           <div className="flex items-center justify-center gap-4 text-[11.5px] text-gray-600">
             <button onClick={handleHomeClick} className="hover:text-white transition flex items-center gap-1">↑ Kembali ke atas</button>
             <span>•</span>
             <span>⚡ &lt;1s LCP</span>
             <span>•</span>
-            <span>🇮🇩 Indonesia</span>
+            <span>👨‍💻 One-man • Senior full-stack</span>
           </div>
         </div>
       </div>

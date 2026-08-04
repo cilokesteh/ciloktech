@@ -1,7 +1,7 @@
 const testimonials = [
   {
     name: "Budi",
-    role: "Owner • UMKM Batik Solo",
+    role: "Owner • UMKM Batik",
     text: "Selesai 3 hari langsung bisa dipakai jualan. Sekarang order WA naik karena customer gampang nemu di Google. SEO-nya beneran jalan, bukan gimmick.",
     initial: "B",
     color: "bg-gray-900 dark:bg-white text-white dark:text-black",
@@ -22,7 +22,7 @@ const testimonials = [
   },
 ];
 
-const logos = ["UMKM Solo", "FashionHub", "Fintech ID", "Kopi Kenangan Lokal", "Bengkel Maju", "Laundry Express"];
+const logos = ["UMKM Batik", "FashionHub", "Fintech ID", "Kopi Kenangan Lokal", "Bengkel Maju", "Laundry Express"];
 
 export default function TestimoniSection() {
   return (

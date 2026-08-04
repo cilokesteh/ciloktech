@@ -17,13 +17,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cilok Tech — Jasa Pembuatan Website & Web App Profesional",
+    default: "Cilok Tech — One-Man Studio | Jasa Website & Web App Profesional",
     template: "%s | Cilok Tech",
   },
   description:
-    "Jasa pembuatan website profesional, landing page, dan web app kustom. Cepat, aman, SEO-friendly, dan berorientasi konversi untuk UMKM hingga Startup. Konsultasi gratis.",
+    "One-man studio — jasa pembuatan website profesional, landing page, dan web app kustom. Senior full-stack, tanpa kantor, tanpa PM, langsung builder. Cepat, aman, SEO-ready, fokus konversi untuk UMKM hingga Startup. Konsultasi gratis.",
   metadataBase: new URL("https://ciloktech.web.id"),
   keywords: [
+    "one-man studio",
     "jasa pembuatan website",
     "jasa website profesional",
     "landing page",
@@ -31,26 +32,27 @@ export const metadata: Metadata = {
     "company profile",
     "jasa website umkm",
     "nextjs developer indonesia",
+    "one-man studio indonesia",
   ],
-  authors: [{ name: "Cilok Tech" }],
+  authors: [{ name: "Cilok Tech — One-Man Studio" }],
   creator: "Cilok Tech",
   publisher: "Cilok Tech",
   openGraph: {
-    title: "Cilok Tech — Jasa Pembuatan Website & Web App Profesional",
+    title: "Cilok Tech — One-Man Studio | Jasa Website & Web App Profesional",
     description:
-      "Solusi web & app profesional untuk UMKM hingga Startup. Cepat, aman, SEO-friendly, fokus konversi.",
+      "One-man studio senior full-stack. Tanpa kantor, tanpa PM — langsung builder. Solusi web & app pro untuk UMKM hingga Startup.",
     url: "https://ciloktech.web.id",
-    siteName: "Cilok Tech",
+    siteName: "Cilok Tech — One-Man Studio",
     type: "website",
     locale: "id_ID",
     images: [
-      { url: "/logo.jpg", width: 1200, height: 630, alt: "Cilok Tech" },
+      { url: "/logo.jpg", width: 1200, height: 630, alt: "Cilok Tech — One-Man Studio" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cilok Tech — Jasa Pembuatan Website & Web App",
-    description: "Jasa website profesional cepat, aman, dan fokus konversi.",
+    title: "Cilok Tech — One-Man Studio | Jasa Website & Web App",
+    description: "One-man studio senior full-stack. Tanpa kantor & PM, langsung builder. Cepat, aman, fokus konversi.",
     images: ["/logo.jpg"],
   },
   robots: { index: true, follow: true },

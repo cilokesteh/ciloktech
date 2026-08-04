@@ -50,7 +50,7 @@ export default function HargaPage() {
               <br />gue jual <span className="text-cyan-600 dark:text-cyan-400">Rp 2.5jt</span>. Kok bisa?
             </h1>
             <p className="text-[16px] leading-relaxed text-gray-600 dark:text-gray-400 mt-6 max-w-[600px]">
-              Karena gue solo senior, bukan agency yang harus bayar kantor + PM + sales. Stack modern Next.js jadi dev ngebut. Tanpa meeting muter-muter. Hasilnya sama — biaya overhead aja yang kepangkas.
+              Karena CilokTech itu one-man studio — bukan agency yang harus bayar kantor + PM + sales. 1 orang, senior, full-stack, fokus produk. Stack modern Next.js jadi dev ngebut. Tanpa meeting muter-muter. Hasilnya sama — biaya overhead aja yang kepangkas.
             </p>
 
             <div className="mt-10 grid md:grid-cols-3 gap-3">
@@ -166,7 +166,7 @@ export default function HargaPage() {
               <div className="inline-flex text-[11px] font-bold tracking-widest uppercase bg-white/10 dark:bg-black/10 border border-white/10 dark:border-black/10 px-3 py-1 rounded-full mb-4">KENAPA BISA MURAH?</div>
               <h2 className="text-[28px] md:text-[36px] font-extrabold leading-[0.9] tracking-tight">Gue potong birokrasi,<br/>bukan kualitas.</h2>
               <div className="mt-8 space-y-6 text-[14px] leading-relaxed opacity-80">
-                <div className="flex gap-3"><span className="font-bold">1.</span><span><b>Solo senior, bukan agency.</b> Gak ada biaya kantor, PM, sales, finance. Lo chat langsung sama dev yang ngerjain — bukan perantara.</span></div>
+                <div className="flex gap-3"><span className="font-bold">1.</span><span><b>One-man studio — bukan agency.</b> 1 builder, senior, full-stack. Gak ada biaya kantor, PM, sales, finance. Lo chat langsung sama dev yang ngerjain — bukan perantara.</span></div>
                 <div className="flex gap-3"><span className="font-bold">2.</span><span><b>Stack modern = dev ngebut.</b> Next.js 15 + Tailwind v4, gue gak ngulik WordPress berat. 1 fitur yang agency 2 hari, gue 2 jam.</span></div>
                 <div className="flex gap-3"><span className="font-bold">3.</span><span><b>No meeting muter-muter.</b> Brief via Telegram, progress via staging link, revisi to-the-point. Gak ada 5x meeting cuma buat milih warna button.</span></div>
                 <div className="flex gap-3"><span className="font-bold">4.</span><span><b>Reuse sistem internal.</b> Gue udah punya boilerplate auth, SEO, dark mode, deployment — jadi gak mulai dari nol tiap project.</span></div>

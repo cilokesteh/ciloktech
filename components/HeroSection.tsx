@@ -10,9 +10,14 @@ export default function HeroSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         {/* LEFT */}
         <div className="space-y-7">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            50+ bisnis sudah scale bareng CilokTech
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              50+ bisnis sudah scale bareng CilokTech
+            </div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 text-[11px] font-bold tracking-wide">
+              <span className="text-[13px]">👨‍💻</span> One-man studio • Senior full-stack
+            </div>
           </div>
 
           <h1 className="text-[34px] md:text-[54px] font-extrabold tracking-[-0.03em] leading-[0.95] text-gray-900 dark:text-white">

@@ -47,7 +47,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "Lo search 'jasa pembuatan website' — keluar harga Rp 500rb sampai Rp 15jt. Kok bisa beda sejauh itu? Gue pecah biar lo gak ketipu murah.",
       "### Rp 800rb - 1.8jt: Freelance Pemula / Template\nTemplate beli Rp 150rb + ganti logo. WordPress + Elementor. SEO gak ada, speed 3-6 detik, source dikunci. Gak muncul di Google, revisi hilang.",
-      "### Rp 2.5jt: CilokTech — Value Asli Rp 7jt\nDesign Figma custom → code, Next.js 15 111kB, SEO OG+Schema+Sitemap+Robots lengkap, dark/light toggle pro anti-FOUC, <1s LCP, source code repo private milik lo 100%, balas <2 jam, live 3-7 hari. Kenapa 2.5jt? Solo senior — potong meeting & kantor. Lihat breakdown lengkap di /harga.",
+      "### Rp 2.5jt: CilokTech — Value Asli Rp 7jt\nDesign Figma custom → code, Next.js 15 111kB, SEO OG+Schema+Sitemap+Robots lengkap, dark/light toggle pro anti-FOUC, <1s LCP, source code repo private milik lo 100%, balas <2 jam, live 3-7 hari. Kenapa 2.5jt? One-man studio senior — potong meeting & kantor. Lihat breakdown lengkap di /harga.",
       "### Rp 8jt - 15jt: Agency\nSama teknologinya, tapi bayar meeting 60% budget. Go-live 2-4 minggu. Cocok kalo butuh brand guideline + invoice PT.",
       "### Mana yang worth?\nUMKM mau validasi pasar cepat tapi tetap SEO ready + scalable → 2.5jt sweet spot. 800rb ujungnya bayar 2x karena bikin ulang. 10jt overkill kalo belum butuh meeting.",
       "#### Transparan gue:\nHarga di depan, breakdown di /harga, source code milik lo. Gak ada hidden fee. Domain + hosting tahun pertama include.",
@@ -91,7 +91,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
       "CV/PT atau startup punya IG bagus, tapi website gak ada atau ala kadarnya? Di B2B, website = first impression. Jelek = dianggap abal.",
       "### Kenapa CV/PT butuh company profile pro?\n1. Client B2B cek website sebelum PO — lemot / 404 = trust 0\n2. Investor cek SEO + speed + legalitas footer — gak ada = gak serius\n3. Tender/vendor list syarat 'wajib website company profile'\n4. Recruitment — calon karyawan bagus cek website dulu",
       "### Standar company profile 2026 (ada di ciloktech.web.id)\n- Homepage high-conversion: Hero + Stats + Layanan + Portofolio + Harga + Testi + FAQ + Kontak\n- Halaman /harga breakdown + /blog keyword\n- Legalitas: NIB, alamat, email domain @perusahaan, Maps\n- Tech: Next.js 15 111kB, 98 Lighthouse, OG 1200x630, Schema Organization, sitemap, robots\n- <1s LCP\n- Source repo private milik perusahaan 100%",
-      "### Harga\nCompany Profile Pro Rp 2.5jt TERLARIS — kayak ciloktech.web.id: 5 hal + blog + CMS, copywriting B2B, SEO lengkap, dark/light mode. Value Rp 7jt agency — jual 2.5jt karena solo senior. Breakdown di /harga.",
+      "### Harga\nCompany Profile Pro Rp 2.5jt TERLARIS — kayak ciloktech.web.id: 5 hal + blog + CMS, copywriting B2B, SEO lengkap, dark/light mode. Value Rp 7jt agency — jual 2.5jt karena one-man senior. Breakdown di /harga.",
       "### Proses PT/CV/Startup anti drama\n01 Brief 15 menit Telegram\n02 DP 50% desain approve staging\n03 Dev 3-7 hari live staging\n04 Go-live deploy .co.id/.web.id + training\n05 Maintenance 3 bulan bug+security",
       "#### Mau company profile yang bikin client bilang 'serius'?\nChat Telegram @ciloktech 'Company Profile [Nama PT/CV] - [Bidang]'. Gue balas <2 jam + roadmap + ref mirip bidang lo.",
     ],
