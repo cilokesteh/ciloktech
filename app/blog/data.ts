@@ -52,6 +52,32 @@ export const posts: Post[] = [
     readingTime: "6 menit",
     tags: ["Checklist", "Conversion", "CRO"],
   },
+  {
+    slug: "jasa-pembuatan-website-solo-profesional",
+    title: "Jasa Pembuatan Website Solo Profesional — UMKM Sampai PT, 3 Hari Live",
+    description: "Cari jasa website Solo yang cepat, SEO ready, dan gak template? CilokTech basis Solo — Next.js 15, <1s LCP, source milik lo. Konsultasi langsung dev.",
+    date: "2026-08-05",
+    readingTime: "7 menit",
+    tags: ["Jasa Website Solo", "Solo", "Local SEO"],
+    featured: true,
+  },
+  {
+    slug: "jasa-website-toko-online-umkm-2026",
+    title: "Jasa Website Toko Online UMKM 2026: Dari Katalog IG ke Checkout Otomatis",
+    description: "Masih jualan via DM IG? Ini cara upgrade ke toko online auto checkout, stok real-time, payment QRIS, dan resi otomatis — mulai Rp 2.5jt.",
+    date: "2026-08-05",
+    readingTime: "8 menit",
+    tags: ["Toko Online", "UMKM", "E-commerce"],
+    featured: true,
+  },
+  {
+    slug: "jasa-website-company-profile-cv-pt-startup",
+    title: "Jasa Website Company Profile CV/PT & Startup: Bikin Investor & Client Percaya",
+    description: "Company profile asal jadi bikin CV/PT keliatan abal. Ini standar 2026 biar dipercaya client + investor: SEO, portofolio, legalitas, dan speed.",
+    date: "2026-08-05",
+    readingTime: "7 menit",
+    tags: ["Company Profile", "CV PT", "B2B"],
+  },
 ];
 
 export function getPost(slug: string) {

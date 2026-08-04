@@ -64,6 +64,39 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
       "#### Checklist CilokTech:\nSemua yang di atas udah ada di ciloktech.web.id — cek aja view-source. 107kB, 98 Lighthouse, dark mode, back-to-top, blog + harga anti-nawar. Mau yang sama? Ambil paket Company Profile 2.5jt di /harga.",
     ],
   },
+  "jasa-pembuatan-website-solo-profesional": {
+    keywords: "jasa pembuatan website solo, jasa website solo, jasa bikin website solo profesional, web developer solo, jasa website umkm solo",
+    body: [
+      "Lo search 'jasa pembuatan website Solo' — keluar 100+ hasil. Tapi 90% itu reseller template WordPress yang servernya di Jakarta, supportnya slow, hasilnya lemot. Gue basis Solo — ngerti pasar Solo.",
+      "### Kenapa harus yang di Solo?\n1. Ketemu offline bisa — gue di Solo, bisa ngopi 15 menit bahas brief. Gak perlu Zoom muter.\n2. Ngerti UMKM Solo: batik, kuliner, konveksi, bengkel, laundry. Tone copywriting gue nyesuaiin pasar Solo — bukan bahasa agency Jakarta yang kaku.\n3. Support <2 jam — via Telegram @ciloktech, bukan ticketing yang dibales 3 hari.",
+      "### Spek yang lo dapet (sama kayak ciloktech.web.id)\n- Next.js 15 + Tailwind v4 — 107kB First Load, 98 Lighthouse\n- SEO lengkap: OG 1200x630, Schema LocalBusiness Solo, sitemap.xml, robots.txt, canonical ciloktech.web.id\n- Dark/light toggle pro + anti-FOUC\n- <1s LCP — buka di HP kentang 4G Solo tetap ngebut\n- Source code repo private GitHub milik lo 100% — bukan sewa\n- Hosting Vercel Edge (server SG paling deket Solo) + domain .web.id 1 tahun include",
+      "### Harga jasa website Solo di CilokTech\n- Landing Page Sales: Rp 900rb — buat 1 produk, 2-3 hari live\n- Company Profile Pro: Rp 2.5jt (TERLARIS) — 5 halaman + blog + CMS, value asli Rp 7jt agency Solo\n- Web App Custom: mulai Rp 5jt — POS, inventory, CRM, dashboard",
+      "### Portfolio Solo\n- UMKM Batik Solo — landing page + katalog + WA checkout, closing +31%\n- POS System Laundry Solo — Firebase + PWA + nota + stok\n- Company Profile Bengkel — <1s LCP, Maps embed, rating",
+      "#### Cara order — Solo area\nChat Telegram @ciloktech bilang 'Mau website Solo' → brief 15 menit → DP 50% → gue kasih staging link tiap hari → live 3-7 hari → pelunasan. Konsultasi gratis, kalo gak cocok gak usah lanjut. Gak usah sungkan — gue juga dari Solo kok.",
+    ],
+  },
+  "jasa-website-toko-online-umkm-2026": {
+    keywords: "jasa website toko online umkm, jasa bikin toko online, toko online qris, website toko online murah profesional",
+    body: [
+      "Masih jualan via DM IG? Capek balas 'Harga kak?', 'Link Shopee kak?' padahal calon customer maunya langsung checkout? Waktunya upgrade ke toko online beneran.",
+      "### Masalah jualan via DM\n- 60% calon customer males nanya harga — langsung skip ke kompetitor yang ada harga jelas + tombol beli\n- Catat stok manual — sering oversell, customer marah\n- Rekap order manual di buku/Excel — 2 jam tiap malam\n- Data customer hilang — gak bisa retargeting",
+      "### Solusi: Toko Online UMKM (mulai Rp 2.5jt di CilokTech)\nStack kayak ciloktech.web.id tapi buat jualan:\n- Katalog produk + varian + stok real-time\n- Keranjang + checkout otomatis\n- Payment QRIS / Transfer / COD\n- Ongkir otomatis (RajaOngkir) + resi auto\n- Dashboard admin: order masuk + stok + export Excel\n- SEO per produk: biar produk lo muncul di Google 'beli batik solo'",
+      "### Perbandingan: Marketplace vs Toko Online Sendiri\nMarketplace (Shopee/Tokped): potongan 5-10%, perang harga, data customer milik marketplace, toko bisa ditutup sepihak.\nToko Online Sendiri (ciloktech.web.id model): tanpa potongan, harga lo kontrol, data customer milik lo, branding kuat, bisa ad-hoc promo.",
+      "### Tech yang gue pakai\nNext.js 15 + Tailwind + Prisma + PostgreSQL + Midtrans QRIS. Speed <1s LCP — pembeli gak kabur. PWA — bisa install di HP kayak aplikasi. 107kB First Load — hemat kuota customer.",
+      "#### Mulai dari mana?\nKalo produk <20 SKU → paket Company Profile 2.5jt + Katalog + WA Checkout (paling laris UMKM). Kalo produk >50 SKU + butuh payment auto → Web App Custom mulai 5jt. Chat @ciloktech dengan 'Mau toko online UMKM' — gue kasih demo akun sandbox yang udah live.",
+    ],
+  },
+  "jasa-website-company-profile-cv-pt-startup": {
+    keywords: "jasa website company profile, jasa website cv pt, jasa website startup, website company profile profesional",
+    body: [
+      "CV/PT atau startup lo punya IG bagus, tapi pas client cek website — gak ada atau ala kadarnya? Di B2B, website itu first impression. Company profile jelek = dianggap abal-abal.",
+      "### Kenapa CV/PT butuh company profile yang pro (bukan 800rb-an template)?\n1. Client B2B cek website sebelum PO — kalo lemot / 404 / WordPress default, trust langsung 0\n2. Investor cek SEO + speed + legalitas di footer — kalo gak ada, dianggap gak serius\n3. Tender / vendor list sering syarat 'wajib ada website company profile'\n4. Recruitment — calon karyawan bagus cek website dulu sebelum apply",
+      "### Standar company profile 2026 (yang ada di ciloktech.web.id)\n- Homepage high-conversion: Hero + Stats + Layanan + Portofolio + Harga + Testi + FAQ + Kontak\n- Halaman Layanan + Portofolio + /harga breakdown + /blog keyword\n- Legalitas: NIB, alamat, email domain @perusahaan (bukan gmail), link Maps\n- Technical: Next.js 15 107kB, 98 Lighthouse, OG image 1200x630, Schema Organization + LocalBusiness, sitemap.xml, robots.txt\n- Speed: <1s LCP — client kantor buka pake WiFi lemot tetap ngebut\n- Source code repo private milik perusahaan 100%",
+      "### Harga di CilokTech\nCompany Profile Pro Rp 2.5jt (TERLARIS) — ini persis kayak ciloktech.web.id: 5 halaman + blog + CMS, copywriting B2B, SEO lengkap, dark/light mode, back-to-top + floating CTA.\nValue aslinya Rp 7jt kalo di agency Jakarta — gue jual 2.5jt karena solo senior, potong meeting & kantor. Breakdown ada di /harga.",
+      "### Proses buat PT/CV/Startup (anti drama)\n01 Briefing 15 menit via Telegram — ceritain bisnis, target client, kompetitor\n02 DP 50% — gue desain, lo approve via staging link\n03 Dev 3-7 hari — progress tiap hari, live staging\n04 Go-live — deploy ke domain .co.id / .web.id + training tim + docs\n05 Maintenance 3 bulan — bug + security include",
+      "#### Mau company profile yang bikin client bilang 'wah ini serius'?\nChat Telegram @ciloktech dengan format: 'Company Profile [Nama PT/CV] - [Bidang]'. Contoh: 'Company Profile CV Maju Jaya - Konstruksi'. Gue balas <2 jam dengan roadmap + contoh ref yang mirip bidang lo. Konsultasi gratis 15 menit.",
+    ],
+  },
 };
 
 export async function generateStaticParams() {
@@ -96,6 +129,7 @@ export default async function BlogDetail({ params }: Props) {
   if (!post) return notFound();
 
   const content = contents[slug];
+  if (!content) return notFound();
 
   return (
     <>
@@ -127,7 +161,7 @@ export default async function BlogDetail({ params }: Props) {
               if (para.startsWith("#### ")) {
                 return (
                   <div key={i} className="mt-10 p-5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-2xl">
-                    <p className="font-bold text-[14px] text-amber-900 dark:text-amber-200 leading-relaxed">{para.replace("#### ", "")}</p>
+                    <p className="font-bold text-[14px] text-amber-900 dark:text-amber-200 leading-relaxed whitespace-pre-wrap">{para.replace("#### ", "")}</p>
                   </div>
                 );
               }
@@ -161,7 +195,7 @@ export default async function BlogDetail({ params }: Props) {
                 .slice(0, 2)
                 .map((p) => (
                   <Link key={p.slug} href={`/blog/${p.slug}`} className="p-4 rounded-xl border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white transition group">
-                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-cyan-600 transition">{p.title}</div>
+                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-cyan-600 transition line-clamp-2">{p.title}</div>
                     <div className="text-[12px] text-gray-500 mt-1">{p.readingTime} • {p.tags[0]}</div>
                   </Link>
                 ))}
