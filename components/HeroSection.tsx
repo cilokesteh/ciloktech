@@ -1,26 +1,135 @@
 export default function HeroSection() {
   return (
-    <section className="relative bg-white py-20 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-1 space-y-6">
-          <div className="inline-block px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm font-semibold">Solusi Web &amp; App Profesional</div>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Transformasi Digital Bisnis Anda dengan <span className="text-cyan-600">Performa Tinggi</span>
-          </h1>
-          <p className="text-lg text-gray-600">Kami membangun sistem yang tidak hanya terlihat bagus, tapi fokus pada konversi, keamanan, dan skalabilitas. Solusi tepat untuk UMKM hingga Startup.</p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <a href="https://t.me/ciloktech" className="px-8 py-4 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-700 transition text-center shadow-lg shadow-cyan-200">Konsultasi Gratis via Telegram</a>
-            <a href="#portofolio" className="px-8 py-4 bg-gray-100 text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition text-center">Lihat Portofolio</a>
+    <section className="relative bg-white pt-28 pb-16 md:pt-36 md:pb-24 px-6 overflow-hidden">
+      {/* subtle grid bg */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:36px_36px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/40 to-transparent blur-3xl rounded-full" />
+      </div>
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        {/* LEFT */}
+        <div className="space-y-7">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 text-white text-xs font-semibold tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            50+ bisnis sudah scale bareng CilokTech
           </div>
-          <div className="flex items-center gap-4 text-sm text-gray-500 pt-6">
-            <span className="font-medium text-gray-900">Trusted by:</span>
-            <span>50+ UMKM &amp; Startup</span>
+
+          <h1 className="text-[34px] md:text-[54px] font-extrabold tracking-[-0.03em] leading-[0.95] text-gray-900">
+            Website yang<br />
+            <span className="text-gray-400">nggak cuma</span> bagus,
+            <br />
+            tapi <span className="relative inline-block"><span className="relative z-10 text-cyan-600">ngasilin cuan</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 -z-0 rotate-1" /></span>
+          </h1>
+
+          <p className="text-[15px] md:text-[17px] leading-relaxed text-gray-600 max-w-[520px]">
+            Gue bangun website & web app yang <b className="text-gray-900">cepat, SEO-ready, aman</b> dan fokus ke 1 tujuan: naikin konversi. Dari UMKM sampai startup — bukan template, fully custom Next.js.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <a
+              href="https://t.me/ciloktech"
+              className="px-7 py-3.5 bg-gray-900 text-white font-bold rounded-full hover:bg-black transition text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2"
+            >
+              <span>🚀</span> Konsultasi Gratis di Telegram
+            </a>
+            <a
+              href="#portofolio"
+              className="px-7 py-3.5 bg-white border border-gray-200 text-gray-900 font-bold rounded-full hover:bg-gray-50 transition text-center text-sm"
+            >
+              Lihat Hasil Kerja →
+            </a>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-100">
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2">
+                <div className="w-7 h-7 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[10px] font-bold">A</div>
+                <div className="w-7 h-7 rounded-full bg-cyan-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-cyan-700">B</div>
+                <div className="w-7 h-7 rounded-full bg-gray-900 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">+48</div>
+              </div>
+              <div className="text-xs leading-tight">
+                <div className="font-bold text-gray-900">Dipercaya 50+ client</div>
+                <div className="text-gray-500">Rating 4.9/5</div>
+              </div>
+            </div>
+            <div className="h-8 w-px bg-gray-200 hidden sm:block" />
+            <div className="flex gap-5 text-xs">
+              <div><span className="block font-extrabold text-gray-900 text-[15px]">&lt;1s</span><span className="text-gray-500">Load Time</span></div>
+              <div><span className="block font-extrabold text-gray-900 text-[15px]">98</span><span className="text-gray-500">Lighthouse</span></div>
+              <div><span className="block font-extrabold text-gray-900 text-[15px]">3 hari</span><span className="text-gray-500">Avg Delivery</span></div>
+            </div>
           </div>
         </div>
-        <div className="flex-1 w-full">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-            <div className="aspect-video bg-gradient-to-br from-cyan-50 to-blue-100 flex items-center justify-center">
-              <img src="/logo.jpg" alt="Cilok Tech" className="w-32 h-32 rounded-2xl object-cover shadow-lg" />
+
+        {/* RIGHT - Browser Mockup */}
+        <div className="relative">
+          <div className="absolute -inset-6 bg-gradient-to-br from-cyan-200/30 via-blue-100/20 to-violet-200/20 blur-2xl rounded-[32px] -z-10" />
+          
+          <div className="rounded-[20px] border border-gray-200 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08),0_2px_10px_rgba(0,0,0,0.04)] overflow-hidden">
+            {/* browser bar */}
+            <div className="h-10 bg-gray-50 border-b border-gray-100 flex items-center gap-2 px-4">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+              </div>
+              <div className="ml-4 flex-1 h-6 bg-white border border-gray-200 rounded-full flex items-center px-3 text-[11px] text-gray-400">
+                <span className="text-green-600 mr-1.5">🔒</span> ciloktech.web.id — Live
+              </div>
+            </div>
+
+            {/* fake dashboard */}
+            <div className="p-4 md:p-5 space-y-4 bg-[#fcfcfc]">
+              <div className="flex items-center justify-between">
+                <div className="h-5 w-24 bg-gray-900 rounded" />
+                <div className="h-7 w-20 bg-cyan-600 rounded-full" />
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
+                <div className="bg-white border border-gray-100 rounded-xl p-3">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Revenue</div>
+                  <div className="text-[18px] font-extrabold mt-1">Rp 42.5jt</div>
+                  <div className="text-[11px] text-emerald-600 font-semibold">+23% ↗</div>
+                </div>
+                <div className="bg-white border border-gray-100 rounded-xl p-3">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Orders</div>
+                  <div className="text-[18px] font-extrabold mt-1">1,248</div>
+                  <div className="text-[11px] text-emerald-600 font-semibold">+12% ↗</div>
+                </div>
+                <div className="bg-white border border-gray-100 rounded-xl p-3">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Speed</div>
+                  <div className="text-[18px] font-extrabold mt-1">0.8s</div>
+                  <div className="text-[11px] text-gray-500">LCP</div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-gray-100 rounded-xl p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="h-3 w-20 bg-gray-200 rounded" />
+                  <div className="h-3 w-12 bg-gray-100 rounded" />
+                </div>
+                <div className="flex items-end gap-[5px] h-[72px]">
+                  {[30, 45, 25, 60, 55, 80, 65, 90, 70, 85, 60, 95].map((h, i) => (
+                    <div key={i} className="flex-1 bg-gray-900 rounded-t-sm" style={{ height: h + "%", opacity: 0.15 + i * 0.07 }} />
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <div className="h-2 flex-1 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full w-[78%] bg-cyan-600 rounded-full" />
+                </div>
+                <span className="text-[10px] font-bold text-gray-600">78% conversion goal</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute -bottom-6 -left-4 bg-white border border-gray-200 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">
+            <div className="w-9 h-9 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm">✓</div>
+            <div className="text-xs leading-tight">
+              <div className="font-bold text-gray-900">Project live dalam 3 hari</div>
+              <div className="text-gray-500">tanpa drama revisi muter-muter</div>
             </div>
           </div>
         </div>

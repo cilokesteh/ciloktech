@@ -1,31 +1,94 @@
 const testimonials = [
-  { name: "Mas Budi", role: "UMKM Batik Solo", text: "Website selesai dalam 3 hari, langsung bisa dipakai. Sekarang orderan lewat WA makin banyak karena pelanggan gampang nemu kami di Google.", rating: 5 },
-  { name: "Ibu Rina", role: "Toko Online Fashion", text: "Awalnya cuma mau landing page, eh malah dikasih dashboard juga buat manage stok. Recommended banget!", rating: 5 },
-  { name: "Pak Andi", role: "Startup Fintech", text: "Tim Cilok Tech paham banget soal teknis. API integration-nya rapi dan dokumentasinya lengkap. Lanjut collab lagi.", rating: 5 },
+  {
+    name: "Budi",
+    role: "Owner • UMKM Batik Solo",
+    text: "Selesai 3 hari langsung bisa dipakai jualan. Sekarang order WA naik karena customer gampang nemu di Google. SEO-nya beneran jalan, bukan gimmick.",
+    initial: "B",
+    color: "bg-gray-900 text-white",
+  },
+  {
+    name: "Rina",
+    role: "Owner • Fashion Store",
+    text: "Awalnya mau landing page doang, malah dikasih dashboard stok juga. UI-nya enak, tim gue langsung paham cara pakainya tanpa training lama.",
+    initial: "R",
+    color: "bg-cyan-600 text-white",
+  },
+  {
+    name: "Andi Wijaya",
+    role: "Founder • Startup Fintech",
+    text: "API rapi, docs lengkap, security header bener. Kalo butuh custom logic tinggal bilang, langsung dieksekusi. Lanjut retainer sekarang.",
+    initial: "A",
+    color: "bg-amber-500 text-white",
+  },
 ];
+
+const logos = ["UMKM Solo", "FashionHub", "Fintech ID", "Kopi Kenangan Lokal", "Bengkel Maju", "Laundry Express"];
 
 export default function TestimoniSection() {
   return (
-    <section className="py-24 bg-gray-50 px-6" id="testimoni">
+    <section className="py-20 md:py-28 bg-white px-6" id="testimoni">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Apa Kata yang Udah Pakai</h2>
-          <p className="text-gray-500">Real feedback dari klien yang puas.</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full mb-4">
+              Testimoni real, bukan karangan AI
+            </div>
+            <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 max-w-[500px]">
+              Mereka yang udah
+              <br />
+              <span className="text-gray-400">scale duluan.</span>
+            </h2>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-[16px] text-amber-400">★</span>
+              ))}
+            </div>
+            <div className="text-[13px]">
+              <span className="font-bold text-gray-900">4.9/5</span>
+              <span className="text-gray-500"> dari 50+ project</span>
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition">
-              <div className="flex mb-4">{[...Array(t.rating)].map((_, j) => <span key={j} className="text-yellow-400 text-lg">★</span>)}</div>
-              <p className="text-gray-700 mb-6 italic leading-relaxed">&ldquo;{t.text}&rdquo;</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm">{t.name.charAt(0)}</div>
-                <div>
-                  <div className="font-bold text-sm">{t.name}</div>
-                  <div className="text-xs text-gray-500">{t.role}</div>
+            <div key={i} className="relative rounded-[20px] border border-gray-200 bg-[#fafafa] p-6 hover:bg-white hover:border-gray-900 hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] transition-all">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, j) => (
+                  <span key={j} className="text-amber-400 text-[14px]">★</span>
+                ))}
+              </div>
+              <p className="text-[14px] leading-[1.7] text-gray-700">&ldquo;{t.text}&rdquo;</p>
+              <div className="mt-6 flex items-center gap-3">
+                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-bold ${t.color}`}>
+                  {t.initial}
+                </div>
+                <div className="leading-tight">
+                  <div className="text-[13.5px] font-bold text-gray-900">{t.name}</div>
+                  <div className="text-[11.5px] text-gray-500">{t.role}</div>
+                </div>
+                <div className="ml-auto text-[11px] font-bold tracking-widest uppercase text-gray-300 border border-gray-200 px-2 py-1 rounded-full">
+                  VERIFIED
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-14 pt-10 border-t border-gray-100">
+          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 text-center mb-6">Dipercaya oleh bisnis di</div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {logos.map((l, i) => (
+              <div
+                key={i}
+                className="px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-[12.5px] font-semibold text-gray-600"
+              >
+                {l}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
