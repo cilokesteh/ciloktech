@@ -97,6 +97,40 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
       "#### Mau company profile yang bikin client bilang 'wah ini serius'?\nChat Telegram @ciloktech dengan format: 'Company Profile [Nama PT/CV] - [Bidang]'. Contoh: 'Company Profile CV Maju Jaya - Konstruksi'. Gue balas <2 jam dengan roadmap + contoh ref yang mirip bidang lo. Konsultasi gratis 15 menit.",
     ],
   },
+  "jasa-website-murah-jangan-asal-murah": {
+    keywords: "jasa website murah, website murah 500rb jebakan, harga website murah vs profesional",
+    body: [
+      "Lo pernah liat iklan 'Jasa Website Murah Rp 500rb'? Gue sering — dan 90% client yang dateng ke gue itu korban website murah yang akhirnya bayar 2x.",
+      "### Bongkar paket Rp 500rb itu isinya apa\n- Domain gratisan .my.id numerik + hosting gratisan 100MB — lemot, sering suspend\n- Template WordPress bajakan — 15 plugin nulled, backdoor siap hack\n- Gak ada SSL — Chrome tulis 'Not Secure', customer kabur\n- Gak ada sitemap, robots, OG — Google gak index, sepi selamanya\n- Revisi 1x, abis itu hilang — WA centang 2, gak dibales\n- Source dikunci — kalo mau pindah hosting dimintain tebusan",
+      "### Cost sebenarnya Rp 500rb itu\nTampilan murah di depan, boncos di belakang:\n- Bulan ke-2 hosting minta upgrade Rp 300rb/bln (kalo gak, down)\n- Bulan ke-3 kena malware — benerin Rp 500rb lagi\n- SEO gak ada → gak dapet customer → rugi peluang Rp 2-5jt/bln\n- Akhirnya bikin ulang di CilokTech — bayar lagi 2.5jt. Total rugi 3.5jt + waktu 2 bulan.",
+      "### Kenapa CilokTech Rp 2.5jt justru lebih murah?\nDi /harga gue breakdown: UI design 1.2jt + Frontend Next.js 1.5jt + SEO 800rb + Copy 700rb + Hosting 300rb + Deploy 500rb = value Rp 5jt+, gue jual 2.5jt all-in. Sekali bayar, milik selamanya, source code 100% milik lo, hosting Vercel + domain 1 tahun include, 3 bulan maintenance bug.",
+      "### Checklist biar gak ketipu murah\n1. Tanya: tech-nya apa? Kalo jawab 'WordPress + Elementor doang' tanpa SEO → skip\n2. Tanya: sitemap.xml + robots.txt ada gak? Kalo gak ada → SEO nol\n3. Tanya: source code milik siapa? Kalo 'pinjam' atau 'sewa' → jangan\n4. Tanya: speed-nya berapa? Minta screenshot Lighthouse — kalo <80 → lemot\n5. Cek portofolio live — buka di HP 4G, beneran <1s gak?",
+      "#### Rules gue:\nKalo budget mepet <1jt → gue saranin Landing Page Rp 900rb (bukan company profile abal 500rb). Lebih worth, focus 1 produk, 2-3 hari live, konversi jelas. Jangan maksa company profile 5 halaman 500rb — itu jebakan batik yang bikin lo bayar 2x.",
+    ],
+  },
+  "jasa-landing-page-solo-high-conversion": {
+    keywords: "jasa landing page solo, landing page high conversion solo, jasa landing page umkm solo, landing page cepat closing",
+    body: [
+      "Landing page yang rame animasi scroll tapi gak ada yang klik WA = gagal. Landing page yang polos tapi sticky CTA + bukti sosial = closing tiap hari.",
+      "### Formula landing page Solo yang high conversion (yang gue pake di ciloktech.web.id)\n1. Hero: headline hasil, bukan fitur. Contoh: 'Laundry 1 Jam Jadi di Solo — Antar Jemput Gratis' bukan 'Selamat Datang di Laundry Kami'\n2. Stats bar: '<1s load • 98 Lighthouse • 50+ client' → trust dalam 3 detik\n3. Problem → Solution → Proof: ceritain masalah customer Solo, solusi lo, bukti closing\n4. Pricing transparan: jangan tulis 'Hubungi kami' — tulis Rp 900rb mulai, no hidden\n5. Testimoni verified + Maps embed Solo\n6. FAQ yang jawab objection: 'Berapa lama?', 'Bisa COD?', 'Cover Solo mana aja?'\n7. Sticky CTA + Floating WA: jangan suruh scroll ke bawah buat chat",
+      "### Kenapa Rp 900rb di CilokTech bisa closing?\nKarena gue gak jualan template. Gue jualan sistem: Next.js 15 107kB, <1s LCP di 4G Solo, copywriting B2B to-the-point, SEO local 'jasa [bisnis] Solo', OG image 1200x630 biar share WA cakep. Go-live 2-3 hari, bukan 2 minggu.",
+      "### Contoh landing page Solo yang udah live\n- Laundry Express Solo — keyword 'laundry kiloan Solo' naik page 1, order WA +40%\n- Bengkel Moge Solo — foto before/after + rating Google, booking +25%\n- Batik Tulis Solo — katalog + WA checkout, closing +31%",
+      "### Bedanya landing page 900rb vs company profile 2.5jt\nLanding page = 1 goal (chat WA). Cocok buat 1 produk/jasa, butuh leads minggu ini.\nCompany profile = banyak goal (trust + SEO + portofolio). Cocok buat PT/CV yang mau long game. Lihat breakdown di /harga.",
+      "#### Mau landing page Solo yang langsung closing?\nChat @ciloktech format: 'Landing Page Solo [bisnis lo]'. Contoh: 'Landing Page Solo Laundry Kiloan Manahan'. Gue kasih struktur headline + CTA yang udah terbukti di Solo — konsultasi gratis 15 menit, <2 jam balas.",
+    ],
+  },
+  "wordpress-vs-nextjs-untuk-umkm-2026": {
+    keywords: "wordpress vs nextjs umkm, perbandingan wordpress nextjs, wordpress lemot vs nextjs cepat, ganti wordpress ke nextjs",
+    body: [
+      "2026 masih debat WordPress vs Next.js? Gue kasih data lapangan dari 50+ project UMKM — bukan teori.",
+      "### Speed benchmark (HP kentang 4G Solo)\nWordPress Elementor + 15 plugin: LCP 4.2s, TTI 6.8s, Build 3.2MB, Lighthouse 62\nNext.js 15 CilokTech: LCP 0.8s, TTI 1.1s, First Load 111kB, Lighthouse 98\nHasil: WP 40% pengunjung kabur sebelum load, Next.js conversion +22% (data real client batik).",
+      "### Security\nWP: PHP + MySQL + plugin = 22 celah CVE tiap tahun. 1 plugin nulled = backdoor. Client laundry gue kena deface gara-gara plugin slider gratisan.\nNext.js static: gak ada DB di frontend, gak ada PHP, API pisah. Mau hack? Harus hack Vercel Edge dulu — hampir mustahil.",
+      "### SEO\nWP: perlu Yoast + Rank Math + Cache + Smush — 4 plugin cuma buat kejar SEO yang Next.js udah include default.\nNext.js: OG + Schema + Sitemap + Robots + Canonical + AVIF image auto. Di ciloktech.web.id semua auto generate pas build.",
+      "### Biaya real 1 tahun\nWP murah 500rb: Tahun pertama 500rb + hosting 600rb + malware fix 500rb + bikin ulang 2.5jt = Rp 4.1jt rugi\nNext.js CilokTech 2.5jt: Tahun pertama 2.5jt all-in include hosting Vercel + domain. Tahun kedua cuma hosting $0-20/bln.",
+      "### Kapan WP masih oke?\nKalo lo Ibu kos yang butuh edit tulisan tiap hari sendiri tanpa dev dan gak peduli speed 3 detik. Kalo lo UMKM yang targetnya closing + SEO page 1 Solo → Next.js.",
+      "#### Mau migrasi WordPress ke Next.js?\nGue bisa migrate konten WP lo ke Next.js 15 tanpa hilang SEO (redirect 301, keep URL). Gratis audit speed WP lo sekarang — screenshot Lighthouse kirim ke @ciloktech, gue kasih report <2 jam. Kalo speed lo di bawah 80, fix wajib ganti.",
+    ],
+  },
 };
 
 export async function generateStaticParams() {

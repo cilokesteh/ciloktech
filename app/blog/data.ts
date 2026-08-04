@@ -78,6 +78,32 @@ export const posts: Post[] = [
     readingTime: "7 menit",
     tags: ["Company Profile", "CV PT", "B2B"],
   },
+  {
+    slug: "jasa-website-murah-jangan-asal-murah",
+    title: "Jasa Website Murah Rp 500rb: Murah di Awal, Boncos di Akhir — Ini Buktinya",
+    description: "Tergiur website murah 500rb? Hosting abal, domain numpang, SEO nol, kena hack. Gue bongkar cost sebenarnya dan kenapa 2.5jt lebih hemat jangka panjang.",
+    date: "2026-08-06",
+    readingTime: "7 menit",
+    tags: ["Website Murah", "Jebakan", "Edukasi"],
+    featured: true,
+  },
+  {
+    slug: "jasa-landing-page-solo-high-conversion",
+    title: "Jasa Landing Page Solo High Conversion — Fokus Closing, Bukan Pajangan",
+    description: "Landing page yang bagus bukan yang rame animasi, tapi yang bikin pengunjung klik WA. Template CilokTech Solo: <1s, sticky CTA, bukti sosial, harga jelas.",
+    date: "2026-08-06",
+    readingTime: "6 menit",
+    tags: ["Landing Page Solo", "Solo", "High Conversion"],
+  },
+  {
+    slug: "wordpress-vs-nextjs-untuk-umkm-2026",
+    title: "WordPress vs Next.js untuk UMKM 2026: Jujur, Mana yang Lebih Cuan?",
+    description: "WordPress gampang edit, Next.js ngebut & aman. Mana yang beneran bikin UMKM di Solo untung? Gue benchmark LCP, security, biaya, dan SEO 2026.",
+    date: "2026-08-06",
+    readingTime: "9 menit",
+    tags: ["WordPress", "Next.js", "UMKM"],
+    featured: true,
+  },
 ];
 
 export function getPost(slug: string) {
