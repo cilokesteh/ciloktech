@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="ringGrad" cx="38%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#e8d5ab"/>
+      <stop offset="55%" stop-color="#c8a96a"/>
+      <stop offset="100%" stop-color="#8a7448"/>
+    </radialGradient>
+    <linearGradient id="ctGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6c8"/>
+      <stop offset="50%" stop-color="#c8a96a"/>
+      <stop offset="100%" stop-color="#8a7448"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="0.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- C: gold ring that opens on the right -->
+  <circle cx="32" cy="32" r="28" fill="url(#ringGrad)" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="24" fill="#0b0a08"/>
+  <!-- Cut the right side of the ring: dark arc from -30 to +30 degrees (opening) -->
+  <path d="M 32 4 A 28 28 0 0 1 56.2 46 L 49.6 42 A 24 24 0 0 0 32 8 Z" fill="#0b0a08"/>
+  <!-- T: vertical stem, centered-right -->
+  <rect x="38" y="14" width="5" height="36" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+  <!-- T: horizontal crossbar extending through the opening to the right -->
+  <rect x="20" y="30" width="34" height="5" rx="2.5" fill="url(#ctGrad)" filter="url(#glow)"/>
+</svg>
