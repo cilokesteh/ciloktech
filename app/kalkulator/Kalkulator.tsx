@@ -99,20 +99,20 @@ export default function Kalkulator() {
           <div className="grid grid-cols-2 gap-4">
             <label className={`rounded-xl border p-4 cursor-pointer transition ${noSEO ? "border-red-300 bg-red-50 dark:bg-red-950/20" : "border-gray-200 dark:border-white/10 bg-white dark:bg-[#171717]"}`}>
               <input type="checkbox" checked={noSEO} onChange={(e) => setNoSEO(e.target.checked)} className="accent-red-600" />
-              <div className="mt-2 text-[13px] font-bold">{isId ? "Gak SEO ready" : "Not SEO ready"}</div>
-              <div className="text-[11px] text-gray-500 mt-1">{isId ? "Gak ada sitemap, OG, schema — Google gak index (-25% traffic)" : "No sitemap, OG, schema — Google won't index (-25% traffic)"}</div>
+              <div className="mt-2 text-[13px] font-bold">{isId ? "Tidak SEO ready" : "Not SEO ready"}</div>
+              <div className="text-[11px] text-gray-500 mt-1">{isId ? "Tanpa sitemap, OG, schema — Google tidak melakukan indexing (-25% traffic)" : "No sitemap, OG, schema — Google won't index (-25% traffic)"}</div>
             </label>
             <label className={`rounded-xl border p-4 cursor-pointer transition ${noCTA ? "border-red-300 bg-red-50 dark:bg-red-950/20" : "border-gray-200 dark:border-white/10 bg-white dark:bg-[#171717]"}`}>
               <input type="checkbox" checked={noCTA} onChange={(e) => setNoCTA(e.target.checked)} className="accent-red-600" />
-              <div className="mt-2 text-[13px] font-bold">{isId ? "Gak ada CTA jelas" : "No clear CTA"}</div>
-              <div className="text-[11px] text-gray-500 mt-1">{isId ? "Gak ada tombol WA/Chat sticky — customer bingung (-20% conv)" : "No sticky WA/Chat button — customers confused (-20% conv)"}</div>
+              <div className="mt-2 text-[13px] font-bold">{isId ? "Tanpa CTA yang jelas" : "No clear CTA"}</div>
+              <div className="text-[11px] text-gray-500 mt-1">{isId ? "Tanpa tombol WA/Chat sticky — pelanggan kebingungan (-20% konversi)" : "No sticky WA/Chat button — customers confused (-20% conv)"}</div>
             </label>
           </div>
         </div>
 
         <div className="space-y-4 min-w-0">
           <div className="rounded-[22px] bg-gray-900 dark:bg-white text-white dark:text-black p-5 md:p-7 border border-gray-800 dark:border-white overflow-hidden">
-            <div className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-60">{isId ? "ESTIMASI RUGI KARENA WEBSITE LEMOT" : "EST. LOSS FROM SLOW WEBSITE"}</div>
+            <div className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-60">{isId ? "ESTIMASI KERUGIAN AKIBAT WEBSITE LAMBAT" : "EST. LOSS FROM SLOW WEBSITE"}</div>
             <div className="mt-4 min-w-0">
               <div className="text-[13px] opacity-70">{isId ? "Per bulan" : "Per month"}</div>
               {/* Monthly — always single line, scale down on mobile */}
@@ -130,28 +130,28 @@ export default function Kalkulator() {
               <div className="rounded-xl bg-red-500/15 border border-red-500/30 px-3.5 py-3.5">
                 <div className="text-[10px] font-bold tracking-[0.12em] uppercase opacity-70 text-red-200 dark:text-red-700">3 tahun</div>
                 <div className="mt-1 text-[16px] sm:text-[18px] font-extrabold leading-none tracking-tight tabular-nums whitespace-nowrap text-red-200 dark:text-red-600" title={fmt(result.rugi3th)}>{fmtTiny(result.rugi3th)}</div>
-                <div className="mt-1 text-[10px] opacity-60 whitespace-nowrap">{isId ? "kalo gak di-fix" : "if not fixed"}</div>
+                <div className="mt-1 text-[10px] opacity-60 whitespace-nowrap">{isId ? "jika tidak segera diperbaiki" : "if not fixed"}</div>
                 <div className="mt-0.5 text-[9px] opacity-40 whitespace-nowrap truncate hidden sm:block" title={fmt(result.rugi3th)}>{fmt(result.rugi3th)}</div>
               </div>
             </div>
 
             <div className="mt-6 pt-5 border-t border-white/10 dark:border-black/10">
-              <div className="text-[11px] font-bold tracking-[0.08em] uppercase opacity-90">{isId ? "Breakdown rugi:" : "Loss breakdown:"}</div>
+              <div className="text-[11px] font-bold tracking-[0.08em] uppercase opacity-90">{isId ? "Rincian kerugian:" : "Loss breakdown:"}</div>
               {/* FIX: each row is flex nowrap — label truncated with min-w-0, amount stays 1 line */}
               <div className="mt-3 space-y-2.5 text-[12.5px]">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Lemot ${lcp}s → ${pct(result.bouncePct)} bounce` : `Slow ${lcp}s → ${pct(result.bouncePct)} bounce`}</span>
+                  <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Lambat ${lcp}s → ${pct(result.bouncePct)} bounce rate` : `Slow ${lcp}s → ${pct(result.bouncePct)} bounce`}</span>
                   <span className="font-bold shrink-0 whitespace-nowrap tabular-nums">{fmtShort(result.onlineRevenue * result.bouncePct)}</span>
                 </div>
                 {result.seoLoss > 0 && (
                   <div className="flex items-center justify-between gap-2">
-                    <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Gak SEO → -${pct(result.seoLoss)} traffic` : `No SEO → -${pct(result.seoLoss)} traffic`}</span>
+                    <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Tanpa SEO → -${pct(result.seoLoss)} traffic organik` : `No SEO → -${pct(result.seoLoss)} traffic`}</span>
                     <span className="font-bold shrink-0 whitespace-nowrap tabular-nums">{fmtShort(result.onlineRevenue * result.seoLoss)}</span>
                   </div>
                 )}
                 {result.ctaLoss > 0 && (
                   <div className="flex items-center justify-between gap-2">
-                    <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Gak CTA → -${pct(result.ctaLoss)} conversion` : `No CTA → -${pct(result.ctaLoss)} conv`}</span>
+                    <span className="opacity-70 min-w-0 truncate pr-2">{isId ? `Tanpa CTA → -${pct(result.ctaLoss)} konversi` : `No CTA → -${pct(result.ctaLoss)} conv`}</span>
                     <span className="font-bold shrink-0 whitespace-nowrap tabular-nums">{fmtShort(result.onlineRevenue * result.ctaLoss)}</span>
                   </div>
                 )}
