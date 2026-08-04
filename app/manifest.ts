@@ -2,27 +2,18 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Cilok Tech — Jasa Website & Web App Profesional",
+    name: "Cilok Tech — One-Man Studio",
     short_name: "CilokTech",
-    description:
-      "Jasa pembuatan website profesional, landing page, dan web app custom. Cepat, aman, SEO-ready.",
+    description: "One-man studio — senior full-stack, jasa website & web app profesional. Tanpa kantor, tanpa PM, langsung builder. 50+ project, <1s LCP, 98 Lighthouse.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#06b6d4",
+    background_color: "#0a0a0a",
+    theme_color: "#0a0a0a",
     icons: [
-      {
-        src: "/logo.jpg",
-        sizes: "192x192",
-        type: "image/jpeg",
-        purpose: "any",
-      },
-      {
-        src: "/logo.jpg",
-        sizes: "512x512",
-        type: "image/jpeg",
-        purpose: "maskable",
-      },
+      { src: "/favicon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/favicon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/logo-oneman-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/logo-oneman.svg", sizes: "any", type: "image/svg+xml" },
     ],
   };
 }

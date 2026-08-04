@@ -60,6 +60,15 @@ export const metadata: Metadata = {
   verification: {
     google: "TRo05EJYLO8cjVxoSrKeyuh-4Z4Ne5d8V-WK92OjS5Q",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo-oneman.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export const viewport = {
@@ -92,13 +101,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Cilok Tech",
+              "@type": "Organization",
+              name: "Cilok Tech — One-Man Studio",
+              alternateName: "CilokTech",
               description:
-                "Jasa Pembuatan Website & Web App Profesional di Indonesia — cepat, aman, SEO-friendly, fokus konversi",
+                "One-man studio — jasa pembuatan website & web app profesional Indonesia. Senior full-stack, tanpa kantor, tanpa PM, langsung builder. Cepat, aman, SEO-ready, fokus konversi",
               url: "https://ciloktech.web.id",
-              logo: "https://ciloktech.web.id/logo.jpg",
-              image: "https://ciloktech.web.id/logo.jpg",
+              logo: "https://ciloktech.web.id/logo-oneman-512.png",
+              image: "https://ciloktech.web.id/og-oneman.png",
               email: "hi@ciloktech.my.id",
               sameAs: [
                 "https://github.com/cilokesteh",
@@ -110,7 +120,7 @@ export default function RootLayout({
                 addressLocality: "Indonesia",
               },
               priceRange: "Rp 900rb - Rp 10jt+",
-              openingHours: "Mo-Sa 09:00-18:00",
+              openingHours: "Mo-Su",
             }),
           }}
         />
