@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/harga",
     "/kalkulator",
+    "/changelog",
     "/blog",
     "/#layanan",
     "/#portofolio",
@@ -21,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: p === "" ? 1 : p === "/kalkulator" ? 0.9 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.7,
+    priority: p === "" ? 1 : p === "/kalkulator" ? 0.9 : p === "/changelog" ? 0.8 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.7,
   }));
 
   const blogRoutes = posts.map((post) => ({
