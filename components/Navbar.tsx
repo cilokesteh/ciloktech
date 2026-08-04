@@ -1,18 +1,22 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { href: "#layanan", label: "Layanan" },
-  { href: "#portofolio", label: "Portofolio" },
-  { href: "#harga", label: "Harga" },
-  { href: "#testimoni", label: "Testimoni" },
-  { href: "#kontak", label: "Kontak" },
+  { href: "/#layanan", label: "Layanan", type: "anchor" },
+  { href: "/#portofolio", label: "Portofolio", type: "anchor" },
+  { href: "/#harga", label: "Harga", type: "anchor" },
+  { href: "/harga", label: "Breakdown", type: "page" },
+  { href: "/blog", label: "Blog", type: "page" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,11 +26,14 @@ export default function Navbar() {
 
   const handleHomeClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    // reset all anchors + scroll to top + refresh state
-    if (window.location.hash) {
-      history.replaceState(null, "", window.location.pathname);
+    if (isHome) {
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname);
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.location.href = "/";
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
     setOpen(false);
   };
 
@@ -59,17 +66,35 @@ export default function Navbar() {
           </span>
         </button>
 
-        <div className="hidden md:flex items-center gap-5">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-[13.5px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cyan-600 dark:after:bg-cyan-400 after:transition-all hover:after:w-full transition"
-            >
-              {l.label}
-            </a>
-          ))}
-          <div className="flex items-center gap-2 ml-2">
+        <div className="hidden md:flex items-center gap-4">
+          {links.map((l) => {
+            const active = pathname === l.href || (l.type === "page" && pathname.startsWith(l.href));
+            if (l.type === "page") {
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`text-[13px] font-medium px-2.5 py-1 rounded-full transition ${
+                    active
+                      ? "bg-gray-900 dark:bg-white text-white dark:text-black"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              );
+            }
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-cyan-600 dark:after:bg-cyan-400 after:transition-all hover:after:w-full transition"
+              >
+                {l.label.replace("Breakdown", "Harga")}
+              </a>
+            );
+          })}
+          <div className="flex items-center gap-2 ml-1">
             <ThemeToggle />
             <a
               href="https://t.me/ciloktech"
@@ -93,7 +118,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 animate-in fade-in slide-in-from-top-2 duration-200 max-h-[80vh] overflow-y-auto">
           <button
             onClick={handleHomeClick}
             className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5"
@@ -101,17 +126,21 @@ export default function Navbar() {
             🏠 Beranda
             <span className="text-gray-300 dark:text-white/20">↺</span>
           </button>
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 border-b border-gray-50 dark:border-white/5 last:border-0"
-            >
-              {l.label}
-              <span className="text-gray-300 dark:text-white/20">›</span>
-            </a>
-          ))}
+          <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
+            Layanan <span className="text-gray-300">›</span>
+          </Link>
+          <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
+            Portofolio <span className="text-gray-300">›</span>
+          </Link>
+          <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">
+            Harga <span className="text-gray-300">›</span>
+          </Link>
+          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">
+            💰 Breakdown Harga <span className="text-amber-400">→</span>
+          </Link>
+          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">
+            📝 Blog <span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">Baru</span>
+          </Link>
           <a
             href="https://t.me/ciloktech"
             className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl"
