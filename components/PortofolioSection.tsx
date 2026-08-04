@@ -31,7 +31,7 @@ export default function PortofolioSection() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[520px]">
               {t.portfolio.headline1}
-              <span className="text-gray-400 dark:text-gray-500">{t.portfolio.headline2}</span> {t.portfolio.headline3.split(" ").slice(-1)}
+              <span className="text-gray-400 dark:text-gray-500">{t.portfolio.headline2}</span>{t.portfolio.headline3}
             </h2>
             <p className="text-[14px] text-gray-600 dark:text-gray-400 max-w-[360px] leading-relaxed">{t.portfolio.sub}</p>
           </div>
