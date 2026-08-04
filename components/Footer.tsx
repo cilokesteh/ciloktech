@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#050507] text-gray-400 py-12 px-6 border-t border-white/[0.06]">
+    <footer className="bg-[#050507] text-gray-400 py-12 px-6 border-t border-white/[0.06] transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="space-y-4 max-w-[320px]">

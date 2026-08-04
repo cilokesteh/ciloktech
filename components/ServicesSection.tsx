@@ -35,20 +35,20 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 md:py-28 bg-[#fafafa] px-6 border-y border-gray-100" id="layanan">
+    <section className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#111111] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300" id="layanan">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-700 bg-cyan-50 border border-cyan-200 px-3 py-1 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-900/50 px-3 py-1 rounded-full mb-4">
               Layanan
             </div>
-            <h2 className="text-[32px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.95] text-gray-900">
+            <h2 className="text-[32px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.95] text-gray-900 dark:text-white">
               Bukan jualan template.<br />Gue bangun sistem
-              <span className="text-gray-400"> yang dipakai.</span>
+              <span className="text-gray-400 dark:text-gray-500"> yang dipakai.</span>
             </h2>
           </div>
-          <p className="text-[15px] leading-relaxed text-gray-600 max-w-[380px]">
-            Semua project dikerjain dari nol, repo private, dokumentasi jelas. Fokus ke speed, SEO, dan conversion. Bukan sekedar “jadi”.
+          <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[380px]">
+            Semua project dikerjain dari nol, repo private, dokumentasi jelas. Fokus ke speed, SEO, dan conversion. Bukan sekedar &ldquo;jadi&rdquo;.
           </p>
         </div>
 
@@ -56,22 +56,22 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <div
               key={i}
-              className="group relative bg-white rounded-[18px] border border-gray-200 p-6 hover:border-gray-900 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+              className="group relative bg-white dark:bg-[#171717] rounded-[18px] border border-gray-200 dark:border-white/10 p-6 hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center mb-5 group-hover:bg-cyan-600 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-center mb-5 group-hover:bg-cyan-600 dark:group-hover:bg-cyan-400 transition-colors">
                 {s.icon}
               </div>
-              <h3 className="text-[16px] font-bold tracking-tight mb-2 text-gray-900">{s.title}</h3>
-              <p className="text-[13.5px] leading-[1.6] text-gray-600 mb-4">{s.desc}</p>
+              <h3 className="text-[16px] font-bold tracking-tight mb-2 text-gray-900 dark:text-white">{s.title}</h3>
+              <p className="text-[13.5px] leading-[1.6] text-gray-600 dark:text-gray-400 mb-4">{s.desc}</p>
               <ul className="space-y-2">
                 {s.points.map((p, j) => (
-                  <li key={j} className="flex items-center gap-2 text-[12.5px] font-medium text-gray-700">
-                    <span className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px]">✓</span>
+                  <li key={j} className="flex items-center gap-2 text-[12.5px] font-medium text-gray-700 dark:text-gray-300">
+                    <span className="w-4 h-4 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px]">✓</span>
                     {p}
                   </li>
                 ))}
               </ul>
-              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-300 group-hover:text-gray-900 transition">
+              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-300 dark:text-white/20 group-hover:text-gray-900 dark:group-hover:text-white transition">
                 {String(i + 1).padStart(2, "0")}
               </div>
             </div>

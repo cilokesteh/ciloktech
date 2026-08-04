@@ -1,7 +1,6 @@
 export default function ContactSection() {
   return (
-    <section className="py-20 md:py-28 bg-gray-950 text-white px-6 relative overflow-hidden" id="kontak">
-      {/* glow */}
+    <section className="py-20 md:py-28 bg-gray-950 dark:bg-[#050507] text-white px-6 relative overflow-hidden border-t border-white/[0.06] transition-colors duration-300" id="kontak">
       <div className="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-gradient-to-b from-cyan-500/20 to-transparent blur-[80px] rounded-full pointer-events-none" />
 
       <div className="max-w-5xl mx-auto text-center relative">

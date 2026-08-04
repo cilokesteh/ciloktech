@@ -51,18 +51,18 @@ const projects = [
 
 export default function PortofolioSection() {
   return (
-    <section className="py-20 md:py-28 bg-white px-6" id="portofolio">
+    <section className="py-20 md:py-28 bg-white dark:bg-[#0a0a0a] px-6 transition-colors duration-300" id="portofolio">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-3 mb-10">
-          <div className="inline-flex w-fit items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
+          <div className="inline-flex w-fit items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">
             Portfolio — selected works
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 max-w-[520px]">
+            <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[520px]">
               Hasil kerja yang
-              <span className="text-gray-400"> beneran dipake client,</span> bukan dummy.
+              <span className="text-gray-400 dark:text-gray-500"> beneran dipake client,</span> bukan dummy.
             </h2>
-            <p className="text-[14px] text-gray-600 max-w-[360px] leading-relaxed">
+            <p className="text-[14px] text-gray-600 dark:text-gray-400 max-w-[360px] leading-relaxed">
               Tiap project repo private, ada staging, ada docs. 3 hari rata-rata go-live. No template marketplace.
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function PortofolioSection() {
           {projects.map((p, i) => (
             <div
               key={i}
-              className="group rounded-[20px] border border-gray-200 bg-white overflow-hidden hover:border-gray-900 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col"
+              className="group rounded-[20px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#171717] overflow-hidden hover:border-gray-900 dark:hover:border-white hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col"
             >
               <div className={`h-[160px] bg-gradient-to-br ${p.accent} relative p-5 flex flex-col justify-between overflow-hidden`}>
                 <div className="flex items-center justify-between">
@@ -87,17 +87,16 @@ export default function PortofolioSection() {
                   <div className="inline-flex h-px w-10 bg-white/60 mb-3" />
                   <div className="text-white font-extrabold text-[18px] leading-tight drop-shadow-sm">{p.title}</div>
                 </div>
-                {/* grain */}
                 <div className="absolute inset-0 opacity-[0.08] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
               </div>
 
               <div className="p-5 flex flex-col flex-1">
-                <p className="text-[13.5px] leading-[1.6] text-gray-600 mb-4 flex-1">{p.desc}</p>
+                <p className="text-[13.5px] leading-[1.6] text-gray-600 dark:text-gray-400 mb-4 flex-1">{p.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mt-auto">
                   {p.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="text-[11px] font-medium bg-gray-50 border border-gray-200 text-gray-700 px-2.5 py-1 rounded-full group-hover:bg-gray-900 group-hover:text-white group-hover:border-gray-900 transition"
+                      className="text-[11px] font-medium bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 px-2.5 py-1 rounded-full group-hover:bg-gray-900 dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black group-hover:border-gray-900 dark:group-hover:border-white transition"
                     >
                       {tag}
                     </span>
@@ -111,7 +110,7 @@ export default function PortofolioSection() {
         <div className="mt-10 flex justify-center">
           <a
             href="https://t.me/ciloktech"
-            className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 border border-gray-200 px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white hover:border-gray-900 transition"
+            className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white transition"
           >
             Mau project serupa? Diskusi dulu →
           </a>

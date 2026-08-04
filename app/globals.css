@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --border: #e5e5e5;
+  --border-strong: #171717;
+  --subtle: #fafafa;
+  --section-alt: #f6f6f5;
+  --nav-bg: rgba(255,255,255,0.75);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card: #171717;
+  --card-foreground: #ededed;
+  --muted: #1a1a1a;
+  --muted-foreground: #a3a3a3;
+  --border: #262626;
+  --border-strong: #ededed;
+  --subtle: #111111;
+  --section-alt: #121212;
+  --nav-bg: rgba(10,10,10,0.75);
 }
 
 @theme inline {
@@ -23,16 +48,22 @@ body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: var(--muted);
 }
 ::-webkit-scrollbar-thumb {
   background: #06b6d4;
   border-radius: 10px;
+}
+
+/* focus ring */
+*:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
 }
