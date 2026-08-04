@@ -1,8 +1,8 @@
 "use client";
 
 export default function Footer() {
-  const handleHomeClick = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleHomeClick = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
     if (window.location.hash) {
       history.replaceState(null, "", window.location.pathname);
     }
@@ -51,15 +51,17 @@ export default function Footer() {
               <div className="space-y-3 text-[13px]">
                 <a href="https://t.me/ciloktech" className="block hover:text-white transition">Telegram @ciloktech</a>
                 <a href="mailto:hi@ciloktech.my.id" className="block hover:text-white transition">hi@ciloktech.my.id</a>
-                <div className="text-gray-600 text-xs mt-4 leading-relaxed">Balas &lt;2 jam<br/>Senin–Sabtu 09:00–18:00 WIB</div>
+                <div className="text-gray-600 text-xs mt-4 leading-relaxed">Balas &lt;2 jam<br/>Senin–Minggu</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-3 text-[11.5px] text-gray-600">
-          <div>© 2026 Cilok Tech — ciloktech.web.id • Dibangun dengan Next.js 15 & Tailwind • Host di Vercel</div>
-          <div className="flex items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col gap-2">
+          <div className="text-center text-[12.5px] text-gray-500 tracking-wide">
+            © 2026 Cilok Tech — ciloktech.web.id
+          </div>
+          <div className="flex items-center justify-center gap-4 text-[11.5px] text-gray-600">
             <button onClick={handleHomeClick} className="hover:text-white transition flex items-center gap-1">↑ Kembali ke atas</button>
             <span>•</span>
             <span>⚡ &lt;1s LCP</span>
