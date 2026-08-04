@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import { posts, getPost } from "../data";
+import { BlogDetailClientLabels, BlogDetailCTA } from "./BlogSlugClient";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -177,18 +178,7 @@ export default async function BlogDetail({ params }: Props) {
       <Navbar />
       <main className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 min-h-screen">
         <article className="max-w-3xl mx-auto px-6 py-12 md:py-20">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6 text-[11px] text-gray-500 flex items-center gap-1.5">
-            <Link href="/" className="hover:text-gray-900 dark:hover:text-white">Home</Link>
-            <span>›</span>
-            <Link href="/blog" className="hover:text-gray-900 dark:hover:text-white">Blog</Link>
-            <span>›</span>
-            <span className="text-gray-900 dark:text-white font-medium truncate max-w-[200px]">{post.title}</span>
-          </nav>
-
-          <Link href="/blog" className="inline-flex items-center gap-2 text-[12px] font-bold text-gray-500 hover:text-gray-900 dark:hover:text-white mb-8">
-            ← Kembali ke Blog
-          </Link>
+          <BlogDetailClientLabels slug={slug} title={post.title} />
 
           <div className="flex flex-wrap gap-2 mb-5">
             {post.tags.map((t) => (
@@ -245,20 +235,7 @@ export default async function BlogDetail({ params }: Props) {
             })}
           </div>
 
-          <div className="mt-16 rounded-[20px] bg-gray-900 dark:bg-white text-white dark:text-black p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div>
-              <div className="font-extrabold text-[18px] leading-tight">Mau website kayak yang di artikel ini?</div>
-              <div className="text-[13px] opacity-70 mt-1">One-man studio — konsultasi 15 menit gratis, langsung builder bukan sales.</div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-              <a href={`https://t.me/ciloktech?text=Halo%20CilokTech%20One-Man%20Studio%2C%20abis%20baca%20${encodeURIComponent(post.title)}%20mau%20konsultasi`} className="px-5 py-3 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13px] hover:bg-cyan-300 text-center transition">
-                Chat dari artikel ini →
-              </a>
-              <Link href="/kalkulator" className="px-5 py-3 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13px] hover:bg-white/10 text-center transition">
-                🧮 Hitung rugi dulu
-              </Link>
-            </div>
-          </div>
+          <BlogDetailCTA title={post.title} />
 
           <div className="mt-12 pt-10 border-t border-gray-100 dark:border-white/10">
             <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">Baca Juga</div>

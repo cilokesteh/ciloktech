@@ -1,43 +1,12 @@
 "use client";
 import { useState } from "react";
-
-const faqs = [
-  {
-    q: "Berapa lama proses pembuatan?",
-    a: "Landing page rata-rata 2–3 hari, company profile 4–7 hari, web app custom tergantung scope tapi biasanya ada MVP dalam 1–2 minggu. Semua dengan staging link biar lo bisa cek progress real-time.",
-  },
-  {
-    q: "Apakah source code diberikan?",
-    a: "Ya, repo private GitHub + dokumentasi. Lo pegang full ownership. Kalo butuh deploy sendiri atau pindah hosting kapan aja bisa, gak ada vendor lock-in. One-man studio — source tetap milik lo.",
-  },
-  {
-    q: "Pakai teknologi apa?",
-    a: "Next.js 15, React 19, Tailwind v4, Firebase/Supabase/Postgres sesuai kebutuhan. Hosting Vercel + Cloudflare. Stack modern 111kB First Load, <1s LCP, 98 Lighthouse, aman by default.",
-  },
-  {
-    q: "Bisa revisi berapa kali?",
-    a: "Landing page & company profile: 2x revisi minor gratis. Web app: iterasi agile tiap minggu. Revisi besar (ganti konsep) dihitung tambahan — tapi gue selalu diskusi solusi termurah dulu.",
-  },
-  {
-    q: "Ada garansi / maintenance?",
-    a: "Company profile gratis maintenance 3 bulan (bug fix + security patch). Web app custom retainer opsional — uptime monitor, backup harian, performance tuning.",
-  },
-  {
-    q: "Cara bayar gimana?",
-    a: "DP 50% untuk mulai, pelunasan setelah go-live dan lo approve. Bisa transfer bank / QRIS. Untuk retainer bulanan sistem langganan.",
-  },
-  {
-    q: "Kenapa sebut one-man studio?",
-    a: "Karena CilokTech emang dikerjain 1 orang senior full-stack — tanpa kantor, tanpa PM, tanpa sales. Lo chat langsung sama builder-nya. Kenapa bisa murah? Gak ada overhead kantor & meeting muter-muter, tapi kualitas agency Rp 7jt.",
-  },
-  {
-    q: "Kenapa harga 2.5jt, bukan 500rb?",
-    a: "Website 500rb itu template bajakan, gak SEO, lemot, kena hack, source dikunci. 2.5jt di CilokTech itu custom Next.js, SEO lengkap, <1s LCP, source milik lo, maintenance 3 bulan. Hitung pakai kalkulator di /kalkulator — website lemot bisa rugi Rp 10jt+/bulan.",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
 
 export default function FAQSection() {
+  const { t } = useI18n();
   const [open, setOpen] = useState<number | null>(0);
+
+  const faqs = t.faq.items;
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -68,15 +37,14 @@ export default function FAQSection() {
           }),
         }}
       />
-
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">
-            FAQ • One-Man Studio
+            {t.faq.label}
           </div>
           <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
-            Pertanyaan yang sering
-            <span className="text-gray-400 dark:text-gray-500"> ditanyain</span>
+            {t.faq.headline1}
+            <span className="text-gray-400 dark:text-gray-500"> {t.faq.headline2}</span>
           </h2>
         </div>
 
@@ -109,7 +77,7 @@ export default function FAQSection() {
 
         <div className="mt-10 text-center">
           <div className="inline-flex items-center gap-2 text-[13px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-5 py-2.5 rounded-full">
-            Masih ada pertanyaan? <a href="https://t.me/ciloktech" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">Tanya di Telegram →</a>
+            {t.faq.stillQ} <a href="https://t.me/ciloktech" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.faq.askTelegram}</a>
           </div>
         </div>
       </div>

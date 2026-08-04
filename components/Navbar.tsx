@@ -3,24 +3,27 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useI18n } from "@/lib/i18n/context";
 
 type NavLink = { href: string; label: string; type: "anchor" | "page"; highlight?: boolean };
-
-const navLinks: NavLink[] = [
-  { href: "/#layanan", label: "Layanan", type: "anchor" },
-  { href: "/#portofolio", label: "Portofolio", type: "anchor" },
-  { href: "/#harga", label: "Harga", type: "anchor" },
-  { href: "/kalkulator", label: "Kalkulator", type: "page", highlight: true },
-  { href: "/changelog", label: "Changelog", type: "page" },
-  { href: "/harga", label: "Breakdown", type: "page" },
-  { href: "/blog", label: "Blog", type: "page" },
-];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { t } = useI18n();
   const isHome = pathname === "/";
+
+  const navLinks: NavLink[] = [
+    { href: "/#layanan", label: t.nav.layanan, type: "anchor" },
+    { href: "/#portofolio", label: t.nav.portofolio, type: "anchor" },
+    { href: "/#harga", label: t.nav.harga, type: "anchor" },
+    { href: "/kalkulator", label: t.nav.kalkulator, type: "page", highlight: true },
+    { href: "/changelog", label: t.nav.changelog, type: "page" },
+    { href: "/harga", label: t.nav.breakdown, type: "page" },
+    { href: "/blog", label: t.nav.blog, type: "page" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,14 +31,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // REFRESH TO HOME — works from any page
   const handleHomeClick = (e?: React.MouseEvent) => {
     if (e) e.preventDefault();
     setOpen(false);
     if (isHome) {
-      // Same page — clear hash + scroll top smooth + force reload if already at top (refresh)
       if (window.scrollY < 10 && !window.location.hash) {
-        // Already at top on same page → full refresh to reset state
         window.location.reload();
         return;
       }
@@ -44,7 +44,6 @@ export default function Navbar() {
       }
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Different page → go home
       window.location.href = "/";
     }
   };
@@ -58,11 +57,11 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
-        {/* WORDMARK — ONE-MAN STUDIO + REFRESH TO HOME */}
+        {/* WORDMARK */}
         <button
           onClick={handleHomeClick}
           className="flex items-center gap-3 group cursor-pointer text-left"
-          aria-label="Kembali ke beranda — refresh"
+          aria-label={`${t.nav.beranda} — refresh`}
           title="Klik: kembali ke atas • Double-click / sudah di atas: refresh halaman"
         >
           <div className="relative">
@@ -82,7 +81,7 @@ export default function Navbar() {
             <div className="flex items-center gap-1.5 mt-[3px]">
               <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition">ONE-MAN STUDIO</span>
               <span className="hidden sm:block w-px h-2.5 bg-gray-200 dark:bg-white/10" />
-              <span className="hidden sm:block text-[9px] font-medium tracking-wide text-gray-400 dark:text-white/40 group-hover:text-gray-600 transition">SENIOR FULL-STACK</span>
+              <span className="hidden sm:block text-[9px] font-medium tracking-wide text-gray-400 dark:text-white/40 group-hover:text-gray-600 transition">{t.common.seniorFullstack.toUpperCase()}</span>
             </div>
           </div>
         </button>
@@ -120,18 +119,20 @@ export default function Navbar() {
           })}
           <div className="w-px h-5 bg-gray-200 dark:bg-white/10 mx-2" />
           <div className="flex items-center gap-2">
+            <LanguageSwitcher compact />
             <ThemeToggle />
             <a
               href="https://t.me/ciloktech"
               className="px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black text-[13.5px] font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-1.5"
             >
-              Konsultasi Gratis <span className="text-[11px] opacity-60">↗</span>
+              {t.common.konsultasiGratis} <span className="text-[11px] opacity-60">↗</span>
             </a>
           </div>
         </div>
 
         {/* MOBILE */}
         <div className="flex md:hidden items-center gap-2">
+          <LanguageSwitcher compact />
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
@@ -148,21 +149,24 @@ export default function Navbar() {
           <div className="flex items-center gap-2 mb-3 px-1">
             <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400">ONE-MAN STUDIO • ONE-MAN OPS</span>
             <span className="w-1 h-1 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="text-[10px] text-gray-500">Available</span>
+            <span className="text-[10px] text-gray-500">{t.common.available}</span>
           </div>
           <button
             onClick={handleHomeClick}
             className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
           >
-            <span>🏠 Beranda ↺ Refresh</span>
+            <span>🏠 {t.nav.berandaRefresh}</span>
             <span className="text-gray-300 dark:text-white/20 text-[12px]">TAP TO TOP</span>
           </button>
-          <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Layanan <span className="text-gray-300">›</span></Link>
-          <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Portofolio <span className="text-gray-300">›</span></Link>
-          <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">Harga <span className="text-gray-300">›</span></Link>
-          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">💰 Breakdown Harga <span className="text-amber-400">→</span></Link>
-          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 Blog <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">11 Artikel</span><span className="text-emerald-500 text-[10px]">●</span></span></Link>
-          <a href="https://t.me/ciloktech" className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 Chat — One-Man Studio</a>
+          <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.layanan} <span className="text-gray-300">›</span></Link>
+          <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.portofolio} <span className="text-gray-300">›</span></Link>
+          <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.harga} <span className="text-gray-300">›</span></Link>
+          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">💰 {t.nav.breakdown} <span className="text-amber-400">→</span></Link>
+          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 {t.nav.blog} <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">11 Artikel</span><span className="text-emerald-500 text-[10px]">●</span></span></Link>
+          <a href="https://t.me/ciloktech" className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 {t.nav.chatStudio}</a>
+          <div className="flex justify-center pt-3">
+            <LanguageSwitcher />
+          </div>
         </div>
       )}
     </nav>

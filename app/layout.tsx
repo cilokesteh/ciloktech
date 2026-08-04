@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { I18nProvider } from "@/lib/i18n/context";
 import CommandPalette from "@/components/CommandPalette";
 
 const geistSans = Geist({
@@ -46,6 +47,7 @@ export const metadata: Metadata = {
     siteName: "Cilok Tech — One-Man Studio",
     type: "website",
     locale: "id_ID",
+    alternateLocale: ["en_US"],
     images: [
       { url: "/logo.jpg", width: 1200, height: 630, alt: "Cilok Tech — One-Man Studio" },
     ],
@@ -57,7 +59,14 @@ export const metadata: Metadata = {
     images: ["/logo.jpg"],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://ciloktech.web.id" },
+  alternates: {
+    canonical: "https://ciloktech.web.id",
+    languages: {
+      "id-ID": "https://ciloktech.web.id",
+      "en-US": "https://ciloktech.web.id?lang=en",
+      "x-default": "https://ciloktech.web.id",
+    },
+  },
   verification: {
     google: "TRo05EJYLO8cjVxoSrKeyuh-4Z4Ne5d8V-WK92OjS5Q",
   },
@@ -91,10 +100,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* anti-FOUC — set theme before React */}
+        {/* anti-FOUC — theme + lang */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('cilok-theme');var d=s? s==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark')}catch(e){}})()`,
+            __html: `(function(){try{var s=localStorage.getItem('cilok-theme');var d=s? s==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');var l=localStorage.getItem('cilok-locale');if(l)document.documentElement.lang=l;else if(navigator.language.toLowerCase().startsWith('en'))document.documentElement.lang='en';}catch(e){}})()`,
           }}
         />
         <script
@@ -127,10 +136,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300">
-        <ThemeProvider>
-          {children}
-          <CommandPalette />
-        </ThemeProvider>
+        <I18nProvider>
+          <ThemeProvider>
+            {children}
+            <CommandPalette />
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );
