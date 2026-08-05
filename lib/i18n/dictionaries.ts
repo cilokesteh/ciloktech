@@ -19,7 +19,6 @@ const idDict = {
     portofolio: "Portofolio",
     harga: "Harga",
     kalkulator: "Kalkulator",
-    changelog: "Changelog",
     breakdown: "Rincian",
     blog: "Blog",
     beranda: "Beranda",
@@ -266,7 +265,6 @@ const idDict = {
       breakdown: { label: "Rincian Harga — Transparan", desc: "Kualitas Rp 7jt dijual Rp 2,5jt" },
       kalkulator: { label: "Kalkulator Kerugian Website", desc: "Hitung kerugian Rp/bulan akibat website lambat" },
       blog: { label: "Blog — 11 Artikel", desc: "Tips praktis dari lapangan agar tidak terjebak harga murah" },
-      changelog: { label: "Changelog — Building in Public", desc: "Mingguan — perjalanan one-man studio" },
       cta: { label: "Chat Telegram — One-Man Studio", desc: "Balas <2 jam • Senin–Minggu • Available" },
     },
   },
@@ -373,7 +371,6 @@ const idDict = {
   },
   kalkulatorPage: { title: "" },
   blogPage: { title: "" },
-  changelogPage: { title: "" },
 };
 
 const enDict: Dict = {
@@ -392,7 +389,6 @@ const enDict: Dict = {
     portofolio: "Portfolio",
     harga: "Pricing",
     kalkulator: "ROI Calculator",
-    changelog: "Changelog",
     breakdown: "Why We're Affordable",
     blog: "Blog",
     beranda: "Home",
@@ -639,7 +635,6 @@ const enDict: Dict = {
       breakdown: { label: "Why So Affordable? — Full Breakdown", desc: "$400+ value delivered for just $155" },
       kalkulator: { label: "ROI Loss Calculator", desc: "Calculate monthly revenue lost to slow performance" },
       blog: { label: "Blog — 11 In-Depth Articles", desc: "Real-world insights to avoid cheap development traps" },
-      changelog: { label: "Changelog — Building in Public", desc: "Week by week — the one-man studio journey documented" },
       cta: { label: "Contact via Telegram — One-Man Studio", desc: "Average reply <2h • Mon–Sun • Available now" },
     },
   },
@@ -746,7 +741,6 @@ const enDict: Dict = {
   },
   kalkulatorPage: { title: "" },
   blogPage: { title: "" },
-  changelogPage: { title: "" },
 };
 
 export const dictionaries: Record<Locale, Dict> = {

@@ -20,7 +20,6 @@ export default function Navbar() {
     { href: "/#portofolio", label: t.nav.portofolio, type: "anchor" },
     { href: "/#harga", label: t.nav.harga, type: "anchor" },
     { href: "/kalkulator", label: t.nav.kalkulator, type: "page", highlight: true },
-    { href: "/changelog", label: t.nav.changelog, type: "page" },
     { href: "/harga", label: t.nav.breakdown, type: "page" },
     { href: "/blog", label: t.nav.blog, type: "page" },
   ];
