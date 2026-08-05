@@ -58,12 +58,12 @@ export default function Kalkulator() {
           <LanguageSwitcher compact className="shrink-0" />
         </div>
         <h1 className="text-[32px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
-          {isId ? "Website lemot itu" : "Slow site ="}
+          {isId ? "Website lambat itu" : "Slow site ="}
           <br />
           <span className="text-red-600 dark:text-red-400">{isId ? `rugi Rp ${Math.round(result.rugiBulan / 1000000)}jt` : `losing ${fmt(result.rugiBulan)}` } {isId ? "per bulan." : "/ month."}</span>
         </h1>
         <p className="text-[16px] leading-relaxed text-gray-600 dark:text-gray-400 mt-6 max-w-[600px]">
-          {isId ? "Hitung berapa omzet yang hilang karena website lemot, gak SEO, dan gak ada CTA. Data dari 50+ audit UMKM — bukan teori. Gratis, no email required." : "Calculate how much revenue you lose because of slow site, no SEO, no CTA. Data from 50+ SME audits — not theory. Free, no email required."}
+          {isId ? "Hitung berapa pendapatan yang hilang akibat website lambat, tanpa SEO, dan tanpa call-to-action. Data berdasarkan audit 50+ UMKM — bukan sekadar teori. Gratis, tanpa perlu email." : "Calculate how much revenue you lose because of slow site, no SEO, no CTA. Data from 50+ SME audits — not theory. Free, no email required."}
         </p>
       </div>
 
@@ -89,11 +89,11 @@ export default function Kalkulator() {
 
           <div>
             <div className="flex justify-between mb-2 gap-2">
-              <label className="text-[13px] font-bold text-gray-900 dark:text-white">{isId ? "Load time website lo sekarang (LCP)" : "Your current load time (LCP)"}</label>
-              <span className={`text-[13px] font-bold shrink-0 whitespace-nowrap ${lcp <= 1.5 ? "text-emerald-600" : lcp <= 3 ? "text-amber-600" : "text-red-600"}`}>{lcp}s — {lcp <= 1.5 ? (isId ? "Ngebut" : "Fast") : lcp <= 3 ? (isId ? "Lambat" : "Slow") : (isId ? "Lemot parah" : "Very slow")}</span>
+              <label className="text-[13px] font-bold text-gray-900 dark:text-white">{isId ? "Kecepatan website Anda saat ini (LCP)" : "Your current load time (LCP)"}</label>
+              <span className={`text-[13px] font-bold shrink-0 whitespace-nowrap ${lcp <= 1.5 ? "text-emerald-600" : lcp <= 3 ? "text-amber-600" : "text-red-600"}`}>{lcp}s — {lcp <= 1.5 ? (isId ? "Cepat" : "Fast") : lcp <= 3 ? (isId ? "Lambat" : "Slow") : (isId ? "Sangat lambat" : "Very slow")}</span>
             </div>
             <input type="range" min={0.5} max={8} step={0.5} value={lcp} onChange={(e) => setLcp(parseFloat(e.target.value))} className="w-full accent-gray-900 dark:accent-white h-2" />
-            <div className="flex justify-between text-[11px] text-gray-500 mt-1"><span>0.5s (Next.js)</span><span>8s (Heavy WP)</span></div>
+            <div className="flex justify-between text-[11px] text-gray-500 mt-1"><span>0.5s (Next.js)</span><span>8s (WordPress berat)</span></div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
@@ -169,15 +169,15 @@ export default function Kalkulator() {
               </div>
             </div>
             <div className="mt-5 flex flex-col gap-3">
-              <a href={`https://t.me/ciloktech?text=Halo%20Cilok%2C%20gue%20barusan%20hitung%20kalkulator%20rugi%20website%3A%20rugi%20${encodeURIComponent(fmt(result.rugiBulan))}%2Fbulan%20karena%20LCP%20${lcp}s%20%2B%20${noSEO ? "no%20SEO" : "SEO%20ok"}%20%2B%20${noCTA ? "no%20CTA" : "CTA%20ok"}.%20Mau%20fix%20jadi%20%3C1s%20kayak%20ciloktech.web.id`} target="_blank" className="w-full text-center px-6 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-[14px] hover:bg-cyan-300 hover:text-black transition whitespace-nowrap">
-                {isId ? "Fix rugi ini → Chat One-Man Studio →" : "Fix this loss → Chat Studio →"}
+              <a href={`https://t.me/ciloktech?text=Halo%20Cilok%2C%20saya%20baru%20menghitung%20kalkulator%20rugi%20website%3A%20rugi%20${encodeURIComponent(fmt(result.rugiBulan))}%2Fbulan%20karena%20LCP%20${lcp}s%20%2B%20${noSEO ? \"no%20SEO\" : \"SEO%20ok\"}%20%2B%20${noCTA ? \"no%20CTA\" : \"CTA%20ok\"}.%20Saya%20ingin%20optimasi%20jadi%20%3C1s%20seperti%20ciloktech.web.id`} target=\"_blank\" className=\"w-full text-center px-6 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-[14px] hover:bg-cyan-300 hover:text-black transition whitespace-nowrap\">
+                {isId ? "Perbaiki kerugian ini → Chat One-Man Studio →" : "Fix this loss → Chat Studio →"}
               </a>
-              <a href="/harga" className="w-full text-center px-6 py-3 bg-transparent border border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-[13px] hover:bg-white/10 dark:hover:bg-black/5 transition">{isId ? "Lihat breakdown Rp 2.5jt vs Rp 7jt" : "See breakdown Rp 2.5jt vs Rp 7jt"}</a>
+              <a href="/harga" className="w-full text-center px-6 py-3 bg-transparent border border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-[13px] hover:bg-white/10 dark:hover:bg-black/5 transition">{isId ? "Lihat rincian Rp 2,5jt vs Rp 7jt" : "See breakdown Rp 2.5jt vs Rp 7jt"}</a>
             </div>
           </div>
           <div className="rounded-xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 p-4">
-            <div className="text-[12px] font-bold text-amber-800 dark:text-amber-200">{isId ? "Ini bukan angka ngarang" : "Not made-up numbers"}</div>
-            <div className="text-[11.5px] text-amber-800/70 dark:text-amber-200/70 leading-relaxed mt-1">{isId ? "Rumus bounce vs LCP dari Google Chrome UX Report. SEO -25% & CTA -20% dari audit 50+ site UMKM CilokTech. Omzet online = omzet x % online. Total loss di-cap 85% max." : "Bounce vs LCP formula from Google Chrome UX Report. SEO -25% & CTA -20% from 50+ SME audits. Online revenue = revenue x % online. Total loss capped 85% max."}</div>
+            <div className="text-[12px] font-bold text-amber-800 dark:text-amber-200">{isId ? "Perhitungan berdasarkan data, bukan perkiraan sembarangan" : "Data-driven calculation, not guesswork"}</div>
+            <div className="text-[11.5px] text-amber-800/70 dark:text-amber-200/70 leading-relaxed mt-1">{isId ? "Formula bounce rate vs LCP berdasarkan Google Chrome UX Report. Dampak SEO -25% & CTA -20% berdasarkan audit 50+ website UMKM CilokTech. Pendapatan online = total omzet x % online. Total kerugian dibatasi maksimal 85%." : "Bounce vs LCP formula from Google Chrome UX Report. SEO -25% & CTA -20% from 50+ SME audits. Online revenue = revenue x % online. Total loss capped 85% max."}</div>
           </div>
         </div>
       </div>

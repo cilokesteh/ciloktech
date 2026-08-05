@@ -12,19 +12,19 @@ export default function BlogClient() {
     <main className="pt-16 bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
       <section className="py-14 md:py-20 px-6 border-b border-gray-100 dark:border-white/5">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-5">BLOG • {isId ? "TO THE POINT — NO BULLSHIT" : "STRAIGHT TALK"}</div>
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-5">BLOG • {isId ? "TIPS PRAKTIS DARI LAPANGAN" : "STRAIGHT TALK — REAL INSIGHTS"}</div>
           <h1 className="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[560px]">
-            {isId ? <>Website yang <span className="text-cyan-600 dark:text-cyan-400">ngasilin</span> customer,<br />bukan cuma bagus.</> : <>Websites that <span className="text-cyan-600 dark:text-cyan-400">convert</span> customers,<br />not just pretty.</>}
+            {isId ? <>Website yang <span className="text-cyan-600 dark:text-cyan-400">menghasilkan</span> pelanggan,<br />bukan sekadar tampilan menarik.</> : <>Websites that <span className="text-cyan-600 dark:text-cyan-400">convert</span> customers,<br />not just look pretty.</>}
           </h1>
           <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 mt-5 max-w-[520px]">
-            {isId ? "Gue tulis apa yang gue temuin di lapangan: kenapa website UMKM sepi, beda landing vs company profile, WordPress lemot, dan checklist conversion yang bener." : "I write what I find in the field: why SME websites get no traffic, landing vs company profile difference, why WordPress is slow, and the real conversion checklist."}
+            {isId ? "Saya menulis berdasarkan temuan di lapangan: mengapa website UMKM sepi pengunjung, perbedaan landing page vs company profile, mengapa WordPress lambat, dan checklist konversi yang benar-benar terbukti." : "I write based on real field findings: why SME websites get zero traffic, landing vs company profile differences, why WordPress is slow, and the conversion checklist that actually works."}
           </p>
         </div>
       </section>
 
       <section className="py-10 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-6">⭐ {isId ? "Featured — Baca dulu ini" : "Featured — Read first"}</div>
+          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-6">⭐ {isId ? "Rekomendasi Utama" : "Featured Articles"}</div>
           <div className="grid md:grid-cols-3 gap-4">
             {featured.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-[20px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#171717] overflow-hidden hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col">
@@ -72,11 +72,11 @@ export default function BlogClient() {
 
       <section className="py-16 px-6 text-center">
         <div className="max-w-3xl mx-auto bg-gray-900 dark:bg-white rounded-[24px] p-8 md:p-10 text-white dark:text-black">
-          <h2 className="text-[24px] md:text-[32px] font-extrabold tracking-tight leading-[0.9]">{isId ? "Mau website kayak yang dibahas di blog?" : "Want a website like discussed in blog?"}</h2>
-          <p className="text-[14px] opacity-70 mt-3 max-w-[500px] mx-auto">{isId ? "Jangan cuma baca — gas eksekusi. Konsultasi 15 menit, gue kasih roadmap gratis." : "Don't just read — let's ship. 15-min free consult, I'll give you a free roadmap."}</p>
+          <h2 className="text-[24px] md:text-[32px] font-extrabold tracking-tight leading-[0.9]">{isId ? "Ingin website seperti yang dibahas di blog?" : "Want a website like the ones featured in the blog?"}</h2>
+          <p className="text-[14px] opacity-70 mt-3 max-w-[500px] mx-auto">{isId ? "Jangan hanya membaca — saatnya eksekusi. Konsultasi 15 menit, saya berikan roadmap gratis." : "Ready to take the next step? Book a free 15-minute consultation and get a complimentary roadmap."}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://t.me/ciloktech?text=Halo%20CilokTech%2C%20abis%20baca%20blog%20mau%20konsultasi" className="px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-cyan-300 dark:hover:bg-cyan-300 hover:text-black transition">🚀 {isId ? "Konsultasi dari Blog" : "Consult from Blog"}</a>
-            <Link href="/harga" className="px-7 py-3.5 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13.5px] hover:bg-white/10 dark:hover:bg-black/10 transition">{isId ? "Lihat harga dulu →" : "See pricing first →"}</Link>
+            <a href="https://t.me/ciloktech?text=Halo%20CilokTech%2C%20saya%20baru%20membaca%20blog%20dan%20ingin%20konsultasi" className="px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-cyan-300 dark:hover:bg-cyan-300 hover:text-black transition">🚀 {isId ? "Mulai Konsultasi" : "Start Consultation"}</a>
+            <Link href="/harga" className="px-7 py-3.5 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13.5px] hover:bg-white/10 dark:hover:bg-black/10 transition">{isId ? "Lihat Paket Harga →" : "View Pricing Plans →"}</Link>
           </div>
         </div>
       </section>

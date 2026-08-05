@@ -11,122 +11,122 @@ type Props = { params: Promise<{ slug: string }> };
 
 const contents: Record<string, { body: string[]; keywords: string }> = {
   "alasan-website-umkm-sepi-pengunjung": {
-    keywords: "website umkm sepi, cara naikin traffic umkm, seo umkm, website umkm tidak muncul di google",
+    keywords: "website umkm sepi, cara meningkatkan traffic umkm, seo umkm, website umkm tidak muncul di google",
     body: [
-      "Lo udah punya IG 5k followers, tapi website sepi kayak kuburan? Ini normal — IG dan Google itu beda game.",
-      "### 1. Website lo gak SEO ready — cuma jadi brosur online\nGak ada OG tag, sitemap, schema LocalBusiness. Google gak ngerti bisnis lo apa. Hasilnya gak ke-index. Fix: Next.js 15 auto generate sitemap + OG + JSON-LD. Di CilokTech ini default.",
-      "### 2. Load >3 detik — pengunjung kabur sebelum liat produk\nRata-rata WordPress Elementor 4.5s LCP. Orang Indonesia sabarnya 2 detik. Fix: gue build 111kB First Load, <1s LCP. Speed = conversion.",
-      "### 3. Gak ada CTA jelas — pengunjung bingung mau ngapain\nWebsite cuma pajang foto dan tulisan 'Selamat datang'. Gak ada tombol WA, Telegram, Maps. Fix: sticky CTA + floating Chat di semua halaman.",
-      "### 4. Gak mobile-first — 80% traffic UMKM dari HP\nDesain desktop doang, di HP berantakan. Tombol susah klik. Fix: gue desain mobile dulu baru desktop.",
-      "### 5. Hosting free/hosting abal-abal — down pas butuh\nFree hosting = SEO zero. Sering down, SSL mati, kena hack. Fix: Vercel Edge + SSL auto, uptime 99.9% — gratis tahun pertama di CilokTech.",
-      "#### Kesimpulan:\nWebsite UMKM yang ngasilin customer harus: SEO ready, <1s, mobile-first, CTA jelas, hosting pro. Bukan cuma bagus. Kalo website lo sepi, cek 5 ini dulu. Hitung rugi lo di /kalkulator.",
+      "Anda sudah memiliki 5.000 followers Instagram, tetapi website tetap sepi pengunjung? Kondisi ini umum terjadi — Instagram dan Google menggunakan mekanisme yang sangat berbeda dalam mendatangkan audiens.",
+      "### 1. Website Anda belum SEO-ready — masih berfungsi sebagai brosur online\nTanpa Open Graph tag, sitemap.xml, dan schema LocalBusiness, Google kesulitan memahami bisnis Anda. Akibatnya, website tidak terindeks. Solusi: Next.js 15 menghasilkan sitemap + OG + JSON-LD secara otomatis. Di CilokTech, ini adalah standar default.",
+      "### 2. Waktu muat lebih dari 3 detik — pengunjung pergi sebelum melihat produk\nRata-rata WordPress + Elementor memiliki LCP 4,5 detik. Sementara pengguna Indonesia hanya bersedia menunggu sekitar 2 detik. Solusi: Saya membangun dengan First Load 111kB dan LCP <1 detik. Kecepatan berbanding lurus dengan konversi.",
+      "### 3. Tidak ada call-to-action yang jelas — pengunjung kebingungan harus melakukan apa\nWebsite hanya menampilkan foto dan tulisan 'Selamat datang'. Tidak ada tombol WhatsApp, Telegram, atau Google Maps. Solusi: Sticky CTA + floating Chat di setiap halaman.",
+      "### 4. Tidak mobile-first — padahal 80% traffic UMKM berasal dari ponsel\nDesain hanya untuk desktop, ketika dibuka di HP menjadi berantakan dan tombol sulit diklik. Solusi: Saya mendesain versi mobile terlebih dahulu, kemudian desktop.",
+      "### 5. Menggunakan hosting gratis atau berkualitas rendah — down saat dibutuhkan\nHosting gratis berarti SEO nol. Sering mengalami downtime, SSL tidak aktif, dan rentan diretas. Solusi: Vercel Edge + SSL otomatis dengan uptime 99,9% — gratis tahun pertama di CilokTech.",
+      "#### Kesimpulan:\nWebsite UMKM yang menghasilkan pelanggan harus: SEO-ready, <1 detik, mobile-first, CTA jelas, dan hosting profesional. Bukan sekadar tampilan menarik. Jika website Anda sepi pengunjung, periksa 5 poin ini terlebih dahulu. Hitung kerugian Anda di /kalkulator.",
     ],
   },
   "landing-page-vs-company-profile": {
-    keywords: "landing page vs company profile, beda landing page dan company profile, jenis website umkm",
+    keywords: "landing page vs company profile, perbedaan landing page dan company profile, jenis website umkm",
     body: [
-      "Banyak UMKM salah pilih: mau jualan 1 produk tapi minta company profile 5 halaman. Ujungnya boncos.",
-      "### Landing Page (Rp 900rb) — buat jualan 1 produk\nFokus 1 goal: konversi. Struktur: Hero + Problem + Solution + Testi + Pricing + FAQ + CTA. Tanpa navigasi muter. Contoh: jasa las, laundry kiloan, bengkel. Go-live 2-3 hari.",
-      "### Company Profile (Rp 2.5jt) — buat bangun kepercayaan\nFokus: trust. Struktur: Home + Layanan + Portofolio + Harga + Testi + Kontak + Blog. Kayak ciloktech.web.id sekarang. Ideal buat: PT, CV, konsultan, agency, sekolah.",
-      "### Kapan pilih mana?\n- 1 produk, mau leads cepat → Landing Page\n- Banyak layanan, butuh portofolio + blog SEO → Company Profile\n- Aplikasi kasir/inventory/dashboard → Web App Custom mulai 5jt+",
-      "#### Rule gue:\nKalo budget <1.5jt dan butuh closing minggu ini → Landing. Kalo mau long game SEO + brand → Company Profile 2.5jt (value Rp 7jt). Lihat breakdown di /harga atau hitung ROI di /kalkulator.",
+      "Banyak UMKM salah memilih: ingin menjual 1 produk tetapi meminta company profile 5 halaman. Hasil akhirnya: biaya membengkak tanpa konversi yang jelas.",
+      "### Landing Page (Rp 900rb) — untuk menjual 1 produk\nFokus pada 1 tujuan: konversi. Struktur ideal: Hero + Problem + Solution + Testimoni + Pricing + FAQ + CTA. Tanpa navigasi yang berputar-putar. Contoh penggunaan: jasa las, laundry kiloan, bengkel mobil. Go-live dalam 2–3 hari.",
+      "### Company Profile (Rp 2,5jt) — untuk membangun kepercayaan\nFokus pada: kepercayaan dan kredibilitas. Struktur: Home + Layanan + Portofolio + Harga + Testimoni + Kontak + Blog. Seperti ciloktech.web.id saat ini. Ideal untuk: PT, CV, konsultan, agency, dan institusi pendidikan.",
+      "### Kapan harus memilih yang mana?\n- 1 produk, butuh leads cepat → Landing Page\n- Banyak layanan, butuh portofolio + blog SEO → Company Profile\n- Aplikasi kasir / inventory / dashboard internal → Web App Custom mulai Rp 5jt+",
+      "#### Aturan praktis saya:\nJika budget di bawah Rp 1,5jt dan Anda butuh closing minggu ini → pilih Landing Page. Jika ingin bermain untuk jangka panjang dengan SEO + branding → Company Profile Rp 2,5jt (value setara Rp 7jt). Lihat rincian lengkap di /harga atau hitung ROI di /kalkulator.",
     ],
   },
   "kenapa-wordpress-lemot-solusi-nextjs": {
     keywords: "wordpress lemot, nextjs vs wordpress, website wordpress kena hack, solusi wordpress lambat",
     body: [
-      "Jujur aja, 90% website UMKM di Indonesia pake WordPress Elementor. Murah? Iya. Masalahnya: lemot, berat, dan jadi langganan tukang hack.",
-      "### Data beneran:\n- Elementor + 15 plugin = 4.5s LCP average\n- 1 plugin gak update = pintu masuk malware\n- Hosting shared Rp 30rb/bln = tetangga abuse IP, SEO mati\n- Build size: 2-5MB vs Next.js 111kB",
-      "### Kenapa Next.js 15 jauh lebih ngebut?\nNext.js generate HTML static pas build, bukan PHP render tiap request. Hasilnya: <1s LCP, 98 Lighthouse, image AVIF auto, routing prefetch.",
-      "### Aman?\nWordPress = PHP + MySQL + 20 plugin = 20 celah. Next.js = static, gak ada DB di frontend. Kena hack hampir mustahil kalo static export.",
-      "### Kapan WordPress masih oke?\nKalo lo butuh edit tulisan tiap hari sendiri non-teknis dan budget mepet. Tapi kalo mau speed + SEO + anti-hack → Next.js.",
-      "#### Di CilokTech — One-Man Studio:\nSemua project Next.js 15. Bukan karena trend, tapi karena client gue butuh website yang buka <1s di HP kentang. Cek rugi WP lo di /kalkulator.",
+      "90% website UMKM di Indonesia menggunakan WordPress + Elementor. Memang terjangkau, tetapi masalah utamanya: lambat, berat, dan rentan terhadap serangan siber.",
+      "### Data berdasarkan lapangan:\n- Elementor + 15 plugin = rata-rata LCP 4,5 detik\n- 1 plugin yang tidak di-update = celah masuk malware\n- Hosting shared Rp 30rb/bulan = IP disalahgunakan tetangga, SEO mati\n- Ukuran build: 2–5MB vs Next.js 111kB",
+      "### Mengapa Next.js 15 jauh lebih cepat?\nNext.js menghasilkan HTML statis pada saat build, bukan PHP yang melakukan render setiap request. Hasilnya: <1 detik LCP, skor Lighthouse 98, format gambar AVIF otomatis, dan routing dengan prefetch.",
+      "### Bagaimana dengan keamanan?\nWordPress = PHP + MySQL + 20 plugin = 20 potensi celah keamanan. Next.js = statis, tidak ada database di frontend. Kemungkinan diretas hampir tidak ada jika menggunakan static export.",
+      "### Kapan WordPress masih relevan?\nJika Anda perlu mengedit tulisan setiap hari secara mandiri, non-teknis, dan budget sangat terbatas. Namun jika prioritas Anda adalah kecepatan + SEO + anti-hack → Next.js adalah pilihan tepat.",
+      "#### Di CilokTech — One-Man Studio:\nSemua project menggunakan Next.js 15. Bukan karena tren, melainkan karena klien saya membutuhkan website yang terbuka <1 detik bahkan di HP dengan spesifikasi rendah. Cek kerugian WP Anda di /kalkulator.",
     ],
   },
   "biaya-bikin-website-2026-breakdown-jujur": {
     keywords: "biaya bikin website 2026, harga jasa pembuatan website, perbandingan harga website, harga website umkm",
     body: [
-      "Lo search 'jasa pembuatan website' — keluar harga Rp 500rb sampai Rp 15jt. Kok bisa beda sejauh itu? Gue pecah biar lo gak ketipu murah.",
-      "### Rp 800rb - 1.8jt: Freelance Pemula / Template\nTemplate beli Rp 150rb + ganti logo. WordPress + Elementor. SEO gak ada, speed 3-6 detik, source dikunci. Gak muncul di Google.",
-      "### Rp 2.5jt: CilokTech One-Man Studio — Value Asli Rp 7jt\nDesign Figma custom → code, Next.js 15 111kB, SEO OG+Schema+Sitemap+Robots lengkap, dark/light toggle pro anti-FOUC, <1s LCP, source code repo private milik lo 100%, balas <2 jam, live 3-7 hari. Kenapa 2.5jt? One-man studio senior — potong meeting & kantor. Lihat breakdown lengkap di /harga — atau hitung rugi kalo gak fix di /kalkulator.",
-      "### Rp 8jt - 15jt: Agency\nSama teknologinya, tapi bayar meeting 60% budget. Go-live 2-4 minggu. Cocok kalo butuh brand guideline + invoice PT.",
-      "#### Transparan gue:\nHarga di depan, breakdown di /harga, source code milik lo. Gak ada hidden fee. Domain + hosting tahun pertama include.",
+      "Jika Anda mencari 'jasa pembuatan website' — akan muncul harga Rp 500rb hingga Rp 15jt. Mengapa bisa berbeda sejauh itu? Saya pecah secara transparan agar Anda tidak terjebak harga murah.",
+      "### Rp 800rb - 1,8jt: Freelance Pemula / Template\nTemplate dibeli Rp 150rb + ganti logo. WordPress + Elementor. Tanpa SEO, kecepatan 3–6 detik, source code terkunci. Tidak muncul di Google.",
+      "### Rp 2,5jt: CilokTech One-Man Studio — Value Asli Setara Rp 7jt\nDesain Figma custom → coding, Next.js 15 dengan 111kB, SEO lengkap OG+Schema+Sitemap+Robots, toggle dark/light profesional anti-FOUC, <1 detik LCP, source code repository private 100% milik Anda, respon <2 jam, live dalam 3–7 hari. Mengapa Rp 2,5jt? One-man studio yang dikerjakan senior — memangkas biaya meeting dan kantor. Lihat breakdown lengkap di /harga — atau hitung kerugian jika tidak segera diperbaiki di /kalkulator.",
+      "### Rp 8jt - 15jt: Agency Jakarta\nTeknologi yang sama, tetapi 60% budget habis untuk meeting. Go-live 2–4 minggu. Cocok jika Anda membutuhkan brand guideline + invoice perusahaan.",
+      "#### Prinsip transparansi saya:\nHarga ditampilkan di depan, breakdown di /harga, source code 100% milik Anda. Tidak ada biaya tersembunyi. Domain + hosting tahun pertama sudah termasuk.",
     ],
   },
   "checklist-website-ngasilin-customer": {
-    keywords: "checklist website conversion, website ngasilin customer, cara bikin website yang menghasilkan uang",
+    keywords: "checklist website conversion, website menghasilkan customer, cara bikin website yang menghasilkan uang",
     body: [
-      "Website bagus doang gak bikin cuan. Gue audit 50+ website UMKM — yang konversi tinggi selalu punya 12 elemen ini.",
-      "### 1-3: Speed & Trust\n1. <1s LCP — kalo 3 detik 40% pengunjung kabur\n2. HTTPS + SSL valid\n3. Favicon CT + emerald dot one-man studio",
-      "### 4-7: SEO & Structure\n4. Title + meta description unik tiap halaman\n5. OG image dynamic 1200x630 biar share WA cakep — sekarang auto di ciloktech.web.id/api/og\n6. Sitemap.xml + robots.txt\n7. JSON-LD Organization + FAQ + Breadcrumb",
-      "### 8-12: Conversion\n8. Headline jelas 3 detik: siapa lo, buat siapa, hasil apa\n9. Social proof di atas fold: 'Dipercaya 50+ bisnis'\n10. Sticky CTA + floating chat one-man\n11. Pricing transparan + breakdown /harga\n12. FAQ yang jawab objection + kalkulator /kalkulator",
-      "#### Checklist CilokTech One-Man Studio:\nSemua ada di ciloktech.web.id — 111kB, 98 Lighthouse, dark mode, blog + harga anti-nawar + kalkulator rugi. Mau sama? Ambil Company Profile 2.5jt di /harga.",
+      "Website yang hanya bagus tidak otomatis menghasilkan cuan. Saya telah mengaudit 50+ website UMKM — yang memiliki tingkat konversi tinggi selalu memiliki 12 elemen berikut.",
+      "### 1-3: Kecepatan & Kepercayaan\n1. <1 detik LCP — jika 3 detik, 40% pengunjung langsung pergi\n2. HTTPS + SSL valid dan aktif\n3. Favicon profesional dengan identitas one-man studio",
+      "### 4-7: SEO & Struktur\n4. Title + meta description unik untuk setiap halaman\n5. OG image dinamis 1200x630 agar share WhatsApp terlihat menarik — sekarang otomatis di ciloktech.web.id/api/og\n6. Sitemap.xml + robots.txt yang valid\n7. JSON-LD Organization + FAQ + Breadcrumb untuk rich snippet",
+      "### 8-12: Konversi\n8. Headline yang jelas dalam 3 detik: siapa Anda, untuk siapa, dan hasil apa yang didapat\n9. Social proof di atas lipatan: 'Dipercaya 50+ bisnis'\n10. Sticky CTA + floating chat one-man studio\n11. Pricing transparan + rincian di /harga\n12. FAQ yang menjawab keberatan + kalkulator di /kalkulator",
+      "#### Checklist CilokTech One-Man Studio:\nSemua elemen di atas tersedia di ciloktech.web.id — 111kB, 98 Lighthouse, dark mode, blog + harga transparan + kalkulator kerugian. Ingin hasil yang sama? Ambil paket Company Profile Rp 2,5jt di /harga.",
     ],
   },
   "jasa-pembuatan-website-profesional-umkm": {
     keywords: "jasa pembuatan website profesional, jasa website profesional, jasa bikin website terpercaya, jasa pembuatan website umkm terbaik, one-man studio",
     body: [
-      "Lo search 'jasa pembuatan website profesional' — keluar 100+ hasil. 90% reseller template WordPress, server shared, support slow, hasilnya lemot. CilokTech beda — one-man studio, custom dari nol.",
-      "### Kenapa harus yang profesional?\n1. Speed <1s = conversion. Template 4.5s bikin 40% visitor kabur. Hitung rugi lo di /kalkulator.\n2. SEO ready — OG dynamic, Schema, sitemap, robots, canonical. Template gak ada.\n3. Source code milik lo 100% repo private GitHub.\n4. Support <2 jam via Telegram @ciloktech — langsung builder, one-man ops.",
-      "### Spek (sama kayak ciloktech.web.id)\n- Next.js 15 + Tailwind v4 — 111kB First Load, 98 Lighthouse\n- SEO lengkap: OG dynamic 1200x630 /api/og, sitemap.xml, robots.txt, JSON-LD FAQ + Breadcrumb, canonical\n- Dark/light toggle pro + anti-FOUC\n- <1s LCP + kalkulator rugi /kalkulator",
-      "### Harga\n- Landing Page: Rp 900rb — 1 produk, 2-3 hari live\n- Company Profile Pro: Rp 2.5jt TERLARIS — value Rp 7jt agency\n- Web App Custom: mulai Rp 5jt",
-      "#### Cara order — One-man studio\nChat Telegram @ciloktech 'Mau website profesional' → brief 15 menit → DP 50% → staging link tiap hari → live 3-7 hari. Konsultasi gratis.",
+      "Jika Anda mencari 'jasa pembuatan website profesional' — akan muncul 100+ hasil. 90% di antaranya adalah reseller template WordPress dengan server shared, support lambat, dan hasil akhir yang lambat. CilokTech berbeda — one-man studio yang membangun dari nol secara custom.",
+      "### Mengapa harus yang profesional?\n1. Kecepatan <1 detik = konversi meningkat. Template dengan 4,5 detik membuat 40% pengunjung pergi. Hitung kerugian Anda di /kalkulator.\n2. SEO-ready — OG dinamis, Schema Markup, sitemap, robots.txt, canonical. Template tidak memiliki ini.\n3. Source code 100% milik Anda dalam repository private GitHub.\n4. Support <2 jam via Telegram @ciloktech — langsung dengan builder, one-man operations.",
+      "### Spesifikasi (sama seperti ciloktech.web.id)\n- Next.js 15 + Tailwind v4 — 111kB First Load, 98 Lighthouse\n- SEO lengkap: OG dinamis 1200x630 via /api/og, sitemap.xml, robots.txt, JSON-LD FAQ + Breadcrumb, canonical\n- Toggle dark/light profesional + anti-FOUC\n- <1 detik LCP + kalkulator kerugian di /kalkulator",
+      "### Paket Harga\n- Landing Page: Rp 900rb — 1 produk, live dalam 2–3 hari\n- Company Profile Pro: Rp 2,5jt — TERLARIS — value setara Rp 7jt di agency\n- Web App Custom: mulai dari Rp 5jt",
+      "#### Cara pemesanan — One-Man Studio\nChat Telegram @ciloktech dengan pesan 'Mau website profesional' → brief 15 menit → DP 50% → link staging setiap hari → live dalam 3–7 hari. Konsultasi gratis tanpa komitmen.",
     ],
   },
   "jasa-website-toko-online-umkm-2026": {
     keywords: "jasa website toko online umkm, jasa bikin toko online, toko online qris, website toko online murah profesional",
     body: [
-      "Masih jualan via DM IG? Capek balas 'Harga kak?', padahal customer maunya langsung checkout? Waktunya upgrade ke toko online.",
-      "### Masalah jualan via DM\n- 60% calon customer males nanya harga — skip ke kompetitor yang ada harga + tombol beli\n- Stok manual — oversell\n- Rekap manual Excel — 2 jam tiap malam",
-      "### Solusi: Toko Online UMKM (mulai Rp 2.5jt One-man studio)\n- Katalog + varian + stok real-time\n- Keranjang + checkout otomatis\n- Payment QRIS / Transfer / COD\n- Ongkir otomatis + resi auto\n- Dashboard admin order + stok",
-      "### Marketplace vs Toko Sendiri\nMarketplace: potongan 5-10%, perang harga, data milik marketplace.\nToko Sendiri: tanpa potongan, data milik lo, branding kuat. Hitung rugi marketplace di /kalkulator.",
-      "### Tech\nNext.js 15 + Prisma + PostgreSQL + Midtrans QRIS. <1s LCP, PWA, 111kB hemat kuota. OG dynamic share WA cakep.",
-      "#### Mulai dari mana?\n<20 SKU → Company Profile 2.5jt + Katalog + WA Checkout. >50 SKU + payment auto → Web App Custom 5jt+.",
+      "Masih berjualan melalui DM Instagram? Lelah membalas 'Berapa harganya kak?' padahal pelanggan ingin langsung checkout? Saatnya upgrade ke toko online profesional.",
+      "### Masalah berjualan via DM\n- 60% calon pelanggan enggan bertanya harga — langsung beralih ke kompetitor yang menampilkan harga + tombol beli jelas\n- Stok manual — risiko overselling\n- Rekapitulasi manual via Excel — menghabiskan 2 jam setiap malam",
+      "### Solusi: Toko Online UMKM (mulai Rp 2,5jt One-Man Studio)\n- Katalog produk + varian + stok real-time\n- Keranjang belanja + checkout otomatis\n- Pembayaran QRIS / Transfer / COD\n- Ongkir otomatis + pembuatan resi otomatis\n- Dashboard admin untuk order + manajemen stok",
+      "### Marketplace vs Toko Mandiri\nMarketplace: potongan 5-10%, perang harga tidak sehat, data pelanggan milik marketplace.\nToko Mandiri: tanpa potongan, data 100% milik Anda, branding lebih kuat. Hitung kerugian marketplace di /kalkulator.",
+      "### Teknologi yang digunakan\nNext.js 15 + Prisma + PostgreSQL + Midtrans QRIS. <1 detik LCP, PWA ready, 111kB hemat kuota. OG dinamis untuk share WhatsApp yang menarik.",
+      "#### Mulai dari mana?\n<20 SKU → Company Profile Rp 2,5jt + Katalog + Checkout via WhatsApp. >50 SKU + pembayaran otomatis → Web App Custom mulai Rp 5jt+.",
     ],
   },
   "jasa-website-company-profile-cv-pt-startup": {
     keywords: "jasa website company profile, jasa website cv pt, jasa website startup, website company profile profesional, one-man studio",
     body: [
-      "CV/PT atau startup punya IG bagus, tapi website gak ada atau ala kadarnya? Di B2B, website = first impression. Jelek = dianggap abal.",
-      "### Kenapa CV/PT butuh company profile pro?\n1. Client B2B cek website sebelum PO — lemot / 404 = trust 0\n2. Investor cek SEO + speed + legalitas footer\n3. Tender/vendor list syarat 'wajib website company profile'",
-      "### Standar company profile 2026 (ada di ciloktech.web.id)\n- Homepage high-conversion: Hero + Stats + Layanan + Portofolio + Harga + Testi + FAQ + Kontak\n- Halaman /harga breakdown + /blog keyword + /kalkulator rugi\n- Legalitas: NIB, alamat, email @perusahaan, Maps\n- Tech: Next.js 15 111kB, 98 Lighthouse, OG dynamic, Schema FAQ+Organization, sitemap, robots, FAQ rich snippet\n- <1s LCP — one-man studio langsung builder",
-      "### Harga\nCompany Profile Pro Rp 2.5jt TERLARIS — kayak ciloktech.web.id: 5 hal + blog + CMS + kalkulator. Value Rp 7jt agency — jual 2.5jt karena one-man studio. Breakdown di /harga + hitung ROI di /kalkulator.",
-      "### Proses PT/CV anti drama — One-man ops\n01 Brief 15 menit Telegram\n02 DP 50% desain approve staging\n03 Dev 3-7 hari live staging\n04 Go-live deploy .co.id/.web.id + training\n05 Maintenance 3 bulan",
-      "#### Mau company profile yang bikin client bilang 'serius'?\nChat @ciloktech 'Company Profile [Nama PT/CV] - [Bidang]'. Balas <2 jam + roadmap. One-man studio — langsung ke builder.",
+      "CV/PT atau startup Anda sudah memiliki Instagram yang bagus, tetapi website belum ada atau asal jadi? Di dunia B2B, website adalah first impression. Tampilan yang kurang profesional akan dianggap tidak meyakinkan.",
+      "### Mengapa CV/PT membutuhkan company profile profesional?\n1. Klien B2B selalu mengecek website sebelum melakukan PO — lambat atau error 404 = kepercayaan nol\n2. Investor mengecek SEO + kecepatan + legalitas di footer\n3. Syarat tender atau vendor list: 'wajib memiliki website company profile'",
+      "### Standar company profile 2026 (tersedia di ciloktech.web.id)\n- Homepage high-conversion: Hero + Statistik + Layanan + Portofolio + Harga + Testimoni + FAQ + Kontak\n- Halaman /harga dengan breakdown + /blog untuk SEO + /kalkulator untuk edukasi\n- Legalitas: NIB, alamat kantor, email @perusahaan, dan Google Maps\n- Teknologi: Next.js 15 111kB, 98 Lighthouse, OG dinamis, Schema FAQ+Organization, sitemap.xml, robots.txt, FAQ rich snippet\n- <1 detik LCP — dikerjakan one-man studio langsung oleh builder",
+      "### Paket Harga\nCompany Profile Pro Rp 2,5jt — TERLARIS — seperti ciloktech.web.id: 5 halaman + blog + CMS + kalkulator. Value setara Rp 7jt di agency — saya jual Rp 2,5jt karena one-man studio. Rincian di /harga dan hitung ROI di /kalkulator.",
+      "### Proses pengerjaan PT/CV tanpa drama — One-man ops\n01 Brief 15 menit via Telegram\n02 DP 50%, desain disetujui via staging\n03 Development 3–7 hari dengan staging live\n04 Go-live deployment .co.id/.web.id + training\n05 Maintenance gratis 3 bulan",
+      "#### Ingin company profile yang membuat klien berkata 'perusahaan ini serius'?\nChat @ciloktech dengan format 'Company Profile [Nama PT/CV] - [Bidang]'. Respon <2 jam disertai roadmap. One-man studio — langsung dengan builder.",
     ],
   },
   "jasa-website-murah-jangan-asal-murah": {
     keywords: "jasa website murah, website murah 500rb jebakan, harga website murah vs profesional, kalkulator rugi website",
     body: [
-      "Lo liat iklan 'Jasa Website Murah Rp 500rb'? 90% client yang dateng ke gue itu korban website murah yang akhirnya bayar 2x.",
-      "### Bongkar paket Rp 500rb isinya apa\n- Domain gratisan + hosting 100MB — lemot, suspend\n- Template WP bajakan — backdoor siap hack\n- Gak SSL — Chrome 'Not Secure'\n- Gak sitemap/robots/OG — Google gak index\n- Source dikunci — pindah hosting dimintain tebusan",
-      "### Cost sebenarnya — hitung di /kalkulator\nBulan 2 hosting minta upgrade 300rb/bln, bulan 3 kena malware 500rb, SEO nol rugi peluang 2-5jt/bln, akhirnya bikin ulang 2.5jt. Total rugi 3.5jt + waktu 2 bulan. Cek rugi lo di /kalkulator biar sreg.",
-      "### Kenapa CilokTech One-Man Studio Rp 2.5jt justru lebih murah?\nUI 1.2jt + Frontend Next.js 1.5jt + SEO OG dynamic + Copy + Hosting + Deploy = value 5jt+, jual 2.5jt all-in. Sekali bayar milik selamanya, source 100% milik lo, hosting Vercel + domain 1th include, 3 bulan maintenance.",
-      "### Checklist biar gak ketipu murah\n1. Tech apa? WP+Elementor doang tanpa SEO → skip\n2. Sitemap + robots ada? Gak ada → SEO nol\n3. Source code milik siapa? Sewa → jangan\n4. Speed berapa? Lighthouse <80 → lemot — cek di /kalkulator\n5. OG share WA cakep gak? Cek /api/og",
-      "#### Rules gue:\nBudget mepet <1jt → Landing Page Rp 900rb (bukan company profile 500rb). Lebih worth 1 produk focus, 2-3 hari live.",
+      "Melihat iklan 'Jasa Website Murah Rp 500rb'? 90% klien yang datang kepada saya adalah korban website murah yang akhirnya harus membayar dua kali lipat.",
+      "### Bongkar paket Rp 500rb isinya apa?\n- Domain gratisan + hosting 100MB — lambat dan sering suspend\n- Template WordPress bajakan — sudah termasuk backdoor siap diretas\n- Tanpa SSL — Chrome menampilkan 'Not Secure'\n- Tanpa sitemap/robots/OG — Google tidak mengindeks\n- Source code terkunci — jika ingin pindah hosting diminta biaya tambahan",
+      "### Biaya sebenarnya — silakan hitung di /kalkulator\nBulan ke-2 hosting meminta upgrade Rp 300rb/bulan, bulan ke-3 terkena malware Rp 500rb, SEO nol dengan kerugian peluang Rp 2–5jt/bulan, akhirnya harus membuat ulang Rp 2,5jt. Total kerugian Rp 3,5jt + waktu 2 bulan terbuang. Cek kerugian Anda di /kalkulator agar lebih yakin.",
+      "### Mengapa CilokTech One-Man Studio Rp 2,5jt justru lebih hemat?\nDesain UI Rp 1,2jt + Frontend Next.js Rp 1,5jt + SEO OG dinamis + Copywriting + Hosting + Deployment = value Rp 5jt+, saya jual Rp 2,5jt all-in. Sekali bayar, milik selamanya, source code 100% milik Anda, hosting via Vercel + domain 1 tahun sudah termasuk, dan gratis maintenance 3 bulan.",
+      "### Checklist agar tidak terjebak website murah\n1. Teknologi apa yang digunakan? Jika hanya WP+Elementor tanpa SEO → hindari\n2. Apakah ada sitemap + robots.txt? Jika tidak ada → SEO nol\n3. Source code milik siapa? Jika sistem sewa → jangan diambil\n4. Kecepatan berapa? Jika Lighthouse <80 → lambat — cek di /kalkulator\n5. Apakah OG untuk share WhatsApp terlihat profesional? Cek di /api/og",
+      "#### Prinsip saya:\nBudget terbatas di bawah Rp 1jt → ambil Landing Page Rp 900rb (bukan company profile Rp 500rb). Lebih worth it untuk 1 produk yang fokus, live dalam 2–3 hari.",
     ],
   },
   "jasa-landing-page-high-conversion-umkm": {
     keywords: "jasa landing page high conversion, jasa landing page umkm, landing page cepat closing, jasa landing page profesional",
     body: [
-      "Landing page rame animasi tapi gak ada yang klik WA = gagal. Landing polos tapi sticky CTA + bukti sosial = closing tiap hari.",
-      "### Formula landing page high conversion (dipake di ciloktech.web.id)\n1. Hero: headline hasil, bukan fitur\n2. Stats bar: '<1s load • 98 Lighthouse • 50+ client'\n3. Problem → Solution → Proof\n4. Pricing transparan: Rp 900rb mulai, jangan 'Hubungi kami'\n5. Testimoni verified + Maps embed\n6. FAQ objection + schema rich snippet\n7. Sticky CTA + Floating WA one-man",
-      "### Kenapa Rp 900rb bisa closing?\nBukan template — sistem: Next.js 15 111kB, <1s LCP, copywriting to-the-point, SEO + OG dynamic /api/og, Kalkulator /kalkulator. Go-live 2-3 hari.",
-      "### Contoh yang udah live\n- Laundry Express — 'laundry kiloan' page 1, order WA +40%\n- Bengkel — before/after + rating, booking +25%\n- Batik Tulis — katalog + WA checkout, closing +31%",
-      "### Landing 900rb vs Company Profile 2.5jt\nLanding = 1 goal (chat WA). Cocok 1 produk, butuh leads minggu ini.\nCompany profile = trust + SEO + portofolio. Lihat /harga + hitung ROI /kalkulator.",
-      "#### Mau landing page yang closing?\nChat @ciloktech 'Landing Page [bisnis lo]'. Gue kasih struktur headline + CTA terbukti — konsultasi gratis 15 menit, one-man studio.",
+      "Landing page yang penuh animasi tetapi tidak ada yang mengklik WhatsApp dianggap gagal. Landing page yang sederhana tetapi memiliki sticky CTA + bukti sosial = closing setiap hari.",
+      "### Formula landing page high conversion (digunakan di ciloktech.web.id)\n1. Hero: headline yang menampilkan hasil, bukan fitur\n2. Stats bar: '<1s load • 98 Lighthouse • 50+ klien'\n3. Problem → Solution → Proof (masalah, solusi, bukti)\n4. Pricing yang transparan: mulai Rp 900rb, bukan 'Hubungi kami'\n5. Testimoni yang terverifikasi + Google Maps embed\n6. FAQ yang menjawab keberatan + schema rich snippet\n7. Sticky CTA + Floating WhatsApp one-man studio",
+      "### Mengapa Rp 900rb bisa menghasilkan closing?\nBukan sekadar template — ini adalah sistem: Next.js 15 111kB, <1 detik LCP, copywriting to-the-point, SEO + OG dinamis via /api/og, dan kalkulator di /kalkulator. Go-live dalam 2–3 hari.",
+      "### Contoh yang sudah live\n- Laundry Express — keyword 'laundry kiloan' halaman 1 Google, order WhatsApp +40%\n- Bengkel Mobil — menampilkan before/after + rating, pemesanan +25%\n- Batik Tulis — katalog + checkout via WhatsApp, closing +31%",
+      "### Landing Page Rp 900rb vs Company Profile Rp 2,5jt\nLanding Page = 1 tujuan (chat WhatsApp). Cocok untuk 1 produk yang butuh leads minggu ini.\nCompany Profile = kepercayaan + SEO + portofolio lengkap. Lihat perbandingan di /harga dan hitung ROI di /kalkulator.",
+      "#### Ingin landing page yang benar-benar closing?\nChat @ciloktech dengan pesan 'Landing Page [jenis bisnis Anda]'. Saya berikan struktur headline + CTA yang telah terbukti — konsultasi gratis 15 menit, one-man studio.",
     ],
   },
   "wordpress-vs-nextjs-untuk-umkm-2026": {
     keywords: "wordpress vs nextjs umkm, perbandingan wordpress nextjs, wordpress lemot vs nextjs cepat, ganti wordpress ke nextjs, kalkulator rugi wordpress",
     body: [
-      "2026 masih debat WordPress vs Next.js? Gue kasih data lapangan 50+ project UMKM.",
-      "### Speed benchmark (HP kentang 4G)\nWP Elementor + 15 plugin: LCP 4.2s, TTI 6.8s, 3.2MB, Lighthouse 62\nNext.js CilokTech One-Man Studio: LCP 0.8s, TTI 1.1s, 111kB, Lighthouse 98\nWP 40% kabur sebelum load, Next.js conversion +22%. Hitung rugi WP lo di /kalkulator.",
-      "### Security\nWP: PHP+MySQL+plugin = 22 CVE/tahun. 1 plugin nulled = backdoor.\nNext.js static: gak ada DB frontend, gak ada PHP. Hack hampir mustahil.",
-      "### SEO\nWP: perlu Yoast + Rank Math + Cache + Smush = 4 plugin buat kejar SEO yang Next.js include default + OG dynamic /api/og + FAQ schema.\nNext.js: OG+Schema FAQ+Breadcrumb+Sitemap+Robots+Canonical+AVIF auto.",
-      "### Biaya 1 tahun — cek /kalkulator\nWP murah 500rb: 500rb+600rb hosting+500rb malware+2.5jt bikin ulang = 4.1jt rugi\nNext.js 2.5jt: all-in include Vercel+domain. Tahun 2 cuma hosting $0-20/bln. ROI balik 1 bulan — hitung di /kalkulator.",
-      "### Kapan WP masih oke?\nIbu kos butuh edit tiap hari sendiri gak peduli speed 3 detik. UMKM target closing + SEO page 1 → Next.js One-Man Studio.",
-      "#### Migrasi WP ke Next.js?\nGue migrate konten WP ke Next.js tanpa hilang SEO (301, keep URL). Gratis audit speed — screenshot Lighthouse kirim @ciloktech, gue kasih report <2 jam + hitung rugi di /kalkulator.",
+      "Tahun 2026 masih memperdebatkan WordPress vs Next.js? Berikut data lapangan berdasarkan 50+ project UMKM yang saya tangani.",
+      "### Benchmark kecepatan (HP entry-level dengan koneksi 4G)\nWordPress Elementor + 15 plugin: LCP 4,2 detik, TTI 6,8 detik, ukuran 3,2MB, skor Lighthouse 62\nNext.js CilokTech One-Man Studio: LCP 0,8 detik, TTI 1,1 detik, ukuran 111kB, skor Lighthouse 98\nWordPress: 40% pengunjung pergi sebelum halaman dimuat. Next.js: konversi +22%. Hitung kerugian WP Anda di /kalkulator.",
+      "### Keamanan\nWordPress: PHP+MySQL+plugin = 22 CVE per tahun. 1 plugin bajakan = pintu masuk backdoor.\nNext.js statis: tidak ada database di frontend, tidak ada PHP. Hampir tidak mungkin diretas.",
+      "### SEO\nWordPress: memerlukan Yoast + Rank Math + Cache + Smush = 4 plugin untuk mengejar SEO yang di Next.js sudah termasuk secara default + OG dinamis via /api/og + FAQ schema.\nNext.js: OG+Schema FAQ+Breadcrumb+Sitemap+Robots+Canonical+AVIF otomatis tersedia.",
+      "### Biaya dalam 1 tahun — silakan cek di /kalkulator\nWP murah Rp 500rb: Rp 500rb + Rp 600rb hosting + Rp 500rb perbaikan malware + Rp 2,5jt pembuatan ulang = rugi Rp 4,1jt\nNext.js Rp 2,5jt: all-in sudah termasuk Vercel+domain. Tahun kedua hanya hosting $0–20/bulan. ROI kembali dalam 1 bulan — hitung di /kalkulator.",
+      "### Kapan WordPress masih relevan?\nJika Anda butuh edit konten setiap hari secara mandiri, tidak terlalu peduli dengan kecepatan 3 detik. Namun jika target Anda adalah closing + SEO halaman 1 → Next.js One-Man Studio adalah pilihan tepat.",
+      "#### Migrasi dari WordPress ke Next.js?\nSaya melakukan migrasi konten WordPress ke Next.js tanpa kehilangan SEO (301 redirect, URL tetap sama). Gratis audit kecepatan — kirim screenshot Lighthouse ke @ciloktech, saya berikan laporan <2 jam disertai hitungan kerugian di /kalkulator.",
     ],
   },
 };
@@ -163,7 +163,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
-
 export default async function BlogDetail({ params }: Props) {
   const { slug } = await params;
   const post = getPost(slug);
@@ -207,8 +206,8 @@ export default async function BlogDetail({ params }: Props) {
                   <div key={i} className="mt-10 p-5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-2xl">
                     <p className="font-bold text-[14px] text-amber-900 dark:text-amber-200 leading-relaxed whitespace-pre-wrap">{para.replace("#### ", "")}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Link href="/kalkulator" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full hover:bg-black dark:hover:bg-cyan-300 transition">🧮 Hitung rugi di kalkulator</Link>
-                      <Link href="/harga" className="text-[12px] font-bold border border-amber-300 dark:border-amber-800 px-3 py-1.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">Lihat breakdown harga</Link>
+                      <Link href="/kalkulator" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full hover:bg-black dark:hover:bg-cyan-300 transition">🧮 Hitung kerugian di kalkulator</Link>
+                      <Link href="/harga" className="text-[12px] font-bold border border-amber-300 dark:border-amber-800 px-3 py-1.5 rounded-full hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">Lihat rincian harga</Link>
                     </div>
                   </div>
                 );

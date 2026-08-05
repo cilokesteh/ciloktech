@@ -12,7 +12,7 @@ export const posts: Post[] = [
   {
     slug: "alasan-website-umkm-sepi-pengunjung",
     title: "5 Alasan Website UMKM Sepi Pengunjung Padahal IG Ramai",
-    description: "Punya website tapi gak ada yang dateng? Ini 5 penyebab paling sering yang gue temuin di UMKM — dan fix-nya yang langsung ngasilin customer.",
+    description: "Website sudah jadi tapi sepi pengunjung? Ini 5 penyebab paling sering saya temui di UMKM — beserta solusi praktis yang terbukti mendatangkan pelanggan.",
     date: "2026-08-01",
     readingTime: "6 menit",
     tags: ["UMKM", "SEO", "Conversion"],
@@ -21,7 +21,7 @@ export const posts: Post[] = [
   {
     slug: "landing-page-vs-company-profile",
     title: "Landing Page vs Company Profile: Mana yang Bikin Cuan?",
-    description: "Jangan salah pilih. Landing page Rp 900rb bukan company profile 2.5jt. Bedanya di tujuan, struktur, dan cara ngasilin cuan. Gue breakdown to-the-point.",
+    description: "Jangan salah pilih. Landing page Rp 900 ribu berbeda dengan company profile Rp 2,5 juta. Perbedaannya ada pada tujuan, struktur, dan cara menghasilkan konversi. Saya bedah secara to-the-point.",
     date: "2026-08-02",
     readingTime: "5 menit",
     tags: ["Landing Page", "Company Profile", "Strategi"],
@@ -30,7 +30,7 @@ export const posts: Post[] = [
   {
     slug: "kenapa-wordpress-lemot-solusi-nextjs",
     title: "Kenapa Website WordPress Lemot & Rawan Hack (dan Solusi Next.js 15)",
-    description: "WordPress Elementor rata-rata 4.5 detik LCP dan sering kena malware. Next.js 15 bisa <1s, 98 Lighthouse, aman by default. Ini perbandingan jujur.",
+    description: "Rata-rata website WordPress + Elementor memiliki LCP 4,5 detik dan rentan malware. Next.js 15 mampu di bawah 1 detik, skor Lighthouse 98, dan aman secara default. Berikut perbandingan jujur berdasarkan data.",
     date: "2026-08-03",
     readingTime: "7 menit",
     tags: ["Next.js", "WordPress", "Speed"],
@@ -38,7 +38,7 @@ export const posts: Post[] = [
   {
     slug: "biaya-bikin-website-2026-breakdown-jujur",
     title: "Biaya Bikin Website Profesional 2026: Breakdown Jujur Rp 900rb – 15jt",
-    description: "Template 800rb vs CilokTech 2.5jt vs Agency 10jt+ — bedanya apa? Gue pecah per-item: desain, code, SEO, copywriting, hosting. Biar gak ketipu murah.",
+    description: "Template Rp 800 ribu vs CilokTech Rp 2,5 juta vs agensi Rp 10 juta ke atas — apa bedanya? Saya rincikan per item: desain, coding, SEO, copywriting, dan hosting agar Anda tidak terkecoh harga murah.",
     date: "2026-08-03",
     readingTime: "8 menit",
     tags: ["Harga", "Transparan", "Comparison"],
@@ -47,7 +47,7 @@ export const posts: Post[] = [
   {
     slug: "checklist-website-ngasilin-customer",
     title: "Checklist Website yang Ngasilin Customer, Bukan Cuma Bagus",
-    description: "Website bagus doang gak cukup. Harus ada 12 elemen conversion ini: sticky CTA, social proof, <1s LCP, Schema, dan form yang gak bikin kabur.",
+    description: "Tampilan bagus saja tidak cukup. Website Anda memerlukan 12 elemen konversi ini: sticky CTA, social proof, LCP di bawah 1 detik, Schema Markup, dan formulir yang ramah pengguna.",
     date: "2026-08-04",
     readingTime: "6 menit",
     tags: ["Checklist", "Conversion", "CRO"],
@@ -55,7 +55,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-pembuatan-website-profesional-umkm",
     title: "Jasa Pembuatan Website Profesional — UMKM Sampai PT, 3 Hari Live",
-    description: "Cari jasa website yang cepat, SEO ready, dan gak template? CilokTech — Next.js 15, <1s LCP, source milik lo. Konsultasi langsung dev, bukan sales.",
+    description: "Mencari jasa pembuatan website yang cepat, SEO-ready, dan bukan template? CilokTech menggunakan Next.js 15, LCP di bawah 1 detik, dan source code 100% milik Anda. Konsultasi langsung dengan developer, bukan sales.",
     date: "2026-08-05",
     readingTime: "7 menit",
     tags: ["Jasa Website Profesional", "UMKM", "Terpercaya"],
@@ -64,7 +64,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-website-toko-online-umkm-2026",
     title: "Jasa Website Toko Online UMKM 2026: Dari Katalog IG ke Checkout Otomatis",
-    description: "Masih jualan via DM IG? Ini cara upgrade ke toko online auto checkout, stok real-time, payment QRIS, dan resi otomatis — mulai Rp 2.5jt.",
+    description: "Masih berjualan lewat DM Instagram? Saatnya upgrade ke toko online dengan checkout otomatis, stok real-time, pembayaran QRIS, dan cetak resi otomatis — mulai Rp 2,5 juta.",
     date: "2026-08-05",
     readingTime: "8 menit",
     tags: ["Toko Online", "UMKM", "E-commerce"],
@@ -73,7 +73,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-website-company-profile-cv-pt-startup",
     title: "Jasa Website Company Profile CV/PT & Startup: Bikin Investor & Client Percaya",
-    description: "Company profile asal jadi bikin CV/PT keliatan abal. Ini standar 2026 biar dipercaya client + investor: SEO, portofolio, legalitas, dan speed.",
+    description: "Company profile asal jadi membuat CV/PT terlihat tidak meyakinkan. Ini standar website company profile 2026 agar dipercaya klien dan investor: SEO, portofolio, legalitas, dan kecepatan.",
     date: "2026-08-05",
     readingTime: "7 menit",
     tags: ["Company Profile", "CV PT", "B2B"],
@@ -81,7 +81,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-website-murah-jangan-asal-murah",
     title: "Jasa Website Murah Rp 500rb: Murah di Awal, Boncos di Akhir — Ini Buktinya",
-    description: "Tergiur website murah 500rb? Hosting abal, domain numpang, SEO nol, kena hack. Gue bongkar cost sebenarnya dan kenapa 2.5jt lebih hemat jangka panjang.",
+    description: "Tergiur website murah Rp 500 ribu? Umumnya menggunakan hosting tidak memadai, domain menumpang, SEO tidak dioptimalkan, dan rawan diretas. Saya bongkar biaya sebenarnya dan alasan mengapa Rp 2,5 juta justru lebih hemat untuk jangka panjang.",
     date: "2026-08-06",
     readingTime: "7 menit",
     tags: ["Website Murah", "Jebakan", "Edukasi"],
@@ -90,7 +90,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-landing-page-high-conversion-umkm",
     title: "Jasa Landing Page High Conversion — Fokus Closing, Bukan Pajangan",
-    description: "Landing page yang bagus bukan yang rame animasi, tapi yang bikin pengunjung klik WA. Template CilokTech: <1s, sticky CTA, bukti sosial, harga jelas.",
+    description: "Landing page yang efektif bukan yang penuh animasi, melainkan yang mendorong pengunjung menghubungi via WhatsApp. Template CilokTech dirancang dengan LCP di bawah 1 detik, sticky CTA, bukti sosial, dan harga yang transparan.",
     date: "2026-08-06",
     readingTime: "6 menit",
     tags: ["Landing Page", "High Conversion", "UMKM"],
@@ -98,7 +98,7 @@ export const posts: Post[] = [
   {
     slug: "wordpress-vs-nextjs-untuk-umkm-2026",
     title: "WordPress vs Next.js untuk UMKM 2026: Jujur, Mana yang Lebih Cuan?",
-    description: "WordPress gampang edit, Next.js ngebut & aman. Mana yang beneran bikin UMKM untung? Gue benchmark LCP, security, biaya, dan SEO 2026.",
+    description: "WordPress mudah diedit, Next.js unggul dalam kecepatan dan keamanan. Mana yang benar-benar menguntungkan untuk UMKM? Saya bandingkan berdasarkan LCP, keamanan, biaya, dan SEO terbaru 2026.",
     date: "2026-08-06",
     readingTime: "9 menit",
     tags: ["WordPress", "Next.js", "UMKM"],
