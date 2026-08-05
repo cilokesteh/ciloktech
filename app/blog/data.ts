@@ -46,7 +46,7 @@ export const posts: Post[] = [
   },
   {
     slug: "checklist-website-ngasilin-customer",
-    title: "Checklist Website yang Ngasilin Customer, Bukan Cuma Bagus",
+    title: "Checklist Website yang Menghasilkan Pelanggan, Bukan Hanya Sekadar Bagus",
     description: "Tampilan bagus saja tidak cukup. Website Anda memerlukan 12 elemen konversi ini: sticky CTA, social proof, LCP di bawah 1 detik, Schema Markup, dan formulir yang ramah pengguna.",
     date: "2026-08-04",
     readingTime: "6 menit",

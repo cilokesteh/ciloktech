@@ -7,7 +7,7 @@ import HargaClient from "./HargaClient";
 export const metadata: Metadata = {
   title: "Harga Jasa Website — Penjelasan Lengkap & Transparan | One-Man Studio",
   description:
-    "Kenapa One-Man Studio CilokTech bandrol Rp 2.5jt untuk kualitas Rp 7jt? Breakdown transparan, comparison freelance vs agency, + kalkulator rugi website lemot. Tanpa hidden fee.",
+    "Mengapa One-Man Studio CilokTech membanderol Rp 2,5jt untuk kualitas setara Rp 7jt? Breakdown transparan, perbandingan freelance vs agency, serta kalkulator kerugian website lambat. Tanpa biaya tersembunyi.",
   alternates: {
     canonical: "https://ciloktech.web.id/harga",
     languages: {
@@ -17,11 +17,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Harga Jasa Website — Breakdown Jujur One-Man Studio",
-    description: "Kualitas Rp 7jt, gue jual Rp 2.5jt. Kenapa bisa? One-man studio senior tanpa kantor & PM. Plus kalkulator rugi website.",
+    description: "Kualitas setara Rp 7jt, kami tawarkan Rp 2,5jt. Mengapa bisa? One-man studio senior tanpa kantor & PM. Dilengkapi kalkulator kerugian website.",
     url: "https://ciloktech.web.id/harga",
     images: [
       {
-        url: "https://ciloktech.web.id/api/og?title=Harga%20Jasa%20Website%20—%20Kualitas%20Rp%207jt%2C%20Gue%20Jual%20Rp%202.5jt&subtitle=HARGA%20JUJUR%20•%20ONE-MAN%20STUDIO&tag=ciloktech.web.id%2Fharga&type=harga",
+        url: "https://ciloktech.web.id/api/og?title=Harga%20Jasa%20Website%20—%20Kualitas%20Rp%207jt%2C%20Kami%20Tawarkan%20Rp%202.5jt&subtitle=HARGA%20JUJUR%20•%20ONE-MAN%20STUDIO&tag=ciloktech.web.id%2Fharga&type=harga",
         width: 1200,
         height: 630,
       },
