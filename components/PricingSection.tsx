@@ -3,9 +3,9 @@
 import { useI18n } from "@/lib/i18n/context";
 
 const PLAN_HREFS = [
-  "https://t.me/ciloktech?text=Halo%20CilokTech%2C%20mau%20Landing%20Page%20900rb",
-  "https://t.me/ciloktech?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%202.5jt",
-  "https://t.me/ciloktech?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Web%20App%20Custom",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Landing%20Page%20900rb",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%202.5jt",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Web%20App%20Custom",
 ];
 
 export default function PricingSection() {
@@ -96,7 +96,7 @@ export default function PricingSection() {
         </div>
 
         <div className="mt-10 text-center text-[12.5px] text-gray-500 dark:text-gray-400">
-          {t.pricing.customPkg} <a href="https://t.me/ciloktech" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
+          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
         </div>
       </div>
     </section>

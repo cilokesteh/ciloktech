@@ -32,7 +32,7 @@ export default function HeroSection() {
           <p className="text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]">{t.hero.desc}</p>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <a href="https://t.me/ciloktech" className="px-7 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2">
+            <a href="https://t.me/ciloktechcsbot" className="px-7 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2">
               <span>🚀</span> {t.hero.ctaTelegram}
             </a>
             <a href="#portofolio" className="px-7 py-3.5 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-white/10 transition text-center text-sm">

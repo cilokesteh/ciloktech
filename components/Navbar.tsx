@@ -119,7 +119,7 @@ export default function Navbar() {
             <LanguageSwitcher compact />
             <ThemeToggle />
             <a
-              href="https://t.me/ciloktech"
+              href="https://t.me/ciloktechcsbot"
               className="px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black text-[13.5px] font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-1.5"
             >
               {t.common.konsultasiGratis} <span className="text-[11px] opacity-60">↗</span>
@@ -160,7 +160,7 @@ export default function Navbar() {
           <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.harga} <span className="text-gray-300">›</span></Link>
           <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-amber-600 dark:text-amber-400 border-b border-gray-50 dark:border-white/5">💰 {t.nav.breakdown} <span className="text-amber-400">→</span></Link>
           <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 {t.nav.blog} <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">11 Artikel</span><span className="text-emerald-500 text-[10px]">●</span></span></Link>
-          <a href="https://t.me/ciloktech" className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 {t.nav.chatStudio}</a>
+          <a href="https://t.me/ciloktechcsbot" className="block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 {t.nav.chatStudio}</a>
           <div className="flex justify-center pt-3">
             <LanguageSwitcher />
           </div>

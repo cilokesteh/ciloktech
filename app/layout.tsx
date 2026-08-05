@@ -122,7 +122,7 @@ export default function RootLayout({
               email: "hi@ciloktech.my.id",
               sameAs: [
                 "https://github.com/cilokesteh",
-                "https://t.me/ciloktech",
+                "https://t.me/ciloktechcsbot",
               ],
               address: {
                 "@type": "PostalAddress",

@@ -27,7 +27,7 @@ export default function CommandPalette() {
     { id: "breakdown", label: t.cmd.items.breakdown.label, desc: t.cmd.items.breakdown.desc, href: "/harga", icon: "📊", keywords: `breakdown ${t.nav.harga} jujur anti nawar one-man`, group: t.cmd.pages },
     { id: "kalkulator", label: t.cmd.items.kalkulator.label, desc: t.cmd.items.kalkulator.desc, href: "/kalkulator", icon: "🧮", keywords: `${t.nav.kalkulator} rugi kerugian website lambat seo cta calculator loss`, group: t.cmd.tools },
     { id: "blog", label: t.cmd.items.blog.label, desc: t.cmd.items.blog.desc, href: "/blog", icon: "📝", keywords: `blog artikel tips umkm seo nextjs`, group: t.cmd.pages },
-    { id: "cta-telegram", label: t.cmd.items.cta.label, desc: t.cmd.items.cta.desc, href: "https://t.me/ciloktech", icon: "💬", keywords: `chat telegram konsultasi`, group: t.cmd.actions },
+    { id: "cta-telegram", label: t.cmd.items.cta.label, desc: t.cmd.items.cta.desc, href: "https://t.me/ciloktechcsbot", icon: "💬", keywords: `chat telegram konsultasi`, group: t.cmd.actions },
   ], [t]);
 
   const allItems = useMemo<Item[]>(() => {

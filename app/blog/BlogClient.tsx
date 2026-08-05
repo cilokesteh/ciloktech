@@ -75,7 +75,7 @@ export default function BlogClient() {
           <h2 className="text-[24px] md:text-[32px] font-extrabold tracking-tight leading-[0.9]">{isId ? "Ingin website seperti yang dibahas di blog?" : "Want a website like the ones featured in the blog?"}</h2>
           <p className="text-[14px] opacity-70 mt-3 max-w-[500px] mx-auto">{isId ? "Jangan hanya membaca — saatnya eksekusi. Konsultasi 15 menit, saya berikan roadmap gratis." : "Ready to take the next step? Book a free 15-minute consultation and get a complimentary roadmap."}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://t.me/ciloktech?text=Halo%20CilokTech%2C%20saya%20baru%20membaca%20blog%20dan%20ingin%20konsultasi" className="px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-cyan-300 dark:hover:bg-cyan-300 hover:text-black transition">🚀 {isId ? "Mulai Konsultasi" : "Start Consultation"}</a>
+            <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20saya%20baru%20membaca%20blog%20dan%20ingin%20konsultasi" className="px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-cyan-300 dark:hover:bg-cyan-300 hover:text-black transition">🚀 {isId ? "Mulai Konsultasi" : "Start Consultation"}</a>
             <Link href="/harga" className="px-7 py-3.5 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13.5px] hover:bg-white/10 dark:hover:bg-black/10 transition">{isId ? "Lihat Paket Harga →" : "View Pricing Plans →"}</Link>
           </div>
         </div>
