@@ -36,6 +36,9 @@ export default function HargaClient() {
               <div className="text-[12px] opacity-60 mt-1">{hp.noCut}</div>
             </div>
           </div>
+          <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-500 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
+            <span className="text-cyan-600 dark:text-cyan-400 font-bold">✨</span> Premium Website tersedia — Rp 7,5jt (katalog + keranjang + dashboard admin). Lihat di <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
+          </div>
         </div>
       </section>
 

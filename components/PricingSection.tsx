@@ -5,6 +5,7 @@ import { useI18n } from "@/lib/i18n/context";
 const PLAN_HREFS = [
   "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Landing%20Page%20900rb",
   "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%202.5jt",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Premium%20Website%20Rp%207.5jt",
   "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Web%20App%20Custom",
 ];
 
@@ -29,7 +30,7 @@ export default function PricingSection() {
 
         <div className="grid md:grid-cols-3 gap-5 items-start max-w-5xl mx-auto">
           {t.pricing.plans.map((plan, idx) => {
-            const featured = idx === 1;
+            const featured = idx === 2;
             return (
               <div
                 key={idx}
