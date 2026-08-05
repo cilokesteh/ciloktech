@@ -169,7 +169,7 @@ export default function Kalkulator() {
               </div>
             </div>
             <div className="mt-5 flex flex-col gap-3">
-              <a href={`https://t.me/ciloktech?text=Halo%20Cilok%2C%20saya%20baru%20menghitung%20kalkulator%20rugi%20website%3A%20rugi%20${encodeURIComponent(fmt(result.rugiBulan))}%2Fbulan%20karena%20LCP%20${lcp}s%20%2B%20${noSEO ? \"no%20SEO\" : \"SEO%20ok\"}%20%2B%20${noCTA ? \"no%20CTA\" : \"CTA%20ok\"}.%20Saya%20ingin%20optimasi%20jadi%20%3C1s%20seperti%20ciloktech.web.id`} target=\"_blank\" className=\"w-full text-center px-6 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-[14px] hover:bg-cyan-300 hover:text-black transition whitespace-nowrap\">
+              <a href={`https://t.me/ciloktech?text=Halo%20CilokTech%2C%20saya%20barusan%20menghitung%20kerugian%20website%20${encodeURIComponent(fmt(result.rugiBulan))}%2Fbulan%20LCP%20${lcp}s%20Mau%20jadi%20%3C1s%20kayak%20ciloktech.web.id`} target="_blank" className="w-full text-center px-6 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-[14px] hover:bg-cyan-300 hover:text-black transition whitespace-nowrap">
                 {isId ? "Perbaiki kerugian ini → Chat One-Man Studio →" : "Fix this loss → Chat Studio →"}
               </a>
               <a href="/harga" className="w-full text-center px-6 py-3 bg-transparent border border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-[13px] hover:bg-white/10 dark:hover:bg-black/5 transition">{isId ? "Lihat rincian Rp 2,5jt vs Rp 7jt" : "See breakdown Rp 2.5jt vs Rp 7jt"}</a>
