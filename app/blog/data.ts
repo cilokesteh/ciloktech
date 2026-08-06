@@ -104,6 +104,15 @@ export const posts: Post[] = [
     tags: ["WordPress", "Next.js", "UMKM"],
     featured: true,
   },
+  {
+    slug: "template-vs-custom-website",
+    title: "Template Rp 390rb vs Custom Rp 2,5jt: Ini Bedanya (Jangan Tertipu Harga)",
+    description: "Banyak jasa menjual 'website siap pakai' Rp 390rb. Kedengarannya murah — tapi apakah itu website yang benar-benar milik Anda? Saya bongkar bedanya dengan custom build: desain, SEO, source code, dan biaya jangka panjang.",
+    date: "2026-08-06",
+    readingTime: "8 menit",
+    tags: ["Template", "Custom", "Edukasi"],
+    featured: true,
+  },
 ];
 
 export function getPost(slug: string) {

@@ -129,6 +129,19 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
       "#### Migrasi dari WordPress ke Next.js?\nSaya melakukan migrasi konten WordPress ke Next.js tanpa kehilangan SEO (301 redirect, URL tetap sama). Gratis audit kecepatan — kirim screenshot Lighthouse ke @ciloktech, saya berikan laporan <2 jam disertai hitungan kerugian di /kalkulator.",
     ],
   },
+  "template-vs-custom-website": {
+    keywords: "template website vs custom, website siap pakai murah, jasa website template 390rb, beda template dan custom website, website custom vs template",
+    body: [
+      "Lihat iklan 'Jasa Website Toko Online Rp 390rb'? Kedengarannya murah sekali. Tapi kalimat kuncinya: 'website siap pakai'. Ini bukan website yang dibuat khusus untuk bisnis Anda — ini template yang sama sudah dipakai ratusan bisnis lain.",
+      "### Apa itu template website?\nTemplate = desain jadi yang dijual berulang-ulang. Penjual tinggal ganti logo, ganti foto, ganti teks — lalu bilang 'website Anda sudah jadi'. Yang sama: layout, warna dasar, struktur halaman, bahkan kadang font dan animasi. Bisnis A dan bisnis B (yang beda bidang!) bisa punya website yang mirip banget.",
+      "### Perbedaan mendasar: Template vs Custom\n| Aspek | Template Rp 390rb | Custom CilokTech Rp 2,5jt |\n|---|---|---|\n| Desain | Pilih dari 20 template jadi | Figma custom sesuai brand Anda |\n| Source code | Milik penjual, Anda 'sewa' | 100% milik Anda, repo private |\n| Kecepatan | Tergantung template + hosting kecil | <1 detik LCP, Next.js 15 |\n| SEO | Template default, minim | OG + Schema + Sitemap + Robots lengkap |\n| Hosting | 150–250MB, bandwidth 15–25GB | Vercel Edge, uptime 99,9% |\n| Perpanjangan | Rp 311–381rb/tahun | Domain + hosting tahun pertama sudah termasuk |\n| Kebebasan ubah | Terbatas pada template | Bebas — code milik Anda |\n| Skala bisnis | Sulit — template gak bisa diubah banyak | Bisa berkembang jadi web app |",
+      "### Kenapa template bisa murah?\nSederhana: penjual membuat sekali, menjual seratus kali. Biaya per klien hampir nol — yang dikerjakan cuma isi konten. Itu kenapa harga bisa 390rb. Tapi yang Anda dapat juga 'seratusan orang lain punya' — desain yang sama dengan kompetitor Anda.",
+      "### Biaya tersembunyi template murah\n- Perpanjangan hosting + domain Rp 311–381rb/tahun (di luar harga awal)\n- Hosting 150MB — lambat, gampang down kalau traffic naik\n- 'Garansi anti-hacker' — tidak ada yang bisa menjamin 100%\n- Mau fitur baru? Bayar lagi — karena code bukan milik Anda\n- SEO minim — website tidak muncul di Google, pengunjung nol",
+      "### Kenapa custom Rp 2,5jt justru lebih hemat\nCustom = desain + code + SEO + hosting + training, semua untuk bisnis ANDA. Sekali bayar, milik selamanya. Source code 100% di tangan Anda — mau pindah hosting, tambah fitur, atau ganti developer, bebas. Ditambah maintenance gratis 3 bulan dan respon <2 jam langsung ke builder. Hitung perbandingan biaya 3 tahun di /kalkulator.",
+      "### Kapan template masih oke?\nJika Anda hanya butuh kartu nama online, tidak peduli desain sama dengan orang lain, dan tidak butuh tampil di Google. Tapi kalau website adalah bagian dari mesin penjualan — pilih yang benar-benar milik Anda.",
+      "#### Kesimpulan:\nHarga murah itu bukan jaminan hemat. Template 390rb terlihat murah di awal, tapi bayar perpanjangan, desain sama dengan kompetitor, dan SEO nol — itu biaya yang tidak terlihat. Custom Rp 2,5jt: sekali bayar, milik selamanya, tampil beda, dan muncul di Google. Cek perbandingan lengkap di /harga dan hitung ROI Anda di /kalkulator.",
+    ],
+  },
 };
 
 export async function generateStaticParams() {
