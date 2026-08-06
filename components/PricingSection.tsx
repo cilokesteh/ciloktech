@@ -13,7 +13,10 @@ export default function PricingSection() {
   const { t } = useI18n();
 
   return (
-    <section className="py-20 md:py-28 bg-[#f6f6f5] dark:bg-[#111111] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300" id="harga">
+    <section className="py-20 md:py-28 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/30 dark:from-cyan-500/[0.05] to-transparent blur-3xl rounded-full" />
+      </div>
       <div className="max-w-6xl mx-auto">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-5 shadow-sm">
@@ -34,15 +37,15 @@ export default function PricingSection() {
             return (
               <div
                 key={idx}
-                className={`relative rounded-[22px] p-7 flex flex-col transition-colors duration-300 ${
+                className={`relative rounded-[22px] p-7 flex flex-col transition-all duration-300 ${
                   featured
-                    ? "bg-gray-900 dark:bg-white text-white dark:text-black shadow-[0_24px_64px_rgba(0,0,0,0.22)] dark:shadow-[0_24px_64px_rgba(255,255,255,0.08)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white"
-                    : "bg-white dark:bg-[#171717] border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white"
+                    ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
+                    : "glass hover:border-gray-900 dark:hover:border-white"
                 }`}
               >
                 {featured && (
-                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-cyan-400 dark:bg-cyan-300 text-gray-900 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gray-900 animate-pulse" /> {t.pricing.populer}
+                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-indigo-500 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg shadow-cyan-500/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" /> {t.pricing.populer}
                   </div>
                 )}
 
@@ -52,7 +55,7 @@ export default function PricingSection() {
                   </h3>
                   <div className="mt-3 flex items-baseline gap-2">
                     <span className="text-[36px] font-extrabold tracking-[-0.03em] leading-none">
-                      {plan.price === "Custom" ? "Custom" : `Rp ${plan.price}`}
+                      {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </span>
                   </div>
                   <div className={`text-[12px] mt-1 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-500 dark:text-gray-400"}`}>{plan.unit}</div>
@@ -64,7 +67,7 @@ export default function PricingSection() {
                     <li key={i} className="flex gap-2.5 text-[13px] leading-snug">
                       <span
                         className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] shrink-0 ${
-                          featured ? "bg-white/10 dark:bg-black/10 text-white dark:text-black" : "bg-gray-900 dark:bg-white text-white dark:text-black"
+                          featured ? "bg-white/10 dark:bg-black/10 text-cyan-300 dark:text-cyan-600" : "bg-gray-900 dark:bg-white text-white dark:text-black"
                         }`}
                       >
                         ✓
@@ -78,7 +81,7 @@ export default function PricingSection() {
                   href={PLAN_HREFS[idx]}
                   className={`w-full py-3.5 rounded-full text-center text-[13.5px] font-bold transition active:scale-[0.98] ${
                     featured
-                      ? "bg-white dark:bg-black text-gray-900 dark:text-white hover:bg-cyan-300 dark:hover:bg-cyan-300 dark:hover:text-black"
+                      ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white hover:from-cyan-400 hover:to-indigo-400 shadow-lg shadow-cyan-500/25"
                       : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-black dark:hover:bg-cyan-300 dark:hover:text-black"
                   }`}
                 >

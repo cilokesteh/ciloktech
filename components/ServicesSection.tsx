@@ -11,7 +11,10 @@ const icons = [
 export default function ServicesSection() {
   const { t } = useI18n();
   return (
-    <section className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#111111] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300" id="layanan">
+    <section className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 right-[-10%] w-[420px] h-[420px] bg-indigo-100/40 dark:bg-indigo-500/[0.05] blur-3xl rounded-full" />
+      </div>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-xl">
@@ -26,8 +29,8 @@ export default function ServicesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {t.services.items.map((s, i) => (
-            <div key={i} className="group relative bg-white dark:bg-[#171717] rounded-[18px] border border-gray-200 dark:border-white/10 p-6 hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-center mb-5 group-hover:bg-cyan-600 dark:group-hover:bg-cyan-400 transition-colors">{icons[i]}</div>
+            <div key={i} className="group relative glass rounded-[18px] p-6 hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-300">
+              <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-cyan-500 group-hover:to-indigo-500 dark:group-hover:from-cyan-400 dark:group-hover:to-indigo-400 transition-colors">{icons[i]}</div>
               <h3 className="text-[16px] font-bold tracking-tight mb-2 text-gray-900 dark:text-white">{s.title}</h3>
               <p className="text-[13.5px] leading-[1.6] text-gray-600 dark:text-gray-400 mb-4">{s.desc}</p>
               <ul className="space-y-2">
@@ -37,7 +40,7 @@ export default function ServicesSection() {
                   </li>
                 ))}
               </ul>
-              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-300 dark:text-white/20 group-hover:text-gray-900 dark:group-hover:text-white transition">{String(i + 1).padStart(2, "0")}</div>
+              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-300 dark:text-white/20 group-hover:text-gradient group-hover:text-gray-900 dark:group-hover:text-white transition">{String(i + 1).padStart(2, "0")}</div>
             </div>
           ))}
         </div>

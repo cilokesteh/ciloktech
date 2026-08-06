@@ -18,7 +18,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050507] text-gray-400 py-12 px-6 border-t border-white/[0.06] transition-colors duration-300">
+    <footer className="bg-[#050507] text-gray-400 py-14 px-6 border-t border-white/[0.06] transition-colors duration-300 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-[-40%] left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-t from-cyan-500/[0.06] to-transparent blur-3xl rounded-full" />
+      </div>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="space-y-4 max-w-[340px]">

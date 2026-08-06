@@ -51,8 +51,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/85 dark:bg-[#0a0a0a]/85 backdrop-blur-xl border-b border-gray-200/60 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
-          : "bg-white/60 dark:bg-[#0a0a0a]/60 backdrop-blur-md border-b border-transparent"
+          ? "glass border-b border-gray-200/60 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+          : "bg-white/60 dark:bg-[#08080b]/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
@@ -120,7 +120,7 @@ export default function Navbar() {
             <ThemeToggle />
             <a
               href="https://t.me/ciloktechcsbot"
-              className="px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black text-[13.5px] font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-1.5"
+              className="px-5 py-2.5 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-white dark:to-gray-200 text-white dark:text-black text-[13.5px] font-bold rounded-full hover:from-cyan-600 hover:to-indigo-600 dark:hover:from-cyan-300 dark:hover:to-indigo-300 hover:shadow-lg transition-all active:scale-[0.98] flex items-center gap-1.5"
             >
               {t.common.konsultasiGratis} <span className="text-[11px] opacity-60">↗</span>
             </a>
@@ -136,7 +136,7 @@ export default function Navbar() {
             className="w-9 h-9 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-900 dark:text-white active:scale-95 transition"
             onClick={() => setOpen(!open)}
           >
-            <span className="text-[18px] leading-none">{open ? "✕" : "☰"}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">{open ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}</svg>
           </button>
         </div>
       </div>

@@ -528,7 +528,7 @@ const enDict: Dict = {
       {
         name: "Landing Page",
         price: "$55",
-        unit: "starting at — Rp 900rb",
+        unit: "starting at — $55",
         desc: "Perfect for fast product/service validation. One high-converting page engineered to sell — not a generic company profile.",
         features: [
           "1 sales-focused page, conversion-optimized",
