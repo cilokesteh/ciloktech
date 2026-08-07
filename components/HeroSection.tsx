@@ -4,18 +4,18 @@ import { useI18n } from "@/lib/i18n/context";
 export default function HeroSection() {
   const { t } = useI18n();
   return (
-    <section className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
+    <section className="hero-section relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[560px] bg-gradient-to-b from-cyan-100/50 dark:from-cyan-500/[0.07] to-transparent blur-3xl rounded-full" />
-        <div className="absolute -top-24 right-[-10%] w-[520px] h-[520px] bg-indigo-200/30 dark:bg-indigo-500/[0.06] blur-3xl rounded-full" />
-        <div className="absolute bottom-[-20%] left-[-5%] w-[420px] h-[420px] bg-cyan-200/30 dark:bg-cyan-500/[0.05] blur-3xl rounded-full" />
+        <div className="hero-orb hero-orb-main absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[560px] bg-gradient-to-b from-cyan-100/50 dark:from-cyan-500/[0.07] to-transparent blur-3xl rounded-full" />
+        <div className="hero-orb hero-orb-indigo absolute -top-24 right-[-10%] w-[520px] h-[520px] bg-indigo-200/30 dark:bg-indigo-500/[0.06] blur-3xl rounded-full" />
+        <div className="hero-orb hero-orb-cyan absolute bottom-[-20%] left-[-5%] w-[420px] h-[420px] bg-cyan-200/30 dark:bg-cyan-500/[0.05] blur-3xl rounded-full" />
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="space-y-8">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="space-y-8 hero-copy">
+          <div className="flex flex-wrap items-center gap-2 hero-reveal hero-reveal-1">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide shadow-lg shadow-gray-900/10">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               {t.hero.trust}
@@ -26,26 +26,26 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <h1 className="text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white">
+          <h1 className="text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white hero-reveal hero-reveal-2">
             {t.hero.headline1}<br />
             <span className="text-gray-400 dark:text-gray-500">{t.hero.headline2}</span> {t.hero.bagus}
             <br />
             {t.hero.tapi} <span className="relative inline-block"><span className="relative z-10 text-gradient">{t.hero.ngasilinCuan}</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 dark:bg-cyan-900/30 -z-0 rotate-1" /></span>
           </h1>
 
-          <p className="text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]">{t.hero.desc}</p>
+          <p className="text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px] hero-reveal hero-reveal-3">{t.hero.desc}</p>
 
-          <div className="flex flex-col sm:flex-row gap-3 pt-1">
-            <a href="https://t.me/ciloktechcsbot" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
+          <div className="flex flex-col sm:flex-row gap-3 pt-1 hero-reveal hero-reveal-4">
+            <a href="https://t.me/ciloktechcsbot" className="hero-cta px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:rotate-[10deg] transition-transform"><path d="M21.9 4.3l-3 14.2c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.8L18.6 6c.4-.3-.1-.5-.6-.2L7.1 12.6l-4.6-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.6.2 1.3 1.5z"/></svg>
               {t.hero.ctaTelegram}
             </a>
-            <a href="#portofolio" className="px-8 py-4 glass text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-white/10 transition text-center text-sm">
+            <a href="#portofolio" className="hero-cta px-8 py-4 glass text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-white/10 transition text-center text-sm">
               {t.hero.ctaPortofolio}
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 pt-5 border-t border-gray-100 dark:border-white/10">
+          <div className="flex flex-wrap items-center gap-6 pt-5 border-t border-gray-100 dark:border-white/10 hero-reveal hero-reveal-5">
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-white/20 border-2 border-white dark:border-[#08080b] flex items-center justify-center text-[10px] font-bold">A</div>
@@ -59,14 +59,14 @@ export default function HeroSection() {
             </div>
             <div className="h-8 w-px bg-gray-200 dark:bg-white/10 hidden sm:block" />
             <div className="flex gap-5 text-xs">
-              <div><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">&lt;1s</span><span className="text-gray-500">{t.hero.loadTime}</span></div>
-              <div><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">98</span><span className="text-gray-500">{t.hero.lighthouse}</span></div>
-              <div><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">3 {t.common.language === "Bahasa" ? "hari" : "days"}</span><span className="text-gray-500">{t.hero.avgDelivery}</span></div>
+              <div className="hero-stat"><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">&lt;1s</span><span className="text-gray-500">{t.hero.loadTime}</span></div>
+              <div className="hero-stat"><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">98</span><span className="text-gray-500">{t.hero.lighthouse}</span></div>
+              <div className="hero-stat"><span className="block font-extrabold text-gray-900 dark:text-white text-[15px]">3 {t.common.language === "Bahasa" ? "hari" : "days"}</span><span className="text-gray-500">{t.hero.avgDelivery}</span></div>
             </div>
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative hero-preview hero-reveal hero-reveal-3">
           <div className="absolute -inset-8 bg-gradient-to-br from-cyan-200/40 via-blue-100/30 to-indigo-200/40 dark:from-cyan-500/10 dark:via-blue-500/5 dark:to-indigo-500/10 blur-2xl rounded-[36px] -z-10" />
           <div className="rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#121217] shadow-[0_24px_70px_rgba(0,0,0,0.1),0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden">
             <div className="h-11 bg-gray-50 dark:bg-[#16161c] border-b border-gray-100 dark:border-white/5 flex items-center gap-2 px-4">
