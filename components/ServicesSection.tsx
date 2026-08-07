@@ -29,18 +29,21 @@ export default function ServicesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {t.services.items.map((s, i) => (
-            <div key={i} className="group relative glass rounded-[18px] p-6 hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-300">
-              <div className="w-10 h-10 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-cyan-500 group-hover:to-indigo-500 dark:group-hover:from-cyan-400 dark:group-hover:to-indigo-400 transition-colors">{icons[i]}</div>
-              <h3 className="text-[16px] font-bold tracking-tight mb-2 text-gray-900 dark:text-white">{s.title}</h3>
-              <p className="text-[13.5px] leading-[1.6] text-gray-600 dark:text-gray-400 mb-4">{s.desc}</p>
-              <ul className="space-y-2">
-                {s.points.map((p, j) => (
-                  <li key={j} className="flex items-center gap-2 text-[12.5px] font-medium text-gray-700 dark:text-gray-300">
-                    <span className="w-4 h-4 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px]">✓</span>{p}
-                  </li>
-                ))}
-              </ul>
-              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-300 dark:text-white/20 group-hover:text-gradient group-hover:text-gray-900 dark:group-hover:text-white transition">{String(i + 1).padStart(2, "0")}</div>
+            <div key={i} className="group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)] dark:hover:shadow-[0_20px_50px_rgba(6,182,212,0.1)] hover:-translate-y-2 transition-all duration-300">
+              <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-cyan-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black flex items-center justify-center mb-5 shadow-lg group-hover:shadow-cyan-500/20 dark:group-hover:shadow-cyan-400/20 group-hover:scale-110 transition-all duration-300">{icons[i]}</div>
+                <h3 className="text-[17px] font-bold tracking-tight mb-3 text-gray-900 dark:text-white">{s.title}</h3>
+                <p className="text-[13.5px] leading-[1.7] text-gray-600 dark:text-gray-400 mb-5">{s.desc}</p>
+                <ul className="space-y-2.5">
+                  {s.points.map((p, j) => (
+                    <li key={j} className="flex items-center gap-2.5 text-[12.5px] font-medium text-gray-700 dark:text-gray-300">
+                      <span className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 text-white flex items-center justify-center text-[10px] shadow-sm">✓</span>{p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-200 dark:text-white/10 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">{String(i + 1).padStart(2, "0")}</div>
             </div>
           ))}
         </div>
