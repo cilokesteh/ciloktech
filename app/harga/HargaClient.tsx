@@ -22,22 +22,22 @@ export default function HargaClient() {
           <div className="mt-10 grid md:grid-cols-3 gap-3">
             <div className="rounded-2xl bg-[#fafafa] dark:bg-[#111111] border border-gray-200 dark:border-white/10 p-5">
               <div className="text-[12px] font-bold uppercase tracking-widest text-gray-500">{hp.whatYouPay}</div>
-              <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">Rp 2.5jt</div>
+              <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceYouPay}</div>
               <div className="text-[12px] text-gray-500 dark:text-gray-400 mt-1">{hp.once}</div>
             </div>
             <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-900/50 p-5">
               <div className="text-[12px] font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-300">{hp.realValue}</div>
-              <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">Rp 6jt — 7jt</div>
+              <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceRealValue}</div>
               <div className="text-[12px] text-cyan-700/70 dark:text-cyan-300/70 mt-1">{hp.ifAgency}</div>
             </div>
             <div className="rounded-2xl bg-gray-900 dark:bg-white border border-gray-900 dark:border-white p-5 text-white dark:text-black">
               <div className="text-[12px] font-bold uppercase tracking-widest opacity-60">{hp.youSave}</div>
-              <div className="text-[28px] font-extrabold mt-1">~Rp 4jt</div>
+              <div className="text-[28px] font-extrabold mt-1">{hp.priceYouSave}</div>
               <div className="text-[12px] opacity-60 mt-1">{hp.noCut}</div>
             </div>
           </div>
           <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-500 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
-            <span className="text-cyan-600 dark:text-cyan-400 font-bold">✨</span> Premium Website tersedia — Rp 7,5jt (katalog + keranjang + dashboard admin). Lihat di <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
+            <span className="text-cyan-600 dark:text-cyan-400 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
           </div>
         </div>
       </section>
