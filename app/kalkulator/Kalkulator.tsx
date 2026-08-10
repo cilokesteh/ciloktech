@@ -164,7 +164,7 @@ export default function Kalkulator() {
                 <div className="text-[13px] font-bold leading-tight">{isId ? "Solusi CilokTech One-Man Studio" : "CilokTech Solution"}</div>
                 <div className="text-[12px] leading-relaxed mt-1">
                   Next.js 111kB &lt;1s LCP (bounce 0%), SEO OG+Schema+Sitemap {isId ? "lengkap" : "complete"} (+25% traffic), CTA sticky + floating (+20% conv).<br />
-                  <span className="font-bold">{isId ? `Invest Rp 2.5jt → balik dalam ${Math.max(1, Math.ceil(2500000 / Math.max(result.rugiBulan, 1)))} bulan.` : `Invest $155 → ROI in ${Math.max(1, Math.ceil(2500000 / Math.max(result.rugiBulan, 1)))} months.`}</span>
+                  <span className="font-bold">{isId ? `Invest Rp 1.5jt → balik dalam ${Math.max(1, Math.ceil(1500000 / Math.max(result.rugiBulan, 1)))} bulan.` : `Invest $90 → ROI in ${Math.max(1, Math.ceil(1500000 / Math.max(result.rugiBulan, 1)))} months.`}</span>
                 </div>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function Kalkulator() {
               <a href={`https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20saya%20barusan%20menghitung%20kerugian%20website%20${encodeURIComponent(fmt(result.rugiBulan))}%2Fbulan%20LCP%20${lcp}s%20Mau%20jadi%20%3C1s%20kayak%20ciloktech.web.id`} target="_blank" className="w-full text-center px-6 py-3.5 bg-white dark:bg-black text-black dark:text-white rounded-full font-bold text-[14px] hover:bg-cyan-300 hover:text-black transition whitespace-nowrap">
                 {isId ? "Perbaiki kerugian ini → Chat One-Man Studio →" : "Fix this loss → Chat Studio →"}
               </a>
-              <a href="/harga" className="w-full text-center px-6 py-3 bg-transparent border border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-[13px] hover:bg-white/10 dark:hover:bg-black/5 transition">{isId ? "Lihat rincian Rp 2,5jt vs Rp 7jt" : "See breakdown Rp 2.5jt vs Rp 7jt"}</a>
+              <a href="/harga" className="w-full text-center px-6 py-3 bg-transparent border border-white/20 dark:border-black/20 text-white dark:text-black rounded-full font-bold text-[13px] hover:bg-white/10 dark:hover:bg-black/5 transition">{isId ? "Lihat rincian Rp 1,5jt vs Rp 5-7jt" : "See breakdown Rp 1.5jt vs Rp 5-7jt"}</a>
             </div>
           </div>
           <div className="rounded-xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 p-4">
