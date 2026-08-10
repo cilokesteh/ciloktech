@@ -4,9 +4,9 @@ import { useI18n } from "@/lib/i18n/context";
 
 const PLAN_HREFS = [
   "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Landing%20Page%20900rb",
-  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%202.5jt",
-  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Premium%20Website%20Rp%207.5jt",
-  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Web%20App%20Custom",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%201.5jt",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Web%20App%20Rp%202jt",
+  "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Custom",
 ];
 
 export default function PricingSection() {
