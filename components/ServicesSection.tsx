@@ -29,7 +29,7 @@ export default function ServicesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {t.services.items.map((s, i) => (
-            <div key={i} className="group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)] dark:hover:shadow-[0_20px_50px_rgba(6,182,212,0.1)] hover:-translate-y-2 transition-all duration-300">
+            <div key={i} className="uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10">
               <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-cyan-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black flex items-center justify-center mb-5 shadow-lg group-hover:shadow-cyan-500/20 dark:group-hover:shadow-cyan-400/20 group-hover:scale-110 transition-all duration-300">{icons[i]}</div>

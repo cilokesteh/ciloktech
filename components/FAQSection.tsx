@@ -52,7 +52,7 @@ export default function FAQSection() {
           {faqs.map((f, i) => (
             <div
               key={i}
-              className={`rounded-[16px] border bg-white dark:bg-[#171717] transition-all ${open === i ? "border-gray-900 dark:border-white shadow-sm" : "border-gray-200 dark:border-white/10 hover:border-gray-300 dark:hover:border-white/20"}`}
+              className={`uiverse-disclosure rounded-[16px] border bg-white dark:bg-[#171717] ${open === i ? "border-gray-900 dark:border-white shadow-sm" : "border-gray-200 dark:border-white/10"}`}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}

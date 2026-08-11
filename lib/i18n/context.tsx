@@ -18,7 +18,6 @@ const STORAGE_KEY = "cilok-locale";
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const saved = (localStorage.getItem(STORAGE_KEY) as Locale) || null;
@@ -33,7 +32,6 @@ export function I18nProvider({ children }: { children: ReactNode }) {
         document.documentElement.lang = "en";
       }
     }
-    setMounted(true);
   }, []);
 
   const setLocale = (l: Locale) => {
@@ -42,15 +40,13 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = l;
   };
 
-  // Avoid hydration mismatch — show default until mounted, then switch if needed
-  // Using suppressHydrationWarning on html handles this, but we gate t as well
+  // Render the default locale immediately. Hiding SSR content until hydration turns
+  // a transient client-side locale update into a blank-page failure when JS is slow.
   const t = dictionaries[locale];
 
   return (
     <I18nContext.Provider value={{ locale, setLocale, t }}>
       {children}
-      {/* Hide content until mounted to avoid flash of wrong language — only if user previously picked EN */}
-      {!mounted && <style dangerouslySetInnerHTML={{ __html: `body{visibility:hidden}` }} />}
     </I18nContext.Provider>
   );
 }

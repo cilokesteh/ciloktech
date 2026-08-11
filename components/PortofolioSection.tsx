@@ -39,7 +39,7 @@ export default function PortofolioSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((p, i) => (
-            <div key={i} className="group rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#141419] overflow-hidden hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:shadow-[0_24px_60px_rgba(6,182,212,0.12)] dark:hover:shadow-[0_24px_60px_rgba(6,182,212,0.08)] hover:-translate-y-2 transition-all duration-500 flex flex-col">
+            <div key={i} className="uiverse-card group rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#141419] overflow-hidden flex flex-col">
               <div className={`h-[170px] bg-gradient-to-br ${accents[i] || accents[0]} relative p-6 flex flex-col justify-between overflow-hidden`}>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2),transparent_50%)]" />
                 <div className="flex items-center justify-between relative z-10">
@@ -62,7 +62,7 @@ export default function PortofolioSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a href="https://t.me/ciloktechcsbot" className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white transition">{t.portfolio.cta}</a>
+          <a href="https://t.me/ciloktechcsbot" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
         </div>
       </div>
     </section>

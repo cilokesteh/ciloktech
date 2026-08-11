@@ -37,7 +37,7 @@ export default function PricingSection() {
             return (
               <div
                 key={idx}
-                className={`relative rounded-[22px] p-7 flex flex-col transition-all duration-300 ${
+                className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
                   featured
                     ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
                     : "glass hover:border-gray-900 dark:hover:border-white"
@@ -79,7 +79,7 @@ export default function PricingSection() {
 
                 <a
                   href={PLAN_HREFS[idx]}
-                  className={`w-full py-3.5 rounded-full text-center text-[13.5px] font-bold transition active:scale-[0.98] ${
+                  className={`uiverse-button w-full py-3.5 rounded-full text-center text-[13.5px] font-bold ${
                     featured
                       ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white hover:from-cyan-400 hover:to-indigo-400 shadow-lg shadow-cyan-500/25"
                       : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-black dark:hover:bg-cyan-300 dark:hover:text-black"

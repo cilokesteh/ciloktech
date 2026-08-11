@@ -48,7 +48,7 @@ export default function FloatingCTA() {
         href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%20One-Man%20Studio%2C%20mau%20tanya%20jasa%20website"
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 z-[60] group flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.22)] hover:bg-black dark:hover:bg-cyan-300 dark:hover:text-black transition-all duration-300 ${showChat ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+        className={`uiverse-button fixed bottom-6 right-6 z-[60] group flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.22)] hover:bg-black dark:hover:bg-cyan-300 dark:hover:text-black ${showChat ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={t.floating.chatTitle}
       >
         <span className="w-12 h-12 rounded-full bg-white dark:bg-black text-gray-900 dark:text-white flex items-center justify-center text-[20px] group-hover:rotate-[10deg] transition">

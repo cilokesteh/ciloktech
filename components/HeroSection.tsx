@@ -1,31 +1,11 @@
 "use client";
 import { useI18n } from "@/lib/i18n/context";
-import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
   const { t } = useI18n();
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
+    <section className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
@@ -34,7 +14,7 @@ export default function HeroSection() {
         <div className="hero-orb hero-orb-cyan absolute bottom-[-20%] left-[-5%] w-[420px] h-[420px] bg-cyan-200/30 dark:bg-cyan-500/[0.05] blur-3xl rounded-full" />
       </div>
 
-      <div className={`max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="space-y-8">
           <div className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide shadow-lg shadow-gray-900/10">
@@ -73,7 +53,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className={`hero-preview relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        <div className="hero-preview relative">
           <div className="absolute -inset-8 bg-gradient-to-br from-cyan-200/40 via-blue-100/30 to-indigo-200/40 dark:from-cyan-500/10 dark:via-blue-500/5 dark:to-indigo-500/10 blur-2xl rounded-[36px] -z-10 animate-pulse" />
           <div className="uiverse-card rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#121217] shadow-[0_24px_70px_rgba(0,0,0,0.1),0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden">
             <div className="h-11 bg-gray-50 dark:bg-[#16161c] border-b border-gray-100 dark:border-white/5 flex items-center gap-2 px-4">
