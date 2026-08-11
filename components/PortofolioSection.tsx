@@ -44,7 +44,7 @@ export default function PortofolioSection() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2),transparent_50%)]" />
                 <div className="flex items-center justify-between relative z-10">
                   <span className="text-[11px] font-bold tracking-wide uppercase bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-gray-900 shadow-sm">{p.cat}</span>
-                  <span className="text-[11px] font-bold bg-black/30 backdrop-blur-sm text-white px-3 py-1.5 rounded-full shadow-sm">{p.stats}</span>
+                  <span className="text-[11px] font-bold bg-black/30 backdrop-blur-sm text-white px-3 py-1.5 rounded-full shadow-sm">Delivered project</span>
                 </div>
                 <div className="mt-auto relative z-10"><div className="inline-flex h-px w-12 bg-white/70 mb-3" /><div className="text-white font-extrabold text-[20px] leading-tight drop-shadow-lg">{p.title}</div></div>
                 <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(#fff_1.5px,transparent_1.5px)] [background-size:20px_20px]" />

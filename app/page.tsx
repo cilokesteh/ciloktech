@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortofolioSection from "@/components/PortofolioSection";
 import PricingSection from "@/components/PricingSection";
-import TestimoniSection from "@/components/TestimoniSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -20,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+      <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
         <HeroSection />
         <ServicesSection />
         <PortofolioSection />
@@ -71,7 +70,7 @@ export default function Home() {
           </div>
         </section>
 
-        <TestimoniSection />
+
         <FAQSection />
         <ContactSection />
       </main>

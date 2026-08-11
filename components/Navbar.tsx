@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n/context";
@@ -11,9 +10,7 @@ type NavLink = { href: string; label: string; type: "anchor" | "page"; highlight
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
   const { t } = useI18n();
-  const isHome = pathname === "/";
 
   const navLinks: NavLink[] = [
     { href: "/#layanan", label: t.nav.layanan, type: "anchor" },
@@ -30,23 +27,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleHomeClick = (e?: React.MouseEvent) => {
-    if (e) e.preventDefault();
-    setOpen(false);
-    if (isHome) {
-      if (window.scrollY < 10 && !window.location.hash) {
-        window.location.reload();
-        return;
-      }
-      if (window.location.hash) {
-        history.replaceState(null, "", window.location.pathname);
-      }
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.location.href = "/";
-    }
-  };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -57,11 +37,10 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
         {/* WORDMARK */}
-        <button
-          onClick={handleHomeClick}
+        <Link
+          href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
-          aria-label={`${t.nav.beranda} — refresh`}
-          title="Klik: kembali ke atas • Double-click / sudah di atas: refresh halaman"
+          aria-label={t.nav.beranda}
         >
           <div className="relative">
             <img
@@ -81,21 +60,18 @@ export default function Navbar() {
               <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition">ONE-MAN STUDIO</span>
             </div>
           </div>
-        </button>
+        </Link>
 
         {/* DESKTOP */}
         <div className="hidden md:flex items-center gap-0.5">
           {navLinks.map((l) => {
-            const active = pathname === l.href || (l.type === "page" && pathname.startsWith(l.href));
             if (l.type === "page") {
               return (
                 <Link
                   key={l.href}
                   href={l.href}
                   className={`text-[13px] font-medium px-3 py-1.5 rounded-full transition ${
-                    active
-                      ? "bg-gray-900 dark:bg-white text-white dark:text-black"
-                      : l.highlight
+                    l.highlight
                       ? "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/40 hover:bg-amber-100"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                   }`}
@@ -148,13 +124,10 @@ export default function Navbar() {
             <span className="w-1 h-1 bg-emerald-400 rounded-full animate-pulse" />
             <span className="text-[10px] text-gray-500">{t.common.available}</span>
           </div>
-          <button
-            onClick={handleHomeClick}
-            className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
-          >
-            <span>🏠 {t.nav.berandaRefresh}</span>
-            <span className="text-gray-300 dark:text-white/20 text-[12px]">TAP TO TOP</span>
-          </button>
+          <Link href="/" onClick={() => setOpen(false)} className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-600 dark:hover:text-cyan-400 transition">
+            <span>{t.nav.beranda}</span>
+            <span className="text-gray-300 dark:text-white/20 text-[12px]">HOME</span>
+          </Link>
           <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.layanan} <span className="text-gray-300">›</span></Link>
           <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.portofolio} <span className="text-gray-300">›</span></Link>
           <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.harga} <span className="text-gray-300">›</span></Link>
