@@ -171,7 +171,7 @@ const idDict = {
       },
       {
         name: "Web App",
-        price: "2jt",
+        price: "2,5jt",
         unit: "mulai dari — PALING LENGKAP",
         desc: "Buat bisnis yang butuh lebih dari website biasa: katalog produk, sistem booking, dashboard admin, atau tools internal. Mulai simpel dulu, nanti bisa dikembangin.",
         features: [
@@ -231,7 +231,7 @@ const idDict = {
       { q: "Bagaimana sistem pembayarannya?", a: "DP 50% untuk memulai, pelunasan setelah go-live dan Anda menyetujui hasil. Pembayaran via transfer bank / QRIS. Untuk retainer bulanan menggunakan sistem langganan." },
       { q: "Mengapa disebut one-man studio?", a: "Karena CilokTech memang dikerjakan oleh 1 orang senior full-stack — tanpa kantor, tanpa PM, tanpa tim sales. Anda berkomunikasi langsung dengan builder-nya. Mengapa bisa lebih terjangkau? Tidak ada overhead kantor & meeting yang berputar-putar, namun kualitas tetap setara agency Rp 7 jutaan." },
       { q: "Mengapa harga Rp 1,5jt, bukan 500 ribu?", a: "Website Rp 500 ribu biasanya template bajakan, tidak SEO, lambat, rentan diretas, dan source code terkunci. Rp 1,5jt di CilokTech adalah custom Next.js, SEO lengkap, LCP <1 detik, source milik Anda, maintenance 3 bulan. Silakan hitung menggunakan kalkulator di /kalkulator — website lambat bisa merugikan Rp 10jt+ per bulan." },
-      { q: "Apa bedanya Web App Rp 2jt dengan Company Profile 1,5jt?", a: "Web App menambahkan mesin penjualan: katalog produk dengan varian + stok real-time, keranjang belanja, checkout WhatsApp/QRIS, dan dashboard admin untuk mengelola produk serta pesanan secara mandiri. Plus PWA installable (muncul di home screen HP), SEO Enterprise, dan maintenance 6 bulan. Cocok untuk bisnis yang siap jualan online, bukan sekadar brosur digital." },
+      { q: "Apa bedanya Web App Rp 2,5jt dengan Company Profile 1,5jt?", a: "Web App menambahkan mesin penjualan: katalog produk dengan varian + stok real-time, keranjang belanja, checkout WhatsApp/QRIS, dan dashboard admin untuk mengelola produk serta pesanan secara mandiri. Plus PWA installable (muncul di home screen HP), SEO Enterprise, dan maintenance 6 bulan. Cocok untuk bisnis yang siap jualan online, bukan sekadar brosur digital." },
     ],
   },
   contact: {
@@ -288,7 +288,7 @@ const idDict = {
       home: { label: "Beranda — One-Man Studio", desc: "Website yang menghasilkan konversi" },
       layanan: { label: "Layanan", desc: "Website, Web App, Custom Dev, Maintenance" },
       portofolio: { label: "Portofolio", desc: "Hasil kerja yang benar-benar digunakan klien" },
-      harga: { label: "Paket Harga", desc: "Rp 900rb — Rp 1,5jt — Rp 2jt — Custom" },
+      harga: { label: "Paket Harga", desc: "Rp 900rb — Rp 1,5jt — Rp 2,5jt — Custom" },
       breakdown: { label: "Rincian Harga — Transparan", desc: "Kualitas Rp 7jt dijual Rp 1,5jt" },
       kalkulator: { label: "Kalkulator Kerugian Website", desc: "Hitung kerugian Rp/bulan akibat website lambat" },
       blog: { label: "Blog — 11 Artikel", desc: "Tips praktis dari lapangan agar tidak terjebak harga murah" },
@@ -322,7 +322,7 @@ const idDict = {
     youSave: "Anda hemat",
     priceYouSave: "~Rp 5jt",
     noCut: "Tanpa pengurangan kualitas",
-    premiumNote: "Web App mulai dari — Rp 2jt (database, login, dashboard). Lihat di",
+    premiumNote: "Web App mulai dari — Rp 2,5jt (database, login, dashboard). Lihat di",
     breakdownTitle: "Rincian transparan: Rp 1,5jt digunakan untuk apa saja?",
     breakdownSub: "Jika dibeli terpisah item per item, agency mematok harga jauh lebih mahal.",
     breakdown: [
@@ -572,7 +572,7 @@ const enDict: Dict = {
       },
       {
         name: "Web App",
-        price: "$120",
+        price: "$150",
         unit: "starting at — MOST COMPLETE",
         desc: "For businesses that need more than a regular website: product catalogs, booking systems, admin dashboards, or internal tools. Start simple and build from there.",
         features: [
@@ -632,7 +632,7 @@ const enDict: Dict = {
       { q: "What is your payment structure?", a: "50% upfront deposit to start, balance after go-live and your final approval. Bank transfer or QRIS accepted. Monthly retainer plans available for ongoing work." },
       { q: "Why call it one-man studio?", a: "Because CilokTech is literally one senior full-stack developer — no office, no PM, no sales team. You chat directly with the builder. Why affordable? Zero office overhead and no endless meetings, yet delivers agency-grade quality worth Rp 7M+." },
       { q: "Why Rp 1.5M and not $30?", a: "A $30 website is a pirated template — no SEO, slow, vulnerable to hacking, and with locked source code. Rp 1.5M at CilokTech gets you custom Next.js, complete SEO, <1s LCP, full source ownership, and 3 months maintenance. Use the calculator at /kalkulator — a slow website can lose you Rp 10M+ per month." },
-      { q: "What's the difference between Web App Rp 2M and Company Profile Rp 1.5M?", a: "Web App adds a full sales engine: product catalog with variants + real-time stock, shopping cart, WhatsApp/QRIS checkout, and an admin dashboard to manage products and orders independently. Plus PWA installable (appears on phone home screens), Enterprise SEO, and 6 months of maintenance. Perfect for businesses ready to sell online — not just a digital brochure." },
+      { q: "What's the difference between Web App Rp 2.5M and Company Profile Rp 1.5M?", a: "Web App adds a full sales engine: product catalog with variants + real-time stock, shopping cart, WhatsApp/QRIS checkout, and an admin dashboard to manage products and orders independently. Plus PWA installable (appears on phone home screens), Enterprise SEO, and 6 months of maintenance. Perfect for businesses ready to sell online — not just a digital brochure." },
     ],
   },
   contact: {
@@ -689,7 +689,7 @@ const enDict: Dict = {
       home: { label: "Home — One-Man Studio", desc: "Fast websites engineered to convert" },
       layanan: { label: "Our Services", desc: "Website Development, Web Apps, Custom Solutions, Maintenance" },
       portofolio: { label: "Portfolio — Selected Works", desc: "Real products used daily by actual clients" },
-      harga: { label: "Pricing Packages", desc: "From $55 — $90 — $120 — Custom solutions" },
+      harga: { label: "Pricing Packages", desc: "From $55 — $90 — $150 — Custom solutions" },
       breakdown: { label: "Why So Affordable? — Full Breakdown", desc: "$400+ value delivered for just $90" },
       kalkulator: { label: "ROI Loss Calculator", desc: "Calculate monthly revenue lost to slow performance" },
       blog: { label: "Blog — 11 In-Depth Articles", desc: "Real-world insights to avoid cheap development traps" },
@@ -723,7 +723,7 @@ const enDict: Dict = {
     youSave: "You save",
     priceYouSave: "~Rp 5M",
     noCut: "Zero quality compromise",
-    premiumNote: "Web App available starting — Rp 2M (database, login, dashboard). See",
+    premiumNote: "Web App available starting — Rp 2.5M (database, login, dashboard). See",
     breakdownTitle: "Transparent breakdown: what does Rp 1.5M actually cover?",
     breakdownSub: "If you were to buy these items individually from different providers, agencies would charge you significantly more.",
     breakdown: [

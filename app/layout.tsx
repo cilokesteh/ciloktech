@@ -131,7 +131,7 @@ export default function RootLayout({
                 addressCountry: "ID",
                 addressLocality: "Indonesia",
               },
-              priceRange: "Rp 900rb - Rp 2jt+",
+              priceRange: "Rp 900rb - Rp 2,5jt+",
               openingHours: "Mo-Su",
             }),
           }}
