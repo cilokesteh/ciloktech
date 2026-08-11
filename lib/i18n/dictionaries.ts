@@ -83,10 +83,10 @@ const idDict = {
   portfolio: {
     label: "PORTOFOLIO · PILIHAN PROJECT",
     headline1: "Project yang",
-    headline2: " dibikin buat dipakai,",
+    headline2: " dibangun untuk dipakai,",
     headline3: " bukan cuma dipajang.",
-    sub: "Dari project yang lagi jalan sampai produk internal. Semua dibikin custom dan disesuaikan sama kebutuhan aslinya.",
-    cta: "Punya kebutuhan mirip? Ngobrol dulu →",
+    sub: "Dari project yang sedang berjalan sampai produk internal. Semua dibangun custom dan disesuaikan dengan kebutuhan aslinya.",
+    cta: "Punya kebutuhan mirip? Ngobrolin project →",
     projects: [
       {
         title: "POS System UMKM",
@@ -140,7 +140,7 @@ const idDict = {
         name: "Landing Page",
         price: "900rb",
         unit: "mulai dari",
-        desc: "Buat ngetes produk atau jasa dengan cepat. Satu halaman yang fokus ngajak orang ambil langkah, bukan company profile seadanya.",
+        desc: "Untuk mengetes produk atau jasa dengan cepat. Satu halaman yang fokus mengajak orang ambil langkah, bukan company profile seadanya.",
         features: [
           "1 halaman fokus penjualan",
           "Mobile-first + muat <1 detik",
@@ -190,7 +190,7 @@ const idDict = {
         name: "Custom",
         price: "Custom",
         unit: "konsultasi terlebih dahulu",
-        desc: "POS, inventory, CRM, dashboard internal, bot, sampai integrasi API. Dibangun dari nol ngikutin alur bisnis loe.",
+        desc: "POS, inventory, CRM, dashboard internal, bot, sampai integrasi API. Dibangun dari nol mengikuti alur bisnis Anda.",
         features: [
           "Perancangan alur & database dari nol",
           "Auth + Role + Permission",
