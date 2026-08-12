@@ -113,6 +113,15 @@ export const posts: Post[] = [
     tags: ["Template", "Custom", "Edukasi"],
     featured: true,
   },
+  {
+    slug: "jasa-website-388rb-baca-sebelum-beli",
+    title: "Jasa Website Rp 388rb: Baca Ini Sebelum Beli — Kenapa Total 3 Tahun Malah Rp 3,3jt",
+    description: "Iklan 'jasa pembuatan website mulai Rp 388 ribu' terlihat menggoda. Tapi Rp 388rb itu domain .my.id — versi .com Rp 818rb, dan modelnya sewa dengan renewal Rp 1,25jt+/tahun. Saya hitung total biaya 3 tahun secara jujur dan bandingkan dengan bayar sekali Rp 1,5jt milik selamanya.",
+    date: "2026-08-07",
+    readingTime: "7 menit",
+    tags: ["Website Murah", "TCO", "Edukasi"],
+    featured: true,
+  },
 ];
 
 export function getPost(slug: string) {
