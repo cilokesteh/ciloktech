@@ -14,7 +14,6 @@ export default function LanguageSwitcher({ compact = false, className = "" }: { 
     return (
       <button
         onClick={toggle}
-        aria-label={`${localeNames[locale].short} — Switch language (current ${locale})`}
         title={`${localeNames[locale].label} → ${localeNames[locale === "id" ? "en" : "id"].label}`}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[12px] font-bold tracking-wide transition active:scale-95 bg-white dark:bg-[#1a1a1a] border-gray-200 dark:border-white/20 text-gray-800 dark:text-white shadow-sm dark:shadow-[0_0_0_1px_rgba(255,255,255,0.15)] hover:bg-gray-50 dark:hover:bg-white/15 hover:border-gray-900 dark:hover:border-white ${className}`}
       >

@@ -40,12 +40,13 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
-          aria-label={`${t.nav.beranda} — Cilok Tech`}
         >
           <div className="relative">
             <img
               src="/logo.jpg"
               alt="Cilok Tech One-Man Studio"
+              width={34}
+              height={34}
               className="h-[34px] w-[34px] rounded-full object-cover ring-1 ring-gray-200 dark:ring-white/10 group-hover:ring-cyan-400 group-hover:scale-[1.03] transition-all shadow-sm"
             />
             <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-white dark:border-[#0a0a0a] group-hover:shadow-[0_0_0_3px_rgba(16,185,129,0.3)] transition" />
@@ -84,7 +85,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition"
+                className="inline-flex items-center text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition"
               >
                 {l.label}
               </a>

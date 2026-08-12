@@ -9,7 +9,7 @@ export default function HargaClient() {
   const breakdown = hp.breakdown;
 
   return (
-    <main className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+    <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
       <section className="py-16 md:py-24 px-6 border-b border-gray-100 dark:border-white/5">
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-6">{hp.badge}</div>
@@ -21,7 +21,7 @@ export default function HargaClient() {
 
           <div className="mt-10 grid md:grid-cols-3 gap-3">
             <div className="rounded-2xl bg-[#fafafa] dark:bg-[#111111] border border-gray-200 dark:border-white/10 p-5">
-              <div className="text-[12px] font-bold uppercase tracking-widest text-gray-500">{hp.whatYouPay}</div>
+              <div className="text-[12px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">{hp.whatYouPay}</div>
               <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceYouPay}</div>
               <div className="text-[12px] text-gray-600 dark:text-gray-400 mt-1">{hp.once}</div>
             </div>
@@ -70,7 +70,7 @@ export default function HargaClient() {
             <table className="w-full text-left min-w-[700px]">
               <thead>
                 <tr className="bg-[#fafafa] dark:bg-[#111111] border-b border-gray-200 dark:border-white/10">
-                  <th className="p-4 text-[11px] font-bold uppercase tracking-widest text-gray-500 w-[22%]">{hp.feature}</th>
+                  <th className="p-4 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 w-[22%]">{hp.feature}</th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.freelance}<br/><span className="font-normal text-[11px]">{hp.freelanceRange}</span></th>
                   <th className="p-4 text-[12px] font-extrabold text-gray-900 dark:text-white bg-cyan-50/50 dark:bg-cyan-950/20 w-[26%] border-x border-cyan-200/50 dark:border-cyan-900/30">{hp.cilokCol}<br/><span className="font-bold text-cyan-700 dark:text-cyan-400">{hp.cilokRange}</span></th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.agencyCol}<br/><span className="font-normal text-[11px]">{hp.agencyRange}</span></th>
@@ -134,7 +134,7 @@ export default function HargaClient() {
           <div className="mt-8 grid md:grid-cols-4 gap-4">
             {hp.steps.map((p: { s: string; t: string; d: string }) => (
               <div key={p.s} className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-white/10 rounded-2xl p-5">
-                <div className="text-[11px] font-bold text-gray-500">{p.s}</div>
+                <div className="text-[11px] font-bold text-gray-500 dark:text-gray-400">{p.s}</div>
                 <div className="font-bold text-[15px] text-gray-900 dark:text-white mt-2">{p.t}</div>
                 <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">{p.d}</div>
               </div>
@@ -151,8 +151,8 @@ export default function HargaClient() {
             <Link href="/kalkulator" className="px-8 py-4 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-400 transition text-sm">{hp.calcCta}</Link>
             <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%201.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-sm">{hp.gasCta}</a>
           </div>
-          <div className="mt-4 flex justify-center"><Link href="/#harga" className="text-[13px] text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">{hp.backPkg}</Link></div>
-          <div className="mt-6 text-[11px] text-gray-500">{hp.freeNote}</div>
+          <div className="mt-4 flex justify-center"><Link href="/#harga" className="text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">{hp.backPkg}</Link></div>
+          <div className="mt-6 text-[11px] text-gray-500 dark:text-gray-400">{hp.freeNote}</div>
         </div>
       </section>
     </main>

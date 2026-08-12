@@ -34,7 +34,7 @@ export default function KalkulatorPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16 bg-white dark:bg-[#0a0a0a]">
+      <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a]">
         <Kalkulator />
       </main>
       <Footer />

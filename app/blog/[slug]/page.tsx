@@ -188,7 +188,7 @@ export default async function BlogDetail({ params }: Props) {
   return (
     <>
       <Navbar />
-      <main className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 min-h-screen">
+      <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300 min-h-screen">
         <article className="max-w-3xl mx-auto px-6 py-12 md:py-20">
           <BlogDetailClientLabels slug={slug} title={post.title} />
 

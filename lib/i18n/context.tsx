@@ -24,14 +24,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (saved && (saved === "id" || saved === "en")) {
       setLocaleState(saved);
       document.documentElement.lang = saved;
-    } else {
-      // auto-detect browser language once
-      const browser = navigator.language.toLowerCase();
-      if (browser.startsWith("en")) {
-        setLocaleState("en");
-        document.documentElement.lang = "en";
-      }
     }
+    // NOTE: auto-detect navigator.language removed (2026-08-12). It caused
+    // SSR(id) -> client(en) hydration reflow -> CLS 0.119 on /blog in Lighthouse,
+    // and served EN to Indonesian visitors with English browser settings.
+    // Default stays ID; EN is opt-in via the language toggle (persisted).
   }, []);
 
   const setLocale = (l: Locale) => {
