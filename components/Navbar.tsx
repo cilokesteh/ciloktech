@@ -40,7 +40,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
-          aria-label={t.nav.beranda}
+          aria-label={`${t.nav.beranda} — Cilok Tech`}
         >
           <div className="relative">
             <img

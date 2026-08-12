@@ -28,7 +28,7 @@ export default function HargaClient() {
             <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-900/50 p-5">
               <div className="text-[12px] font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-300">{hp.realValue}</div>
               <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceRealValue}</div>
-              <div className="text-[12px] text-cyan-700/70 dark:text-cyan-300/70 mt-1">{hp.ifAgency}</div>
+              <div className="text-[12px] text-cyan-800 dark:text-cyan-300 mt-1">{hp.ifAgency}</div>
             </div>
             <div className="rounded-2xl bg-gray-900 dark:bg-white border border-gray-900 dark:border-white p-5 text-white dark:text-black">
               <div className="text-[12px] font-bold uppercase tracking-widest opacity-80">{hp.youSave}</div>
@@ -134,7 +134,7 @@ export default function HargaClient() {
           <div className="mt-8 grid md:grid-cols-4 gap-4">
             {hp.steps.map((p: { s: string; t: string; d: string }) => (
               <div key={p.s} className="bg-white dark:bg-[#171717] border border-gray-200 dark:border-white/10 rounded-2xl p-5">
-                <div className="text-[11px] font-bold text-gray-400">{p.s}</div>
+                <div className="text-[11px] font-bold text-gray-500">{p.s}</div>
                 <div className="font-bold text-[15px] text-gray-900 dark:text-white mt-2">{p.t}</div>
                 <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">{p.d}</div>
               </div>
@@ -152,7 +152,7 @@ export default function HargaClient() {
             <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%201.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-sm">{hp.gasCta}</a>
           </div>
           <div className="mt-4 flex justify-center"><Link href="/#harga" className="text-[13px] text-gray-500 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">{hp.backPkg}</Link></div>
-          <div className="mt-6 text-[11px] text-gray-400">{hp.freeNote}</div>
+          <div className="mt-6 text-[11px] text-gray-500">{hp.freeNote}</div>
         </div>
       </section>
     </main>

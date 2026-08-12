@@ -24,7 +24,7 @@ export default function BlogClient() {
 
       <section className="py-10 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-6">⭐ {isId ? "Rekomendasi Utama" : "Featured Articles"}</div>
+          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-6">⭐ {isId ? "Rekomendasi Utama" : "Featured Articles"}</div>
           <div className="grid md:grid-cols-3 gap-4">
             {featured.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-[20px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#171717] overflow-hidden hover:border-gray-900 dark:hover:border-white hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col">
@@ -34,9 +34,9 @@ export default function BlogClient() {
                   <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:14px_14px]" />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition line-clamp-2">{post.title}</h3>
+                  <h2 className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition line-clamp-2">{post.title}</h2>
                   <p className="text-[13px] text-gray-600 dark:text-gray-400 mt-2 leading-relaxed line-clamp-2">{post.description}</p>
-                  <div className="mt-4 flex items-center justify-between text-[11px] text-gray-400">
+                  <div className="mt-4 flex items-center justify-between text-[11px] text-gray-500">
                     <span>{new Date(post.date).toLocaleDateString(isId ? "id-ID" : "en-US", { day: "numeric", month: "short", year: "numeric" })}</span>
                     <span className="font-medium">{post.readingTime} • {isId ? "Baca" : "Read"} →</span>
                   </div>
@@ -49,16 +49,16 @@ export default function BlogClient() {
 
       <section className="py-10 px-6 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-100 dark:border-white/5">
         <div className="max-w-5xl mx-auto">
-          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-6">{isId ? "Semua Artikel" : "All Articles"}</div>
+          <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-500 mb-6">{isId ? "Semua Artikel" : "All Articles"}</div>
           <div className="space-y-3">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex flex-col md:flex-row md:items-center justify-between gap-3 p-5 bg-white dark:bg-[#171717] rounded-2xl border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white transition">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[11px] text-gray-400">{new Date(post.date).toLocaleDateString(isId ? "id-ID" : "en-US")}</span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-[11px] text-gray-400">{post.readingTime}</span>
-                    {post.featured && <span className="text-[10px] font-bold bg-amber-500 text-white px-2 py-0.5 rounded-full">FEATURED</span>}
+                    <span className="text-[11px] text-gray-500">{new Date(post.date).toLocaleDateString(isId ? "id-ID" : "en-US")}</span>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-[11px] text-gray-500">{post.readingTime}</span>
+                    {post.featured && <span className="text-[10px] font-bold bg-amber-500 text-amber-950 px-2 py-0.5 rounded-full">FEATURED</span>}
                   </div>
                   <div className="font-bold text-[15px] text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">{post.title}</div>
                   <div className="text-[13px] text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">{post.description}</div>
