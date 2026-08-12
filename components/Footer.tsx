@@ -53,7 +53,6 @@ export default function Footer() {
                 <a href="#layanan" className="block hover:text-white transition">{t.footer.layanan}</a>
                 <a href="#portofolio" className="block hover:text-white transition">{t.footer.portofolio}</a>
                 <a href="#harga" className="block hover:text-white transition">{t.footer.harga}</a>
-                <a href="#testimoni" className="block hover:text-white transition">{t.footer.testimoni}</a>
               </nav>
             </div>
             <div>

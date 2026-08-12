@@ -31,8 +31,7 @@ const idDict = {
     trust: "WEBSITE & WEB APP CUSTOM · INDONESIA",
     oneManBadge: "One-man studio · langsung sama builder",
     headline1: "Website yang",
-    headline2: "bukan cuma",
-    bagus: "enak dilihat,",
+    headline2: "bukan cuma enak dilihat,",
     tapi: "tapi bikin",
     ngasilinCuan: "bisnis Anda terlihat lebih siap.",
     desc: "Website dan web app custom untuk bisnis yang ingin tampil lebih profesional. Desainnya matang, mudah dipakai, dan alurnya jelas — pengunjung tahu langkah selanjutnya.",
@@ -53,8 +52,7 @@ const idDict = {
   services: {
     label: "YANG BISA SAYA BANTU",
     headline1: "Website yang",
-    headline2: "bikin brand Anda",
-    headline3: " terlihat beda.",
+    headline2: "bikin brand Anda terlihat beda.",
     sub: "Mau mulai dari landing page, bikin web app, atau membenahi proses internal? Saya bantu bangun yang sesuai cara bisnis Anda berjalan — bukan asal jadi.",
     items: [
       {
@@ -218,8 +216,7 @@ const idDict = {
   },
   faq: {
     label: "FAQ • One-Man Studio",
-    headline1: "Pertanyaan yang sering",
-    headline2: " ditanyakan",
+    headline1: "Pertanyaan yang sering ditanyakan",
     stillQ: "Masih ada pertanyaan?",
     askTelegram: "Tanya via Telegram →",
     items: [
@@ -300,8 +297,7 @@ const idDict = {
     priceExplainDesc: "Lihat isi tiap paket, bonus yang Anda dapat, dan mana yang paling pas buat tahap bisnis Anda sekarang.",
     priceExplainCta: "Cek paketnya →",
     blogLabel: "JOURNAL · CATATAN DARI LAPANGAN",
-    blogHeadline1: "Biar tidak asal pilih,",
-    blogHeadline2: "baca dulu yang penting.",
+    blogHeadline1: "Biar tidak asal pilih, baca dulu yang penting.",
     blogViewAll: "Lihat semua artikel →",
   },
   hargaPage: {
@@ -430,8 +426,7 @@ const enDict: Dict = {
     trust: "CUSTOM WEBSITES & WEB APPS · INDONESIA",
     oneManBadge: "One-man studio · straight to the builder",
     headline1: "Digital work that",
-    headline2: "doesn't just",
-    bagus: "look good,",
+    headline2: "doesn't just look good,",
     tapi: "but makes your",
     ngasilinCuan: "business look legit.",
     desc: "Custom websites and web apps for businesses ready to show up stronger. Sharp-looking, easy to use, and clear about what visitors should do next.",
@@ -452,8 +447,7 @@ const enDict: Dict = {
   services: {
     label: "WHAT I CAN HELP WITH",
     headline1: "From a website that",
-    headline2: "makes your brand",
-    headline3: " stand out.",
+    headline2: "makes your brand stand out.",
     sub: "Need a landing page, a web app, or a cleaner internal workflow? We make what fits how your business actually works—not something generic.",
     items: [
       {
@@ -617,8 +611,7 @@ const enDict: Dict = {
   },
   faq: {
     label: "FAQ • One-Man Studio",
-    headline1: "Frequently",
-    headline2: " asked questions",
+    headline1: "Frequently asked questions",
     stillQ: "Still have questions?",
     askTelegram: "Ask on Telegram →",
     items: [
@@ -699,8 +692,7 @@ const enDict: Dict = {
     priceExplainDesc: "See what each package includes, the bonus value you get, and what fits your business at this stage.",
     priceExplainCta: "Check the packages →",
     blogLabel: "JOURNAL · NOTES FROM THE FIELD",
-    blogHeadline1: "Before you choose,",
-    blogHeadline2: "read what actually matters.",
+    blogHeadline1: "Before you choose, read what actually matters.",
     blogViewAll: "Browse all articles →",
   },
   hargaPage: {

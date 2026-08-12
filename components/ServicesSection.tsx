@@ -21,7 +21,6 @@ export default function ServicesSection() {
             <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-900/50 px-3 py-1 rounded-full mb-4">{t.services.label}</div>
             <h2 className="text-[32px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.95] text-gray-900 dark:text-white">
               {t.services.headline1}<br />{t.services.headline2}
-              <span className="text-gray-600 dark:text-gray-400">{t.services.headline3}</span>
             </h2>
           </div>
           <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[380px]">{t.services.sub}</p>

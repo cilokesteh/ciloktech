@@ -44,7 +44,6 @@ export default function FAQSection() {
           </div>
           <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
             {t.faq.headline1}
-            <span className="text-gray-600 dark:text-gray-400"> {t.faq.headline2}</span>
           </h2>
         </div>
 

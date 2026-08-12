@@ -49,7 +49,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
               <div>
                 <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">{t.homeExtra.blogLabel}</div>
-                <h2 className="text-[28px] md:text-[36px] font-extrabold tracking-tight leading-[0.9] text-gray-900 dark:text-white">{t.homeExtra.blogHeadline1}<br/>{t.homeExtra.blogHeadline2}</h2>
+                <h2 className="text-[28px] md:text-[36px] font-extrabold tracking-tight leading-[0.9] text-gray-900 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
               </div>
               <Link href="/blog" className="inline-flex items-center text-[13.5px] font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-5 py-2.5 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition w-fit">
                 {t.homeExtra.blogViewAll}

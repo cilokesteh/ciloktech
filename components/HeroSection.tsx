@@ -29,7 +29,7 @@ export default function HeroSection() {
 
           <h1 className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance">
             {t.hero.headline1}<br />
-            <span className="text-gray-600 dark:text-gray-400">{t.hero.headline2}</span> {t.hero.bagus}
+            <span className="text-gray-600 dark:text-gray-400">{t.hero.headline2}</span>
             <br />
             {t.hero.tapi} <span className="relative inline-block"><span className="relative z-10 text-gradient">{t.hero.ngasilinCuan}</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 dark:bg-cyan-900/30 -z-0 rotate-1" /></span>
           </h1>
