@@ -25,7 +25,7 @@ export default function TestimoniSection() {
             <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[500px]">
               {t.testimoni.headline1}
               <br />
-              <span className="text-gray-400 dark:text-gray-500">{t.testimoni.headline2}</span>
+              <span className="text-gray-600 dark:text-gray-400">{t.testimoni.headline2}</span>
             </h2>
           </div>
           <div className="flex items-center gap-3">

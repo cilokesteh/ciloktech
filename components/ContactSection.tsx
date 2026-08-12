@@ -20,19 +20,19 @@ export default function ContactSection() {
           <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20website" className="uiverse-card group p-6 rounded-[18px] bg-white/[0.06] backdrop-blur border border-white/10 hover:bg-white hover:text-gray-900">
             <div className="text-2xl mb-3">💬</div>
             <div className="font-bold text-[15px]">{t.contact.telegramTitle}</div>
-            <div className="text-[13px] mt-1 opacity-60 group-hover:opacity-70">{t.contact.telegramDesc}</div>
+            <div className="text-[13px] mt-1 opacity-80 group-hover:opacity-70">{t.contact.telegramDesc}</div>
             <div className="mt-4 inline-flex items-center gap-1 text-[12px] font-bold">{t.contact.telegramCta} <span className="group-hover:translate-x-1 transition">→</span></div>
           </a>
           <a href="mailto:hi@ciloktech.my.id?subject=Konsultasi%20Website%20CilokTech" className="uiverse-card group p-6 rounded-[18px] bg-white/[0.06] backdrop-blur border border-white/10 hover:bg-white hover:text-gray-900">
             <div className="text-2xl mb-3">📧</div>
             <div className="font-bold text-[15px]">{t.contact.emailTitle}</div>
-            <div className="text-[13px] mt-1 opacity-60 group-hover:opacity-70">hi@ciloktech.my.id</div>
+            <div className="text-[13px] mt-1 opacity-80 group-hover:opacity-70">hi@ciloktech.my.id</div>
             <div className="mt-4 inline-flex items-center gap-1 text-[12px] font-bold">{t.contact.emailCta} <span className="group-hover:translate-x-1 transition">→</span></div>
           </a>
           <a href="https://t.me/ciloktech" target="_blank" rel="noopener noreferrer" className="uiverse-card group p-6 rounded-[18px] bg-white/[0.06] backdrop-blur border border-white/10 hover:bg-white hover:text-gray-900">
             <div className="text-2xl mb-3">👨‍💻</div>
             <div className="font-bold text-[15px]">{t.contact.devTitle}</div>
-            <div className="text-[13px] mt-1 opacity-60 group-hover:opacity-70">{t.contact.devHandle} — {t.contact.devDesc}</div>
+            <div className="text-[13px] mt-1 opacity-80 group-hover:opacity-70">{t.contact.devHandle} — {t.contact.devDesc}</div>
             <div className="mt-4 inline-flex items-center gap-1 text-[12px] font-bold">{t.contact.devCta} <span className="group-hover:translate-x-1 transition">→</span></div>
           </a>
         </div>
@@ -41,7 +41,7 @@ export default function ContactSection() {
           <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis" className="uiverse-button px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-cyan-300 text-sm shadow-[0_10px_40px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2">🚀 {t.contact.ctaPrimary}</a>
           <a href="#harga" className="uiverse-button px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 text-sm flex items-center justify-center gap-2">{t.contact.ctaSecondary}</a>
         </div>
-        <div className="mt-8 text-[11.5px] text-gray-500">{t.contact.footerNote}</div>
+        <div className="mt-8 text-[11.5px] text-gray-400">{t.contact.footerNote}</div>
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function Home() {
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-[18px] bg-white dark:bg-[#171717] border border-gray-200 dark:border-white/10 p-5 hover:border-gray-900 dark:hover:border-white transition flex flex-col">
                   <div className="flex gap-1.5 flex-wrap mb-3">
                     {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="text-[10px] font-bold bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-full text-gray-600 dark:text-gray-300">{tg}</span>))}
-                    <span className="text-[10px] text-gray-400">{post.readingTime}</span>
+                    <span className="text-[10px] text-gray-500">{post.readingTime}</span>
                   </div>
                   <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition line-clamp-2">{post.title}</div>
                   <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 line-clamp-2 leading-relaxed">{post.description}</div>

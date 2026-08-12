@@ -15,7 +15,7 @@ export default function HargaClient() {
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-6">{hp.badge}</div>
           <h1 className="text-[32px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[720px]">
             {hp.heroH1a} <span className="line-through decoration-2 decoration-gray-400">{hp.heroH1b}</span> {hp.heroH1c}
-            <br />{hp.heroH1d} <span className="text-cyan-600 dark:text-cyan-400">{hp.heroH1e}</span>{hp.heroH1f}
+            <br />{hp.heroH1d} <span className="text-cyan-700 dark:text-cyan-400">{hp.heroH1e}</span>{hp.heroH1f}
           </h1>
           <p className="text-[16px] leading-relaxed text-gray-600 dark:text-gray-400 mt-6 max-w-[600px]">{hp.heroSub}</p>
 
@@ -23,7 +23,7 @@ export default function HargaClient() {
             <div className="rounded-2xl bg-[#fafafa] dark:bg-[#111111] border border-gray-200 dark:border-white/10 p-5">
               <div className="text-[12px] font-bold uppercase tracking-widest text-gray-500">{hp.whatYouPay}</div>
               <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceYouPay}</div>
-              <div className="text-[12px] text-gray-500 dark:text-gray-400 mt-1">{hp.once}</div>
+              <div className="text-[12px] text-gray-600 dark:text-gray-400 mt-1">{hp.once}</div>
             </div>
             <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-900/50 p-5">
               <div className="text-[12px] font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-300">{hp.realValue}</div>
@@ -31,13 +31,13 @@ export default function HargaClient() {
               <div className="text-[12px] text-cyan-700/70 dark:text-cyan-300/70 mt-1">{hp.ifAgency}</div>
             </div>
             <div className="rounded-2xl bg-gray-900 dark:bg-white border border-gray-900 dark:border-white p-5 text-white dark:text-black">
-              <div className="text-[12px] font-bold uppercase tracking-widest opacity-60">{hp.youSave}</div>
+              <div className="text-[12px] font-bold uppercase tracking-widest opacity-80">{hp.youSave}</div>
               <div className="text-[28px] font-extrabold mt-1">{hp.priceYouSave}</div>
-              <div className="text-[12px] opacity-60 mt-1">{hp.noCut}</div>
+              <div className="text-[12px] opacity-80 mt-1">{hp.noCut}</div>
             </div>
           </div>
-          <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-500 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
-            <span className="text-cyan-600 dark:text-cyan-400 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
+          <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
+            <span className="text-cyan-700 dark:text-cyan-400 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
           </div>
         </div>
       </section>
@@ -49,14 +49,14 @@ export default function HargaClient() {
           <div className="bg-white dark:bg-[#171717] rounded-[20px] border border-gray-200 dark:border-white/10 overflow-hidden">
             {breakdown.map((b: { item: string; value: string; note: string }, i: number) => (
               <div key={i} className="flex flex-col md:flex-row md:items-center justify-between gap-2 p-5 border-b last:border-0 border-gray-100 dark:border-white/5 hover:bg-gray-50/50 dark:hover:bg-white/[0.02] transition">
-                <div className="flex-1"><div className="text-[14px] font-bold text-gray-900 dark:text-white">{i + 1}. {b.item}</div><div className="text-[12px] text-gray-500 dark:text-gray-400 mt-1">{b.note}</div></div>
+                <div className="flex-1"><div className="text-[14px] font-bold text-gray-900 dark:text-white">{i + 1}. {b.item}</div><div className="text-[12px] text-gray-600 dark:text-gray-400 mt-1">{b.note}</div></div>
                 <div className="text-[13px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full w-fit">{b.value}</div>
               </div>
             ))}
             <div className="p-5 bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-between"><span className="font-bold text-[14px]">{hp.totalSeparate}</span><span className="font-extrabold text-[18px]">{hp.totalSeparateVal}</span></div>
             <div className="p-5 bg-cyan-500 dark:bg-cyan-400 text-gray-900 flex items-center justify-between font-bold"><span>{hp.paketCilok}</span><span className="text-[20px]">{hp.paketVal}</span></div>
           </div>
-          <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-500 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full"><span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" /> {hp.noHidden}</div>
+          <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full"><span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" /> {hp.noHidden}</div>
         </div>
       </section>
 
@@ -72,7 +72,7 @@ export default function HargaClient() {
                 <tr className="bg-[#fafafa] dark:bg-[#111111] border-b border-gray-200 dark:border-white/10">
                   <th className="p-4 text-[11px] font-bold uppercase tracking-widest text-gray-500 w-[22%]">{hp.feature}</th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.freelance}<br/><span className="font-normal text-[11px]">{hp.freelanceRange}</span></th>
-                  <th className="p-4 text-[12px] font-extrabold text-gray-900 dark:text-white bg-cyan-50/50 dark:bg-cyan-950/20 w-[26%] border-x border-cyan-200/50 dark:border-cyan-900/30">{hp.cilokCol}<br/><span className="font-bold text-cyan-600 dark:text-cyan-400">{hp.cilokRange}</span></th>
+                  <th className="p-4 text-[12px] font-extrabold text-gray-900 dark:text-white bg-cyan-50/50 dark:bg-cyan-950/20 w-[26%] border-x border-cyan-200/50 dark:border-cyan-900/30">{hp.cilokCol}<br/><span className="font-bold text-cyan-700 dark:text-cyan-400">{hp.cilokRange}</span></th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.agencyCol}<br/><span className="font-normal text-[11px]">{hp.agencyRange}</span></th>
                 </tr>
               </thead>
@@ -111,7 +111,7 @@ export default function HargaClient() {
             </div>
           </div>
           <div className="rounded-[22px] bg-white dark:bg-black text-gray-900 dark:text-white p-7 border border-gray-200 dark:border-white/10">
-            <div className="text-[13px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">{hp.sideCardTitle}</div>
+            <div className="text-[13px] font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400">{hp.sideCardTitle}</div>
             <div className="mt-5 space-y-4">
               {hp.sideRows.map((r: string, i: number) => {
                 const isCilok = i === 2;

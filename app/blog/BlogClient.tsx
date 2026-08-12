@@ -14,7 +14,7 @@ export default function BlogClient() {
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-5">BLOG • {isId ? "TIPS PRAKTIS DARI LAPANGAN" : "STRAIGHT TALK — REAL INSIGHTS"}</div>
           <h1 className="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[560px]">
-            {isId ? <>Website yang <span className="text-cyan-600 dark:text-cyan-400">menghasilkan</span> pelanggan,<br />bukan sekadar tampilan menarik.</> : <>Websites that <span className="text-cyan-600 dark:text-cyan-400">convert</span> customers,<br />not just look pretty.</>}
+            {isId ? <>Website yang <span className="text-cyan-700 dark:text-cyan-400">menghasilkan</span> pelanggan,<br />bukan sekadar tampilan menarik.</> : <>Websites that <span className="text-cyan-700 dark:text-cyan-400">convert</span> customers,<br />not just look pretty.</>}
           </h1>
           <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 mt-5 max-w-[520px]">
             {isId ? "Saya menulis berdasarkan temuan di lapangan: mengapa website UMKM sepi pengunjung, perbedaan landing page vs company profile, mengapa WordPress lambat, dan checklist konversi yang benar-benar terbukti." : "I write based on real field findings: why SME websites get zero traffic, landing vs company profile differences, why WordPress is slow, and the conversion checklist that actually works."}

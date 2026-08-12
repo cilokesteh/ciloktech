@@ -112,7 +112,7 @@ export default function Kalkulator() {
 
         <div className="space-y-4 min-w-0">
           <div className="rounded-[22px] bg-gray-900 dark:bg-white text-white dark:text-black p-5 md:p-7 border border-gray-800 dark:border-white overflow-hidden">
-            <div className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-60">{isId ? "ESTIMASI KERUGIAN AKIBAT WEBSITE LAMBAT" : "EST. LOSS FROM SLOW WEBSITE"}</div>
+            <div className="text-[11px] font-bold tracking-[0.15em] uppercase opacity-80">{isId ? "ESTIMASI KERUGIAN AKIBAT WEBSITE LAMBAT" : "EST. LOSS FROM SLOW WEBSITE"}</div>
             <div className="mt-4 min-w-0">
               <div className="text-[13px] opacity-70">{isId ? "Per bulan" : "Per month"}</div>
               {/* Monthly — always single line, scale down on mobile */}
@@ -130,7 +130,7 @@ export default function Kalkulator() {
               <div className="rounded-xl bg-red-500/15 border border-red-500/30 px-3.5 py-3.5">
                 <div className="text-[10px] font-bold tracking-[0.12em] uppercase opacity-70 text-red-200 dark:text-red-700">3 tahun</div>
                 <div className="mt-1 text-[16px] sm:text-[18px] font-extrabold leading-none tracking-tight tabular-nums whitespace-nowrap text-red-200 dark:text-red-600" title={fmt(result.rugi3th)}>{fmtTiny(result.rugi3th)}</div>
-                <div className="mt-1 text-[10px] opacity-60 whitespace-nowrap">{isId ? "jika tidak segera diperbaiki" : "if not fixed"}</div>
+                <div className="mt-1 text-[10px] opacity-80 whitespace-nowrap">{isId ? "jika tidak segera diperbaiki" : "if not fixed"}</div>
                 <div className="mt-0.5 text-[9px] opacity-40 whitespace-nowrap truncate hidden sm:block" title={fmt(result.rugi3th)}>{fmt(result.rugi3th)}</div>
               </div>
             </div>

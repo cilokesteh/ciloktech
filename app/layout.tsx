@@ -108,6 +108,7 @@ export default function RootLayout({
             __html: `(function(){try{var s=localStorage.getItem('cilok-theme');var d=s? s==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');var l=localStorage.getItem('cilok-locale');if(l)document.documentElement.lang=l;else if(navigator.language.toLowerCase().startsWith('en'))document.documentElement.lang='en';}catch(e){}})()`,
           }}
         />
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -21,7 +21,7 @@ export default function LanguageSwitcher({ compact = false, className = "" }: { 
         <span className="text-[14px] leading-none">{localeNames[locale].flag}</span>
         <span>{localeNames[locale].short}</span>
         <span className="opacity-30">/</span>
-        <span className="opacity-60">{localeNames[locale === "id" ? "en" : "id"].short}</span>
+        <span className="opacity-80">{localeNames[locale === "id" ? "en" : "id"].short}</span>
       </button>
     );
   }

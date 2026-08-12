@@ -122,12 +122,12 @@ body {
 }
 
 /* Hero premium motion: transform/opacity only for smooth, low-cost animation. */
-.hero-reveal { opacity: 0; transform: translateY(14px); animation: hero-reveal 700ms cubic-bezier(.22,1,.36,1) forwards; }
-.hero-reveal-1 { animation-delay: 80ms; }
-.hero-reveal-2 { animation-delay: 160ms; }
-.hero-reveal-3 { animation-delay: 240ms; }
-.hero-reveal-4 { animation-delay: 320ms; }
-.hero-reveal-5 { animation-delay: 400ms; }
+.js .hero-reveal { opacity: 0; transform: translateY(14px); animation: hero-reveal 600ms cubic-bezier(.22,1,.36,1) forwards; }
+.js .hero-reveal-1 { animation-delay: 40ms; }
+.js .hero-reveal-2 { animation-delay: 80ms; }
+.js .hero-reveal-3 { animation-delay: 120ms; }
+.js .hero-reveal-4 { animation-delay: 160ms; }
+.js .hero-reveal-5 { animation-delay: 200ms; }
 @keyframes hero-reveal { to { opacity: 1; transform: translateY(0); } }
 .hero-orb { animation: hero-float 12s ease-in-out infinite; will-change: transform; }
 .hero-orb-main { animation-name: hero-float-centered; }

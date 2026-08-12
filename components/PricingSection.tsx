@@ -24,7 +24,7 @@ export default function PricingSection() {
           </div>
           <h2 className="text-[32px] md:text-[46px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
             {t.pricing.headline1} <br />
-            <span className="text-gray-400 dark:text-gray-500">{t.pricing.headline2}</span>
+            <span className="text-gray-600 dark:text-gray-400">{t.pricing.headline2}</span>
           </h2>
           <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
             {t.pricing.sub}
@@ -58,7 +58,7 @@ export default function PricingSection() {
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </span>
                   </div>
-                  <div className={`text-[12px] mt-1 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-500 dark:text-gray-400"}`}>{plan.unit}</div>
+                  <div className={`text-[12px] mt-1 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.unit}</div>
                   <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
                 </div>
 
@@ -99,7 +99,7 @@ export default function PricingSection() {
           })}
         </div>
 
-        <div className="mt-10 text-center text-[12.5px] text-gray-500 dark:text-gray-400">
+        <div className="mt-10 text-center text-[12.5px] text-gray-600 dark:text-gray-400">
           {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
         </div>
       </div>

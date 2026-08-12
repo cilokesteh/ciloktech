@@ -26,11 +26,21 @@ export default function GA4() {
     gtag("js", new Date());
     gtag("config", id, { anonymize_ip: true });
 
-    // 2. Muat gtag.js async — tidak blocking
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
-    document.head.appendChild(script);
+    // 2. Muat gtag.js saat idle — 150KB parser/main-thread cost ditunda
+    //    setelah interaksi awal (dataLayer queue tetap menangkap event).
+    const load = () => {
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+      document.head.appendChild(script);
+    };
+    if ("requestIdleCallback" in window) {
+      (window as unknown as { requestIdleCallback?: (cb: () => void) => void }).requestIdleCallback?.(
+        () => setTimeout(load, 500)
+      );
+    } else {
+      setTimeout(load, 1200);
+    }
   }, []);
 
   return null;

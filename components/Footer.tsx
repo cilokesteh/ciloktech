@@ -32,7 +32,7 @@ export default function Footer() {
                   <span className="text-white font-extrabold text-[16px] tracking-tight group-hover:text-cyan-300 transition">Cilok Tech</span>
                   <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-cyan-300 transition">WEB.ID</span>
                 </div>
-                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-white/40 mt-1 group-hover:text-white/60 transition">ONE-MAN STUDIO • {t.nav.clickToTop}</span>
+                <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-white/60 mt-1 group-hover:text-white/70 transition">ONE-MAN STUDIO • {t.nav.clickToTop}</span>
               </div>
             </button>
             <p className="text-[13px] leading-relaxed">{t.footer.desc}</p>
@@ -61,19 +61,19 @@ export default function Footer() {
               <div className="space-y-3 text-[13px]">
                 <a href="https://t.me/ciloktechcsbot" className="block hover:text-white transition">{t.footer.telegram}</a>
                 <a href="mailto:hi@ciloktech.my.id" className="block hover:text-white transition">hi@ciloktech.my.id</a>
-                <div className="text-gray-600 text-xs mt-4 leading-relaxed whitespace-pre-line">{t.footer.replyNote}</div>
+                <div className="text-gray-400 text-xs mt-4 leading-relaxed whitespace-pre-line">{t.footer.replyNote}</div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-col gap-2">
-          <div className="text-center text-[12.5px] text-gray-500 tracking-wide flex items-center justify-center gap-2 flex-wrap">
+          <div className="text-center text-[12.5px] text-gray-400 tracking-wide flex items-center justify-center gap-2 flex-wrap">
             <span>{t.footer.copyright}</span>
             <span className="w-px h-3 bg-white/10" />
             <button onClick={handleHomeClick} className="hover:text-white transition">One-man studio ↺</button>
           </div>
-          <div className="flex items-center justify-center gap-4 text-[11.5px] text-gray-600 flex-wrap">
+          <div className="flex items-center justify-center gap-4 text-[11.5px] text-gray-400 flex-wrap">
             <button onClick={handleHomeClick} className="hover:text-white transition flex items-center gap-1 group">{t.footer.backToTop} <span className="opacity-0 group-hover:opacity-100 transition">↺</span></button>
             <span>•</span>
             <span>{t.footer.lcp}</span>

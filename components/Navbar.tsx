@@ -52,8 +52,8 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col items-start leading-none">
             <div className="flex items-baseline gap-[1px]">
-              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition">Cilok</span>
-              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-cyan-600 dark:text-cyan-400">Tech</span>
+              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition">Cilok</span>
+              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-cyan-700 dark:text-cyan-400">Tech</span>
               <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-black tracking-[0.14em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-[6px] py-[2px] rounded-full leading-none -translate-y-[1px] group-hover:bg-cyan-500 dark:group-hover:bg-cyan-400 transition">WEB.ID</span>
             </div>
             <div className="mt-[3px]">
@@ -98,7 +98,7 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               className="uiverse-button px-5 py-2.5 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-white dark:to-gray-200 text-white dark:text-black text-[13.5px] font-bold rounded-full hover:from-cyan-600 hover:to-indigo-600 dark:hover:from-cyan-300 dark:hover:to-indigo-300 hover:shadow-lg flex items-center gap-1.5"
             >
-              {t.common.konsultasiGratis} <span className="text-[11px] opacity-60">↗</span>
+              {t.common.konsultasiGratis} <span className="text-[11px] opacity-80">↗</span>
             </a>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function Navbar() {
             <span className="w-1 h-1 bg-emerald-400 rounded-full animate-pulse" />
             <span className="text-[10px] text-gray-500">{t.common.available}</span>
           </div>
-          <Link href="/" onClick={() => setOpen(false)} className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-600 dark:hover:text-cyan-400 transition">
+          <Link href="/" onClick={() => setOpen(false)} className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-700 dark:hover:text-cyan-400 transition">
             <span>{t.nav.beranda}</span>
             <span className="text-gray-300 dark:text-white/20 text-[12px]">HOME</span>
           </Link>
