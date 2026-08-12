@@ -58,7 +58,7 @@ export default function Kalkulator() {
           <LanguageSwitcher compact className="shrink-0" />
         </div>
         <h1 className="text-[32px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
-          {isId ? "Website lambat itu" : "Slow site ="}
+          {isId ? "Website lambat itu " : "Slow site = "}
           <br />
           <span className="text-red-600 dark:text-red-400">{isId ? `rugi Rp ${Math.round(result.rugiBulan / 1000000)}jt` : `losing ${fmt(result.rugiBulan)}` } {isId ? "per bulan." : "/ month."}</span>
         </h1>

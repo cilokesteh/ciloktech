@@ -21,7 +21,7 @@ export const posts: Post[] = [
   {
     slug: "landing-page-vs-company-profile",
     title: "Landing Page vs Company Profile: Mana yang Bikin Cuan?",
-    description: "Jangan salah pilih. Landing page Rp 900 ribu berbeda dengan company profile Rp 2,5 juta. Perbedaannya ada pada tujuan, struktur, dan cara menghasilkan konversi. Saya bedah secara to-the-point.",
+    description: "Jangan salah pilih. Landing page Rp 900 ribu berbeda dengan company profile Rp 1,5jt. Perbedaannya ada pada tujuan, struktur, dan cara menghasilkan konversi. Saya bedah secara to-the-point.",
     date: "2026-08-02",
     readingTime: "5 menit",
     tags: ["Landing Page", "Company Profile", "Strategi"],
@@ -38,7 +38,7 @@ export const posts: Post[] = [
   {
     slug: "biaya-bikin-website-2026-breakdown-jujur",
     title: "Biaya Bikin Website Profesional 2026: Breakdown Jujur Rp 900rb – 15jt",
-    description: "Template Rp 800 ribu vs CilokTech Rp 2,5 juta vs agensi Rp 10 juta ke atas — apa bedanya? Saya rincikan per item: desain, coding, SEO, copywriting, dan hosting agar Anda tidak terkecoh harga murah.",
+    description: "Template Rp 800 ribu vs CilokTech Rp 1,5jt vs agensi Rp 10 juta ke atas — apa bedanya? Saya rincikan per item: desain, coding, SEO, copywriting, dan hosting agar Anda tidak terkecoh harga murah.",
     date: "2026-08-03",
     readingTime: "8 menit",
     tags: ["Harga", "Transparan", "Comparison"],
@@ -81,7 +81,7 @@ export const posts: Post[] = [
   {
     slug: "jasa-website-murah-jangan-asal-murah",
     title: "Jasa Website Murah Rp 500rb: Murah di Awal, Boncos di Akhir — Ini Buktinya",
-    description: "Tergiur website murah Rp 500 ribu? Umumnya menggunakan hosting tidak memadai, domain menumpang, SEO tidak dioptimalkan, dan rawan diretas. Saya bongkar biaya sebenarnya dan alasan mengapa Rp 2,5 juta justru lebih hemat untuk jangka panjang.",
+    description: "Tergiur website murah Rp 500 ribu? Umumnya menggunakan hosting tidak memadai, domain menumpang, SEO tidak dioptimalkan, dan rawan diretas. Saya bongkar biaya sebenarnya dan alasan mengapa Rp 1,5jt justru lebih hemat untuk jangka panjang.",
     date: "2026-08-06",
     readingTime: "7 menit",
     tags: ["Website Murah", "Jebakan", "Edukasi"],

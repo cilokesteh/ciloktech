@@ -28,7 +28,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
       "Banyak UMKM salah memilih: ingin menjual 1 produk tetapi meminta company profile 5 halaman. Hasil akhirnya: biaya membengkak tanpa konversi yang jelas.",
       "### Landing Page (Rp 900rb) — untuk menjual 1 produk\nFokus pada 1 tujuan: konversi. Struktur ideal: Hero + Problem + Solution + Testimoni + Pricing + FAQ + CTA. Tanpa navigasi yang berputar-putar. Contoh penggunaan: jasa las, laundry kiloan, bengkel mobil. Go-live dalam 2–3 hari.",
       "### Company Profile (Rp 1,5jt) — untuk membangun kepercayaan\nFokus pada: kepercayaan dan kredibilitas. Struktur: Home + Layanan + Portofolio + Harga + Testimoni + Kontak + Blog. Seperti ciloktech.web.id saat ini. Ideal untuk: PT, CV, konsultan, agency, dan institusi pendidikan.",
-      "### Kapan harus memilih yang mana?\\n- 1 produk, butuh leads cepat → Landing Page\\n- Banyak layanan, butuh portofolio + blog SEO → Company Profile\\n- Aplikasi kasir / inventory / dashboard internal → Web App Custom mulai Rp 2,5jt+",
+      "### Kapan harus memilih yang mana?\n- 1 produk, butuh leads cepat → Landing Page\n- Banyak layanan, butuh portofolio + blog SEO → Company Profile\n- Aplikasi kasir / inventory / dashboard internal → Web App Custom mulai Rp 2,5jt+",
       "#### Aturan praktis saya:\nJika budget di bawah Rp 1,5jt dan Anda butuh closing minggu ini → pilih Landing Page. Jika ingin bermain untuk jangka panjang dengan SEO + branding → Company Profile Rp 1,5jt (value setara Rp 5-7jt). Lihat rincian lengkap di /harga atau hitung ROI di /kalkulator.",
     ],
   },
@@ -78,7 +78,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "Masih berjualan melalui DM Instagram? Lelah membalas 'Berapa harganya kak?' padahal pelanggan ingin langsung checkout? Saatnya upgrade ke toko online profesional.",
       "### Masalah berjualan via DM\n- 60% calon pelanggan enggan bertanya harga — langsung beralih ke kompetitor yang menampilkan harga + tombol beli jelas\n- Stok manual — risiko overselling\n- Rekapitulasi manual via Excel — menghabiskan 2 jam setiap malam",
-      "### Solusi: Toko Online UMKM (mulai Rp 1,5jt One-Man Studio)\n- Katalog produk + varian + stok real-time\n- Keranjang belanja + checkout otomatis\n- Pembayaran QRIS / Transfer / COD\n- Ongkir otomatis + pembuatan resi otomatis\n- Dashboard admin untuk order + manajemen stok",
+      "### Solusi: Toko Online UMKM (mulai Rp 2,5jt One-Man Studio)\n- Katalog produk + varian + stok real-time\n- Keranjang belanja + checkout otomatis\n- Pembayaran QRIS / Transfer / COD\n- Ongkir otomatis + pembuatan resi otomatis\n- Dashboard admin untuk order + manajemen stok",
       "### Marketplace vs Toko Mandiri\nMarketplace: potongan 5-10%, perang harga tidak sehat, data pelanggan milik marketplace.\nToko Mandiri: tanpa potongan, data 100% milik Anda, branding lebih kuat. Hitung kerugian marketplace di /kalkulator.",
       "### Teknologi yang digunakan\nNext.js 15 + Prisma + PostgreSQL + Midtrans QRIS. <1 detik LCP, PWA ready, 111kB hemat kuota. OG dinamis untuk share WhatsApp yang menarik.",
       "#### Mulai dari mana?\n<20 SKU → Company Profile Rp 1,5jt + Katalog + Checkout via WhatsApp. >50 SKU + pembayaran otomatis → Web App Custom mulai Rp 2,5jt+.",
