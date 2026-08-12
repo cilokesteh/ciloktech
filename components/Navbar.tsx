@@ -16,7 +16,6 @@ export default function Navbar() {
     { href: "/#layanan", label: t.nav.layanan, type: "anchor" },
     { href: "/#portofolio", label: t.nav.portofolio, type: "anchor" },
     { href: "/#harga", label: t.nav.harga, type: "anchor" },
-    { href: "/kalkulator", label: t.nav.kalkulator, type: "page", highlight: true },
     { href: "/harga", label: t.nav.breakdown, type: "page" },
     { href: "/blog", label: t.nav.blog, type: "page" },
   ];

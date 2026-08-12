@@ -148,7 +148,6 @@ export default function HargaClient() {
           <h2 className="text-[28px] md:text-[42px] font-extrabold tracking-tight text-gray-900 dark:text-white leading-[0.9] whitespace-pre-line">{hp.finalH1}</h2>
           <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-5 max-w-[520px] mx-auto leading-relaxed">{hp.finalP}</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/kalkulator" className="px-8 py-4 bg-amber-500 text-black font-bold rounded-full hover:bg-amber-400 transition text-sm">{hp.calcCta}</Link>
             <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%201.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-sm">{hp.gasCta}</a>
           </div>
           <div className="mt-4 flex justify-center"><Link href="/#harga" className="text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">{hp.backPkg}</Link></div>

@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     "",
     "/harga",
-    "/kalkulator",
     "/blog",
   ];
 
@@ -16,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: p === "" ? 1 : p === "/kalkulator" ? 0.9 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.7,
+    priority: p === "" ? 1 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.7,
   }));
 
   const blogRoutes = posts.map((post) => ({

@@ -34,9 +34,6 @@ export function BlogDetailCTA({ title }: { title: string }) {
         <a href={`https://t.me/ciloktechcsbot?text=Halo%20CilokTech%20One-Man%20Studio%2C%20abis%20baca%20${encodeURIComponent(title)}%20mau%20konsultasi`} className="px-5 py-3 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13px] hover:bg-cyan-300 text-center transition">
           {isId ? "Chat dari artikel ini →" : "Chat from this article →"}
         </a>
-        <Link href="/kalkulator" className="px-5 py-3 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13px] hover:bg-white/10 text-center transition">
-          🧮 {isId ? "Hitung rugi dulu" : "Calc loss first"}
-        </Link>
       </div>
     </div>
   );
