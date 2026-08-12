@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     "kalkulator pendapatan hilang website",
     "one-man studio website",
   ],
-  alternates: { canonical: "https://ciloktech.web.id/kalkulator" },
+  alternates: { canonical: "https://www.ciloktech.web.id/kalkulator" },
   openGraph: {
     title: "Kalkulator Kerugian Website — Berapa Kerugian Anda Setiap Bulan?",
     description: "Website lambat = 40% pelanggan pergi. Hitung kerugian real-time secara gratis dari CilokTech One-Man Studio.",
-    url: "https://ciloktech.web.id/kalkulator",
+    url: "https://www.ciloktech.web.id/kalkulator",
     images: [
       {
-        url: "https://ciloktech.web.id/api/og?title=Kalkulator%20Kerugian%20Website%20—%20Rugi%20Berapa%20Per%20Bulan%3F&subtitle=KALKULATOR%20GRATIS%20•%20ONE-MAN%20STUDIO&tag=ciloktech.web.id%2Fkalkulator&type=harga",
+        url: "https://www.ciloktech.web.id/api/og?title=Kalkulator%20Kerugian%20Website%20—%20Rugi%20Berapa%20Per%20Bulan%3F&subtitle=KALKULATOR%20GRATIS%20•%20ONE-MAN%20STUDIO&tag=ciloktech.web.id%2Fkalkulator&type=harga",
         width: 1200,
         height: 630,
       },

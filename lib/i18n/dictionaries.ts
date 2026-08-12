@@ -110,7 +110,7 @@ const idDict = {
         title: "Company Profile Pro",
         cat: "Website • SEO",
         desc: "Company profile dengan LCP <1 detik, schema LocalBusiness, OG dinamis, sitemap otomatis, dan blog berbasis MDX.",
-        stats: "98 Lighthouse",
+        stats: "Lighthouse 100",
       },
       {
         title: "Ekosistem Bot Telegram",
@@ -226,7 +226,7 @@ const idDict = {
     items: [
       { q: "Berapa lama proses pembuatannya?", a: "Landing page rata-rata 2–3 hari, company profile 4–7 hari, web app custom tergantung ruang lingkup, namun biasanya MVP tersedia dalam 1–2 minggu. Semua proses disertai link staging sehingga Anda dapat memantau progress secara real-time." },
       { q: "Apakah source code diberikan?", a: "Ya, Anda mendapatkan repository private GitHub + dokumentasi lengkap. Kepemilikan penuh di tangan Anda. Jika ingin deploy sendiri atau pindah hosting kapan pun bisa, tanpa vendor lock-in. One-man studio — source code tetap milik Anda." },
-      { q: "Menggunakan teknologi apa?", a: "Next.js 15, React 19, Tailwind v4, Firebase / Supabase / PostgreSQL menyesuaikan kebutuhan. Hosting di Vercel + Cloudflare. Stack modern dengan First Load 111kB, LCP <1 detik, skor 98 Lighthouse, dan aman secara default." },
+      { q: "Menggunakan teknologi apa?", a: "Next.js 15, React 19, Tailwind v4, Firebase / Supabase / PostgreSQL menyesuaikan kebutuhan. Hosting di Vercel + Cloudflare. Stack modern dengan First Load 136kB, LCP <1 detik, skor Lighthouse 100 (SEO & Aksesibilitas), dan aman secara default." },
       { q: "Berapa kali revisi yang didapat?", a: "Untuk landing page & company profile: gratis 2x revisi minor. Web app: iterasi agile mingguan. Revisi mayor (perubahan konsep) akan dihitung sebagai tambahan — namun saya selalu mendiskusikan solusi paling efisien terlebih dahulu." },
       { q: "Apakah ada garansi / maintenance?", a: "Company profile mendapatkan gratis maintenance 3 bulan (perbaikan bug + patch keamanan). Untuk web app custom tersedia opsi retainer — monitoring uptime, backup harian, dan tuning performa." },
       { q: "Bagaimana sistem pembayarannya?", a: "DP 50% untuk memulai, pelunasan setelah go-live dan Anda menyetujui hasil. Pembayaran via transfer bank / QRIS. Untuk retainer bulanan menggunakan sistem langganan." },
@@ -329,7 +329,7 @@ const idDict = {
     breakdown: [
       { item: "Desain UI custom Figma-inspired + responsif", value: "Rp 400rb", note: "Agency kenakan 2–3jt" },
       { item: "Frontend Next.js 15 + Tailwind + Dark/Light Mode", value: "Rp 400rb", note: "Custom, bukan template" },
-      { item: "SEO on-page: OG, Schema, Sitemap, Robots, 98 Lighthouse", value: "Rp 300rb", note: "Jasa SEO saja 1jt/bulan di luar" },
+      { item: "SEO on-page: OG, Schema, Sitemap, Robots, Lighthouse 100 (SEO & Aksesibilitas)", value: "Rp 300rb", note: "Jasa SEO saja 1jt/bulan di luar" },
       { item: "Copywriting B2B fokus konversi + struktur", value: "Rp 200rb", note: "Bukan Lorem Ipsum" },
       { item: "Hosting Vercel + domain web.id + SSL 1 tahun", value: "Rp 100rb", note: "Gratis tahun pertama" },
       { item: "Deployment + training + dokumentasi", value: "Rp 100rb", note: "Via Telegram / Google Meet" },
@@ -350,7 +350,7 @@ const idDict = {
     agencyRange: "Rp 8jt – 15jt",
     comparison: [
       { feature: "Desain", low: "Template beli Rp 150rb", mid: "Custom Figma → code (seperti ciloktech.web.id)", high: "Custom + brand guideline" },
-      { feature: "Teknologi", low: "WordPress + Elementor (berat)", mid: "Next.js 15 + Tailwind v4 — 107kB, 98 Lighthouse", high: "Next.js + testing + CI/CD" },
+      { feature: "Teknologi", low: "WordPress + Elementor (berat)", mid: "Next.js 15 + Tailwind v4 — 136kB, Lighthouse 100", high: "Next.js + testing + CI/CD" },
       { feature: "SEO", low: "Tidak ada / asal-asalan", mid: "OG, Schema, Sitemap, Robots, Canonical — lengkap", high: "Sama + blog SEO + setup analytics" },
       { feature: "Dark / Light Mode", low: "❌ Tidak ada", mid: "✅ Toggle profesional + persist + anti-FOUC", high: "✅ Tersedia" },
       { feature: "Kecepatan", low: "3–6 detik", mid: "<1 detik LCP", high: "<1 detik LCP" },
@@ -512,7 +512,7 @@ const enDict: Dict = {
         title: "Company Profile Pro — SEO Edition",
         cat: "Website • SEO Optimized",
         desc: "High-performance company profile with <1s LCP, LocalBusiness schema, dynamic OG image generation, automated sitemap, and MDX-powered blog.",
-        stats: "98 Lighthouse score",
+        stats: "Lighthouse 100",
       },
       {
         title: "Telegram Bot Ecosystem",
@@ -628,7 +628,7 @@ const enDict: Dict = {
     items: [
       { q: "How long does the development process take?", a: "Landing pages average 2–3 days, company profiles 4–7 days, and custom web apps depend on scope but MVPs are typically ready in 1–2 weeks. Every project includes a live staging link so you can track real-time progress." },
       { q: "Do you provide full source code ownership?", a: "Absolutely — you get a private GitHub repository + complete documentation. You own 100% of the code. Want to self-deploy or migrate hosting anytime? No vendor lock-in. One-man studio means your source stays 100% yours." },
-      { q: "What technology stack do you use?", a: "Next.js 15, React 19, Tailwind v4, Firebase / Supabase / PostgreSQL depending on your needs. Hosted on Vercel + Cloudflare. Modern, blazing-fast stack: 111kB First Load, <1s LCP, 98 Lighthouse score, secure by default." },
+      { q: "What technology stack do you use?", a: "Next.js 15, React 19, Tailwind v4, Firebase / Supabase / PostgreSQL depending on your needs. Hosted on Vercel + Cloudflare. Modern, blazing-fast stack: 136kB First Load, <1s LCP, 100 Lighthouse (SEO & Accessibility), secure by default." },
       { q: "How many revision rounds are included?", a: "Landing pages & company profiles: 2 rounds of minor revisions are free. Web apps: weekly agile iterations. Major revisions (concept changes) are billed separately — but I always discuss the most cost-efficient solution first." },
       { q: "Do you offer warranty / maintenance?", a: "Company profiles include 3 months of free maintenance (bug fixes + security patches). For custom web apps, an optional retainer is available — including uptime monitoring, daily backups, and performance tuning." },
       { q: "What is your payment structure?", a: "50% upfront deposit to start, balance after go-live and your final approval. Bank transfer or QRIS accepted. Monthly retainer plans available for ongoing work." },
@@ -731,7 +731,7 @@ const enDict: Dict = {
     breakdown: [
       { item: "Custom UI design — Figma-inspired & fully responsive", value: "Rp 400k", note: "Agencies: Rp 2-3M" },
       { item: "Frontend: Next.js 15 + Tailwind CSS + Dark/Light mode", value: "Rp 400k", note: "100% custom, not a template" },
-      { item: "On-page SEO: OG image, Schema, Sitemap, Robots, 98 Lighthouse score", value: "Rp 300k", note: "SEO services alone: Rp 1M/month externally" },
+      { item: "On-page SEO: OG image, Schema, Sitemap, Robots, Lighthouse 100 (SEO & Accessibility)", value: "Rp 300k", note: "SEO services alone: Rp 1M/month externally" },
       { item: "B2B conversion-focused copywriting + content structure", value: "Rp 200k", note: "Not generic Lorem Ipsum" },
       { item: "Premium hosting on Vercel + domain web.id + SSL certificate (1 year)", value: "Rp 100k", note: "Free first year included" },
       { item: "Deployment automation + hands-on training + documentation", value: "Rp 100k", note: "Via Telegram / Google Meet" },
@@ -752,7 +752,7 @@ const enDict: Dict = {
     agencyRange: "Rp 8M - 15M",
     comparison: [
       { feature: "Design Quality", low: "Purchased template for Rp 150k", mid: "Custom Figma design → meticulously coded (like ciloktech.web.id)", high: "Custom + comprehensive brand guidelines" },
-      { feature: "Technology Stack", low: "WordPress + heavy Elementor (slow)", mid: "Next.js 15 + Tailwind v4 — 107kB, 98 Lighthouse score", high: "Next.js + testing + CI/CD pipeline" },
+      { feature: "Technology Stack", low: "WordPress + heavy Elementor (slow)", mid: "Next.js 15 + Tailwind v4 — 136kB, Lighthouse 100", high: "Next.js + testing + CI/CD pipeline" },
       { feature: "SEO Optimization", low: "None or poorly implemented", mid: "OG, Schema, Sitemap, Robots.txt, Canonical — complete setup", high: "Everything + content SEO strategy + analytics integration" },
       { feature: "Dark / Light Mode", low: "❌ Not available", mid: "✅ Professional toggle with persistence + anti-FOUC", high: "✅ Fully supported" },
       { feature: "Loading Speed", low: "3-6 seconds average", mid: "<1s LCP — blazing fast", high: "<1s LCP — blazing fast" },

@@ -30,7 +30,7 @@ export const posts: Post[] = [
   {
     slug: "kenapa-wordpress-lemot-solusi-nextjs",
     title: "Kenapa Website WordPress Lemot & Rawan Hack (dan Solusi Next.js 15)",
-    description: "Rata-rata website WordPress + Elementor memiliki LCP 4,5 detik dan rentan malware. Next.js 15 mampu di bawah 1 detik, skor Lighthouse 98, dan aman secara default. Berikut perbandingan jujur berdasarkan data.",
+    description: "Rata-rata website WordPress + Elementor memiliki LCP 4,5 detik dan rentan malware. Next.js 15 mampu di bawah 1 detik, skor Lighthouse 100 (SEO & Aksesibilitas), dan aman secara default. Berikut perbandingan jujur berdasarkan data.",
     date: "2026-08-03",
     readingTime: "7 menit",
     tags: ["Next.js", "WordPress", "Speed"],

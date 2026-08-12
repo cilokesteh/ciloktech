@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Cilok Tech — One-Man Studio",
     short_name: "CilokTech",
-    description: "One-man studio — senior full-stack, jasa website & web app profesional. Tanpa kantor, tanpa PM, langsung builder. 50+ project, <1s LCP, 98 Lighthouse.",
+    description: "One-man studio — senior full-stack, jasa website & web app profesional. Tanpa kantor, tanpa PM, langsung builder. 50+ project, <1s LCP, Lighthouse 100 (SEO & Aksesibilitas).",
     start_url: "/",
     display: "standalone",
     background_color: "#0a0a0a",

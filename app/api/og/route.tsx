@@ -130,7 +130,7 @@ export async function GET(req: NextRequest) {
         {/* bottom */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 1 }}>
           <div style={{ display: "flex", gap: 12 }}>
-            {["<1s LCP", "98 Lighthouse", "3 hari live", "50+ project"].map((s) => (
+            {["<1s LCP", "Lighthouse 100 (SEO)", "3 hari live", "50+ project"].map((s) => (
               <div
                 key={s}
                 style={{

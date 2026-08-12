@@ -163,7 +163,7 @@ export default function Kalkulator() {
               <div className="min-w-0">
                 <div className="text-[13px] font-bold leading-tight">{isId ? "Solusi CilokTech One-Man Studio" : "CilokTech Solution"}</div>
                 <div className="text-[12px] leading-relaxed mt-1">
-                  Next.js 111kB &lt;1s LCP (bounce 0%), SEO OG+Schema+Sitemap {isId ? "lengkap" : "complete"} (+25% traffic), CTA sticky + floating (+20% conv).<br />
+                  Next.js 136kB &lt;1s LCP (bounce 0%), SEO OG+Schema+Sitemap {isId ? "lengkap" : "complete"} (+25% traffic), CTA sticky + floating (+20% conv).<br />
                   <span className="font-bold">{isId ? `Invest Rp 1.5jt → balik dalam ${Math.max(1, Math.ceil(1500000 / Math.max(result.rugiBulan, 1)))} bulan.` : `Invest $90 → ROI in ${Math.max(1, Math.ceil(1500000 / Math.max(result.rugiBulan, 1)))} months.`}</span>
                 </div>
               </div>
