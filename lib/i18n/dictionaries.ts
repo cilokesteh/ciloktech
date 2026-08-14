@@ -184,6 +184,21 @@ const idDict = {
         cta: "Konsultasi Web App",
       },
       {
+        name: "Bundling",
+        price: "3,5jt",
+        unit: "mulai dari — PALING HEMAT",
+        desc: "Company Profile + Web App dalam satu paket. Hemat Rp 500rb dibanding beli terpisah. Cocok untuk bisnis yang butuh website + fitur app sekaligus.",
+        features: [
+          "Semua fitur Company Profile (5 halaman + CMS)",
+          "Semua fitur Web App (login, DB real-time, dashboard)",
+          "Katalog produk + keranjang + checkout WhatsApp",
+          "SEO lanjutan + Schema + Sitemap + OG",
+          "Maintenance 1 bulan + email @domain 3 mailbox",
+          "Google Business Profile + GA4 + laporan 1 bulan",
+        ],
+        cta: "Ambil Bundling",
+      },
+      {
         name: "Custom",
         price: "Custom",
         unit: "harga negotiable sesuai scope",
@@ -577,6 +592,21 @@ const enDict: Dict = {
           "Full SEO + Analytics + 1 month maintenance",
         ],
         cta: "Get Web App Package",
+      },
+      {
+        name: "Bundle",
+        price: "$195",
+        unit: "starting at — BEST VALUE",
+        desc: "Company Profile + Web App in one package. Save $30 compared to buying separately. Perfect for businesses that need a website + app features at once.",
+        features: [
+          "All Company Profile features (5 pages + CMS)",
+          "All Web App features (login, real-time DB, dashboard)",
+          "Product catalog + cart + WhatsApp checkout",
+          "Advanced SEO + Schema + Sitemap + OG",
+          "1 month maintenance + business email (3 mailboxes)",
+          "Google Business Profile + GA4 + 1-month report",
+        ],
+        cta: "Get Bundle",
       },
       {
         name: "Web App / Custom Solution",
