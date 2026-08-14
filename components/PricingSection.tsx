@@ -71,12 +71,12 @@ export default function PricingSection() {
                   <h3 className={`text-[18px] font-bold tracking-tight ${featured ? "text-white dark:text-black" : "text-gray-900 dark:text-white"}`}>
                     {plan.name}
                   </h3>
-                  <div className="mt-3 flex items-baseline gap-2">
+                  <div className={`text-[12px] mt-2 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.unit}</div>
+                  <div className="mt-1 flex items-baseline gap-2">
                     <span className="text-[36px] font-extrabold tracking-[-0.03em] leading-none">
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </span>
                   </div>
-                  <div className={`text-[12px] mt-1 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.unit}</div>
                   <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
                 </div>
 
