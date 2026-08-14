@@ -1,15 +1,11 @@
 "use client";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HeroSection() {
   const { t } = useI18n();
-  const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
+    <section className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
@@ -20,12 +16,7 @@ export default function HeroSection() {
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="space-y-8">
-          <motion.div
-            className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0 * 0.1 }}
-          >
+          <div className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide shadow-lg shadow-gray-900/10">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               {t.hero.trust}
@@ -34,37 +25,18 @@ export default function HeroSection() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-cyan-700 dark:text-cyan-400"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               {t.hero.oneManBadge}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1 * 0.1 }}
-          >
-            <h1>
-              {t.hero.headline1}<br />
-              <span className="text-gray-600 dark:text-gray-400">{t.hero.headline2}</span>
-              <br />
-              {t.hero.tapi} <span className="relative inline-block"><span className="relative z-10 text-gradient">{t.hero.ngasilinCuan}</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 dark:bg-cyan-900/30 -z-0 rotate-1" /></span>
-            </h1>
-          </motion.div>
+          <h1 className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance">
+            {t.hero.headline1}<br />
+            <span className="text-gray-600 dark:text-gray-400">{t.hero.headline2}</span>
+            <br />
+            {t.hero.tapi} <span className="relative inline-block"><span className="relative z-10 text-gradient">{t.hero.ngasilinCuan}</span><span className="absolute bottom-1 left-0 right-0 h-3 bg-cyan-100 dark:bg-cyan-900/30 -z-0 rotate-1" /></span>
+          </h1>
 
-          <motion.p
-            className="hero-reveal hero-reveal-3 text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 2 * 0.1 }}
-          >
-            {t.hero.desc}
-          </motion.p>
+          <p className="hero-reveal hero-reveal-3 text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]">{t.hero.desc}</p>
 
-          <motion.div
-            className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 pt-1"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 3 * 0.1 }}
-          >
+          <div className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 pt-1">
             <a href="https://t.me/ciloktechcsbot" className="hero-cta uiverse-button px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:rotate-[10deg] transition-transform"><path d="M21.9 4.3l-3 14.2c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.8L18.6 6c.4-.3-.1-.5-.6-.2L7.1 12.6l-4.6-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.6.2 1.3 1.5z"/></svg>
               {t.hero.ctaTelegram}
@@ -72,26 +44,16 @@ export default function HeroSection() {
             <a href="#portofolio" className="hero-cta px-8 py-4 glass text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-white/10 text-center text-sm">
               {t.hero.ctaPortofolio}
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="hero-reveal hero-reveal-5 flex flex-wrap items-center gap-3 pt-5 border-t border-gray-100 dark:border-white/10 text-xs"
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 4 * 0.1 }}
-          >
+          <div className="hero-reveal hero-reveal-5 flex flex-wrap items-center gap-3 pt-5 border-t border-gray-100 dark:border-white/10 text-xs">
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />{t.hero.trusted}</span>
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />{t.hero.rating}</span>
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />{t.hero.noDrama}</span>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="hero-preview relative"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: [0, -8, 0] } : {}}
-          transition={{ duration: 0.6, delay: 0.2, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
-        >
+        <div className="hero-preview relative">
           <div className="absolute -inset-8 bg-gradient-to-br from-cyan-200/40 via-blue-100/30 to-indigo-200/40 dark:from-cyan-500/10 dark:via-blue-500/5 dark:to-indigo-500/10 blur-2xl rounded-[36px] -z-10 animate-pulse" />
           <div className="uiverse-card rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#121217] shadow-[0_24px_70px_rgba(0,0,0,0.1),0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden">
             <div className="h-11 bg-gray-50 dark:bg-[#16161c] border-b border-gray-100 dark:border-white/5 flex items-center gap-2 px-4">
@@ -119,7 +81,7 @@ export default function HeroSection() {
             <div className="w-9 h-9 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-sm shadow-lg shadow-emerald-500/30">✓</div>
             <div className="text-xs leading-tight"><div className="font-bold text-gray-900 dark:text-white">{t.hero.liveIn}</div><div className="text-gray-500 dark:text-gray-400">{t.hero.noDrama}</div></div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

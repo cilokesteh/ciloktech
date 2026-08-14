@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 const PLAN_HREFS = [
@@ -13,21 +11,14 @@ const PLAN_HREFS = [
 
 export default function PricingSection() {
   const { t } = useI18n();
-  const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { once: true, margin: "-50px" });
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
+    <section className="py-20 md:py-28 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/30 dark:from-cyan-500/[0.05] to-transparent blur-3xl rounded-full" />
       </div>
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="max-w-2xl mx-auto text-center mb-14"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="max-w-2xl mx-auto text-center mb-14">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-5 shadow-sm">
             {t.pricing.label}
           </div>
@@ -38,29 +29,20 @@ export default function PricingSection() {
           <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-4 leading-relaxed">
             {t.pricing.sub}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-5 items-start max-w-5xl mx-auto">
           {t.pricing.plans.map((plan, idx) => {
             const featured = idx === 2;
             return (
-              <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              animate={
-                inView
-                  ? featured
-                    ? { opacity: 1, y: 0, scale: 1, boxShadow: "0 0 40px rgba(6,182,212,0.08)" }
-                    : { opacity: 1, y: 0, scale: 1 }
-                  : {}
-              }
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
-                featured
-                  ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
-                  : "glass hover:border-gray-900 dark:hover:border-white"
-              }`}
-            >
+              <div
+                key={idx}
+                className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
+                  featured
+                    ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
+                    : "glass hover:border-gray-900 dark:hover:border-white"
+                }`}
+              >
                 {featured && (
                   <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-indigo-500 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg shadow-cyan-500/30">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" /> {t.pricing.populer}
@@ -112,7 +94,7 @@ export default function PricingSection() {
                 {featured && (
                   <div className="text-[11px] text-center text-gray-500 dark:text-gray-600 mt-3">{t.pricing.footnotes[1]}</div>
                 )}
-              </motion.div>
+              </div>
             );
           })}
         </div>
