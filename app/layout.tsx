@@ -64,7 +64,6 @@ export const metadata: Metadata = {
     canonical: "https://www.ciloktech.web.id",
     languages: {
       "id-ID": "https://www.ciloktech.web.id",
-      "en-US": "https://www.ciloktech.web.id?lang=en",
       "x-default": "https://www.ciloktech.web.id",
     },
   },
@@ -105,7 +104,7 @@ export default function RootLayout({
         {/* anti-FOUC — theme + lang */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('cilok-theme');var d=s? s==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');var l=localStorage.getItem('cilok-locale');if(l)document.documentElement.lang=l;else if(navigator.language.toLowerCase().startsWith('en'))document.documentElement.lang='en';}catch(e){}})()`,
+            __html: `(function(){try{var s=localStorage.getItem('cilok-theme');var d=s? s==='dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');var l=localStorage.getItem('cilok-locale');if(l)document.documentElement.lang=l;}catch(e){}})()`,
           }}
         />
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />

@@ -11,8 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.ciloktech.web.id/harga",
     languages: {
-      "id-ID": "https://www.ciloktech.web.id/harga",
-      "en-US": "https://www.ciloktech.web.id/harga?lang=en",
+      "id-ID": "https://www.ciloktech.web.id/harga"
     },
   },
   openGraph: {
