@@ -44,7 +44,7 @@ export default function Home() {
         </section>
 
         {/* BLOG PREVIEW SEO */}
-        <section className="px-6 py-16 md:py-20 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-100 dark:border-white/5">
+        <section className="px-6 py-14 md:py-16 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-100 dark:border-white/5">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
               <div>

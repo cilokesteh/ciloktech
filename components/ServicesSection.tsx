@@ -16,7 +16,7 @@ export default function ServicesSection() {
   const inView = useInView(sectionRef, { once: true, margin: "-50px" });
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
+    <section ref={sectionRef} className="py-14 md:py-20 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-[-10%] w-[420px] h-[420px] bg-indigo-100/40 dark:bg-indigo-500/[0.05] blur-3xl rounded-full" />
       </div>
@@ -25,7 +25,7 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
         >
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-900/50 px-3 py-1 rounded-full mb-4">{t.services.label}</div>

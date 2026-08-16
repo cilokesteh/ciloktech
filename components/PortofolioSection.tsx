@@ -24,9 +24,9 @@ export default function PortofolioSection() {
   const projects = t.portfolio.projects;
 
   return (
-    <section className="py-20 md:py-28 bg-white dark:bg-[#0a0a0a] px-6 transition-colors duration-300" id="portofolio">
+    <section className="py-14 md:py-20 bg-white dark:bg-[#0a0a0a] px-6 transition-colors duration-300" id="portofolio">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col gap-3 mb-10">
+        <div className="flex flex-col gap-3 mb-8">
           <div className="inline-flex w-fit items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">{t.portfolio.label}</div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[520px]">
@@ -61,7 +61,7 @@ export default function PortofolioSection() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
         </div>
       </div>

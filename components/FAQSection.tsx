@@ -19,7 +19,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300" id="faq">
+    <section className="py-14 md:py-20 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300" id="faq">
       {/* FAQ JSON-LD — rich snippet Google */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
@@ -38,7 +38,7 @@ export default function FAQSection() {
         }}
       />
       <div className="max-w-5xl mx-auto">
-        <div className="max-w-2xl mx-auto text-center mb-12">
+        <div className="max-w-2xl mx-auto text-center mb-8">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">
             {t.faq.label}
           </div>

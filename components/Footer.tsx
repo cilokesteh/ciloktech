@@ -18,7 +18,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050507] text-gray-400 py-14 px-6 border-t border-white/[0.06] transition-colors duration-300 relative overflow-hidden">
+    <footer className="bg-[#050507] text-gray-400 py-10 px-6 border-t border-white/[0.06] transition-colors duration-300 relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute bottom-[-40%] left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-t from-cyan-500/[0.06] to-transparent blur-3xl rounded-full" />
       </div>

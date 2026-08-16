@@ -17,13 +17,13 @@ export default function PricingSection() {
   const inView = useInView(sectionRef, { once: true, margin: "-50px" });
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
+    <section ref={sectionRef} className="py-14 md:py-20 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/30 dark:from-cyan-500/[0.05] to-transparent blur-3xl rounded-full" />
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="max-w-2xl mx-auto text-center mb-14"
+          className="max-w-2xl mx-auto text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}

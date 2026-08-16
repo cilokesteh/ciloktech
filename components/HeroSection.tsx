@@ -9,7 +9,7 @@ export default function HeroSection() {
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={sectionRef} className="relative bg-white dark:bg-[#08080b] pt-32 pb-20 md:pt-44 md:pb-28 px-6 overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} className="relative bg-white dark:bg-[#08080b] pt-24 pb-14 md:pt-32 md:pb-20 px-6 overflow-hidden transition-colors duration-300">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
@@ -18,7 +18,7 @@ export default function HeroSection() {
         <div className="hero-orb hero-orb-cyan absolute bottom-[-20%] left-[-5%] w-[420px] h-[420px] bg-cyan-200/30 dark:bg-cyan-500/[0.05] blur-3xl rounded-full" />
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
         <div className="space-y-8">
           <motion.div
             className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2"
