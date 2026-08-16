@@ -62,7 +62,7 @@ export default function PortofolioSection() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <a href="https://t.me/ciloktechcsbot" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
+          <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
         </div>
       </div>
     </section>

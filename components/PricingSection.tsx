@@ -83,11 +83,11 @@ export default function PricingSection() {
                             {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                           </span>
                         </div>
-                        {badge && <div className={`text-[11px] mt-1 font-semibold ${featured ? "text-cyan-400 dark:text-cyan-600" : "text-gray-500 dark:text-gray-400"}`}>{badge}</div>}
+                        {badge && <div className={`text-[11px] mt-1 font-semibold ${featured ? "text-cyan-300 dark:text-cyan-700" : "text-gray-500 dark:text-gray-400"}`}>{badge}</div>}
                       </>
                     );
                   })()}
-                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
+                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-gray-300 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">
@@ -107,6 +107,8 @@ export default function PricingSection() {
 
                 <a
                   href={PLAN_HREFS[idx]}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`uiverse-button w-full py-3.5 rounded-full text-center text-[13.5px] font-bold ${
                     featured
                       ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white hover:from-cyan-400 hover:to-indigo-400 shadow-lg shadow-cyan-500/25"
@@ -128,7 +130,7 @@ export default function PricingSection() {
         </div>
 
         <div className="mt-10 text-center text-[12.5px] text-gray-600 dark:text-gray-400">
-          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
+          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
         </div>
       </div>
     </section>

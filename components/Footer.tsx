@@ -40,8 +40,8 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /> One-man studio • Senior • 🇮🇩
             </div>
             <div className="flex gap-2 pt-1">
-              <a href="https://t.me/ciloktechcsbot" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✈</a>
-              <a href="https://github.com/cilokesteh" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">G</a>
+              <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✈</a>
+              <a href="https://github.com/cilokesteh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">G</a>
               <a href="mailto:hi@ciloktech.my.id" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✉</a>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
             <div>
               <div className="text-white font-bold mb-4 text-[13px] tracking-wide uppercase">{t.footer.contact}</div>
               <div className="space-y-3 text-[13px]">
-                <a href="https://t.me/ciloktechcsbot" className="block hover:text-white transition">{t.footer.telegram}</a>
+                <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition">{t.footer.telegram}</a>
                 <a href="mailto:hi@ciloktech.my.id" className="block hover:text-white transition">hi@ciloktech.my.id</a>
                 <div className="text-gray-400 text-xs mt-4 leading-relaxed whitespace-pre-line">{t.footer.replyNote}</div>
               </div>

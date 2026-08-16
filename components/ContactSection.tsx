@@ -17,7 +17,7 @@ export default function ContactSection() {
         <p className="text-[15px] text-gray-400 mt-5 max-w-[520px] mx-auto leading-relaxed">{t.contact.sub}</p>
 
         <div className="grid md:grid-cols-3 gap-4 mt-12 text-left max-w-4xl mx-auto">
-          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20website" className="uiverse-card group p-6 rounded-[18px] bg-white/[0.06] backdrop-blur border border-white/10 hover:bg-white hover:text-gray-900">
+          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="uiverse-card group p-6 rounded-[18px] bg-white/[0.06] backdrop-blur border border-white/10 hover:bg-white hover:text-gray-900">
             <div className="text-2xl mb-3">💬</div>
             <div className="font-bold text-[15px]">{t.contact.telegramTitle}</div>
             <div className="text-[13px] mt-1 opacity-80 group-hover:opacity-70">{t.contact.telegramDesc}</div>
@@ -38,7 +38,7 @@ export default function ContactSection() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis" className="uiverse-button px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-cyan-300 text-sm shadow-[0_10px_40px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2">🚀 {t.contact.ctaPrimary}</a>
+          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" className="uiverse-button px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-cyan-300 text-sm shadow-[0_10px_40px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2">🚀 {t.contact.ctaPrimary}</a>
           <a href="#harga" className="uiverse-button px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 text-sm flex items-center justify-center gap-2">{t.contact.ctaSecondary}</a>
         </div>
         <div className="mt-8 text-[11.5px] text-gray-400">{t.contact.footerNote}</div>

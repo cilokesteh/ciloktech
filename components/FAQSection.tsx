@@ -76,7 +76,7 @@ export default function FAQSection() {
 
         <div className="mt-10 text-center">
           <div className="inline-flex items-center gap-2 text-[13px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-5 py-2.5 rounded-full">
-            {t.faq.stillQ} <a href="https://t.me/ciloktechcsbot" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.faq.askTelegram}</a>
+            {t.faq.stillQ} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.faq.askTelegram}</a>
           </div>
         </div>
       </div>

@@ -136,6 +136,21 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Cilok Tech — One-Man Studio",
+              alternateName: "CilokTech",
+              url: "https://www.ciloktech.web.id",
+              description:
+                "One-man studio — jasa pembuatan website & web app profesional Indonesia. Senior full-stack, tanpa kantor, tanpa PM, langsung builder.",
+              inLanguage: ["id-ID", "en-US"],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300">
         <a href="#main-content" className="skip-link">Skip to main content</a>
