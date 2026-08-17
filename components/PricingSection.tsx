@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 const PLAN_HREFS = [
@@ -13,19 +12,18 @@ const PLAN_HREFS = [
 
 export default function PricingSection() {
   const { t } = useI18n();
-  const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { once: true, margin: "-50px" });
 
   return (
-    <section ref={sectionRef} className="py-14 md:py-20 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
+    <section className="py-14 md:py-20 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/30 dark:from-cyan-500/[0.05] to-transparent blur-3xl rounded-full" />
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="max-w-2xl mx-auto text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
         >
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-5 shadow-sm">
@@ -48,13 +46,12 @@ export default function PricingSection() {
               key={idx}
               data-featured={featured ? "true" : "false"}
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              animate={
-                inView
-                  ? featured
-                    ? { opacity: 1, y: 0, scale: 1, boxShadow: "0 0 40px rgba(6,182,212,0.08)" }
-                    : { opacity: 1, y: 0, scale: 1 }
-                  : {}
+              whileInView={
+                featured
+                  ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+                  : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
               }
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
               className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
                 featured

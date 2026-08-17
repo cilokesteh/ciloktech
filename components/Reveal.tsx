@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, type Variants } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import { motion, type Variants } from "framer-motion";
+import { type ReactNode } from "react";
 
 const EASE = [0.12, 1, 0.22, 1] as [number, number, number, number];
 const DURATION = 1.9;
@@ -15,7 +15,11 @@ const offsets: Record<Dir, { x: number; y: number; scale: number }> = {
   scale: { x: 0, y: 0, scale: 0.95 },
 };
 
-/** Reveal — single element scroll reveal (blur + slide, 0.8s ease-out expo) */
+/**
+ * Reveal — single element scroll reveal.
+ * Pakai whileInView (bukan useInView+animate) supaya TIAP elemen
+ * track viewport-nya sendiri — sinkron sama posisi scroll.
+ */
 export function Reveal({
   children,
   dir = "up",
@@ -27,16 +31,14 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
   const o = offsets[dir];
 
   return (
     <motion.div
-      ref={ref}
       className={className}
       initial={{ opacity: 0, x: o.x, y: o.y, scale: o.scale, filter: "blur(12px)" }}
-      animate={inView ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" } : {}}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: DURATION, delay, ease: EASE }}
     >
       {children}
@@ -44,7 +46,11 @@ export function Reveal({
   );
 }
 
-/** RevealGrid — staggered children reveal */
+/**
+ * RevealGrid — staggered children reveal.
+ * Tiap child pakai whileInView sendiri supaya sinkron scroll.
+ * stagger via delay index (bukan parent container).
+ */
 export function RevealGrid({
   children,
   className,
@@ -54,33 +60,27 @@ export function RevealGrid({
   className?: string;
   stagger?: number;
 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
-  const container: Variants = {
-    hidden: {},
-    show: { transition: { staggerChildren: stagger } },
-  };
   const item: Variants = {
     hidden: { opacity: 0, y: 64, filter: "blur(12px)" },
     show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: DURATION, ease: EASE } },
   };
 
   return (
-    <motion.div
-      ref={ref}
-      className={className}
-      variants={container}
-      initial="hidden"
-      animate={inView ? "show" : "hidden"}
-    >
+    <div className={className}>
       {Array.isArray(children)
         ? children.map((child, i) => (
-            <motion.div key={i} variants={item}>
+            <motion.div
+              key={i}
+              variants={item}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: DURATION, delay: i * stagger, ease: EASE }}
+            >
               {child}
             </motion.div>
           ))
-        : <motion.div variants={item}>{children}</motion.div>}
-    </motion.div>
+        : <motion.div variants={item} initial="hidden" whileInView="show" viewport={{ once: true, margin: "-80px" }}>{children}</motion.div>}
+    </div>
   );
 }

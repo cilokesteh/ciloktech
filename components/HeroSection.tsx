@@ -1,15 +1,11 @@
 "use client";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HeroSection() {
   const { t } = useI18n();
-  const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { once: true, margin: "-100px" });
-
   return (
-    <section ref={sectionRef} className="relative bg-white dark:bg-[#08080b] pt-24 pb-14 md:pt-32 md:pb-20 px-6 overflow-hidden transition-colors duration-300">
+    <section className="relative bg-white dark:bg-[#08080b] pt-24 pb-14 md:pt-32 md:pb-20 px-6 overflow-hidden transition-colors duration-300">
       {/* ambient background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid" />
@@ -23,7 +19,8 @@ export default function HeroSection() {
           <motion.div
             className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2"
             initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0, ease: [0.12, 1, 0.22, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide shadow-lg shadow-gray-900/10">
@@ -39,7 +36,8 @@ export default function HeroSection() {
           <motion.div
             className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance"
             initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.15, ease: [0.12, 1, 0.22, 1] }}
           >
             <h1>
@@ -53,7 +51,8 @@ export default function HeroSection() {
           <motion.p
             className="hero-reveal hero-reveal-3 text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]"
             initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.3, ease: [0.12, 1, 0.22, 1] }}
           >
             {t.hero.desc}
@@ -62,7 +61,8 @@ export default function HeroSection() {
           <motion.div
             className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 pt-1"
             initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.45, ease: [0.12, 1, 0.22, 1] }}
           >
             <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hero-cta uiverse-button px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
@@ -77,7 +77,8 @@ export default function HeroSection() {
           <motion.div
             className="hero-reveal hero-reveal-5 flex flex-wrap items-center gap-3 pt-5 border-t border-gray-100 dark:border-white/10 text-xs"
             initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.6, ease: [0.12, 1, 0.22, 1] }}
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />{t.hero.trusted}</span>
@@ -89,7 +90,8 @@ export default function HeroSection() {
         <motion.div
           className="hero-preview relative"
           initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-          animate={inView ? { opacity: 1, y: [0, -8, 0], filter: "blur(0px)" } : {}}
+          whileInView={{ opacity: 1, y: [0, -8, 0], filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, delay: 0.2, ease: [0.12, 1, 0.22, 1], y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
         >
           <div className="absolute -inset-8 bg-gradient-to-br from-cyan-200/40 via-blue-100/30 to-indigo-200/40 dark:from-cyan-500/10 dark:via-blue-500/5 dark:to-indigo-500/10 blur-2xl rounded-[36px] -z-10 animate-pulse" />

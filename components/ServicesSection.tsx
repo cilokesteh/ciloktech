@@ -1,6 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 const icons = [
@@ -12,18 +11,17 @@ const icons = [
 
 export default function ServicesSection() {
   const { t } = useI18n();
-  const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { once: true, margin: "-50px" });
 
   return (
-    <section ref={sectionRef} className="py-14 md:py-20 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
+    <section className="py-14 md:py-20 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-[-10%] w-[420px] h-[420px] bg-indigo-100/40 dark:bg-indigo-500/[0.05] blur-3xl rounded-full" />
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
         >
@@ -41,7 +39,8 @@ export default function ServicesSection() {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-              animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: i * 0.25, ease: [0.12, 1, 0.22, 1] }}
               className="uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10"
             >
