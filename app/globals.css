@@ -198,3 +198,21 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   }
   @media (hover: hover) and (pointer: fine) { nav a:hover::after { width: 60%; } }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   FIX 2026-08-17 — contact card anchors blockify + stretch
+   Root cause: <a> display:inline berisi block children → line box
+   (150px) ≠ padding box (197px) → kartu overflow wrapper ±24px
+   atas/bawah, grid terlihat rusak/misaligned.
+   Fix: a.uiverse-card jadi flex column + fill wrapper (h-full),
+   CTA card di-pin ke bawah (mt-auto) supaya sejajar.
+   ═══════════════════════════════════════════════════════════ */
+a.uiverse-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+#kontak a.uiverse-card > div:last-child {
+  margin-top: auto;
+}
