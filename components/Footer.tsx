@@ -30,7 +30,7 @@ export default function Footer() {
               <div className="flex flex-col leading-none">
                 <div className="flex items-center gap-1.5">
                   <span className="text-white font-extrabold text-[16px] tracking-tight group-hover:text-cyan-300 transition">Cilok Tech</span>
-                  <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-cyan-300 transition">WEB.ID</span>
+                  <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-cyan-300 transition">.ID</span>
                 </div>
                 <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-white/60 mt-1 group-hover:text-white/70 transition">ONE-MAN STUDIO • {t.nav.clickToTop}</span>
               </div>

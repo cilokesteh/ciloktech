@@ -54,7 +54,7 @@ export default function Navbar() {
             <div className="flex items-baseline gap-[1px]">
               <span className="font-extrabold text-[18px] tracking-[-0.02em] text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition">Cilok</span>
               <span className="font-extrabold text-[18px] tracking-[-0.02em] text-cyan-700 dark:text-cyan-400">Tech</span>
-              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-black tracking-[0.14em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-[6px] py-[2px] rounded-full leading-none -translate-y-[1px] group-hover:bg-cyan-500 dark:group-hover:bg-cyan-400 transition">WEB.ID</span>
+              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-black tracking-[0.14em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-[6px] py-[2px] rounded-full leading-none -translate-y-[1px] group-hover:bg-cyan-500 dark:group-hover:bg-cyan-400 transition">.ID</span>
             </div>
             <div className="mt-[3px]">
               <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition">ONE-MAN STUDIO</span>
