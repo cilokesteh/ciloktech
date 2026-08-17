@@ -46,6 +46,7 @@ export default function PricingSection() {
             return (
               <motion.div
               key={idx}
+              data-featured={featured ? "true" : "false"}
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               animate={
                 inView
