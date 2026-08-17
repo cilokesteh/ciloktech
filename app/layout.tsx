@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   description:
     "One-man studio — jasa pembuatan website profesional, landing page, dan web app kustom. Senior full-stack, tanpa kantor, tanpa PM, langsung builder. Cepat, aman, SEO-ready, fokus konversi untuk UMKM hingga Startup. Konsultasi gratis.",
-  metadataBase: new URL("https://www.ciloktech.id"),
+  metadataBase: new URL("https://www.ciloktech.web.id"),
   keywords: [
     "one-man studio",
     "jasa pembuatan website",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Cilok Tech — One-Man Studio | Jasa Website & Web App Profesional",
     description:
       "One-man studio senior full-stack. Tanpa kantor, tanpa PM — langsung builder. Solusi web & app pro untuk UMKM hingga Startup.",
-    url: "https://www.ciloktech.id",
+    url: "https://www.ciloktech.web.id",
     siteName: "Cilok Tech — One-Man Studio",
     type: "website",
     locale: "id_ID",
@@ -61,10 +61,10 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://www.ciloktech.id",
+    canonical: "https://www.ciloktech.web.id",
     languages: {
-      "id-ID": "https://www.ciloktech.id",
-      "x-default": "https://www.ciloktech.id",
+      "id-ID": "https://www.ciloktech.web.id",
+      "x-default": "https://www.ciloktech.web.id",
     },
   },
   verification: {
@@ -118,9 +118,9 @@ export default function RootLayout({
               alternateName: "CilokTech",
               description:
                 "One-man studio — jasa pembuatan website & web app profesional Indonesia. Senior full-stack, tanpa kantor, tanpa PM, langsung builder. Cepat, aman, SEO-ready, fokus konversi",
-              url: "https://www.ciloktech.id",
-              logo: "https://www.ciloktech.id/logo-oneman-512.png",
-              image: "https://www.ciloktech.id/og-oneman.png",
+              url: "https://www.ciloktech.web.id",
+              logo: "https://www.ciloktech.web.id/logo-oneman-512.png",
+              image: "https://www.ciloktech.web.id/og-oneman.png",
               email: "hi@ciloktech.my.id",
               sameAs: [
                 "https://github.com/cilokesteh",
@@ -144,7 +144,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Cilok Tech — One-Man Studio",
               alternateName: "CilokTech",
-              url: "https://www.ciloktech.id",
+              url: "https://www.ciloktech.web.id",
               description:
                 "One-man studio — jasa pembuatan website & web app profesional Indonesia. Senior full-stack, tanpa kantor, tanpa PM, langsung builder.",
               inLanguage: ["id-ID", "en-US"],

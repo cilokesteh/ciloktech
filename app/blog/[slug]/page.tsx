@@ -27,7 +27,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "Banyak UMKM salah memilih: ingin menjual 1 produk tetapi meminta company profile 5 halaman. Hasil akhirnya: biaya membengkak tanpa konversi yang jelas.",
       "### Landing Page (Rp 900rb) — untuk menjual 1 produk\nFokus pada 1 tujuan: konversi. Struktur ideal: Hero + Problem + Solution + Testimoni + Pricing + FAQ + CTA. Tanpa navigasi yang berputar-putar. Contoh penggunaan: jasa las, laundry kiloan, bengkel mobil. Go-live dalam 2–3 hari.",
-      "### Company Profile (Rp 1,5jt) — untuk membangun kepercayaan\nFokus pada: kepercayaan dan kredibilitas. Struktur: Home + Layanan + Portofolio + Harga + Testimoni + Kontak + Blog. Seperti ciloktech.id saat ini. Ideal untuk: PT, CV, konsultan, agency, dan institusi pendidikan.",
+      "### Company Profile (Rp 1,5jt) — untuk membangun kepercayaan\nFokus pada: kepercayaan dan kredibilitas. Struktur: Home + Layanan + Portofolio + Harga + Testimoni + Kontak + Blog. Seperti ciloktech.web.id saat ini. Ideal untuk: PT, CV, konsultan, agency, dan institusi pendidikan.",
       "### Kapan harus memilih yang mana?\n- 1 produk, butuh leads cepat → Landing Page\n- Banyak layanan, butuh portofolio + blog SEO → Company Profile\n- Aplikasi kasir / inventory / dashboard internal → Web App Custom mulai Rp 2,5jt+",
       "#### Aturan praktis saya:\nJika budget di bawah Rp 1,5jt dan Anda butuh closing minggu ini → pilih Landing Page. Jika ingin bermain untuk jangka panjang dengan SEO + branding → Company Profile Rp 1,5jt (value setara Rp 5-7jt). Lihat rincian lengkap di /harga.",
     ],
@@ -58,9 +58,9 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "Website yang hanya bagus tidak otomatis menghasilkan cuan. Saya telah mengaudit 50+ website UMKM — yang memiliki tingkat konversi tinggi selalu memiliki 12 elemen berikut.",
       "### 1-3: Kecepatan & Kepercayaan\n1. <1 detik LCP — jika 3 detik, 40% pengunjung langsung pergi\n2. HTTPS + SSL valid dan aktif\n3. Favicon profesional dengan identitas one-man studio",
-      "### 4-7: SEO & Struktur\n4. Title + meta description unik untuk setiap halaman\n5. OG image dinamis 1200x630 agar share WhatsApp terlihat menarik — sekarang otomatis di ciloktech.id/api/og\n6. Sitemap.xml + robots.txt yang valid\n7. JSON-LD Organization + FAQ + Breadcrumb untuk rich snippet",
+      "### 4-7: SEO & Struktur\n4. Title + meta description unik untuk setiap halaman\n5. OG image dinamis 1200x630 agar share WhatsApp terlihat menarik — sekarang otomatis di ciloktech.web.id/api/og\n6. Sitemap.xml + robots.txt yang valid\n7. JSON-LD Organization + FAQ + Breadcrumb untuk rich snippet",
       "### 8-12: Konversi\n8. Headline yang jelas dalam 3 detik: siapa Anda, untuk siapa, dan hasil apa yang didapat\n9. Social proof di atas lipatan: 'Dipercaya 50+ bisnis'\n10. Sticky CTA + floating chat one-man studio\n11. Pricing transparan + rincian di /harga\n12. FAQ yang menjawab keberatan",
-      "#### Checklist CilokTech One-Man Studio:\nSemua elemen di atas tersedia di ciloktech.id — 136kB, Lighthouse 100 (SEO & Aksesibilitas), dark mode, blog + harga transparan. Ingin hasil yang sama? Ambil paket Company Profile Rp 1,5jt di /harga.",
+      "#### Checklist CilokTech One-Man Studio:\nSemua elemen di atas tersedia di ciloktech.web.id — 136kB, Lighthouse 100 (SEO & Aksesibilitas), dark mode, blog + harga transparan. Ingin hasil yang sama? Ambil paket Company Profile Rp 1,5jt di /harga.",
     ],
   },
   "jasa-pembuatan-website-profesional-umkm": {
@@ -68,7 +68,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "Jika Anda mencari 'jasa pembuatan website profesional' — akan muncul 100+ hasil. 90% di antaranya adalah reseller template WordPress dengan server shared, support lambat, dan hasil akhir yang lambat. CilokTech berbeda — one-man studio yang membangun dari nol secara custom.",
       "### Mengapa harus yang profesional?\n1. Kecepatan <1 detik = konversi meningkat. Template dengan 4,5 detik membuat 40% pengunjung pergi.\n2. SEO-ready — OG dinamis, Schema Markup, sitemap, robots.txt, canonical. Template tidak memiliki ini.\n3. Source code 100% milik Anda dalam repository private GitHub.\n4. Support <2 jam via Telegram @ciloktech — langsung dengan builder, one-man operations.",
-      "### Spesifikasi (sama seperti ciloktech.id)\n- Next.js 15 + Tailwind v4 — 136kB First Load, Lighthouse 100 (SEO & Aksesibilitas)\n- SEO lengkap: OG dinamis 1200x630 via /api/og, sitemap.xml, robots.txt, JSON-LD FAQ + Breadcrumb, canonical\n- Toggle dark/light profesional + anti-FOUC\n- <1 detik LCP",
+      "### Spesifikasi (sama seperti ciloktech.web.id)\n- Next.js 15 + Tailwind v4 — 136kB First Load, Lighthouse 100 (SEO & Aksesibilitas)\n- SEO lengkap: OG dinamis 1200x630 via /api/og, sitemap.xml, robots.txt, JSON-LD FAQ + Breadcrumb, canonical\n- Toggle dark/light profesional + anti-FOUC\n- <1 detik LCP",
       "### Paket Harga\n- Landing Page: Rp 900rb — 1 produk, live dalam 2–3 hari\n- Company Profile Pro: Rp 1,5jt — TERLARIS — value setara Rp 5-7jt di agency\n- Web App Custom: mulai dari Rp 2,5jt",
       "#### Cara pemesanan — One-Man Studio\nChat Telegram @ciloktech dengan pesan 'Mau website profesional' → brief 15 menit → DP 50% → link staging setiap hari → live dalam 3–7 hari. Konsultasi gratis tanpa komitmen.",
     ],
@@ -89,8 +89,8 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     body: [
       "CV/PT atau startup Anda sudah memiliki Instagram yang bagus, tetapi website belum ada atau asal jadi? Di dunia B2B, website adalah first impression. Tampilan yang kurang profesional akan dianggap tidak meyakinkan.",
       "### Mengapa CV/PT membutuhkan company profile profesional?\n1. Klien B2B selalu mengecek website sebelum melakukan PO — lambat atau error 404 = kepercayaan nol\n2. Investor mengecek SEO + kecepatan + legalitas di footer\n3. Syarat tender atau vendor list: 'wajib memiliki website company profile'",
-      "### Standar company profile 2026 (tersedia di ciloktech.id)\n- Homepage high-conversion: Hero + Statistik + Layanan + Portofolio + Harga + Testimoni + FAQ + Kontak\n- Halaman /harga dengan breakdown + /blog untuk SEO\n- Legalitas: NIB, alamat kantor, email @perusahaan, dan Google Maps\n- Teknologi: Next.js 15 136kB, Lighthouse 100 (SEO & Aksesibilitas), OG dinamis, Schema FAQ+Organization, sitemap.xml, robots.txt, FAQ rich snippet\n- <1 detik LCP — dikerjakan one-man studio langsung oleh builder",
-      "### Paket Harga\nCompany Profile Pro Rp 1,5jt — TERLARIS — seperti ciloktech.id: 5 halaman + blog + CMS. Value setara Rp 5-7jt di agency — saya jual Rp 1,5jt karena one-man studio. Rincian di /harga.",
+      "### Standar company profile 2026 (tersedia di ciloktech.web.id)\n- Homepage high-conversion: Hero + Statistik + Layanan + Portofolio + Harga + Testimoni + FAQ + Kontak\n- Halaman /harga dengan breakdown + /blog untuk SEO\n- Legalitas: NIB, alamat kantor, email @perusahaan, dan Google Maps\n- Teknologi: Next.js 15 136kB, Lighthouse 100 (SEO & Aksesibilitas), OG dinamis, Schema FAQ+Organization, sitemap.xml, robots.txt, FAQ rich snippet\n- <1 detik LCP — dikerjakan one-man studio langsung oleh builder",
+      "### Paket Harga\nCompany Profile Pro Rp 1,5jt — TERLARIS — seperti ciloktech.web.id: 5 halaman + blog + CMS. Value setara Rp 5-7jt di agency — saya jual Rp 1,5jt karena one-man studio. Rincian di /harga.",
       "### Proses pengerjaan PT/CV tanpa drama — One-man ops\n01 Brief 15 menit via Telegram\n02 DP 50%, desain disetujui via staging\n03 Development 3–7 hari dengan staging live\n04 Go-live deployment .co.id/.web.id + training\n05 Maintenance gratis 3 bulan",
       "#### Ingin company profile yang membuat klien berkata 'perusahaan ini serius'?\nChat @ciloktech dengan format 'Company Profile [Nama PT/CV] - [Bidang]'. Respon <2 jam disertai roadmap. One-man studio — langsung dengan builder.",
     ],
@@ -110,7 +110,7 @@ const contents: Record<string, { body: string[]; keywords: string }> = {
     keywords: "jasa landing page high conversion, jasa landing page umkm, landing page cepat closing, jasa landing page profesional",
     body: [
       "Landing page yang penuh animasi tetapi tidak ada yang mengklik WhatsApp dianggap gagal. Landing page yang sederhana tetapi memiliki sticky CTA + bukti sosial = closing setiap hari.",
-      "### Formula landing page high conversion (digunakan di ciloktech.id)\n1. Hero: headline yang menampilkan hasil, bukan fitur\n2. Stats bar: '<1s load • Lighthouse 100 • 50+ klien'\n3. Problem → Solution → Proof (masalah, solusi, bukti)\n4. Pricing yang transparan: mulai Rp 900rb, bukan 'Hubungi kami'\n5. Testimoni yang terverifikasi + Google Maps embed\n6. FAQ yang menjawab keberatan + schema rich snippet\n7. Sticky CTA + Floating WhatsApp one-man studio",
+      "### Formula landing page high conversion (digunakan di ciloktech.web.id)\n1. Hero: headline yang menampilkan hasil, bukan fitur\n2. Stats bar: '<1s load • Lighthouse 100 • 50+ klien'\n3. Problem → Solution → Proof (masalah, solusi, bukti)\n4. Pricing yang transparan: mulai Rp 900rb, bukan 'Hubungi kami'\n5. Testimoni yang terverifikasi + Google Maps embed\n6. FAQ yang menjawab keberatan + schema rich snippet\n7. Sticky CTA + Floating WhatsApp one-man studio",
       "### Mengapa Rp 900rb bisa menghasilkan closing?\nBukan sekadar template — ini adalah sistem: Next.js 15 136kB, <1 detik LCP, copywriting to-the-point, SEO + OG dinamis via /api/og. Go-live dalam 2–3 hari.",
       "### Contoh yang sudah live\n- Laundry Express — keyword 'laundry kiloan' halaman 1 Google, order WhatsApp +40%\n- Bengkel Mobil — menampilkan before/after + rating, pemesanan +25%\n- Batik Tulis — katalog + checkout via WhatsApp, closing +31%",
       "### Landing Page Rp 900rb vs Company Profile Rp 1,5jt\nLanding Page = 1 tujuan (chat WhatsApp). Cocok untuk 1 produk yang butuh leads minggu ini.\nCompany Profile = kepercayaan + SEO + portofolio lengkap. Lihat perbandingan di /harga.",
@@ -166,16 +166,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) return {};
   const kw = contents[slug]?.keywords.split(", ") || post.tags;
-  const ogUrl = `https://www.ciloktech.id/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.tags.join(" • "))}&tag=ciloktech.id%2Fblog%2F${slug}&type=blog`;
+  const ogUrl = `https://www.ciloktech.web.id/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.tags.join(" • "))}&tag=ciloktech.web.id%2Fblog%2F${slug}&type=blog`;
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `https://www.ciloktech.id/blog/${slug}` },
+    alternates: { canonical: `https://www.ciloktech.web.id/blog/${slug}` },
     keywords: kw,
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://www.ciloktech.id/blog/${slug}`,
+      url: `https://www.ciloktech.web.id/blog/${slug}`,
       type: "article",
       publishedTime: post.date,
       tags: post.tags,
@@ -196,7 +196,7 @@ export default async function BlogDetail({ params }: Props) {
   const content = contents[slug];
   if (!content) return notFound();
 
-  const ogUrl = `https://www.ciloktech.id/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.tags.join(" • "))}&tag=ciloktech.id%2Fblog%2F${slug}&type=blog`;
+  const ogUrl = `https://www.ciloktech.web.id/api/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.tags.join(" • "))}&tag=ciloktech.web.id%2Fblog%2F${slug}&type=blog`;
 
   return (
     <>
@@ -279,9 +279,9 @@ export default async function BlogDetail({ params }: Props) {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ciloktech.id/" },
-                { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.ciloktech.id/blog" },
-                { "@type": "ListItem", position: 3, name: post.title, item: `https://www.ciloktech.id/blog/${slug}` },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ciloktech.web.id/" },
+                { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.ciloktech.web.id/blog" },
+                { "@type": "ListItem", position: 3, name: post.title, item: `https://www.ciloktech.web.id/blog/${slug}` },
               ],
             }),
           }}
@@ -294,15 +294,15 @@ export default async function BlogDetail({ params }: Props) {
               "@type": "Article",
               headline: post.title,
               description: post.description,
-              author: { "@type": "Organization", name: "Cilok Tech — One-Man Studio", url: "https://www.ciloktech.id" },
+              author: { "@type": "Organization", name: "Cilok Tech — One-Man Studio", url: "https://www.ciloktech.web.id" },
               publisher: {
                 "@type": "Organization",
                 name: "Cilok Tech — One-Man Studio",
-                logo: { "@type": "ImageObject", url: "https://www.ciloktech.id/logo-oneman-512.png" },
+                logo: { "@type": "ImageObject", url: "https://www.ciloktech.web.id/logo-oneman-512.png" },
               },
               datePublished: post.date,
               dateModified: post.date,
-              mainEntityOfPage: `https://www.ciloktech.id/blog/${slug}`,
+              mainEntityOfPage: `https://www.ciloktech.web.id/blog/${slug}`,
               image: ogUrl,
               keywords: contents[slug]?.keywords,
             }),

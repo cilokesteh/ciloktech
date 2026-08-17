@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { posts } from "./blog/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://www.ciloktech.id";
+  const base = "https://www.ciloktech.web.id";
   const now = new Date().toISOString();
 
   const staticPages = [

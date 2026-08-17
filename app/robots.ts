@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.ciloktech.id/sitemap.xml",
-    host: "https://www.ciloktech.id",
+    sitemap: "https://www.ciloktech.web.id/sitemap.xml",
+    host: "https://www.ciloktech.web.id",
   };
 }
