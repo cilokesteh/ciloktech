@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n/context";
+import { Reveal, RevealGrid } from "./Reveal";
 
 export default function FAQSection() {
   const { t } = useI18n();
@@ -38,16 +39,18 @@ export default function FAQSection() {
         }}
       />
       <div className="max-w-5xl mx-auto">
-        <div className="max-w-2xl mx-auto text-center mb-8">
+        <Reveal>
+          <div className="max-w-2xl mx-auto text-center mb-8">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">
             {t.faq.label}
           </div>
           <h2 className="text-[30px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
             {t.faq.headline1}
           </h2>
-        </div>
+          </div>
+        </Reveal>
 
-        <div className="max-w-3xl mx-auto space-y-3">
+        <RevealGrid className="max-w-3xl mx-auto space-y-3">
           {faqs.map((f, i) => (
             <div
               key={i}
@@ -72,13 +75,15 @@ export default function FAQSection() {
               )}
             </div>
           ))}
-        </div>
+        </RevealGrid>
 
-        <div className="mt-10 text-center">
+        <Reveal delay={0.2}>
+          <div className="mt-10 text-center">
           <div className="inline-flex items-center gap-2 text-[13px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-5 py-2.5 rounded-full">
             {t.faq.stillQ} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.faq.askTelegram}</a>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

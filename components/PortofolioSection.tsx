@@ -1,5 +1,6 @@
 "use client";
 import { useI18n } from "@/lib/i18n/context";
+import { Reveal, RevealGrid } from "./Reveal";
 
 const accents = [
   "from-emerald-500 to-cyan-500",
@@ -26,7 +27,8 @@ export default function PortofolioSection() {
   return (
     <section className="py-14 md:py-20 bg-white dark:bg-[#0a0a0a] px-6 transition-colors duration-300" id="portofolio">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col gap-3 mb-8">
+        <Reveal>
+          <div className="flex flex-col gap-3 mb-8">
           <div className="inline-flex w-fit items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">{t.portfolio.label}</div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[520px]">
@@ -35,9 +37,10 @@ export default function PortofolioSection() {
             </h2>
             <p className="text-[14px] text-gray-600 dark:text-gray-400 max-w-[360px] leading-relaxed">{t.portfolio.sub}</p>
           </div>
-        </div>
+          </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <RevealGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((p, i) => (
             <div key={i} className="uiverse-card group rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#141419] overflow-hidden flex flex-col">
               <div className={`h-[170px] bg-gradient-to-br ${accents[i] || accents[0]} relative p-6 flex flex-col justify-between overflow-hidden`}>
@@ -59,11 +62,13 @@ export default function PortofolioSection() {
               </div>
             </div>
           ))}
-        </div>
+        </RevealGrid>
 
-        <div className="mt-8 flex justify-center">
+        <Reveal delay={0.2}>
+          <div className="mt-8 flex justify-center">
           <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 "use client";
 import { useI18n } from "@/lib/i18n/context";
+import { Reveal, RevealGrid } from "./Reveal";
 
 const meta = [
   { initial: "B", color: "bg-gray-900 dark:bg-white text-white dark:text-black" },
@@ -17,7 +18,8 @@ export default function TestimoniSection() {
   return (
     <section className="py-20 md:py-28 bg-white dark:bg-[#0a0a0a] px-6 transition-colors duration-300" id="testimoni">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">
               {t.testimoni.label}
@@ -39,9 +41,10 @@ export default function TestimoniSection() {
               <span className="text-gray-500 dark:text-gray-400"> {t.testimoni.ratingLabel}</span>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <RevealGrid className="grid md:grid-cols-3 gap-5">
           {t.testimoni.items.map((item, i) => {
             const m = meta[i] ?? meta[0];
             return (
@@ -67,9 +70,10 @@ export default function TestimoniSection() {
               </div>
             );
           })}
-        </div>
+        </RevealGrid>
 
-        <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/5">
+        <Reveal delay={0.2}>
+          <div className="mt-14 pt-10 border-t border-gray-100 dark:border-white/5">
           <div className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 text-center mb-6">{t.testimoni.trustedTitle}</div>
           <div className="flex flex-wrap justify-center gap-3">
             {logos.map((l, i) => (
@@ -81,7 +85,8 @@ export default function TestimoniSection() {
               </div>
             ))}
           </div>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
