@@ -22,9 +22,9 @@ export default function HeroSection() {
         <div className="space-y-8">
           <motion.div
             className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0 * 0.1 }}
+            transition={{ duration: 1.9, delay: 0, ease: [0.12, 1, 0.22, 1] }}
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-black text-xs font-semibold tracking-wide shadow-lg shadow-gray-900/10">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -38,9 +38,9 @@ export default function HeroSection() {
 
           <motion.div
             className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1 * 0.1 }}
+            transition={{ duration: 1.9, delay: 0.15, ease: [0.12, 1, 0.22, 1] }}
           >
             <h1>
               {t.hero.headline1}<br />
@@ -52,18 +52,18 @@ export default function HeroSection() {
 
           <motion.p
             className="hero-reveal hero-reveal-3 text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 2 * 0.1 }}
+            transition={{ duration: 1.9, delay: 0.3, ease: [0.12, 1, 0.22, 1] }}
           >
             {t.hero.desc}
           </motion.p>
 
           <motion.div
             className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 pt-1"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 3 * 0.1 }}
+            transition={{ duration: 1.9, delay: 0.45, ease: [0.12, 1, 0.22, 1] }}
           >
             <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hero-cta uiverse-button px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:rotate-[10deg] transition-transform"><path d="M21.9 4.3l-3 14.2c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.8L18.6 6c.4-.3-.1-.5-.6-.2L7.1 12.6l-4.6-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.6.2 1.3 1.5z"/></svg>
@@ -76,9 +76,9 @@ export default function HeroSection() {
 
           <motion.div
             className="hero-reveal hero-reveal-5 flex flex-wrap items-center gap-3 pt-5 border-t border-gray-100 dark:border-white/10 text-xs"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 4 * 0.1 }}
+            transition={{ duration: 1.9, delay: 0.6, ease: [0.12, 1, 0.22, 1] }}
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />{t.hero.trusted}</span>
             <span className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-white/[0.06] px-3 py-2 font-semibold text-gray-700 dark:text-gray-300"><span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />{t.hero.rating}</span>
@@ -88,9 +88,9 @@ export default function HeroSection() {
 
         <motion.div
           className="hero-preview relative"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
           animate={inView ? { opacity: 1, y: [0, -8, 0] } : {}}
-          transition={{ duration: 0.6, delay: 0.2, y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
+          transition={{ duration: 1.9, delay: 0.2, ease: [0.12, 1, 0.22, 1], y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
         >
           <div className="absolute -inset-8 bg-gradient-to-br from-cyan-200/40 via-blue-100/30 to-indigo-200/40 dark:from-cyan-500/10 dark:via-blue-500/5 dark:to-indigo-500/10 blur-2xl rounded-[36px] -z-10 animate-pulse" />
           <div className="uiverse-card rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#121217] shadow-[0_24px_70px_rgba(0,0,0,0.1),0_2px_12px_rgba(0,0,0,0.04)] dark:shadow-[0_24px_70px_rgba(0,0,0,0.55)] overflow-hidden">

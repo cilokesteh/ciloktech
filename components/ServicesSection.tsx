@@ -22,9 +22,9 @@ export default function ServicesSection() {
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
+          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
         >
           <div className="max-w-xl">
@@ -40,9 +40,9 @@ export default function ServicesSection() {
           {t.services.items.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
+              initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
+              animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+              transition={{ duration: 1.9, delay: i * 0.25, ease: [0.12, 1, 0.22, 1] }}
               className="uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10"
             >
               <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-cyan-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

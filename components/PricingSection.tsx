@@ -26,7 +26,7 @@ export default function PricingSection() {
           className="max-w-2xl mx-auto text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
         >
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-5 shadow-sm">
             {t.pricing.label}
@@ -55,7 +55,7 @@ export default function PricingSection() {
                     : { opacity: 1, y: 0, scale: 1 }
                   : {}
               }
-              transition={{ duration: 0.5, delay: idx * 0.15 }}
+              transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
               className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
                 featured
                   ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
