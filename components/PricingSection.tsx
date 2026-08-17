@@ -77,13 +77,21 @@ export default function PricingSection() {
                     const badge = parts[1] || null;
                     return (
                       <>
-                        <div className={`text-[12px] mt-2 ${featured ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{label}</div>
+                        <div className={`text-[12px] font-medium tracking-wide uppercase mt-2 ${featured ? "text-gray-400 dark:text-gray-600" : "text-cyan-600 dark:text-cyan-400"}`}>
+                          {label}
+                        </div>
                         <div className="mt-1 flex items-baseline gap-2">
                           <span className="text-[36px] font-extrabold tracking-[-0.03em] leading-none">
                             {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                           </span>
                         </div>
-                        {badge && <div className={`text-[11px] mt-1 font-semibold ${featured ? "text-cyan-300 dark:text-cyan-700" : "text-gray-500 dark:text-gray-400"}`}>{badge}</div>}
+                        {badge && (
+                          <div className="mt-2.5">
+                            <span className="inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                              {badge}
+                            </span>
+                          </div>
+                        )}
                       </>
                     );
                   })()}
