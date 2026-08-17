@@ -9,15 +9,15 @@ export const metadata: Metadata = {
   description:
     "Artikel praktis tentang website UMKM, landing page, company profile, perbandingan Next.js vs WordPress, dan cara membuat website yang menghasilkan pelanggan. Berdasarkan pengalaman lapangan, langsung dapat dipraktikkan.",
   alternates: {
-    canonical: "https://www.ciloktech.web.id/blog",
+    canonical: "https://www.ciloktech.id/blog",
     languages: {
-      "id-ID": "https://www.ciloktech.web.id/blog"
+      "id-ID": "https://www.ciloktech.id/blog"
     },
   },
   openGraph: {
     title: "Blog CilokTech — Tips Praktis Website & Konversi",
     description: "Artikel praktis tentang website yang menghasilkan konversi, bukan sekadar tampilan menarik.",
-    url: "https://www.ciloktech.web.id/blog",
+    url: "https://www.ciloktech.id/blog",
     type: "website",
   },
 };

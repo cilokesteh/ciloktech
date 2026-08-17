@@ -32,8 +32,8 @@ export default function FAQSection() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ciloktech.web.id/" },
-              { "@type": "ListItem", position: 2, name: "FAQ", item: "https://www.ciloktech.web.id/#faq" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ciloktech.id/" },
+              { "@type": "ListItem", position: 2, name: "FAQ", item: "https://www.ciloktech.id/#faq" },
             ],
           }),
         }}

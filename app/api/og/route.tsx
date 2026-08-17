@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get("title") || "Cilok Tech — One-Man Studio";
   const subtitle = searchParams.get("subtitle") || "ONE-MAN STUDIO • SENIOR FULL-STACK • INDONESIA";
-  const tag = searchParams.get("tag") || "ciloktech.web.id • One-Man Studio";
+  const tag = searchParams.get("tag") || "ciloktech.id • One-Man Studio";
   const type = searchParams.get("type") || "default"; // default | blog | harga
 
   // truncate title for OG
