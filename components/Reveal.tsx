@@ -4,14 +4,14 @@ import { motion, useInView, type Variants } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 const EASE = [0.12, 1, 0.22, 1] as [number, number, number, number];
-const DURATION = 0.8;
+const DURATION = 1.9;
 
 type Dir = "up" | "left" | "right" | "scale";
 
 const offsets: Record<Dir, { x: number; y: number; scale: number }> = {
-  up: { x: 0, y: 40, scale: 1 },
-  left: { x: -50, y: 0, scale: 1 },
-  right: { x: 50, y: 0, scale: 1 },
+  up: { x: 0, y: 64, scale: 1 },
+  left: { x: -64, y: 0, scale: 1 },
+  right: { x: 64, y: 0, scale: 1 },
   scale: { x: 0, y: 0, scale: 0.95 },
 };
 
@@ -35,7 +35,7 @@ export function Reveal({
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, x: o.x, y: o.y, scale: o.scale, filter: "blur(10px)" }}
+      initial={{ opacity: 0, x: o.x, y: o.y, scale: o.scale, filter: "blur(12px)" }}
       animate={inView ? { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" } : {}}
       transition={{ duration: DURATION, delay, ease: EASE }}
     >
@@ -48,7 +48,7 @@ export function Reveal({
 export function RevealGrid({
   children,
   className,
-  stagger = 0.15,
+  stagger = 0.25,
 }: {
   children: ReactNode;
   className?: string;
@@ -62,7 +62,7 @@ export function RevealGrid({
     show: { transition: { staggerChildren: stagger } },
   };
   const item: Variants = {
-    hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
+    hidden: { opacity: 0, y: 64, filter: "blur(12px)" },
     show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: DURATION, ease: EASE } },
   };
 
