@@ -9,6 +9,15 @@ const icons = [
   <svg key={3} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
 ];
 
+/* Bento layout: card 0 & 2 span tinggi dobel di desktop, card 1 span 2 kolom.
+   Grid 4 kolom → baris atas [0, 0, 1, 1], baris bawah [2, 2, 3, 3] visual asimetris. */
+const bentoSpan = [
+  "lg:row-span-2 lg:flex lg:flex-col",
+  "",
+  "lg:row-span-2 lg:flex lg:flex-col",
+  "",
+];
+
 export default function ServicesSection() {
   const { t } = useI18n();
 
@@ -16,6 +25,8 @@ export default function ServicesSection() {
     <section className="py-14 md:py-20 bg-[#fafafa] dark:bg-[#101014] px-6 border-y border-gray-100 dark:border-white/5 transition-colors duration-300 relative overflow-hidden" id="layanan">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-[-10%] w-[420px] h-[420px] bg-indigo-100/40 dark:bg-indigo-500/[0.05] blur-3xl rounded-full" />
+        {/* aurora accent */}
+        <div className="aurora-blob aurora-anim-slow bottom-[5%] left-[15%] w-[300px] h-[300px] bg-gradient-to-tr from-cyan-200/30 to-transparent dark:from-cyan-500/[0.05]" />
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -34,7 +45,8 @@ export default function ServicesSection() {
           <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[380px]">{t.services.sub}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {/* Bento grid: asimetris, kartu pertama & ketiga lebih tinggi di desktop */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:auto-rows-fr">
           {t.services.items.map((s, i) => (
             <motion.div
               key={i}
@@ -42,22 +54,33 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: i * 0.25, ease: [0.12, 1, 0.22, 1] }}
-              className="uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10"
+              className={`uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10 ${bentoSpan[i]} overflow-hidden`}
             >
-              <div className="absolute inset-0 rounded-[20px] bg-gradient-to-br from-cyan-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black flex items-center justify-center mb-5 shadow-lg group-hover:shadow-cyan-500/20 dark:group-hover:shadow-cyan-400/20 group-hover:scale-110 transition-all duration-300">{icons[i]}</div>
+              {/* gradient wash — beda warna per kartu biar ada identitas */}
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                i === 0 ? "bg-gradient-to-br from-cyan-500/[0.07] via-transparent to-indigo-500/[0.05]"
+                : i === 1 ? "bg-gradient-to-br from-emerald-500/[0.06] via-transparent to-cyan-500/[0.04]"
+                : i === 2 ? "bg-gradient-to-br from-indigo-500/[0.07] via-transparent to-fuchsia-500/[0.04]"
+                : "bg-gradient-to-br from-amber-500/[0.06] via-transparent to-emerald-500/[0.04]"
+              }`} />
+              {/* glow orb kecil di pojok kartu tall (bento feel) */}
+              {i % 2 === 0 && (
+                <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-gradient-to-br from-cyan-400/10 to-indigo-400/10 blur-2xl group-hover:scale-125 transition-transform duration-500" />
+              )}
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-white dark:text-black flex items-center justify-center mb-5 shadow-lg group-hover:shadow-cyan-500/20 dark:group-hover:shadow-cyan-400/20 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300">{icons[i]}</div>
                 <h3 className="text-[17px] font-bold tracking-tight mb-3 text-gray-900 dark:text-white">{s.title}</h3>
                 <p className="text-[13.5px] leading-[1.7] text-gray-600 dark:text-gray-400 mb-5">{s.desc}</p>
-                <ul className="space-y-2.5">
+                <ul className="space-y-2.5 mt-auto">
                   {s.points.map((p, j) => (
                     <li key={j} className="flex items-center gap-2.5 text-[12.5px] font-medium text-gray-700 dark:text-gray-300">
                       <span className="w-5 h-5 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 text-white flex items-center justify-center text-[10px] shadow-sm">✓</span>{p}
                     </li>
                   ))}
                 </ul>
+                {/* nomor besar watermark ala bento premium */}
+                <div className="absolute bottom-3 right-5 text-[44px] leading-none font-extrabold text-gray-900/[0.04] dark:text-white/[0.04] select-none pointer-events-none">{String(i + 1).padStart(2, "0")}</div>
               </div>
-              <div className="absolute top-5 right-5 text-[11px] font-bold text-gray-200 dark:text-white/10 group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">{String(i + 1).padStart(2, "0")}</div>
             </motion.div>
           ))}
         </div>

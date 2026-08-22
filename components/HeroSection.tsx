@@ -12,6 +12,9 @@ export default function HeroSection() {
         <div className="hero-orb hero-orb-main absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[560px] bg-gradient-to-b from-cyan-100/50 dark:from-cyan-500/[0.07] to-transparent blur-3xl rounded-full" />
         <div className="hero-orb hero-orb-indigo absolute -top-24 right-[-10%] w-[520px] h-[520px] bg-indigo-200/30 dark:bg-indigo-500/[0.06] blur-3xl rounded-full" />
         <div className="hero-orb hero-orb-cyan absolute bottom-[-20%] left-[-5%] w-[420px] h-[420px] bg-cyan-200/30 dark:bg-cyan-500/[0.05] blur-3xl rounded-full" />
+        {/* aurora accent blobs — v3 UI upgrade */}
+        <div className="aurora-blob aurora-anim top-[20%] left-[8%] w-[280px] h-[280px] bg-gradient-to-br from-emerald-300/25 to-cyan-300/15 dark:from-emerald-500/[0.07] dark:to-cyan-400/[0.05]" />
+        <div className="aurora-blob aurora-anim-slow top-[45%] right-[12%] w-[240px] h-[240px] bg-gradient-to-bl from-indigo-300/30 to-fuchsia-200/15 dark:from-indigo-500/[0.08] dark:to-fuchsia-500/[0.04]" />
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">

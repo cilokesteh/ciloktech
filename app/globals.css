@@ -216,3 +216,26 @@ a.uiverse-card {
 #kontak a.uiverse-card > div:last-child {
   margin-top: auto;
 }
+
+/* ── UI upgrade: ambient light blobs + aurora ── */
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+.aurora-anim { animation: aurora-drift 22s ease-in-out infinite alternate; }
+.aurora-anim-slow { animation: aurora-drift 34s ease-in-out infinite alternate-reverse; }
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: .55; }
+  50%  { transform: translate3d(40px, -30px, 0) scale(1.12); opacity: .85; }
+  100% { transform: translate3d(-30px, 24px, 0) scale(.95); opacity: .6; }
+}
+
+/* count-up number */
+.stat-number { font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-anim, .aurora-anim-slow { animation: none !important; }
+}

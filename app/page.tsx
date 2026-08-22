@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortofolioSection from "@/components/PortofolioSection";
 import PricingSection from "@/components/PricingSection";
@@ -8,6 +9,8 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
+import CursorGlow from "@/components/CursorGlow";
+import ScrollProgress from "@/components/ScrollProgress";
 import Link from "next/link";
 import { posts } from "./blog/data";
 import { useI18n } from "@/lib/i18n/context";
@@ -18,9 +21,12 @@ export default function Home() {
 
   return (
     <>
+      <ScrollProgress />
+      <CursorGlow />
       <Navbar />
       <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
         <HeroSection />
+        <StatsSection />
         <ServicesSection />
         <PortofolioSection />
         <PricingSection />
