@@ -53,7 +53,7 @@ export default function PricingSection() {
               }
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
-              className={`uiverse-card relative rounded-[22px] p-7 flex flex-col ${
+              className={`uiverse-card relative rounded-[22px] p-7 flex flex-col will-change-transform ${
                 featured
                   ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
                   : "glass hover:border-gray-900 dark:hover:border-white"

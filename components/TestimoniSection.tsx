@@ -48,7 +48,7 @@ export default function TestimoniSection() {
           {t.testimoni.items.map((item, i) => {
             const m = meta[i] ?? meta[0];
             return (
-              <div key={i} className="relative rounded-[20px] border border-gray-200 dark:border-white/10 bg-[#fafafa] dark:bg-[#171717] p-6 hover:bg-white dark:hover:bg-[#1a1a1a] hover:border-gray-900 dark:hover:border-white hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] transition-all">
+              <div key={i} className="relative rounded-[20px] border border-gray-200 dark:border-white/10 bg-[#fafafa] dark:bg-[#171717] p-6 hover:bg-white dark:hover:bg-[#1a1a1a] hover:border-gray-900 dark:hover:border-white hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] transition-colors duration-300">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
                     <span key={j} className="text-amber-400 text-[14px]">★</span>

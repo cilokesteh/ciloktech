@@ -255,6 +255,7 @@ const idDict = {
     telegramDesc: "@ciloktechcsbot — siap bantu kapan pun, balas cepat",
     telegramCta: "Chat sekarang",
     emailTitle: "Email",
+    emailMeta: "hi@ciloktech.my.id",
     emailCta: "Kirim brief",
     devTitle: "Developer",
     devHandle: "@ciloktech",
@@ -266,6 +267,12 @@ const idDict = {
     ctaPrimary: "Mulai Konsultasi Gratis",
     ctaSecondary: "Lihat paket harga",
     footerNote: "Rata-rata membalas <2 jam • Tanpa meeting berbelit • Langsung ke inti",
+  },
+  stats: {
+    proyek: "Proyek Selesai",
+    lighthouse: "Lighthouse Score",
+    pengerjaan: "Rata-rata Pengerjaan",
+    pengalaman: "Pengalaman",
   },
   footer: {
     desc: "One-man studio — jasa pembuatan website & web app profesional. Cepat, aman, SEO-ready, fokus pada konversi. Tanpa kantor, tanpa PM, langsung dengan builder.",
@@ -665,6 +672,7 @@ const enDict: Dict = {
     telegramDesc: "@ciloktechcsbot — here anytime, fast replies",
     telegramCta: "Chat now",
     emailTitle: "Email",
+    emailMeta: "hi@ciloktech.my.id",
     emailCta: "Send your brief",
     devTitle: "Developer",
     devHandle: "@ciloktech",
@@ -676,6 +684,12 @@ const enDict: Dict = {
     ctaPrimary: "Start Free Consultation",
     ctaSecondary: "View pricing first",
     footerNote: "Average reply <2h • No endless meetings • Straight to the point",
+  },
+  stats: {
+    proyek: "Projects Shipped",
+    lighthouse: "Lighthouse Score",
+    pengerjaan: "Avg. Build Time",
+    pengalaman: "Experience",
   },
   footer: {
     desc: "One-man studio specializing in professional website & web app development. Lightning fast, secure, SEO-ready, and conversion-focused. No office, no PM, direct communication with the builder.",

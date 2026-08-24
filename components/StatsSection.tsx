@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useI18n } from "@/lib/i18n/context";
 
 /* Count-up hook — animasi angka dari 0 ke target pas masuk viewport */
 function useCountUp(target: number, active: boolean, duration = 1600): number {
@@ -42,6 +43,7 @@ function StatItem({ target, suffix, label }: { target: number; suffix: string; l
 }
 
 export default function StatsSection() {
+  const { t } = useI18n();
   return (
     <section className="py-10 md:py-14 bg-white dark:bg-[#08080b] px-6 relative overflow-hidden transition-colors duration-300">
       {/* aurora tipis di belakang stats */}
@@ -55,10 +57,10 @@ export default function StatsSection() {
         transition={{ duration: 1.2, ease: [0.12, 1, 0.22, 1] }}
         className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-8 divide-x-0 md:divide-x md:divide-gray-100 dark:md:divide-white/5"
       >
-        <StatItem target={50} suffix="+" label="Proyek Selesai" />
-        <StatItem target={98} suffix="/100" label="Lighthouse Score" />
-        <StatItem target={3} suffix=" hari" label="Rata-rata Pengerjaan" />
-        <StatItem target={3} suffix="+ thn" label="Pengalaman" />
+        <StatItem target={50} suffix="+" label={t.stats.proyek} />
+        <StatItem target={98} suffix="/100" label={t.stats.lighthouse} />
+        <StatItem target={3} suffix=" hari" label={t.stats.pengerjaan} />
+        <StatItem target={3} suffix="+ thn" label={t.stats.pengalaman} />
       </motion.div>
     </section>
   );

@@ -40,9 +40,9 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /> One-man studio • Senior • 🇮🇩
             </div>
             <div className="flex gap-2 pt-1">
-              <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✈</a>
-              <a href="https://github.com/cilokesteh" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">G</a>
-              <a href="mailto:hi@ciloktech.my.id" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition">✉</a>
+              <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" aria-label="Telegram CilokTech" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition"><span className="sr-only">Telegram</span>✈</a>
+              <a href="https://github.com/cilokesteh" target="_blank" rel="noopener noreferrer" aria-label="GitHub CilokTech" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition"><span className="sr-only">GitHub</span>G</a>
+              <a href="mailto:hi@ciloktech.my.id" aria-label="Email CilokTech" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition"><span className="sr-only">Email</span>✉</a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-10 text-sm">
