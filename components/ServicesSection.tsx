@@ -30,8 +30,8 @@ export default function ServicesSection() {
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 64 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8"
@@ -50,8 +50,8 @@ export default function ServicesSection() {
           {t.services.items.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 64 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: i * 0.25, ease: [0.12, 1, 0.22, 1] }}
               className={`uiverse-card group relative rounded-[20px] p-6 bg-white dark:bg-[#141419] border border-gray-200 dark:border-white/10 ${bentoSpan[i]} overflow-hidden`}

@@ -36,8 +36,8 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, x: o.x, y: o.y, scale: o.scale, filter: "blur(12px)" }}
-      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }}
+      initial={{ opacity: 0, x: o.x, y: o.y, scale: o.scale }}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: DURATION, delay, ease: EASE }}
     >
@@ -61,8 +61,8 @@ export function RevealGrid({
   stagger?: number;
 }) {
   const item: Variants = {
-    hidden: { opacity: 0, y: 64, filter: "blur(12px)" },
-    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: DURATION, ease: EASE } },
+    hidden: { opacity: 0, y: 64 },
+    show: { opacity: 1, y: 0, transition: { duration: DURATION, ease: EASE } },
   };
 
   return (

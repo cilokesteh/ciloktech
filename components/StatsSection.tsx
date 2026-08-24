@@ -31,11 +31,14 @@ function StatItem({ target, suffix, label }: { target: number; suffix: string; l
   const value = useCountUp(target, inView);
 
   return (
-    <div ref={ref} className="text-center px-4">
-      <div className="stat-number text-[40px] md:text-[52px] font-extrabold tracking-[-0.04em] leading-none bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
-        {value}{suffix}
+    <div ref={ref} className="text-center px-2 sm:px-4 min-w-0">
+      <div className="stat-number inline-flex items-baseline justify-center whitespace-nowrap leading-none bg-gradient-to-b from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
+        <span className="text-[38px] md:text-[50px] font-extrabold tracking-[-0.04em]">{value}</span>
+        <span className={`font-bold tracking-[-0.02em] ${suffix === "/100" ? "text-[18px] md:text-[22px] ml-0.5" : "text-[24px] md:text-[30px] ml-0.5"}`}>
+          {suffix}
+        </span>
       </div>
-      <div className="mt-2 text-[12px] md:text-[13px] font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400">
+      <div className="mt-2 text-[11px] sm:text-[12px] md:text-[13px] font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400">
         {label}
       </div>
     </div>

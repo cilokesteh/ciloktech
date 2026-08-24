@@ -21,8 +21,8 @@ export default function HeroSection() {
         <div className="space-y-8">
           <motion.div
             className="hero-reveal hero-reveal-1 flex flex-wrap items-center gap-2"
-            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 64 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0, ease: [0.12, 1, 0.22, 1] }}
           >
@@ -38,8 +38,8 @@ export default function HeroSection() {
 
           <motion.div
             className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance"
-            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 64 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.15, ease: [0.12, 1, 0.22, 1] }}
           >
@@ -53,8 +53,8 @@ export default function HeroSection() {
 
           <motion.p
             className="hero-reveal hero-reveal-3 text-[15px] md:text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 max-w-[520px]"
-            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 64 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.3, ease: [0.12, 1, 0.22, 1] }}
           >
@@ -63,8 +63,8 @@ export default function HeroSection() {
 
           <motion.div
             className="hero-reveal hero-reveal-4 flex flex-col sm:flex-row gap-3 pt-1"
-            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 64 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.45, ease: [0.12, 1, 0.22, 1] }}
           >
@@ -79,8 +79,8 @@ export default function HeroSection() {
 
           <motion.div
             className="hero-reveal hero-reveal-5 flex flex-wrap items-center gap-3 pt-5 border-t border-gray-100 dark:border-white/10 text-xs"
-            initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 64 }}
+            whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.6, ease: [0.12, 1, 0.22, 1] }}
           >
@@ -92,8 +92,8 @@ export default function HeroSection() {
 
         <motion.div
           className="hero-preview relative"
-          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-          whileInView={{ opacity: 1, y: [0, -8, 0], filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 64 }}
+          whileInView={{ opacity: 1, y: [0, -8, 0] }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, delay: 0.2, ease: [0.12, 1, 0.22, 1], y: { duration: 5, repeat: Infinity, ease: "easeInOut" } }}
         >

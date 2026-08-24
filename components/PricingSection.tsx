@@ -21,8 +21,8 @@ export default function PricingSection() {
       <div className="max-w-6xl mx-auto">
         <motion.div
           className="max-w-2xl mx-auto text-center mb-10"
-          initial={{ opacity: 0, y: 64, filter: "blur(12px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 64 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
         >
@@ -48,8 +48,8 @@ export default function PricingSection() {
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               whileInView={
                 featured
-                  ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
-                  : { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+                  ? { opacity: 1, y: 0, scale: 1 }
+                  : { opacity: 1, y: 0, scale: 1 }
               }
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
