@@ -58,11 +58,11 @@ body {
 }
 
 /* Uiverse-inspired interaction primitives, rebuilt with CilokTech tokens. */
-.uiverse-button { position: relative; isolation: isolate; overflow: hidden; transform: translateZ(0); transition: transform 180ms cubic-bezier(.22,1,.36,1), box-shadow 220ms ease, color 220ms ease, background-color 220ms ease, border-color 220ms ease; }
+.uiverse-button { position: relative; isolation: isolate; overflow: hidden; transition: transform 180ms cubic-bezier(.22,1,.36,1), box-shadow 220ms ease, color 220ms ease, background-color 220ms ease, border-color 220ms ease; }
 .uiverse-button::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, #06b6d4, #6366f1 52%, #06b6d4); background-size: 200% 100%; opacity: 0; transition: opacity 220ms ease, background-position 450ms ease; }
 .uiverse-button:hover::before { opacity: 1; background-position: 100% 0; }
 .uiverse-button:active { transform: translateY(1px) scale(.98); }
-.uiverse-card { position: relative; transform: translateZ(0); transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms ease, border-color 320ms ease, background-color 320ms ease; }
+.uiverse-card { position: relative; transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms ease, border-color 320ms ease, background-color 320ms ease; }
 .uiverse-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; background: linear-gradient(135deg, rgba(6,182,212,.11), transparent 36%, rgba(99,102,241,.10)); opacity: 0; transition: opacity 320ms ease; }
 @media (hover: hover) and (pointer: fine) { .uiverse-button:hover { transform: translateY(-2px); } .uiverse-card:hover { transform: translateY(-6px); border-color: rgba(6,182,212,.42); box-shadow: 0 28px 70px rgba(6,182,212,.12); } .uiverse-card:hover::after { opacity: 1; } }
 .uiverse-disclosure { transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease, background-color 220ms ease; }
@@ -181,11 +181,15 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 @media (hover: hover) and (pointer: fine) { .uiverse-card:hover::before { transform: translateX(120%); } }
 .dark .uiverse-card::before { background: linear-gradient(110deg, transparent 32%, rgba(255,255,255,.07) 50%, transparent 68%); }
 
-/* Featured pricing: glow pulse */
+/* Featured pricing: glow pulse — composite-only (animate ::after opacity, BUKAN box-shadow).
+   Box-shadow animation = repaint tiap frame → scroll jank. Opacity = GPU composite. */
+.uiverse-card[data-featured="true"]::after {
+  box-shadow: 0 30px 90px rgba(6,182,212,.26);
+}
 .uiverse-card[data-featured="true"] { animation: card-glow-pulse 5s ease-in-out infinite; }
 @keyframes card-glow-pulse {
-  0%, 100% { box-shadow: 0 30px 90px rgba(6,182,212,.22); }
-  50% { box-shadow: 0 30px 90px rgba(6,182,212,.34); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: .88; }
 }
 
 /* Navbar desktop links: underline premium (selector komponen actual) */
@@ -222,7 +226,6 @@ a.uiverse-card {
   position: absolute;
   border-radius: 9999px;
   filter: blur(90px);
-  will-change: transform, opacity;
   pointer-events: none;
 }
 .aurora-anim { animation: aurora-drift 22s ease-in-out infinite alternate; }

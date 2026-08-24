@@ -54,7 +54,7 @@ export default function CursorGlow() {
 
   return (
     <>
-      {/* glow besar */}
+      {/* glow besar — tanpa mixBlendMode (re-blend full viewport tiap frame = jank saat scroll) */}
       <div
         ref={glowRef}
         aria-hidden
@@ -62,7 +62,7 @@ export default function CursorGlow() {
         style={{
           background: "radial-gradient(circle, rgba(6,182,212,0.10) 0%, rgba(99,102,241,0.06) 40%, transparent 70%)",
           top: 0, left: 0,
-          mixBlendMode: "plus-lighter",
+          willChange: "transform",
         }}
       />
       {/* dot kecil */}
