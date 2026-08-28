@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import CursorGlow from "@/components/CursorGlow";
 import ScrollProgress from "@/components/ScrollProgress";
+import SpotlightVars from "@/components/SpotlightVars";
 import Link from "next/link";
 import { posts } from "./blog/data";
 import { useI18n } from "@/lib/i18n/context";
@@ -23,6 +24,8 @@ export default function Home() {
     <>
       <ScrollProgress />
       <CursorGlow />
+      <SpotlightVars />
+      <div className="grain-overlay" aria-hidden="true" />
       <Navbar />
       <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
         <HeroSection />

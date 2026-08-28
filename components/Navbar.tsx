@@ -10,6 +10,7 @@ type NavLink = { href: string; label: string; type: "anchor" | "page"; highlight
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("");
   const { t } = useI18n();
 
   const navLinks: NavLink[] = [
@@ -24,6 +25,23 @@ export default function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // scroll-spy: highlight nav link of the section in view (home page only)
+  useEffect(() => {
+    const ids = ["layanan", "portofolio", "harga"];
+    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    if (!sections.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        }
+      },
+      { rootMargin: "-35% 0px -55% 0px" }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -84,7 +102,11 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="inline-flex items-center text-[13px] font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-white/5 transition"
+                className={`inline-flex items-center text-[13px] font-medium px-3 py-1.5 rounded-full transition ${
+                  active && l.href === `/#${active}`
+                    ? "text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-500/10 ring-1 ring-cyan-200/70 dark:ring-cyan-400/20"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
+                }`}
               >
                 {l.label}
               </a>

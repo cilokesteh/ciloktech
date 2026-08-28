@@ -59,6 +59,7 @@ export default function PricingSection() {
                   : "glass hover:border-gray-900 dark:hover:border-white"
               }`}
             >
+                {featured && <div className="border-beam" aria-hidden="true" />}
                 {featured && (
                   <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-indigo-500 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg shadow-cyan-500/30">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" /> {t.pricing.populer}
