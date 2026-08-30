@@ -71,7 +71,7 @@ export default function Home() {
                     {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="text-[10px] font-bold bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-full text-gray-600 dark:text-gray-300">{tg}</span>))}
                     <span className="text-[10px] text-gray-500">{post.readingTime}</span>
                   </div>
-                  <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition line-clamp-2">{post.title}</div>
+                  <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition line-clamp-2">{post.title}</div>
                   <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 line-clamp-2 leading-relaxed">{post.description}</div>
                 </Link>
               ))}

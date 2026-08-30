@@ -113,7 +113,7 @@ export default function CommandPalette() {
             <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded text-[10px]">↑↓</kbd> {t.cmd.navHint}</span>
             <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded text-[10px]">↵</kbd> {t.cmd.openHint}</span>
           </div>
-          <div className="flex items-center gap-2"><span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" /> One-man studio • ⌘K anywhere</div>
+          <div className="flex items-center gap-2"><span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" /> One-man studio • ⌘K anywhere</div>
         </div>
       </div>
     </div>

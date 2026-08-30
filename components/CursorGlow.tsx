@@ -69,7 +69,7 @@ export default function CursorGlow() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed z-[61] w-2 h-2 rounded-full bg-cyan-500/70 dark:bg-cyan-400/80 shadow-[0_0_10px_rgba(6,182,212,0.6)]"
+        className="pointer-events-none fixed z-[61] w-2 h-2 rounded-full bg-amber-700/70 dark:bg-amber-400/80 shadow-[0_0_10px_rgba(6,182,212,0.6)]"
         style={{ top: 0, left: 0 }}
       />
     </>

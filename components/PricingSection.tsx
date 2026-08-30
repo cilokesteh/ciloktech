@@ -16,7 +16,7 @@ export default function PricingSection() {
   return (
     <section className="py-14 md:py-20 bg-[#f6f6f5] dark:bg-[#0e0e12] border-y border-gray-200 dark:border-white/5 px-6 transition-colors duration-300 relative overflow-hidden" id="harga">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-b from-cyan-100/30 dark:from-cyan-500/[0.05] to-transparent blur-3xl rounded-full" />
+        <div className="absolute inset-0 bg-grid opacity-40" />
       </div>
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -26,7 +26,7 @@ export default function PricingSection() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
         >
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-gray-900 dark:text-white bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-5 shadow-sm">
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 px-3 py-1 rounded-full mb-5 shadow-sm">
             {t.pricing.label}
           </div>
           <h2 className="text-[32px] md:text-[46px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
@@ -38,9 +38,16 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5 items-start max-w-5xl mx-auto">
+        {/* Asymmetric grid: kolom tengah lebih besar, sisi lebih ringkas
+            (anti-AI §II.3.2: break perfect symmetry) */}
+        <div className="grid md:grid-cols-[1fr_1.15fr_1fr] gap-4 md:gap-5 items-stretch max-w-5xl mx-auto">
           {t.pricing.plans.map((plan, idx) => {
             const featured = idx === 2;
+            const sizeClass = featured
+              ? "md:py-10 md:px-8 md:scale-[1.02]"
+              : idx === 0
+                ? "md:py-7 md:px-6 md:scale-[0.96] md:opacity-90"
+                : "md:py-7 md:px-6 md:scale-[0.96] md:opacity-90";
             return (
               <motion.div
               key={idx}
@@ -53,21 +60,21 @@ export default function PricingSection() {
               }
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
-              className={`uiverse-card relative rounded-[22px] p-7 flex flex-col will-change-transform ${
+              className={`uiverse-card relative rounded-[22px] p-7 flex flex-col will-change-transform ${sizeClass} ${
                 featured
-                  ? "bg-gradient-to-b from-gray-900 to-gray-950 dark:from-white dark:to-gray-100 text-white dark:text-black shadow-[0_28px_72px_rgba(0,0,0,0.3)] dark:shadow-[0_28px_72px_rgba(255,255,255,0.1)] md:-mt-4 md:mb-4 border border-gray-800 dark:border-white ring-1 ring-cyan-500/30 dark:ring-cyan-400/40 scale-[1.02]"
-                  : "glass hover:border-gray-900 dark:hover:border-white"
+                  ? "bg-amber-800 dark:bg-amber-600 text-amber-50 dark:text-amber-950 shadow-[0_28px_72px_rgba(180,83,9,0.25)] dark:shadow-[0_28px_72px_rgba(180,83,9,0.4)] border border-amber-900 dark:border-amber-700"
+                  : "surface-elev hover:border-amber-800/40 dark:hover:border-amber-400/40"
               }`}
             >
                 {featured && <div className="border-beam" aria-hidden="true" />}
                 {featured && (
-                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-gradient-to-r from-cyan-500 to-indigo-500 text-white text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg shadow-cyan-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" /> {t.pricing.populer}
+                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-amber-50 text-amber-900 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-800 animate-pulse" /> {t.pricing.populer}
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className={`text-[18px] font-bold tracking-tight ${featured ? "text-white dark:text-black" : "text-gray-900 dark:text-white"}`}>
+                  <h3 className={`text-[18px] font-bold tracking-tight font-display italic ${featured ? "text-amber-50 dark:text-amber-950" : "text-gray-900 dark:text-white"}`}>
                     {plan.name}
                   </h3>
                   {(() => {
@@ -76,7 +83,7 @@ export default function PricingSection() {
                     const badge = parts[1] || null;
                     return (
                       <>
-                        <div className={`text-[12px] font-medium tracking-wide uppercase mt-2 ${featured ? "text-gray-400 dark:text-gray-600" : "text-cyan-600 dark:text-cyan-400"}`}>
+                        <div className={`text-[12px] font-medium tracking-wide uppercase mt-2 ${featured ? "text-amber-200 dark:text-amber-800" : "text-amber-800 dark:text-amber-400"}`}>
                           {label}
                         </div>
                         <div className="mt-1 flex items-baseline gap-2">
@@ -86,7 +93,7 @@ export default function PricingSection() {
                         </div>
                         {badge && (
                           <div className="mt-2.5">
-                            <span className="inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                            <span className="inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
                               {badge}
                             </span>
                           </div>
@@ -94,7 +101,7 @@ export default function PricingSection() {
                       </>
                     );
                   })()}
-                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-gray-300 dark:text-gray-600" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
+                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-amber-100 dark:text-amber-900" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">
@@ -102,12 +109,12 @@ export default function PricingSection() {
                     <li key={i} className="flex gap-2.5 text-[13px] leading-snug">
                       <span
                         className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] shrink-0 ${
-                          featured ? "bg-white/10 dark:bg-black/10 text-cyan-300 dark:text-cyan-600" : "bg-gray-900 dark:bg-white text-white dark:text-black"
+                          featured ? "bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-50" : "bg-amber-800 dark:bg-amber-500 text-amber-50"
                         }`}
                       >
                         ✓
                       </span>
-                      <span className={featured ? "text-gray-200 dark:text-gray-700" : "text-gray-700 dark:text-gray-300"}>{f}</span>
+                      <span className={featured ? "text-amber-50 dark:text-amber-950" : "text-gray-700 dark:text-gray-300"}>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -118,8 +125,8 @@ export default function PricingSection() {
                   rel="noopener noreferrer"
                   className={`uiverse-button w-full py-3.5 rounded-full text-center text-[13.5px] font-bold ${
                     featured
-                      ? "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white hover:from-cyan-400 hover:to-indigo-400 shadow-lg shadow-cyan-500/25"
-                      : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-black dark:hover:bg-cyan-300 dark:hover:text-black"
+                      ? "bg-amber-50 text-amber-900 hover:bg-white shadow-lg"
+                      : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-amber-800 dark:hover:bg-amber-500 dark:hover:text-white"
                   }`}
                 >
                   {plan.cta}
@@ -129,7 +136,7 @@ export default function PricingSection() {
                   <div className="text-[11px] text-center text-gray-500 mt-3">{t.pricing.footnotes[0]}</div>
                 )}
                 {featured && (
-                  <div className="text-[11px] text-center text-gray-500 dark:text-gray-600 mt-3">{t.pricing.footnotes[1]}</div>
+                  <div className="text-[11px] text-center text-amber-100 dark:text-amber-800 mt-3">{t.pricing.footnotes[1]}</div>
                 )}
               </motion.div>
             );
@@ -137,7 +144,7 @@ export default function PricingSection() {
         </div>
 
         <div className="mt-10 text-center text-[12.5px] text-gray-600 dark:text-gray-400">
-          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 dark:text-white underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
+          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-amber-800 dark:text-amber-400 underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
         </div>
       </div>
     </section>

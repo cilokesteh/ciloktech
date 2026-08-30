@@ -15,7 +15,7 @@ export default function HargaClient() {
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-6">{hp.badge}</div>
           <h1 className="text-[32px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[720px]">
             {hp.heroH1a} <span className="line-through decoration-2 decoration-gray-400">{hp.heroH1b}</span> {hp.heroH1c}
-            <br />{hp.heroH1d} <span className="text-cyan-700 dark:text-cyan-400">{hp.heroH1e}</span>{hp.heroH1f}
+            <br />{hp.heroH1d} <span className="text-amber-800 dark:text-amber-400">{hp.heroH1e}</span>{hp.heroH1f}
           </h1>
           <p className="text-[16px] leading-relaxed text-gray-600 dark:text-gray-400 mt-6 max-w-[600px]">{hp.heroSub}</p>
 
@@ -25,10 +25,10 @@ export default function HargaClient() {
               <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceYouPay}</div>
               <div className="text-[12px] text-gray-600 dark:text-gray-400 mt-1">{hp.once}</div>
             </div>
-            <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-900/50 p-5">
-              <div className="text-[12px] font-bold uppercase tracking-widest text-cyan-700 dark:text-cyan-300">{hp.realValue}</div>
+            <div className="rounded-2xl bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 p-5">
+              <div className="text-[12px] font-bold uppercase tracking-widest text-amber-800 dark:text-amber-300">{hp.realValue}</div>
               <div className="text-[28px] font-extrabold mt-1 text-gray-900 dark:text-white">{hp.priceRealValue}</div>
-              <div className="text-[12px] text-cyan-800 dark:text-cyan-300 mt-1">{hp.ifAgency}</div>
+              <div className="text-[12px] text-amber-800 dark:text-amber-300 mt-1">{hp.ifAgency}</div>
             </div>
             <div className="rounded-2xl bg-gray-900 dark:bg-white border border-gray-900 dark:border-white p-5 text-white dark:text-black">
               <div className="text-[12px] font-bold uppercase tracking-widest opacity-80">{hp.youSave}</div>
@@ -37,7 +37,7 @@ export default function HargaClient() {
             </div>
           </div>
           <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
-            <span className="text-cyan-700 dark:text-cyan-400 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
+            <span className="text-amber-800 dark:text-amber-400 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
           </div>
         </div>
       </section>
@@ -54,9 +54,9 @@ export default function HargaClient() {
               </div>
             ))}
             <div className="p-5 bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-between"><span className="font-bold text-[14px]">{hp.totalSeparate}</span><span className="font-extrabold text-[18px]">{hp.totalSeparateVal}</span></div>
-            <div className="p-5 bg-cyan-500 dark:bg-cyan-400 text-gray-900 flex items-center justify-between font-bold"><span>{hp.paketCilok}</span><span className="text-[20px]">{hp.paketVal}</span></div>
+            <div className="p-5 bg-amber-700 dark:bg-amber-400 text-gray-900 flex items-center justify-between font-bold"><span>{hp.paketCilok}</span><span className="text-[20px]">{hp.paketVal}</span></div>
           </div>
-          <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full"><span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" /> {hp.noHidden}</div>
+          <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full"><span className="w-2 h-2 bg-amber-700 rounded-full animate-pulse" /> {hp.noHidden}</div>
         </div>
       </section>
 
@@ -72,7 +72,7 @@ export default function HargaClient() {
                 <tr className="bg-[#fafafa] dark:bg-[#111111] border-b border-gray-200 dark:border-white/10">
                   <th className="p-4 text-[11px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 w-[22%]">{hp.feature}</th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.freelance}<br/><span className="font-normal text-[11px]">{hp.freelanceRange}</span></th>
-                  <th className="p-4 text-[12px] font-extrabold text-gray-900 dark:text-white bg-cyan-50/50 dark:bg-cyan-950/20 w-[26%] border-x border-cyan-200/50 dark:border-cyan-900/30">{hp.cilokCol}<br/><span className="font-bold text-cyan-700 dark:text-cyan-400">{hp.cilokRange}</span></th>
+                  <th className="p-4 text-[12px] font-extrabold text-gray-900 dark:text-white bg-amber-50/50 dark:bg-amber-950/20 w-[26%] border-x border-amber-200/50 dark:border-amber-900/30">{hp.cilokCol}<br/><span className="font-bold text-amber-800 dark:text-amber-400">{hp.cilokRange}</span></th>
                   <th className="p-4 text-[12px] font-bold text-gray-600 dark:text-gray-400 w-[26%]">{hp.agencyCol}<br/><span className="font-normal text-[11px]">{hp.agencyRange}</span></th>
                 </tr>
               </thead>
@@ -81,7 +81,7 @@ export default function HargaClient() {
                   <tr key={i} className={`border-b last:border-0 border-gray-100 dark:border-white/5 ${row.highlight ? "bg-gray-900 dark:bg-white text-white dark:text-black font-bold" : "hover:bg-gray-50/50 dark:hover:bg-white/[0.02]"} transition`}>
                     <td className={`p-4 font-bold ${row.highlight ? "text-white dark:text-black" : "text-gray-900 dark:text-white"}`}>{row.feature}</td>
                     <td className={`p-4 ${row.highlight ? "text-white/80 dark:text-black/70" : "text-gray-600 dark:text-gray-400"}`}>{row.low}</td>
-                    <td className={`p-4 border-x border-cyan-200/30 dark:border-cyan-900/20 ${row.highlight ? "bg-gray-900 dark:bg-white text-white dark:text-black" : "bg-cyan-50/30 dark:bg-cyan-950/10 text-gray-900 dark:text-white font-medium"}`}>{row.mid}</td>
+                    <td className={`p-4 border-x border-amber-200/30 dark:border-cyan-900/20 ${row.highlight ? "bg-gray-900 dark:bg-white text-white dark:text-black" : "bg-amber-50/30 dark:bg-amber-950/10 text-gray-900 dark:text-white font-medium"}`}>{row.mid}</td>
                     <td className={`p-4 ${row.highlight ? "text-white/80 dark:text-black/70" : "text-gray-600 dark:text-gray-400"}`}>{row.high}</td>
                   </tr>
                 ))}
@@ -93,7 +93,7 @@ export default function HargaClient() {
               <div className="font-bold text-red-900 dark:text-red-300 text-[14px]">{hp.ifCheapTitle}</div>
               <ul className="mt-3 space-y-2 text-[13px] text-red-800/80 dark:text-red-300/80 list-disc pl-5">{hp.ifCheapBullets.map((b: string, i: number) => <li key={i}>{b}</li>)}</ul>
             </div>
-            <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/30 p-5">
+            <div className="rounded-2xl bg-amber-50 dark:bg-emerald-950/20 border border-amber-200 dark:border-emerald-900/30 p-5">
               <div className="font-bold text-emerald-900 dark:text-emerald-300 text-[14px]">{hp.ifCilokTitle}</div>
               <ul className="mt-3 space-y-2 text-[13px] text-emerald-900/80 dark:text-emerald-300/80 list-disc pl-5">{hp.ifCilokBullets.map((b: string, i: number) => <li key={i}>{b}</li>)}</ul>
             </div>
@@ -116,9 +116,9 @@ export default function HargaClient() {
               {hp.sideRows.map((r: string, i: number) => {
                 const isCilok = i === 2;
                 return (
-                  <div key={i} className={`flex justify-between p-3 rounded-xl border ${isCilok ? "bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200 dark:border-emerald-800" : "bg-[#fafafa] dark:bg-white/5 border-gray-100 dark:border-white/10"}`}>
+                  <div key={i} className={`flex justify-between p-3 rounded-xl border ${isCilok ? "bg-amber-50 dark:bg-emerald-950/30 border-amber-200 dark:border-emerald-800" : "bg-[#fafafa] dark:bg-white/5 border-gray-100 dark:border-white/10"}`}>
                     <span className={`text-[13px] ${isCilok ? "font-bold text-emerald-900 dark:text-emerald-300" : ""}`}>{r}</span>
-                    <span className={`text-[12px] font-bold ${isCilok ? "text-emerald-700" : ""}`}>{isCilok ? "✅" : "❌"}</span>
+                    <span className={`text-[12px] font-bold ${isCilok ? "text-amber-800" : ""}`}>{isCilok ? "✅" : "❌"}</span>
                   </div>
                 );
               })}
@@ -148,7 +148,7 @@ export default function HargaClient() {
           <h2 className="text-[28px] md:text-[42px] font-extrabold tracking-tight text-gray-900 dark:text-white leading-[0.9] whitespace-pre-line">{hp.finalH1}</h2>
           <p className="text-[15px] text-gray-600 dark:text-gray-400 mt-5 max-w-[520px] mx-auto leading-relaxed">{hp.finalP}</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%201.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-300 transition text-sm">{hp.gasCta}</a>
+            <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20Company%20Profile%20Rp%201.5jt%20(detail%20dari%20/harga)" className="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-amber-500 transition text-sm">{hp.gasCta}</a>
           </div>
           <div className="mt-4 flex justify-center"><Link href="/#harga" className="text-[13px] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white underline underline-offset-4">{hp.backPkg}</Link></div>
           <div className="mt-6 text-[11px] text-gray-500 dark:text-gray-400">{hp.freeNote}</div>

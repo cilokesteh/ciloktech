@@ -49,22 +49,12 @@ export default function StatsSection() {
   const { t } = useI18n();
   return (
     <section className="py-10 md:py-14 bg-white dark:bg-[#08080b] px-6 relative overflow-hidden transition-colors duration-300">
-      {/* aurora tipis di belakang stats */}
-      <div className="absolute inset-0 -z-10">
-        <div className="aurora-blob aurora-anim top-[30%] left-[35%] w-[380px] h-[200px] bg-gradient-to-r from-cyan-200/25 via-indigo-200/20 to-fuchsia-100/15 dark:from-cyan-500/[0.05] dark:via-indigo-500/[0.04] dark:to-transparent" />
-      </div>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 1.2, ease: [0.12, 1, 0.22, 1] }}
-        className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-8 divide-x-0 md:divide-x md:divide-gray-100 dark:md:divide-white/5"
-      >
+      <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-8 divide-x-0 md:divide-x md:divide-gray-100 dark:md:divide-white/5">
         <StatItem target={50} suffix="+" label={t.stats.proyek} />
         <StatItem target={98} suffix="/100" label={t.stats.lighthouse} />
         <StatItem target={3} suffix=" hari" label={t.stats.pengerjaan} />
         <StatItem target={3} suffix="+ thn" label={t.stats.pengalaman} />
-      </motion.div>
+      </div>
     </section>
   );
 }

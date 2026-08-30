@@ -4,7 +4,7 @@ import { Reveal, RevealGrid } from "./Reveal";
 
 const meta = [
   { initial: "B", color: "bg-gray-900 dark:bg-white text-white dark:text-black" },
-  { initial: "R", color: "bg-cyan-600 text-white" },
+  { initial: "R", color: "bg-amber-700 text-white" },
   { initial: "A", color: "bg-amber-500 text-white" },
 ];
 

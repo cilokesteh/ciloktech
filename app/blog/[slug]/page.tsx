@@ -222,7 +222,7 @@ export default async function BlogDetail({ params }: Props) {
             <img src={ogUrl} alt={`OG ${post.title}`} className="w-full h-auto" loading="lazy" />
           </div>
 
-          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-strong:text-gray-900 dark:prose-strong:text-white">
+          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-amber-800 dark:prose-a:text-cyan-400 prose-strong:text-gray-900 dark:prose-strong:text-white">
             {content.body.map((para, i) => {
               if (para.startsWith("### ")) {
                 return <h3 key={i} className="text-[22px] font-extrabold mt-10 mb-4 text-gray-900 dark:text-white">{para.replace("### ", "")}</h3>;
@@ -232,7 +232,7 @@ export default async function BlogDetail({ params }: Props) {
                   <div key={i} className="mt-10 p-5 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 rounded-2xl">
                     <p className="font-bold text-[14px] text-amber-900 dark:text-amber-200 leading-relaxed whitespace-pre-wrap">{para.replace("#### ", "")}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Link href="/harga" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full hover:bg-black dark:hover:bg-cyan-300 transition">Lihat rincian harga</Link>
+                      <Link href="/harga" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full hover:bg-black dark:hover:bg-amber-500 transition">Lihat rincian harga</Link>
                     </div>
                   </div>
                 );
@@ -242,7 +242,7 @@ export default async function BlogDetail({ params }: Props) {
                   {para.includes("/harga") ? (
                     <>
                       {para.split("/harga")[0]}
-                      <Link href="/harga" className="font-bold text-cyan-600 dark:text-cyan-400 underline underline-offset-4">/harga</Link>
+                      <Link href="/harga" className="font-bold text-amber-800 dark:text-amber-400 underline underline-offset-4">/harga</Link>
                       {para.split("/harga").slice(1).join("/harga")}
                     </>
                   ) : (
@@ -263,7 +263,7 @@ export default async function BlogDetail({ params }: Props) {
                 .slice(0, 2)
                 .map((p) => (
                   <Link key={p.slug} href={`/blog/${p.slug}`} className="p-4 rounded-xl border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white transition group">
-                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-cyan-600 transition line-clamp-2">{p.title}</div>
+                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-amber-800 transition line-clamp-2">{p.title}</div>
                     <div className="text-[12px] text-gray-500 mt-1">{p.readingTime} • {p.tags[0]}</div>
                   </Link>
                 ))}

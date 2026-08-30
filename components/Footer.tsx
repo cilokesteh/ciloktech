@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#050507] text-gray-400 py-10 px-6 border-t border-white/[0.06] transition-colors duration-300 relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute bottom-[-40%] left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-t from-cyan-500/[0.06] to-transparent blur-3xl rounded-full" />
+        <div className="absolute bottom-[-40%] left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gradient-to-t from-amber-700/[0.06] to-transparent blur-3xl rounded-full" />
       </div>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-10">
@@ -30,14 +30,14 @@ export default function Footer() {
               <div className="flex flex-col leading-none">
                 <div className="flex items-center gap-1.5">
                   <span className="text-white font-extrabold text-[16px] tracking-tight group-hover:text-cyan-300 transition">Cilok Tech</span>
-                  <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-cyan-300 transition">.ID</span>
+                  <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-amber-500 transition">.ID</span>
                 </div>
                 <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-white/60 mt-1 group-hover:text-white/70 transition">ONE-MAN STUDIO • {t.nav.clickToTop}</span>
               </div>
             </button>
             <p className="text-[13px] leading-relaxed">{t.footer.desc}</p>
             <div className="inline-flex items-center gap-2 text-[11px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full hover:bg-white/10 cursor-pointer transition" onClick={handleHomeClick}>
-              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" /> One-man studio • Senior • 🇮🇩
+              <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse" /> One-man studio • Senior • 🇮🇩
             </div>
             <div className="flex gap-2 pt-1">
               <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" aria-label="Telegram CilokTech" className="w-8 h-8 rounded-full bg-white/10 hover:bg-white hover:text-black flex items-center justify-center text-sm transition"><span className="sr-only">Telegram</span>✈</a>
