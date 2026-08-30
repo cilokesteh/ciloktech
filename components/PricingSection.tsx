@@ -52,14 +52,7 @@ export default function PricingSection() {
               <motion.div
               key={idx}
               data-featured={featured ? "true" : "false"}
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
-              whileInView={
-                featured
-                  ? { opacity: 1, y: 0, scale: 1 }
-                  : { opacity: 1, y: 0, scale: 1 }
-              }
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 1.9, delay: idx * 0.25, ease: [0.12, 1, 0.22, 1] }}
+              initial={false}
               className={`uiverse-card relative rounded-[22px] p-7 flex flex-col will-change-transform ${sizeClass} ${
                 featured
                   ? "bg-amber-800 dark:bg-amber-600 text-amber-50 dark:text-amber-950 shadow-[0_28px_72px_rgba(180,83,9,0.25)] dark:shadow-[0_28px_72px_rgba(180,83,9,0.4)] border border-amber-900 dark:border-amber-700"

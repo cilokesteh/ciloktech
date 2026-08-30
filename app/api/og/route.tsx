@@ -70,7 +70,7 @@ export async function GET(req: NextRequest) {
   const shortTitle = title.length > 80 ? title.slice(0, 77) + "..." : title;
 
   const bg = type === "blog" ? "#0a0a0a" : type === "harga" ? "#111827" : "#0a0a0a";
-  const accent = type === "harga" ? "#f59e0b" : "#06b6d4";
+  const accent = type === "harga" ? "#f59e0b" : "#b45309";
 
   return new ImageResponse(
     (

@@ -1,5 +1,6 @@
 "use client";
 import { useI18n } from "@/lib/i18n/context";
+import Image from "next/image";
 
 export default function Footer() {
   const { t } = useI18n();
@@ -26,10 +27,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="space-y-4 max-w-[340px]">
             <button onClick={handleHomeClick} className="flex items-center gap-2.5 group cursor-pointer text-left" title={`Click: top • Already at top: refresh`}>
-              <img src="/logo.jpg" alt="Cilok Tech One-Man Studio" width={28} height={28} className="h-7 w-7 rounded-full object-cover group-hover:ring-2 group-hover:ring-white/20 group-hover:scale-105 transition" />
+              <Image src="/logo.jpg" alt="Cilok Tech One-Man Studio" width={28} height={28} className="h-7 w-7 rounded-full object-cover group-hover:ring-2 group-hover:ring-white/20 group-hover:scale-105 transition" />
               <div className="flex flex-col leading-none">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-white font-extrabold text-[16px] tracking-tight group-hover:text-cyan-300 transition">Cilok Tech</span>
+                  <span className="text-white font-extrabold text-[16px] tracking-tight group-hover:text-amber-300 transition">Cilok Tech</span>
                   <span className="text-[9px] font-black tracking-widest uppercase bg-white text-black px-2 py-0.5 rounded-full group-hover:bg-amber-500 transition">.ID</span>
                 </div>
                 <span className="text-[9px] font-bold tracking-[0.15em] uppercase text-white/60 mt-1 group-hover:text-white/70 transition">ONE-MAN STUDIO • {t.nav.clickToTop}</span>

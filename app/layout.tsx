@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { I18nProvider } from "@/lib/i18n/context";
 import CommandPalette from "@/components/CommandPalette";
 import GA4 from "@/components/GA4";
+import WebVitals from "@/components/WebVitals";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -163,6 +164,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300">
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <GA4 />
+        <WebVitals />
         <I18nProvider>
           <ThemeProvider>
             {children}

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n/context";
@@ -48,7 +49,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-gray-200/60 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+          ? "surface-elev border-b border-gray-200/60 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
           : "bg-white/60 dark:bg-[#08080b]/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
@@ -59,7 +60,7 @@ export default function Navbar() {
           className="flex items-center gap-3 group cursor-pointer text-left"
         >
           <div className="relative">
-            <img
+            <Image
               src="/logo.jpg"
               alt="Cilok Tech One-Man Studio"
               width={34}

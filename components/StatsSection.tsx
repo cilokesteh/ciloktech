@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 /* Count-up hook — animasi angka dari 0 ke target pas masuk viewport */

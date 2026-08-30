@@ -25,13 +25,14 @@ export default function HeroSection() {
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
               {t.hero.trust}
             </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass text-[11px] font-bold tracking-wide">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full surface-elev text-[11px] font-bold tracking-wide">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-amber-800 dark:text-amber-400"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               {t.hero.oneManBadge}
             </div>
           </motion.div>
 
           <motion.h1
+            aria-label={`${t.hero.headline1} ${t.hero.headline2} ${t.hero.tapi} ${t.hero.ngasilinCuan}`}
             className="hero-reveal hero-reveal-2 text-[36px] md:text-[58px] font-extrabold tracking-[-0.035em] leading-[0.95] text-gray-900 dark:text-white text-balance"
             initial={{ opacity: 0, y: 64 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,8 +42,9 @@ export default function HeroSection() {
             {t.hero.headline1}<br />
             <span className="text-gray-600 dark:text-gray-400">{t.hero.headline2}</span>
             <br />
-            {t.hero.tapi}{" "}
+            {t.hero.tapi}
             <span className="font-display italic font-medium text-accent">
+              {"\u00a0"}
               {t.hero.ngasilinCuan}
             </span>
           </motion.h1>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -219,10 +220,10 @@ export default async function BlogDetail({ params }: Props) {
 
           {/* OG preview mini */}
           <div className="mt-6 rounded-xl overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111]">
-            <img src={ogUrl} alt={`OG ${post.title}`} className="w-full h-auto" loading="lazy" />
+            <Image src={ogUrl} alt={`OG ${post.title}`} width={1200} height={630} className="w-full h-auto" loading="lazy" unoptimized />
           </div>
 
-          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-amber-800 dark:prose-a:text-cyan-400 prose-strong:text-gray-900 dark:prose-strong:text-white">
+          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-amber-800 dark:prose-a:text-amber-400 prose-strong:text-gray-900 dark:prose-strong:text-white">
             {content.body.map((para, i) => {
               if (para.startsWith("### ")) {
                 return <h3 key={i} className="text-[22px] font-extrabold mt-10 mb-4 text-gray-900 dark:text-white">{para.replace("### ", "")}</h3>;
