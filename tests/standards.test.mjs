@@ -12,7 +12,6 @@ test("production boundaries and operational endpoints exist", async () => {
     "app/not-found.tsx",
     "app/health/route.ts",
     "app/ready/route.ts",
-    "app/api/vitals/route.ts",
     "docs/OPERATIONS.md",
   ];
   await Promise.all(files.map(read));

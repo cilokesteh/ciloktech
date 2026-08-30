@@ -2,40 +2,27 @@
 
 import { useReportWebVitals } from "next/web-vitals";
 
-type VitalMetric = {
-  id: string;
-  name: string;
-  value: number;
-  rating: "good" | "needs-improvement" | "poor";
-  navigationType: string;
+type GtagWindow = Window & {
+  gtag?: (...args: unknown[]) => void;
 };
 
 /**
- * Client-side SLI collector for Core Web Vitals.
- * Uses sendBeacon so measurement never blocks navigation or rendering.
+ * Client-side Core Web Vitals SLI collector.
+ * Metrics are sent through the existing GA4 dataLayer; no public ingestion
+ * endpoint, application log, IP, user ID, or user-controlled string is stored.
  */
 export default function WebVitals() {
   useReportWebVitals((metric) => {
-    const payload: VitalMetric = {
-      id: metric.id,
-      name: metric.name,
-      value: metric.value,
-      rating: metric.rating,
-      navigationType: metric.navigationType,
-    };
+    const gtag = (window as GtagWindow).gtag;
+    if (!gtag) return;
 
-    const body = JSON.stringify(payload);
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon("/api/vitals", body);
-      return;
-    }
-
-    void fetch("/api/vitals", {
-      method: "POST",
-      body,
-      headers: { "content-type": "application/json" },
-      keepalive: true,
-    }).catch(() => undefined);
+    gtag("event", metric.name, {
+      event_category: "Web Vitals",
+      event_label: metric.id,
+      value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value),
+      non_interaction: true,
+      metric_rating: metric.rating,
+    });
   });
 
   return null;

@@ -23,7 +23,7 @@
 
 - `/health`: process liveness; no external dependency calls.
 - `/ready`: readiness; currently has no external dependencies.
-- `/api/vitals`: validated, PII-free Core Web Vitals intake. Events are structured JSON in Vercel logs.
+- Core Web Vitals are sent client-side through the existing GA4 dataLayer. There is no public ingestion endpoint and no application-side metric logging.
 - GA4: conversion and traffic analytics only.
 
 Alert on user-visible symptoms, not resource usage alone:
@@ -52,5 +52,5 @@ Alert on user-visible symptoms, not resource usage alone:
 ## Data and privacy
 
 - No accounts, database, payment details, or form submissions are stored.
-- Web-vitals logs contain metric name/value/rating only; no IP, cookie, user ID, or user agent is persisted by application code.
+- Core Web Vitals use the existing GA4 integration; no duplicate application logs are written.
 - GA4 is the only third-party analytics integration.

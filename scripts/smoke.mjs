@@ -44,44 +44,6 @@ try {
     console.log(`PASS ${path} ${response.status}`);
   }
 
-  const validMetric = await fetch(`${base}/api/vitals`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ id: "smoke", name: "LCP", value: 1200, rating: "good", navigationType: "navigate" }),
-  });
-  if (validMetric.status !== 204) throw new Error(`vitals valid expected 204, got ${validMetric.status}`);
-  console.log("PASS /api/vitals valid 204");
-
-  const invalidMetric = await fetch(`${base}/api/vitals`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ name: "BOGUS" }),
-  });
-  if (invalidMetric.status !== 422) throw new Error(`vitals invalid expected 422, got ${invalidMetric.status}`);
-  console.log("PASS /api/vitals invalid 422");
-
-  const oversizeMetric = await fetch(`${base}/api/vitals`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ padding: "x".repeat(3000) }),
-  });
-  if (oversizeMetric.status !== 413) throw new Error(`vitals oversize expected 413, got ${oversizeMetric.status}`);
-  console.log("PASS /api/vitals oversize 413");
-
-  let rateLimited = false;
-  for (let attempt = 0; attempt < 65; attempt += 1) {
-    const response = await fetch(`${base}/api/vitals`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ name: "BOGUS" }),
-    });
-    if (response.status === 429) {
-      rateLimited = response.headers.has("retry-after");
-      break;
-    }
-  }
-  if (!rateLimited) throw new Error("vitals rate limit expected 429 + Retry-After");
-  console.log("PASS /api/vitals rate limit 429");
 } finally {
   server.kill("SIGTERM");
 }
