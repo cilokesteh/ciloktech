@@ -28,9 +28,15 @@ export default function GA4() {
 
     // 2. Muat gtag.js saat idle — 150KB parser/main-thread cost ditunda
     //    setelah interaksi awal (dataLayer queue tetap menangkap event).
+    //    SRI tidak dipakai untuk gtag.js: Google update file ini rutin, hash
+    //    akan stale dalam hitungan hari. Sebagai gantinya, kita kunci origin
+    //    di CSP (connect-src + script-src allowlist) dan referrer policy
+    //    ketat — sudah enforced via vercel.json headers.
     const load = () => {
       const script = document.createElement("script");
       script.async = true;
+      script.referrerPolicy = "strict-origin-when-cross-origin";
+      script.crossOrigin = "anonymous";
       script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
       document.head.appendChild(script);
     };

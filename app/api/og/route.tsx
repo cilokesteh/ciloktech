@@ -3,14 +3,70 @@ import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const title = searchParams.get("title") || "Cilok Tech — One-Man Studio";
-  const subtitle = searchParams.get("subtitle") || "ONE-MAN STUDIO • SENIOR FULL-STACK • INDONESIA";
-  const tag = searchParams.get("tag") || "ciloktech.id • One-Man Studio";
-  const type = searchParams.get("type") || "default"; // default | blog | harga
+// ── Validation schema (§IV.3.1: validate EVERY untrusted input) ──
+// Inline validator (zod not installed — kept lean, no extra dep).
+type OgType = "default" | "blog" | "harga";
 
-  // truncate title for OG
+function clamp(value: string | null, min: number, max: number, fallback: string): string {
+  if (!value) return fallback;
+  const trimmed = value.trim();
+  if (trimmed.length < min) return fallback;
+  return trimmed.length > max ? trimmed.slice(0, max) : trimmed;
+}
+
+function parseType(value: string | null): OgType {
+  return value === "blog" || value === "harga" ? value : "default";
+}
+
+// ── In-memory rate limit (§VII.6 Tier 3 lenient) ──
+// Edge runtime: Map stateful per-isolate, 60 req/min/IP default.
+// Untuk multi-region production, swap ke Upstash/Redis.
+const WINDOW_MS = 60_000;
+const MAX_REQ = Number(process.env.OG_RATE_LIMIT_PER_MIN ?? "60");
+const buckets = new Map<string, { count: number; reset: number }>();
+
+function checkRate(ip: string): { ok: boolean; retryAfter: number } {
+  const now = Date.now();
+  const bucket = buckets.get(ip);
+  if (!bucket || now > bucket.reset) {
+    buckets.set(ip, { count: 1, reset: now + WINDOW_MS });
+    return { ok: true, retryAfter: 0 };
+  }
+  if (bucket.count >= MAX_REQ) {
+    return { ok: false, retryAfter: Math.ceil((bucket.reset - now) / 1000) };
+  }
+  bucket.count += 1;
+  return { ok: true, retryAfter: 0 };
+}
+
+export async function GET(req: NextRequest) {
+  // Rate limit by IP (best-effort, x-forwarded-for from Vercel)
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown";
+  const rl = checkRate(ip);
+  if (!rl.ok) {
+    return new Response(JSON.stringify({ error: "rate_limited" }), {
+      status: 429,
+      headers: {
+        "content-type": "application/json",
+        "retry-after": String(rl.retryAfter),
+      },
+    });
+  }
+
+  // Validate + clamp query params (§IV.3.1)
+  const sp = new URL(req.url).searchParams;
+  const title = clamp(sp.get("title"), 1, 200, "Cilok Tech — One-Man Studio");
+  const subtitle = clamp(
+    sp.get("subtitle"),
+    1,
+    120,
+    "ONE-MAN STUDIO • SENIOR FULL-STACK • INDONESIA"
+  );
+  const tag = clamp(sp.get("tag"), 1, 80, "ciloktech.id • One-Man Studio");
+  const type = parseType(sp.get("type"));
   const shortTitle = title.length > 80 ? title.slice(0, 77) + "..." : title;
 
   const bg = type === "blog" ? "#0a0a0a" : type === "harga" ? "#111827" : "#0a0a0a";

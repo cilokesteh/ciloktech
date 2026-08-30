@@ -51,15 +51,20 @@ export default function FAQSection() {
         </Reveal>
 
         <RevealGrid className="max-w-3xl mx-auto space-y-3">
-          {faqs.map((f, i) => (
+          {faqs.map((f, i) => {
+            const panelId = `faq-panel-${i}`;
+            const btnId = `faq-trigger-${i}`;
+            return (
             <div
               key={i}
               className={`uiverse-disclosure rounded-[16px] border bg-white dark:bg-[#171717] ${open === i ? "border-gray-900 dark:border-white shadow-sm" : "border-gray-200 dark:border-white/10"}`}
             >
               <button
+                id={btnId}
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left"
                 aria-expanded={open === i}
+                aria-controls={panelId}
               >
                 <span className="text-[14px] md:text-[15px] font-bold text-gray-900 dark:text-white pr-4">{f.q}</span>
                 <span
@@ -69,12 +74,18 @@ export default function FAQSection() {
                 </span>
               </button>
               {open === i && (
-                <div className="px-5 pb-5 text-[13.5px] leading-[1.7] text-gray-600 dark:text-gray-400 animate-in fade-in duration-200">
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={btnId}
+                  className="px-5 pb-5 text-[13.5px] leading-[1.7] text-gray-600 dark:text-gray-400 animate-in fade-in duration-200"
+                >
                   {f.a}
                 </div>
               )}
             </div>
-          ))}
+            );
+          })}
         </RevealGrid>
 
         <Reveal delay={0.2}>
