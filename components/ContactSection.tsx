@@ -12,7 +12,7 @@ export default function ContactSection() {
       <div className="max-w-5xl mx-auto text-center relative">
         <Reveal>
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-white/10 border border-white/10 px-3 py-1 rounded-full mb-6">
-            <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" /> {t.contact.label}
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" /> {t.contact.label}
           </div>
           <h2 className="text-[34px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9]">
             {t.contact.headline1} <br />
@@ -50,7 +50,7 @@ export default function ContactSection() {
 
         <Reveal delay={0.2}>
           <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" className="uiverse-button px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-amber-500 text-sm shadow-[0_10px_40px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2">🚀 {t.contact.ctaPrimary}</a>
+          <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" className="uiverse-button px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-cyan-400 text-sm shadow-[0_10px_40px_rgba(255,255,255,0.15)] flex items-center justify-center gap-2">🚀 {t.contact.ctaPrimary}</a>
           <a href="#harga" className="uiverse-button px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/10 text-sm flex items-center justify-center gap-2">{t.contact.ctaSecondary}</a>
         </div>
         <div className="mt-8 text-[11.5px] text-gray-400">{t.contact.footerNote}</div>

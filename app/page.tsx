@@ -37,15 +37,15 @@ export default function Home() {
         {/* Harga explainer CTA */}
         <section className="px-6 py-8 bg-white dark:bg-[#0a0a0a] border-t border-gray-100 dark:border-white/5">
           <div className="max-w-5xl mx-auto">
-            <div className="rounded-[20px] border border-amber-200 dark:border-amber-900/30 bg-amber-50/60 dark:bg-amber-950/10 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <div className="rounded-[20px] border border-cyan-200 dark:border-cyan-900/30 bg-cyan-50/60 dark:bg-cyan-950/10 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center text-[18px] shrink-0">!</div>
+                <div className="w-10 h-10 rounded-full bg-cyan-400 text-white flex items-center justify-center text-[18px] shrink-0">!</div>
                 <div>
                   <div className="font-extrabold text-[16px] text-gray-900 dark:text-white">{t.homeExtra.priceExplainTitle}</div>
                   <div className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed mt-1 max-w-[520px]">{t.homeExtra.priceExplainDesc}</div>
                 </div>
               </div>
-              <Link href="/harga" className="shrink-0 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full text-[13px] font-bold hover:bg-black dark:hover:bg-amber-300 transition flex items-center gap-2">
+              <Link href="/harga" className="shrink-0 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full text-[13px] font-bold hover:bg-black dark:hover:bg-cyan-300 transition flex items-center gap-2">
                 {t.homeExtra.priceExplainCta}
               </Link>
             </div>
@@ -71,7 +71,7 @@ export default function Home() {
                     {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="text-[10px] font-bold bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-full text-gray-600 dark:text-gray-300">{tg}</span>))}
                     <span className="text-[10px] text-gray-500">{post.readingTime}</span>
                   </div>
-                  <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition line-clamp-2">{post.title}</div>
+                  <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition line-clamp-2">{post.title}</div>
                   <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 line-clamp-2 leading-relaxed">{post.description}</div>
                 </Link>
               ))}

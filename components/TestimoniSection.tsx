@@ -4,8 +4,8 @@ import { Reveal, RevealGrid } from "./Reveal";
 
 const meta = [
   { initial: "B", color: "bg-gray-900 dark:bg-white text-white dark:text-black" },
-  { initial: "R", color: "bg-amber-700 text-white" },
-  { initial: "A", color: "bg-amber-500 text-white" },
+  { initial: "R", color: "bg-cyan-600 text-white" },
+  { initial: "A", color: "bg-cyan-400 text-white" },
 ];
 
 const logosId = ["UMKM Batik", "FashionHub", "Fintech ID", "Kopi Kenangan Lokal", "Bengkel Maju", "Laundry Express"];
@@ -33,7 +33,7 @@ export default function TestimoniSection() {
           <div className="flex items-center gap-3">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-[16px] text-amber-400">★</span>
+                <span key={i} className="text-[16px] text-cyan-300">★</span>
               ))}
             </div>
             <div className="text-[13px]">
@@ -51,7 +51,7 @@ export default function TestimoniSection() {
               <div key={i} className="relative rounded-[20px] border border-gray-200 dark:border-white/10 bg-[#fafafa] dark:bg-[#171717] p-6 hover:bg-white dark:hover:bg-[#1a1a1a] hover:border-gray-900 dark:hover:border-white hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] transition-colors duration-300">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-amber-400 text-[14px]">★</span>
+                    <span key={j} className="text-cyan-300 text-[14px]">★</span>
                   ))}
                 </div>
                 <p className="text-[14px] leading-[1.7] text-gray-700 dark:text-gray-300">&ldquo;{item.text}&rdquo;</p>

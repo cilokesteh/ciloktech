@@ -17,7 +17,7 @@ test("production boundaries and operational endpoints exist", async () => {
   await Promise.all(files.map(read));
 });
 
-test("anti-AI visual patterns stay removed from runtime source", async () => {
+test("brand palette stays free of generic aurora/glass patterns", async () => {
   const files = [
     "app/globals.css",
     "components/HeroSection.tsx",

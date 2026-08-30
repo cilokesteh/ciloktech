@@ -24,7 +24,7 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/"
-            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-sm hover:bg-black dark:hover:bg-amber-500 transition"
+            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-sm hover:bg-black dark:hover:bg-cyan-400 transition"
           >
             ← Kembali ke Beranda
           </Link>

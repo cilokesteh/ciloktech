@@ -14,7 +14,7 @@ export default function BlogClient() {
         <div className="max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1 rounded-full mb-5">BLOG • {isId ? "TIPS PRAKTIS DARI LAPANGAN" : "STRAIGHT TALK — REAL INSIGHTS"}</div>
           <h1 className="text-[36px] md:text-[52px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white max-w-[560px]">
-            {isId ? <>Website yang <span className="text-amber-800 dark:text-amber-400">menghasilkan</span> pelanggan,<br />bukan sekadar tampilan menarik.</> : <>Websites that <span className="text-amber-800 dark:text-amber-400">convert</span> customers,<br />not just look pretty.</>}
+            {isId ? <>Website yang <span className="text-cyan-700 dark:text-cyan-300">menghasilkan</span> pelanggan,<br />bukan sekadar tampilan menarik.</> : <>Websites that <span className="text-cyan-700 dark:text-cyan-300">convert</span> customers,<br />not just look pretty.</>}
           </h1>
           <p className="text-[15px] leading-relaxed text-gray-600 dark:text-gray-400 mt-5 max-w-[520px]">
             {isId ? "Saya menulis berdasarkan temuan di lapangan: mengapa website UMKM sepi pengunjung, perbedaan landing page vs company profile, mengapa WordPress lambat, dan checklist konversi yang benar-benar terbukti." : "I write based on real field findings: why SME websites get zero traffic, landing vs company profile differences, why WordPress is slow, and the conversion checklist that actually works."}
@@ -34,7 +34,7 @@ export default function BlogClient() {
                   <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:14px_14px]" />
                 </div>
                 <div className="p-5 flex flex-col flex-1">
-                  <h2 className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition line-clamp-2">{post.title}</h2>
+                  <h2 className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition line-clamp-2">{post.title}</h2>
                   <p className="text-[13px] text-gray-600 dark:text-gray-400 mt-2 leading-relaxed line-clamp-2">{post.description}</p>
                   <div className="mt-4 flex items-center justify-between text-[11px] text-gray-500 dark:text-gray-400">
                     <span>{new Date(post.date).toLocaleDateString(isId ? "id-ID" : "en-US", { day: "numeric", month: "short", year: "numeric" })}</span>
@@ -58,9 +58,9 @@ export default function BlogClient() {
                     <span className="text-[11px] text-gray-500 dark:text-gray-400">{new Date(post.date).toLocaleDateString(isId ? "id-ID" : "en-US")}</span>
                     <span className="text-gray-400">•</span>
                     <span className="text-[11px] text-gray-500 dark:text-gray-400">{post.readingTime}</span>
-                    {post.featured && <span className="text-[10px] font-bold bg-amber-500 text-amber-950 px-2 py-0.5 rounded-full">FEATURED</span>}
+                    {post.featured && <span className="text-[10px] font-bold bg-cyan-400 text-cyan-950 px-2 py-0.5 rounded-full">FEATURED</span>}
                   </div>
-                  <div className="font-bold text-[15px] text-gray-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition">{post.title}</div>
+                  <div className="font-bold text-[15px] text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition">{post.title}</div>
                   <div className="text-[13px] text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">{post.description}</div>
                 </div>
                 <div className="shrink-0 flex items-center gap-2 flex-wrap">{post.tags.map((t) => (<span key={t} className="text-[10px] bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-full text-gray-600 dark:text-gray-400">{t}</span>))}</div>
@@ -75,7 +75,7 @@ export default function BlogClient() {
           <h2 className="text-[24px] md:text-[32px] font-extrabold tracking-tight leading-[0.9]">{isId ? "Ingin website seperti yang dibahas di blog?" : "Want a website like the ones featured in the blog?"}</h2>
           <p className="text-[14px] opacity-70 mt-3 max-w-[500px] mx-auto">{isId ? "Jangan hanya membaca — saatnya eksekusi. Konsultasi 15 menit, saya berikan roadmap gratis." : "Ready to take the next step? Book a free 15-minute consultation and get a complimentary roadmap."}</p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20saya%20baru%20membaca%20blog%20dan%20ingin%20konsultasi" className="inline-flex items-center px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-black transition">🚀 {isId ? "Mulai Konsultasi" : "Start Consultation"}</a>
+            <a href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20saya%20baru%20membaca%20blog%20dan%20ingin%20konsultasi" className="inline-flex items-center px-7 py-3.5 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13.5px] hover:bg-cyan-400 dark:hover:bg-cyan-400 hover:text-black transition">🚀 {isId ? "Mulai Konsultasi" : "Start Consultation"}</a>
             <Link href="/harga" className="inline-flex items-center px-7 py-3.5 bg-transparent border border-white/20 dark:border-black/20 rounded-full font-bold text-[13.5px] hover:bg-white/10 dark:hover:bg-black/10 transition">{isId ? "Lihat Paket Harga →" : "View Pricing Plans →"}</Link>
           </div>
         </div>

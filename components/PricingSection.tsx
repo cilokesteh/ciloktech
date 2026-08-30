@@ -27,7 +27,7 @@ export default function PricingSection() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 1.9, ease: [0.12, 1, 0.22, 1] }}
         >
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 px-3 py-1 rounded-full mb-5 shadow-sm">
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-900/50 px-3 py-1 rounded-full mb-5 shadow-sm">
             {t.pricing.label}
           </div>
           <h2 className="text-[32px] md:text-[46px] font-extrabold tracking-[-0.03em] leading-[0.9] text-gray-900 dark:text-white">
@@ -56,19 +56,19 @@ export default function PricingSection() {
               initial={false}
               className={`uiverse-card relative rounded-[22px] p-7 flex flex-col will-change-transform ${sizeClass} ${
                 featured
-                  ? "bg-amber-800 dark:bg-amber-600 text-amber-50 dark:text-amber-950 shadow-[0_28px_72px_rgba(180,83,9,0.25)] dark:shadow-[0_28px_72px_rgba(180,83,9,0.4)] border border-amber-900 dark:border-amber-700"
-                  : "surface-elev hover:border-amber-800/40 dark:hover:border-amber-400/40"
+                  ? "bg-cyan-700 dark:bg-cyan-500 text-cyan-50 dark:text-cyan-950 shadow-[0_28px_72px_rgba(6,182,212,0.25)] dark:shadow-[0_28px_72px_rgba(6,182,212,0.4)] border border-cyan-900 dark:border-cyan-600"
+                  : "surface-elev hover:border-cyan-700/40 dark:hover:border-cyan-300/40"
               }`}
             >
                 {featured && <div className="border-beam" aria-hidden="true" />}
                 {featured && (
-                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-amber-50 text-amber-900 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-800 animate-pulse" /> {t.pricing.populer}
+                  <div className="absolute -top-3 left-7 inline-flex items-center gap-1.5 bg-cyan-50 text-cyan-900 text-[10px] font-extrabold tracking-widest uppercase px-3 py-1 rounded-full shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-700 animate-pulse" /> {t.pricing.populer}
                   </div>
                 )}
 
                 <div className="mb-6">
-                  <h3 className={`text-[18px] font-bold tracking-tight font-display italic ${featured ? "text-amber-50 dark:text-amber-950" : "text-gray-900 dark:text-white"}`}>
+                  <h3 className={`text-[18px] font-bold tracking-tight font-display italic ${featured ? "text-cyan-50 dark:text-cyan-950" : "text-gray-900 dark:text-white"}`}>
                     {plan.name}
                   </h3>
                   {(() => {
@@ -77,7 +77,7 @@ export default function PricingSection() {
                     const badge = parts[1] || null;
                     return (
                       <>
-                        <div className={`text-[12px] font-medium tracking-wide uppercase mt-2 ${featured ? "text-amber-200 dark:text-amber-800" : "text-amber-800 dark:text-amber-400"}`}>
+                        <div className={`text-[12px] font-medium tracking-wide uppercase mt-2 ${featured ? "text-cyan-200 dark:text-cyan-700" : "text-cyan-700 dark:text-cyan-300"}`}>
                           {label}
                         </div>
                         <div className="mt-1 flex items-baseline gap-2">
@@ -87,7 +87,7 @@ export default function PricingSection() {
                         </div>
                         {badge && (
                           <div className="mt-2.5">
-                            <span className="inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-900 border border-amber-200">
+                            <span className="inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-0.5 rounded-md bg-cyan-50 text-cyan-900 border border-cyan-200">
                               {badge}
                             </span>
                           </div>
@@ -95,7 +95,7 @@ export default function PricingSection() {
                       </>
                     );
                   })()}
-                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-amber-100 dark:text-amber-900" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
+                  <p className={`text-[13px] leading-relaxed mt-4 ${featured ? "text-cyan-100 dark:text-cyan-900" : "text-gray-600 dark:text-gray-400"}`}>{plan.desc}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">
@@ -103,12 +103,12 @@ export default function PricingSection() {
                     <li key={i} className="flex gap-2.5 text-[13px] leading-snug">
                       <span
                         className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-[11px] shrink-0 ${
-                          featured ? "bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-50" : "bg-amber-800 dark:bg-amber-500 text-amber-50"
+                          featured ? "bg-cyan-50 dark:bg-cyan-950 text-cyan-900 dark:text-cyan-50" : "bg-cyan-700 dark:bg-cyan-400 text-cyan-50"
                         }`}
                       >
                         ✓
                       </span>
-                      <span className={featured ? "text-amber-50 dark:text-amber-950" : "text-gray-700 dark:text-gray-300"}>{f}</span>
+                      <span className={featured ? "text-cyan-50 dark:text-cyan-950" : "text-gray-700 dark:text-gray-300"}>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -119,8 +119,8 @@ export default function PricingSection() {
                   rel="noopener noreferrer"
                   className={`uiverse-button w-full py-3.5 rounded-full text-center text-[13.5px] font-bold ${
                     featured
-                      ? "bg-amber-50 text-amber-900 hover:bg-white shadow-lg"
-                      : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-amber-800 dark:hover:bg-amber-500 dark:hover:text-white"
+                      ? "bg-cyan-50 text-cyan-900 hover:bg-white shadow-lg"
+                      : "bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-cyan-700 dark:hover:bg-cyan-400 dark:hover:text-white"
                   }`}
                 >
                   {plan.cta}
@@ -130,7 +130,7 @@ export default function PricingSection() {
                   <div className="text-[11px] text-center text-gray-500 mt-3">{t.pricing.footnotes[0]}</div>
                 )}
                 {featured && (
-                  <div className="text-[11px] text-center text-amber-100 dark:text-amber-800 mt-3">{t.pricing.footnotes[1]}</div>
+                  <div className="text-[11px] text-center text-cyan-100 dark:text-cyan-700 mt-3">{t.pricing.footnotes[1]}</div>
                 )}
               </motion.div>
             );
@@ -138,7 +138,7 @@ export default function PricingSection() {
         </div>
 
         <div className="mt-10 text-center text-[12.5px] text-gray-600 dark:text-gray-400">
-          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-amber-800 dark:text-amber-400 underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
+          {t.pricing.customPkg} <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="font-bold text-cyan-700 dark:text-cyan-300 underline underline-offset-4">{t.pricing.chatCustom}</a> {t.pricing.customSuffix}
         </div>
       </div>
     </section>
