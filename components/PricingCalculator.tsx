@@ -100,9 +100,9 @@ const BASE_PLANS: BasePlan[] = [
 
 const AVAILABLE_ADDONS: AddOn[] = [
   {
-    id: "addon-wa-bot",
-    name: "WhatsApp Quick Lead Route",
-    description: "Format pesan konsultasi/order otomatis terstruktur saat pengunjung klik tombol.",
+    id: "addon-telegram-route",
+    name: "Telegram Lead & Notification Engine",
+    description: "Format pesan konsultasi/order otomatis terstruktur yang langsung terhubung ke Telegram studio.",
     priceIdr: 0,
     priceUsd: 0,
     isBundledFree: true,
@@ -149,7 +149,7 @@ export default function PricingCalculator() {
 
   const [selectedPlanId, setSelectedPlanId] = useState<string>("company");
   const [selectedAddons, setSelectedAddons] = useState<string[]>([
-    "addon-wa-bot",
+    "addon-telegram-route",
     "addon-pwa",
   ]);
   const [copied, setCopied] = useState(false);
@@ -200,7 +200,7 @@ export default function PricingCalculator() {
       : `Rp ${total.idr.toLocaleString("id-ID")}`;
 
     if (isEn) {
-      return `[CILOKTECH PROJECT ESTIMATION]\n\n• Package: ${activePlan.name} ($${activePlan.basePriceUsd})\n• Add-ons:\n  - ${chosenAddons.length > 0 ? chosenAddons.join("\n  - ") : "None"}\n• Est. Total: ${priceText}\n• Timeline Target: ${activePlan.timeline}\n• Target Channel: @ciloktech\n\nHello CilokTech, I would like to consult this customized scope for my business.`;
+      return `[CILOKTECH PROJECT ESTIMATION]\n\n• Package: ${activePlan.name} ($${activePlan.basePriceUsd})\n• Add-ons:\n  - ${chosenAddons.length > 0 ? chosenAddons.join("\n  - ") : "None"}\n• Est. Total: ${priceText}\n• Timeline Target: ${activePlan.timeline}\n• Contact Channel: @ciloktech\n\nHello CilokTech, I would like to consult this customized scope for my business.`;
     }
 
     return `[RINGKASAN ESTIMASI SCOPE CILOKTECH]\n\n• Pilihan Paket: ${activePlan.name} (Rp ${activePlan.basePriceIdr.toLocaleString("id-ID")})\n• Fitur Tambahan / Add-on:\n  - ${chosenAddons.length > 0 ? chosenAddons.join("\n  - ") : "Tidak ada"}\n• Total Estimasi: ${priceText}\n• Estimasi Timeline: ${activePlan.timeline}\n• Kontak Studio: @ciloktech\n\nHalo CilokTech, saya ingin konsultasi pengerjaan website dengan rincian scope di atas.`;
@@ -218,8 +218,6 @@ export default function PricingCalculator() {
     }
   };
 
-  // Direct WhatsApp with prefilled message
-  const waHref = `https://wa.me/628870540908?text=${encodeURIComponent(briefText)}`;
   // Direct Telegram Link
   const tgHref = `https://t.me/ciloktech`;
 
@@ -361,7 +359,7 @@ export default function PricingCalculator() {
               <button
                 type="button"
                 onClick={handleCopyText}
-                className="text-[11.5px] font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1"
+                className="text-[11.5px] font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer"
               >
                 {copied ? "✓ Tersalin!" : "📋 Salin Teks"}
               </button>
@@ -395,32 +393,24 @@ export default function PricingCalculator() {
               </span>
             </div>
 
-            {/* DIRECT ACTION BUTTONS */}
+            {/* DIRECT TELEGRAM ACTION BUTTON */}
             <div className="space-y-2.5">
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-[13.5px] py-3 px-4 rounded-xl transition-colors shadow-sm"
-              >
-                <span>💬 Kirim Scope Ini ke WhatsApp</span>
-                <span>→</span>
-              </a>
-
               <a
                 href={tgHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-950 font-bold text-[13px] py-2.5 px-4 rounded-xl transition-colors"
+                onClick={handleCopyText}
+                className="w-full flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13.5px] py-3 px-4 rounded-xl transition-colors shadow-sm cursor-pointer"
               >
-                <span>✈️ Konsultasi via Telegram @ciloktech</span>
+                <span>✈️ Salin &amp; Kirim Scope ke Telegram @ciloktech</span>
+                <span>→</span>
               </a>
             </div>
 
             <p className="text-[10.5px] text-center text-gray-500 dark:text-gray-400 mt-2.5">
               {isEn
-                ? "Teks brief otomatis terisi saat Anda menekan tombol di atas."
-                : "Pesan estimasi otomatis terlampir saat Anda klik tombol konsultasi."}
+                ? "Clicking above copies the brief text to your clipboard and opens @ciloktech."
+                : "Klik tombol di atas untuk menyalin rincian scope dan langsung membuka chat @ciloktech."}
             </p>
           </div>
         </div>

@@ -550,14 +550,14 @@ export default function DemoSandbox() {
 
               <div>
                 <label className="block text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
-                  4. Nama Pemesan & WhatsApp
+                  4. Nama Pemesan &amp; Username Telegram
                 </label>
                 <input
                   type="text"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px]"
-                  placeholder="Masukkan nama pemesan..."
+                  placeholder="Contoh: Bima (@username)"
                 />
               </div>
             </div>
