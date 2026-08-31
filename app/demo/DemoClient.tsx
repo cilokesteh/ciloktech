@@ -63,12 +63,12 @@ export default function DemoClient() {
               Lihat Kalkulator Harga & Scope →
             </Link>
             <a
-              href="https://wa.me/628870540908?text=Halo%20CilokTech,%20saya%20sudah%20coba%20demo%20POS/JasaFlow%20dan%20mau%20konsultasi%20pemasangan"
+              href="https://t.me/ciloktech"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-gray-300 text-gray-900 dark:text-white font-bold text-[13px] px-6 py-2.5 rounded-xl transition"
             >
-              Chat WhatsApp Langsung
+              Chat Telegram @ciloktech
             </a>
           </div>
         </div>

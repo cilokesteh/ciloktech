@@ -179,21 +179,9 @@ export default function PricingCalculator() {
     return `$${val}`;
   };
 
-  // WhatsApp Message Generator
-  const generateWhatsAppHref = () => {
-    const chosenAddons = selectedAddons
-      .map((id) => AVAILABLE_ADDONS.find((a) => a.id === id)?.name)
-      .filter(Boolean);
-
-    const priceText = isEn
-      ? `$${total.usd} (USD)`
-      : `Rp ${total.idr.toLocaleString("id-ID")}`;
-
-    const text = isEn
-      ? `Hello CilokTech, I want to consult my project:\n\n- *Selected Package:* ${activePlan.name} ($${activePlan.basePriceUsd})\n- *Add-ons:* ${chosenAddons.length > 0 ? chosenAddons.join(", ") : "None"}\n- *Estimated Total:* ${priceText}\n- *Timeline Target:* ${activePlan.timeline}\n\nCould we discuss the requirements further?`
-      : `Halo CilokTech, saya ingin konsultasi estimasi project:\n\n- *Pilihan Paket:* ${activePlan.name} (Rp ${activePlan.basePriceIdr.toLocaleString("id-ID")})\n- *Fitur Tambahan:* ${chosenAddons.length > 0 ? chosenAddons.join(", ") : "Tidak ada"}\n- *Total Estimasi:* ${priceText}\n- *Target Waktu:* ${activePlan.timeline}\n\nBisa dibantu untuk rincian scope teknisnya?`;
-
-    return `https://wa.me/628870540908?text=${encodeURIComponent(text)}`;
+  // Telegram CTA Generator
+  const generateTelegramHref = () => {
+    return "https://t.me/ciloktech";
   };
 
   return (
@@ -365,12 +353,12 @@ export default function PricingCalculator() {
             </div>
 
             <a
-              href={generateWhatsAppHref()}
+              href={generateTelegramHref()}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[14px] py-3.5 px-6 rounded-xl transition-colors shadow-sm"
             >
-              <span>{isEn ? "Consult this Scope via WhatsApp" : "Konsultasikan Scope Ini via WA"}</span>
+              <span>{isEn ? "Consult this Scope via Telegram @ciloktech" : "Konsultasikan Scope Ini via Telegram @ciloktech"}</span>
               <span>→</span>
             </a>
             <p className="text-[11px] text-center text-gray-500 dark:text-gray-400 mt-2.5">
