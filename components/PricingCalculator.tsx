@@ -148,11 +148,11 @@ export default function PricingCalculator() {
   const isEn = locale === "en";
 
   const [selectedPlanId, setSelectedPlanId] = useState<string>("company");
-  // Default selected: 2 bundled free addons
   const [selectedAddons, setSelectedAddons] = useState<string[]>([
     "addon-wa-bot",
     "addon-pwa",
   ]);
+  const [copied, setCopied] = useState(false);
 
   const activePlan = BASE_PLANS.find((p) => p.id === selectedPlanId) || BASE_PLANS[1];
 
@@ -186,10 +186,42 @@ export default function PricingCalculator() {
     return `$${val}`;
   };
 
-  // Telegram CTA Generator
-  const generateTelegramHref = () => {
-    return "https://t.me/ciloktech";
+  // Generate structured brief text
+  const generateBriefSummaryText = () => {
+    const chosenAddons = selectedAddons
+      .map((id) => {
+        const a = AVAILABLE_ADDONS.find((item) => item.id === id);
+        return a ? `${a.name}${a.isBundledFree ? " (Gratis/Bonus)" : ""}` : null;
+      })
+      .filter(Boolean);
+
+    const priceText = isEn
+      ? `$${total.usd} (USD)`
+      : `Rp ${total.idr.toLocaleString("id-ID")}`;
+
+    if (isEn) {
+      return `[CILOKTECH PROJECT ESTIMATION]\n\n• Package: ${activePlan.name} ($${activePlan.basePriceUsd})\n• Add-ons:\n  - ${chosenAddons.length > 0 ? chosenAddons.join("\n  - ") : "None"}\n• Est. Total: ${priceText}\n• Timeline Target: ${activePlan.timeline}\n• Target Channel: @ciloktech\n\nHello CilokTech, I would like to consult this customized scope for my business.`;
+    }
+
+    return `[RINGKASAN ESTIMASI SCOPE CILOKTECH]\n\n• Pilihan Paket: ${activePlan.name} (Rp ${activePlan.basePriceIdr.toLocaleString("id-ID")})\n• Fitur Tambahan / Add-on:\n  - ${chosenAddons.length > 0 ? chosenAddons.join("\n  - ") : "Tidak ada"}\n• Total Estimasi: ${priceText}\n• Estimasi Timeline: ${activePlan.timeline}\n• Kontak Studio: @ciloktech\n\nHalo CilokTech, saya ingin konsultasi pengerjaan website dengan rincian scope di atas.`;
   };
+
+  const briefText = generateBriefSummaryText();
+
+  const handleCopyText = async () => {
+    try {
+      await navigator.clipboard.writeText(briefText);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // fallback
+    }
+  };
+
+  // Direct WhatsApp with prefilled message
+  const waHref = `https://wa.me/628870540908?text=${encodeURIComponent(briefText)}`;
+  // Direct Telegram Link
+  const tgHref = `https://t.me/ciloktech`;
 
   return (
     <div className="w-full bg-[#fbfbfb] dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-3xl p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
@@ -204,7 +236,7 @@ export default function PricingCalculator() {
           <p className="text-[14px] text-gray-600 dark:text-gray-400 mt-2 max-w-xl">
             {isEn
               ? "Select your base project architecture. Includes 2 bundled free add-ons with transparent optional upgrades."
-              : "Pilih paket dasar. Sudah termasuk 2 fitur add-on bundling gratis dengan pilihan upgrade opsional yang ramah anggaran."}
+              : "Pilih paket dasar. Sudah termasuk 2 fitur add-on bundling gratis dengan rincian teks otomatis yang siap dikirim saat konsultasi."}
           </p>
         </div>
 
@@ -319,64 +351,41 @@ export default function PricingCalculator() {
           </div>
         </div>
 
-        {/* RIGHT: Scope Summary & Direct Actions */}
+        {/* RIGHT: Scope Summary & Live Generated Output Text */}
         <div className="lg:col-span-5 flex flex-col justify-between bg-white dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-2xl p-6">
           <div>
-            <div className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
-              {isEn ? "Package Breakdown" : "Rincian Deliverables"}
+            <div className="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-white/5">
+              <span className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                {isEn ? "Generated Scope Output" : "Rincian & Output Brief"}
+              </span>
+              <button
+                type="button"
+                onClick={handleCopyText}
+                className="text-[11.5px] font-bold text-amber-700 dark:text-amber-400 hover:underline flex items-center gap-1"
+              >
+                {copied ? "✓ Tersalin!" : "📋 Salin Teks"}
+              </button>
             </div>
-            <h4 className="text-[18px] font-black text-gray-900 dark:text-white">
-              {activePlan.name}
-            </h4>
-            <p className="text-[12px] text-gray-600 dark:text-gray-400 mt-1">
-              {activePlan.idealFor}
-            </p>
+
+            {/* LIVE AUTO-GENERATED OUTPUT BOX */}
+            <div className="mt-3.5 p-3.5 rounded-xl bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/5 font-mono text-[11.5px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-line max-h-[190px] overflow-y-auto">
+              {briefText}
+            </div>
 
             <div className="mt-5 space-y-2">
               <div className="text-[11px] font-bold uppercase tracking-wider text-gray-400">
                 {isEn ? "Included in Base Package:" : "Fitur Bawaan Paket:"}
               </div>
               {activePlan.included.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-[12.5px] text-gray-700 dark:text-gray-300">
+                <div key={idx} className="flex items-center gap-2 text-[12px] text-gray-700 dark:text-gray-300">
                   <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
                   <span>{item}</span>
                 </div>
               ))}
             </div>
-
-            {selectedAddons.length > 0 && (
-              <div className="mt-6 pt-5 border-t border-gray-100 dark:border-white/5 space-y-2">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                  {isEn ? "Selected Add-ons:" : "Add-on Terpilih:"}
-                </div>
-                {selectedAddons.map((id) => {
-                  const addon = AVAILABLE_ADDONS.find((a) => a.id === id);
-                  if (!addon) return null;
-                  return (
-                    <div key={id} className="flex items-center justify-between text-[12.5px]">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium flex items-center gap-1.5">
-                        <span>+{addon.name}</span>
-                        {addon.isBundledFree && (
-                          <span className="text-[9px] font-black text-emerald-600 dark:text-emerald-400 uppercase">
-                            (Free)
-                          </span>
-                        )}
-                      </span>
-                      <span className="text-gray-500 font-mono text-[11px]">
-                        {addon.isBundledFree
-                          ? "Rp 0"
-                          : isEn
-                          ? formatPrice(addon.priceUsd, "USD")
-                          : formatPrice(addon.priceIdr, "IDR")}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-white/10">
+          <div className="mt-6 pt-5 border-t border-gray-200 dark:border-white/10">
             <div className="flex items-center justify-between mb-4">
               <span className="text-[13px] font-bold text-gray-600 dark:text-gray-400">
                 {isEn ? "Total Estimation" : "Total Estimasi"}
@@ -386,19 +395,32 @@ export default function PricingCalculator() {
               </span>
             </div>
 
-            <a
-              href={generateTelegramHref()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[14px] py-3.5 px-6 rounded-xl transition-colors shadow-sm"
-            >
-              <span>{isEn ? "Consult this Scope via Telegram @ciloktech" : "Konsultasikan Scope Ini via Telegram @ciloktech"}</span>
-              <span>→</span>
-            </a>
-            <p className="text-[11px] text-center text-gray-500 dark:text-gray-400 mt-2.5">
+            {/* DIRECT ACTION BUTTONS */}
+            <div className="space-y-2.5">
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-[13.5px] py-3 px-4 rounded-xl transition-colors shadow-sm"
+              >
+                <span>💬 Kirim Scope Ini ke WhatsApp</span>
+                <span>→</span>
+              </a>
+
+              <a
+                href={tgHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-950 font-bold text-[13px] py-2.5 px-4 rounded-xl transition-colors"
+              >
+                <span>✈️ Konsultasi via Telegram @ciloktech</span>
+              </a>
+            </div>
+
+            <p className="text-[10.5px] text-center text-gray-500 dark:text-gray-400 mt-2.5">
               {isEn
-                ? "Zero commitment briefing · Direct talk with lead builder"
-                : "Konsultasi santai · Langsung terhubung dengan builder teknis"}
+                ? "Teks brief otomatis terisi saat Anda menekan tombol di atas."
+                : "Pesan estimasi otomatis terlampir saat Anda klik tombol konsultasi."}
             </p>
           </div>
         </div>
