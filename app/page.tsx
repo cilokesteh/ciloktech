@@ -31,7 +31,33 @@ export default function Home() {
         <HeroSection />
         <StatsSection />
         <ServicesSection />
+        {/* Portofolio Section */}
         <PortofolioSection />
+
+        {/* INTERACTIVE DEMO SANDBOX BANNER */}
+        <section className="px-6 py-10 bg-[#fafafa] dark:bg-[#111114] border-y border-gray-200/80 dark:border-white/5">
+          <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent border border-amber-600/30 dark:border-amber-400/20 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 text-[10.5px] font-bold tracking-widest uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full mb-2.5">
+                🎮 Live Interactive Sandbox
+              </div>
+              <h3 className="text-[20px] md:text-[24px] font-black text-gray-900 dark:text-white">
+                Mau Coba Langsung Sistem Kasir POS &amp; Engine JasaFlow?
+              </h3>
+              <p className="text-[13.5px] text-gray-600 dark:text-gray-400 mt-1.5 max-w-xl">
+                Simulasi transaksi kasir, diskon, cetak struk thermal 58mm, dan alur booking antrean barbershop langsung di browser tanpa install aplikasi.
+              </p>
+            </div>
+            <Link
+              href="/demo"
+              className="shrink-0 bg-amber-800 hover:bg-amber-900 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13px] px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2"
+            >
+              <span>Buka Demo Sandbox</span>
+              <span>→</span>
+            </Link>
+          </div>
+        </section>
+
         <PricingSection />
 
         {/* Harga explainer CTA */}

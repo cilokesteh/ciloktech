@@ -66,11 +66,15 @@ export default function HeroSection() {
           viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.9, delay: 0.45, ease: [0.12, 1, 0.22, 1] }}
           >
-            <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hero-cta uiverse-button px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-500 dark:hover:text-white text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
+            <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hero-cta uiverse-button px-7 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full hover:bg-black dark:hover:bg-cyan-500 dark:hover:text-white text-center text-sm shadow-xl shadow-gray-900/20 flex items-center justify-center gap-2 group">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="group-hover:rotate-[10deg] transition-transform"><path d="M21.9 4.3l-3 14.2c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.8L18.6 6c.4-.3-.1-.5-.6-.2L7.1 12.6l-4.6-1.4c-1-.3-1-1 .2-1.5L20.6 2.8c.8-.3 1.6.2 1.3 1.5z"/></svg>
               {t.hero.ctaTelegram}
             </a>
-            <a href="#portofolio" className="hero-cta px-8 py-4 surface-elev text-gray-900 dark:text-white font-bold rounded-full hover:bg-cyan-50 dark:hover:bg-cyan-950/30 text-center text-sm">
+            <a href="/demo" className="hero-cta px-6 py-3.5 bg-amber-500/10 border border-amber-600/40 dark:border-amber-400/40 text-amber-900 dark:text-amber-300 font-bold rounded-full hover:bg-amber-500/20 text-center text-sm flex items-center justify-center gap-1.5 shadow-sm">
+              <span>🎮</span>
+              <span>Coba Demo Live</span>
+            </a>
+            <a href="#portofolio" className="hero-cta px-6 py-3.5 surface-elev text-gray-900 dark:text-white font-bold rounded-full hover:bg-cyan-50 dark:hover:bg-cyan-950/30 text-center text-sm flex items-center justify-center">
               {t.hero.ctaPortofolio}
             </a>
           </motion.div>
