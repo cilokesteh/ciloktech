@@ -49,6 +49,7 @@ test("security headers and workflow gates are present", async () => {
   const vercel = await read("vercel.json");
   for (const header of [
     "Content-Security-Policy",
+    "Strict-Transport-Security",
     "X-Frame-Options",
     "X-Content-Type-Options",
     "Referrer-Policy",
@@ -56,6 +57,7 @@ test("security headers and workflow gates are present", async () => {
   ]) {
     assert.match(vercel, new RegExp(header));
   }
+  assert.doesNotMatch(vercel, /script-src[^;]*'unsafe-eval'/);
 
   const workflow = await read(".github/workflows/ci.yml");
   for (const command of ["pnpm lint", "pnpm typecheck", "pnpm test", "pnpm build", "pnpm smoke", "pnpm audit"]) {

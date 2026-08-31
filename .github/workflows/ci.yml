@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
@@ -46,6 +46,12 @@ jobs:
 
       - name: Smoke
         run: pnpm smoke
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Browser E2E, accessibility, and mobile overflow
+        run: pnpm e2e
 
       - name: Audit
         run: pnpm audit --audit-level=high

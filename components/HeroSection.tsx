@@ -124,7 +124,7 @@ export default function HeroSection() {
           </div>
           <div className="absolute -bottom-6 -left-4 bg-white dark:bg-[#16161c] border border-gray-200 dark:border-white/10 rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
             <div className="w-9 h-9 bg-cyan-600 dark:bg-cyan-400 rounded-full flex items-center justify-center text-white text-sm shadow-lg shadow-cyan-600/30">✓</div>
-            <div className="text-xs leading-tight"><div className="font-bold text-gray-900 dark:text-white">{t.hero.liveIn}</div><div className="text-gray-500 dark:text-gray-400">{t.hero.noDrama}</div></div>
+            <div className="text-xs leading-tight"><div className="font-bold text-gray-900 dark:text-white">{t.hero.liveIn}</div><div className="text-gray-600 dark:text-gray-300">{t.hero.noDrama}</div></div>
           </div>
         </motion.div>
       </div>
