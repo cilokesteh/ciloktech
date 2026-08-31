@@ -17,6 +17,7 @@ export default function Navbar() {
   const navLinks: NavLink[] = [
     { href: "/#layanan", label: t.nav.layanan, type: "anchor" },
     { href: "/#portofolio", label: t.nav.portofolio, type: "anchor" },
+    { href: "/demo", label: "Demo Sandbox", type: "page" },
     { href: "/#harga", label: t.nav.harga, type: "anchor" },
     { href: "/harga", label: t.nav.breakdown, type: "page" },
     { href: "/blog", label: t.nav.blog, type: "page" },

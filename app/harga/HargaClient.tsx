@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import PricingCalculator from "@/components/PricingCalculator";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HargaClient() {
@@ -36,8 +37,9 @@ export default function HargaClient() {
               <div className="text-[12px] opacity-80 mt-1">{hp.noCut}</div>
             </div>
           </div>
-          <div className="mt-4 inline-flex items-center gap-2 text-[12.5px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full">
-            <span className="text-cyan-700 dark:text-cyan-300 font-bold">✨</span> {hp.premiumNote} <Link href="/#harga" className="font-bold underline underline-offset-4">paket</Link>
+          {/* CALCULATOR SECTION */}
+          <div className="mt-14">
+            <PricingCalculator />
           </div>
         </div>
       </section>

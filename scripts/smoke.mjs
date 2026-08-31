@@ -26,6 +26,7 @@ const checks = [
   ["/", 200, "Cilok Tech"],
   ["/blog", 200, "Blog"],
   ["/harga", 200, "Harga"],
+  ["/demo", 200, "Sandbox"],
   ["/health", 200, '"status":"ok"'],
   ["/ready", 200, '"status":"ready"'],
   ["/robots.txt", 200, "Sitemap:"],
