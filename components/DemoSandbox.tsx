@@ -15,12 +15,12 @@ interface PosItem {
 }
 
 const POS_SAMPLE_MENU: PosItem[] = [
-  { id: "m1", name: "Cilok Kuah Pedas Spesial", category: "Makanan", price: 15000, stock: 45 },
-  { id: "m2", name: "Cilok Goreng Crispy Keju", category: "Makanan", price: 18000, stock: 30 },
-  { id: "m3", name: "Es Teh Manis Jumbo", category: "Minuman", price: 5000, stock: 100 },
-  { id: "m4", name: "Paket Combo Kenyang Berdua", category: "Paket", price: 35000, stock: 20 },
-  { id: "m5", name: "Baso Aci Komplit Urat", category: "Makanan", price: 22000, stock: 18 },
-  { id: "m6", name: "Air Mineral Botol 600ml", category: "Minuman", price: 4000, stock: 60 },
+  { id: "m1", name: "Overshirt Linen Stone", category: "Fashion", price: 289000, stock: 12 },
+  { id: "m2", name: "Relaxed Tee Charcoal", category: "Fashion", price: 149000, stock: 24 },
+  { id: "m3", name: "Canvas Tote Natural", category: "Aksesori", price: 119000, stock: 18 },
+  { id: "m4", name: "Daily Cap Ochre", category: "Aksesori", price: 99000, stock: 9 },
+  { id: "m5", name: "Straight Pants Oxblood", category: "Fashion", price: 259000, stock: 7 },
+  { id: "m6", name: "Essential Socks Set", category: "Aksesori", price: 79000, stock: 31 },
 ];
 
 interface BarberService {
@@ -55,7 +55,7 @@ export default function DemoSandbox() {
   const [selectedServiceId, setSelectedServiceId] = useState<string>("s1");
   const [selectedBarber, setSelectedBarber] = useState<string>("Bima (Master)");
   const [selectedSlot, setSelectedSlot] = useState<string>("14:30");
-  const [customerName, setCustomerName] = useState<string>("Cilok Tester");
+  const [customerName, setCustomerName] = useState<string>("Raka (@rakasantai)");
   const [bookingConfirmed, setBookingConfirmed] = useState<boolean>(false);
   const [bookingToken, setBookingToken] = useState<string>("");
 
@@ -161,7 +161,7 @@ export default function DemoSandbox() {
 
             <div className="flex items-center gap-2">
               <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-md border border-gray-200 dark:border-white/10">
-                Outlet: CilokTech Flagship
+                Outlet: Chill Look Concept Store
               </span>
               <button
                 type="button"
@@ -377,15 +377,15 @@ export default function DemoSandbox() {
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
               <div className="bg-white text-gray-950 p-6 rounded-2xl max-w-sm w-full font-mono text-[11.5px] border shadow-2xl animate-in fade-in zoom-in-95">
                 <div className="text-center pb-3 border-b border-dashed border-gray-300">
-                  <div className="font-bold text-[14px] uppercase tracking-wider">CILOKTECH POS</div>
-                  <div className="text-gray-600 text-[10px]">Jl. Wonodri Sendang No. 3, Semarang</div>
-                  <div className="text-[10px] text-gray-500 mt-1">Telp: 0887-0540-908</div>
+                  <div className="font-bold text-[14px] uppercase tracking-wider">CHILL LOOK CONCEPT STORE</div>
+                  <div className="text-gray-600 text-[10px]">Semarang, Jawa Tengah</div>
+                  <div className="text-[10px] text-gray-500 mt-1">Demo POS oleh CilokTech</div>
                 </div>
 
                 <div className="py-2.5 border-b border-dashed border-gray-300 space-y-0.5 text-[10px] text-gray-600">
                   <div className="flex justify-between">
                     <span>No: {lastOrderTrxId}</span>
-                    <span>Kasir: Cilok Admin</span>
+                    <span>Kasir: Rani</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Tgl: {new Date().toLocaleDateString("id-ID")}</span>
@@ -479,7 +479,7 @@ export default function DemoSandbox() {
 
             <div className="flex items-center gap-2">
               <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-md border border-gray-200 dark:border-white/10">
-                Outlet: Cilok Cuts Studio
+                Outlet: Northside Grooming Studio
               </span>
             </div>
           </div>
