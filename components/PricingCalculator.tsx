@@ -21,6 +21,7 @@ interface AddOn {
   description: string;
   priceIdr: number;
   priceUsd: number;
+  isBundledFree?: boolean;
   category: "feature" | "infra" | "support";
 }
 
@@ -37,7 +38,7 @@ const BASE_PLANS: BasePlan[] = [
     included: [
       "1 Halaman High-Conversion",
       "Mobile-First & Ultra Fast (<1s)",
-      "Form Lead + WA Click Routing",
+      "Form Lead + CTA Routing",
       "Setup Domain & Vercel/Cloudflare",
       "SEO Dasar & OpenGraph Card",
     ],
@@ -99,43 +100,45 @@ const BASE_PLANS: BasePlan[] = [
 
 const AVAILABLE_ADDONS: AddOn[] = [
   {
+    id: "addon-wa-bot",
+    name: "WhatsApp Quick Lead Route",
+    description: "Format pesan konsultasi/order otomatis terstruktur saat pengunjung klik tombol.",
+    priceIdr: 0,
+    priceUsd: 0,
+    isBundledFree: true,
+    category: "feature",
+  },
+  {
     id: "addon-pwa",
-    name: "PWA Offline App Shell",
-    description: "Pengunjung bisa install web ke homescreen HP/laptop dan buka tanpa kuota.",
-    priceIdr: 300000,
-    priceUsd: 20,
+    name: "PWA App Shell (Installable)",
+    description: "Web bisa di-install langsung ke homescreen HP/desktop & cache offline.",
+    priceIdr: 0,
+    priceUsd: 0,
+    isBundledFree: true,
     category: "feature",
   },
   {
     id: "addon-i18n",
     name: "Multi-Language (ID / EN)",
     description: "Sistem multi-bahasa terstruktur dengan toggle instan dan subpath SEO.",
-    priceIdr: 350000,
-    priceUsd: 25,
-    category: "feature",
-  },
-  {
-    id: "addon-wa-bot",
-    name: "WhatsApp Notification Engine",
-    description: "Deep link template order / form terstruktur yang langsung membuka WA admin.",
-    priceIdr: 250000,
-    priceUsd: 15,
+    priceIdr: 150000,
+    priceUsd: 10,
     category: "feature",
   },
   {
     id: "addon-sla",
     name: "Extended SLA & Backup 6 Bulan",
-    description: "Garansi uptime, pemantauan error harian, backup database mingguan, dan minor patch.",
-    priceIdr: 600000,
-    priceUsd: 40,
+    description: "Garansi uptime, pemantauan error, backup berkala, dan minor maintenance.",
+    priceIdr: 250000,
+    priceUsd: 18,
     category: "support",
   },
   {
     id: "addon-source-handover",
-    name: "Source Code & Repository Handover",
-    description: "Serah terima full source code, arsitektur docs, dan deploy scripts untuk tim internal.",
-    priceIdr: 1000000,
-    priceUsd: 70,
+    name: "Source Code & Repo Handover",
+    description: "Serah terima full repository Git, arsitektur docs, dan instruksi deploy mandiri.",
+    priceIdr: 350000,
+    priceUsd: 25,
     category: "infra",
   },
 ];
@@ -145,7 +148,11 @@ export default function PricingCalculator() {
   const isEn = locale === "en";
 
   const [selectedPlanId, setSelectedPlanId] = useState<string>("company");
-  const [selectedAddons, setSelectedAddons] = useState<string[]>(["addon-pwa"]);
+  // Default selected: 2 bundled free addons
+  const [selectedAddons, setSelectedAddons] = useState<string[]>([
+    "addon-wa-bot",
+    "addon-pwa",
+  ]);
 
   const activePlan = BASE_PLANS.find((p) => p.id === selectedPlanId) || BASE_PLANS[1];
 
@@ -196,8 +203,8 @@ export default function PricingCalculator() {
           </h3>
           <p className="text-[14px] text-gray-600 dark:text-gray-400 mt-2 max-w-xl">
             {isEn
-              ? "Select your base project type and toggle required add-on capabilities for transparent, instant pricing."
-              : "Pilih pondasi paket utama dan centang fitur tambahan sesuai kebutuhan bisnis Anda secara transparan."}
+              ? "Select your base project architecture. Includes 2 bundled free add-ons with transparent optional upgrades."
+              : "Pilih paket dasar. Sudah termasuk 2 fitur add-on bundling gratis dengan pilihan upgrade opsional yang ramah anggaran."}
           </p>
         </div>
 
@@ -254,9 +261,14 @@ export default function PricingCalculator() {
           </div>
 
           <div>
-            <label className="block text-[13px] font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">
-              2. {isEn ? "Select Add-on Modules" : "Pilih Modul & Add-on Tambahan"}
-            </label>
+            <div className="flex items-center justify-between mb-3">
+              <label className="block text-[13px] font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                2. {isEn ? "Select Add-on Modules" : "Pilih Modul & Add-on Tambahan"}
+              </label>
+              <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-full">
+                2 Free Included
+              </span>
+            </div>
             <div className="space-y-2.5">
               {AVAILABLE_ADDONS.map((addon) => {
                 const isChecked = selectedAddons.includes(addon.id);
@@ -279,15 +291,26 @@ export default function PricingCalculator() {
                       />
                       <div>
                         <div className="text-[13.5px] font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                          {addon.name}
+                          <span>{addon.name}</span>
+                          {addon.isBundledFree && (
+                            <span className="text-[10px] uppercase font-black px-1.5 py-0.2 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 rounded">
+                              GRATIS
+                            </span>
+                          )}
                         </div>
                         <div className="text-[12px] text-gray-500 dark:text-gray-400 mt-0.5">
                           {addon.description}
                         </div>
                       </div>
                     </div>
-                    <div className="text-[13px] font-bold text-gray-800 dark:text-gray-200 whitespace-nowrap pt-0.5">
-                      +{isEn ? formatPrice(addon.priceUsd, "USD") : formatPrice(addon.priceIdr, "IDR")}
+                    <div className="text-[13px] font-bold whitespace-nowrap pt-0.5">
+                      {addon.isBundledFree ? (
+                        <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">Rp 0 (Bonus)</span>
+                      ) : (
+                        <span className="text-gray-800 dark:text-gray-200">
+                          +{isEn ? formatPrice(addon.priceUsd, "USD") : formatPrice(addon.priceIdr, "IDR")}
+                        </span>
+                      )}
                     </div>
                   </div>
                 );
@@ -331,9 +354,20 @@ export default function PricingCalculator() {
                   if (!addon) return null;
                   return (
                     <div key={id} className="flex items-center justify-between text-[12.5px]">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">+{addon.name}</span>
+                      <span className="text-gray-700 dark:text-gray-300 font-medium flex items-center gap-1.5">
+                        <span>+{addon.name}</span>
+                        {addon.isBundledFree && (
+                          <span className="text-[9px] font-black text-emerald-600 dark:text-emerald-400 uppercase">
+                            (Free)
+                          </span>
+                        )}
+                      </span>
                       <span className="text-gray-500 font-mono text-[11px]">
-                        {isEn ? formatPrice(addon.priceUsd, "USD") : formatPrice(addon.priceIdr, "IDR")}
+                        {addon.isBundledFree
+                          ? "Rp 0"
+                          : isEn
+                          ? formatPrice(addon.priceUsd, "USD")
+                          : formatPrice(addon.priceIdr, "IDR")}
                       </span>
                     </div>
                   );
