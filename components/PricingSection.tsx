@@ -59,7 +59,7 @@ export default function PricingSection() {
 
                 <div>
                   <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-gray-500 mb-2">
-                    TIER 0{idx + 1}
+                    0{idx + 1}
                   </div>
                   <h3 className="text-[24px] font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">
                     {plan.name}

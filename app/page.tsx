@@ -32,14 +32,14 @@ export default function Home() {
         <div
           tabIndex={0}
           role="region"
-          aria-label="Spesifikasi sistem"
+          aria-label="Cara kerja CilokTech"
           className="border-b swiss-line py-3 px-5 md:px-7 font-mono text-[11px] uppercase tracking-[0.14em] text-gray-500 overflow-x-auto whitespace-nowrap bg-[var(--card)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
           <div className="max-w-[1320px] mx-auto flex items-center justify-between gap-6">
-            <span>[ SYSTEM // NEXT.JS 15 ]</span>
-            <span>[ ARCHITECTURE // SWISS GRID ]</span>
-            <span>[ BUILDER // ONE-MAN STUDIO ]</span>
-            <span>[ SLA // HIGH RELIABILITY ]</span>
+            <span>Desain sesuai kebutuhan</span>
+            <span>Tampilan rapi di HP dan desktop</span>
+            <span>Langsung dengan pembuatnya</span>
+            <span>Dibantu setelah website terbit</span>
           </div>
         </div>
         <StatsSection />
@@ -52,20 +52,20 @@ export default function Home() {
           <div className="max-w-[1320px] mx-auto p-7 md:p-9 border swiss-line bg-[var(--card)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold tracking-widest uppercase border swiss-line px-2.5 py-1 text-[var(--accent-text)] mb-3 bg-[var(--subtle)]">
-                🎮 LIVE INTERACTIVE SANDBOX
+                COBA DEMO LANGSUNG
               </div>
               <h3 className="text-[22px] md:text-[28px] font-extrabold text-gray-900 dark:text-white tracking-tight">
-                Mau Coba Langsung Sistem Kasir POS &amp; Engine JasaFlow?
+                Coba sistem kasir dan booking sebelum memesan.
               </h3>
               <p className="font-mono text-[13px] text-gray-600 dark:text-gray-400 mt-2 max-w-2xl leading-relaxed">
-                Simulasi transaksi kasir, diskon, cetak struk thermal 58mm, dan alur booking antrean barbershop langsung di browser tanpa install aplikasi.
+                Jalankan transaksi kasir, coba diskon, cetak struk, dan buat antrean langsung dari browser. Tidak perlu instal aplikasi.
               </p>
             </div>
             <Link
               href="/demo"
               className="shrink-0 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[11px] font-bold uppercase tracking-[0.08em] px-6 py-3.5 border border-[var(--accent)] hover:opacity-90 transition flex items-center gap-2"
             >
-              <span>Buka Demo Sandbox</span>
+              <span>Coba sekarang</span>
               <span>↗</span>
             </Link>
           </div>

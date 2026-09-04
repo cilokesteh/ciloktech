@@ -11,7 +11,7 @@ export default function ContactSection() {
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 items-end pb-12 border-b swiss-line">
             <div>
               <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-4 bg-[var(--card)]">
-                04 // KONTAK &amp; INTAKE
+                {t.contact.label}
               </div>
               <h2 className="text-[36px] sm:text-[48px] lg:text-[64px] font-extrabold tracking-[-0.05em] leading-[0.92] text-gray-900 dark:text-white">
                 {t.contact.headline1} <br />
@@ -33,7 +33,7 @@ export default function ContactSection() {
             className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">CHANNEL 01 // TELEGRAM</div>
+              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Paling Cepat Dibalas</div>
               <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">{t.contact.telegramTitle}</div>
               <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">{t.contact.telegramDesc}</div>
             </div>
@@ -49,7 +49,7 @@ export default function ContactSection() {
             className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">CHANNEL 02 // DIRECT MAIL</div>
+              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Untuk Dokumen &amp; Penawaran</div>
               <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">{t.contact.emailTitle}</div>
               <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">{t.contact.emailMeta}</div>
             </div>
@@ -67,7 +67,7 @@ export default function ContactSection() {
             className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">CHANNEL 03 // LEAD BUILDER</div>
+              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Tanya Teknis Langsung</div>
               <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">{t.contact.devTitle}</div>
               <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">{t.contact.devHandle} — {t.contact.devDesc}</div>
             </div>

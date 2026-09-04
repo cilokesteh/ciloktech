@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-[11px] text-gray-500">
-          <div>{t.footer.copyright} • NEXT.JS 15 L1 STANDARD</div>
+          <div>{t.footer.copyright}</div>
           <button onClick={handleHomeClick} className="hover:text-[var(--accent-text)] transition">{t.footer.backToTop} ↑</button>
         </div>
       </div>

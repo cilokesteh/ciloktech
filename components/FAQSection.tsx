@@ -42,7 +42,7 @@ export default function FAQSection() {
         <Reveal>
           <div className="max-w-2xl mb-10">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-3 bg-[var(--card)]">
-              03 // TANYA JAWAB
+              {t.faq.label}
             </div>
             <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[0.94] text-gray-900 dark:text-white">
               {t.faq.headline1}

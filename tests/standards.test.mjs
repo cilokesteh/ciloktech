@@ -39,6 +39,22 @@ test("swiss tech minimal design tokens exist", async () => {
   assert.match(css, /--font-mono-tech/i, "technical monospace font variable must exist");
 });
 
+test("public homepage copy avoids internal technical labels", async () => {
+  const files = [
+    "app/page.tsx",
+    "components/HeroSection.tsx",
+    "components/ServicesSection.tsx",
+    "components/PortofolioSection.tsx",
+    "components/PricingSection.tsx",
+    "components/ContactSection.tsx",
+    "components/Footer.tsx",
+    "components/DemoSandbox.tsx",
+  ];
+  const source = (await Promise.all(files.map(read))).join("\n");
+  assert.doesNotMatch(source, /SPEC-01|ARCHITECTURE\s*\/\/|TIER\s+0\d|CHANNEL\s+0\d|\/\/\s*SYS|NEXT\.JS 15 L1 STANDARD/);
+  assert.doesNotMatch(source, /Independent\s*·\s*Remote\s*·\s*WIB|\{selectedSlot\}\s*WIB/);
+});
+
 test("every pricing plan has a working Telegram CTA", async () => {
   const pricing = await read("components/PricingSection.tsx");
   const dictionaries = await read("lib/i18n/dictionaries.ts");

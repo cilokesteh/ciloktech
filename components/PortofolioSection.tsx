@@ -36,8 +36,8 @@ export default function PortofolioSection() {
             <div key={i} className="group border swiss-line bg-[var(--card)] hover:border-[var(--accent)] hover:translate-y-[-2px] transition flex flex-col justify-between">
               <div className="p-6 border-b swiss-line bg-[var(--subtle)]">
                 <div className="flex items-center justify-between font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">
-                  <span>0{i + 1} // SYS</span>
-                  <span className="text-[var(--accent-text)]">● ACTIVE</span>
+                  <span>Project 0{i + 1}</span>
+                  <span className="text-[var(--accent-text)]">Siap Digunakan</span>
                 </div>
                 <div className="font-mono text-[11px] font-bold text-gray-600 dark:text-gray-400 mb-1">{p.cat}</div>
                 <div className="text-[22px] font-extrabold tracking-[-0.03em] text-gray-900 dark:text-white">{p.title}</div>

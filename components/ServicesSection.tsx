@@ -24,7 +24,7 @@ export default function ServicesSection() {
         >
           <div>
             <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--accent-text)] mb-3">
-              01 // KAPABILITAS
+              {t.services.label}
             </div>
             <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[0.94] text-gray-900 dark:text-white">
               {t.services.headline1}<br />{t.services.headline2}
@@ -49,7 +49,7 @@ export default function ServicesSection() {
               <div>
                 <div className="flex items-center justify-between mb-8">
                   <span className="font-mono text-[12px] font-bold tracking-[0.1em] text-[var(--accent-text)]">
-                    0{i + 1} — SPEC
+                    0{i + 1}
                   </span>
                   <div className="text-gray-900 dark:text-white opacity-40 hover:opacity-100 transition">
                     {icons[i]}

@@ -12,12 +12,11 @@ export default function HeroSection() {
         <aside className="border-b lg:border-b-0 lg:border-r swiss-line pb-8 lg:pb-0 lg:pr-10 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--accent-text)]">
-              CILOKTECH / SPEC-01
+              {t.hero.trust}
             </div>
             <p className="font-mono text-[12px] leading-relaxed text-gray-600 dark:text-gray-400">
-              One-Man Engineering Studio<br />
-              Independent · Remote · WIB<br />
-              High-Precision Web Systems
+              {t.hero.oneManBadge}<br />
+              {t.hero.noDrama}
             </p>
           </div>
 
@@ -38,7 +37,7 @@ export default function HeroSection() {
             className="space-y-6"
           >
             <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-gray-500 dark:text-gray-400">
-              [ 01 // ARCHITECTURE &amp; EXECUTION ]
+              {t.hero.approachTag}
             </div>
 
             <h1

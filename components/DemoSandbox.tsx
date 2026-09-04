@@ -570,7 +570,7 @@ export default function DemoSandbox() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Waktu:</span>
-                        <span className="font-bold font-mono">Hari ini, {selectedSlot} WIB</span>
+                        <span className="font-bold font-mono">Hari ini, jam {selectedSlot}</span>
                       </div>
                     </div>
 
@@ -597,7 +597,7 @@ export default function DemoSandbox() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Slot Waktu:</span>
-                        <span className="font-bold font-mono">{selectedSlot} WIB</span>
+                        <span className="font-bold font-mono">Jam {selectedSlot}</span>
                       </div>
                       <div className="flex justify-between pt-2 border-t border-gray-200/50 dark:border-white/5 font-black text-[14px]">
                         <span>Deposit (DP 50%):</span>
