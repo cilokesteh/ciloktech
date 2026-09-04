@@ -48,13 +48,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b swiss-line ${
         scrolled
-          ? "surface-elev border-b border-gray-200/60 dark:border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
-          : "bg-white/60 dark:bg-[#08080b]/60 backdrop-blur-md border-b border-transparent"
+          ? "bg-[var(--nav-bg)] backdrop-blur-md"
+          : "bg-[var(--background)]"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-[64px] flex items-center justify-between">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-7 h-[72px] flex items-center justify-between">
         {/* WORDMARK */}
         <Link
           href="/"
@@ -66,34 +66,34 @@ export default function Navbar() {
               alt="Cilok Tech One-Man Studio"
               width={34}
               height={34}
-              className="h-[34px] w-[34px] rounded-full object-cover ring-1 ring-gray-200 dark:ring-white/10 group-hover:ring-cyan-400 group-hover:scale-[1.03] transition-all shadow-sm"
+              className="h-[34px] w-[34px] rounded-none object-cover border border-black/20 dark:border-white/20 group-hover:border-[var(--accent)] transition-all"
             />
-            <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-cyan-500 rounded-full border-2 border-white dark:border-[#0a0a0a] group-hover:shadow-[0_0_0_3px_rgba(6,182,212,0.3)] transition" />
+            <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[var(--accent)]" />
           </div>
-          <div className="flex flex-col items-start leading-none">
+          <div className="flex flex-col items-start leading-none font-mono">
             <div className="flex items-baseline gap-[1px]">
-              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition">Cilok</span>
-              <span className="font-extrabold text-[18px] tracking-[-0.02em] text-cyan-700 dark:text-cyan-300">Tech</span>
-              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-black tracking-[0.14em] uppercase bg-gray-900 dark:bg-white text-white dark:text-black px-[6px] py-[2px] rounded-full leading-none -translate-y-[1px] group-hover:bg-cyan-700 dark:group-hover:bg-cyan-400 transition">.ID</span>
+              <span className="font-extrabold text-[17px] tracking-[-0.04em] text-gray-900 dark:text-white">CILOK</span>
+              <span className="font-extrabold text-[17px] tracking-[-0.04em] text-[var(--accent-text)]">TECH</span>
+              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-bold tracking-[0.14em] uppercase bg-black dark:bg-white text-white dark:text-black px-[5px] py-[2px] leading-none">.ID</span>
             </div>
             <div className="mt-[3px]">
-              <span className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition">ONE-MAN STUDIO</span>
+              <span className="text-[9px] font-semibold tracking-[0.14em] uppercase text-gray-500 dark:text-gray-400">ONE-MAN STUDIO</span>
             </div>
           </div>
         </Link>
 
         {/* DESKTOP */}
-        <div className="hidden md:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((l) => {
             if (l.type === "page") {
               return (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`text-[13px] font-medium px-3 py-1.5 rounded-full transition ${
+                  className={`font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3 py-2 transition ${
                     l.highlight
-                      ? "text-cyan-500 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-900/40 hover:bg-cyan-100"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
+                      ? "text-[var(--accent-text)]"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {l.highlight ? `💰 ${l.label}` : l.label}
@@ -104,10 +104,10 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className={`inline-flex items-center text-[13px] font-medium px-3 py-1.5 rounded-full transition ${
+                className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3 py-2 transition ${
                   active && l.href === `/#${active}`
-                    ? "text-cyan-700 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-400/10 ring-1 ring-cyan-200/[0.30] dark:ring-cyan-400/20"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5"
+                    ? "text-[var(--accent-text)]"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
                 {l.label}
@@ -122,15 +122,15 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="uiverse-button px-5 py-2.5 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-white dark:to-gray-200 text-white dark:text-black text-[13.5px] font-bold rounded-full hover:from-cyan-600 hover:to-indigo-600 dark:hover:from-cyan-300 dark:hover:to-indigo-300 hover:shadow-lg flex items-center gap-1.5"
+              className="uiverse-button px-5 py-3 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[11px] font-bold uppercase tracking-[0.06em] border border-[var(--accent)] flex items-center gap-2"
             >
               {t.common.konsultasiGratis} <span className="text-[11px] opacity-80">↗</span>
             </a>
           </div>
         </div>
 
-        {/* MOBILE */}
-        <div className="flex md:hidden items-center gap-2">
+        {/* MOBILE & TABLET */}
+        <div className="flex lg:hidden items-center gap-2">
           <LanguageSwitcher compact />
           <ThemeToggle />
           <button
@@ -144,7 +144,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 max-h-[80vh] overflow-y-auto">
           <div className="flex items-center gap-2 mb-3 px-1">
             <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400">ONE-MAN STUDIO • ONE-MAN OPS</span>
             <span className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" />

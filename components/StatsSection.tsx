@@ -48,12 +48,12 @@ function StatItem({ target, suffix, label }: { target: number; suffix: string; l
 export default function StatsSection() {
   const { t } = useI18n();
   return (
-    <section className="py-10 md:py-14 bg-white dark:bg-[#08080b] px-6 relative overflow-hidden transition-colors duration-300">
-      <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-8 divide-x-0 md:divide-x md:divide-gray-100 dark:md:divide-white/5">
-        <StatItem target={50} suffix="+" label={t.stats.proyek} />
-        <StatItem target={98} suffix="/100" label={t.stats.lighthouse} />
-        <StatItem target={3} suffix=" hari" label={t.stats.pengerjaan} />
-        <StatItem target={3} suffix="+ thn" label={t.stats.pengalaman} />
+    <section className="py-8 bg-[var(--background)] px-5 md:px-7 border-b swiss-line transition-colors duration-200">
+      <div className="max-w-[1320px] mx-auto grid grid-cols-2 md:grid-cols-4 border-l swiss-line">
+        <div className="border-r border-b md:border-b-0 swiss-line py-5 px-4"><StatItem target={50} suffix="+" label={t.stats.proyek} /></div>
+        <div className="border-r border-b md:border-b-0 swiss-line py-5 px-4"><StatItem target={98} suffix="/100" label={t.stats.lighthouse} /></div>
+        <div className="border-r swiss-line py-5 px-4"><StatItem target={3} suffix=" hari" label={t.stats.pengerjaan} /></div>
+        <div className="border-r swiss-line py-5 px-4"><StatItem target={3} suffix="+ thn" label={t.stats.pengalaman} /></div>
       </div>
     </section>
   );

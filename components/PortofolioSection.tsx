@@ -2,15 +2,6 @@
 import { useI18n } from "@/lib/i18n/context";
 import { Reveal, RevealGrid } from "./Reveal";
 
-const accents = [
-  "bg-cyan-700",          // ochre — Web App
-  "bg-blue-800",          // slate — Dashboard
-  "bg-indigo-900",           // oxblood — CRM
-  "bg-blue-800",        // forest — Company Profile
-  "bg-zinc-900",           // ink — Bot
-  "bg-orange-900",         // terracotta — Landing
-];
-
 const TAGS = [
   ["Next.js", "Firebase", "PWA"],
   ["React", "WebSocket", "Node.js"],
@@ -40,22 +31,22 @@ export default function PortofolioSection() {
           </div>
         </Reveal>
 
-        <RevealGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <RevealGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p, i) => (
-            <div key={i} className="uiverse-card group rounded-[24px] border border-gray-200 dark:border-white/10 bg-white dark:bg-[#141419] overflow-hidden flex flex-col">
-              <div className={`h-[170px] ${accents[i] || accents[0]} relative p-6 flex flex-col justify-between overflow-hidden`}>
-                <div className="flex items-center justify-between relative z-10">
-                  <span className="text-[11px] font-bold tracking-wide uppercase bg-cyan-50 dark:bg-cyan-100 backdrop-blur-sm px-3 py-1.5 rounded-full text-cyan-900 dark:text-cyan-950 shadow-sm">{p.cat}</span>
-                  <span className="text-[11px] font-bold bg-black/40 backdrop-blur-sm text-cyan-50 px-3 py-1.5 rounded-full shadow-sm">Delivered project</span>
+            <div key={i} className="group border swiss-line bg-[var(--card)] hover:border-[var(--accent)] hover:translate-y-[-2px] transition flex flex-col justify-between">
+              <div className="p-6 border-b swiss-line bg-[var(--subtle)]">
+                <div className="flex items-center justify-between font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">
+                  <span>0{i + 1} // SYS</span>
+                  <span className="text-[var(--accent-text)]">● ACTIVE</span>
                 </div>
-                <div className="mt-auto relative z-10"><div className="inline-flex h-px w-12 bg-cyan-100/70 mb-3" /><div className="text-cyan-50 font-extrabold text-[20px] leading-tight drop-shadow-lg font-display italic">{p.title}</div></div>
-                <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#fff_1.5px,transparent_1.5px)] [background-size:20px_20px]" />
+                <div className="font-mono text-[11px] font-bold text-gray-600 dark:text-gray-400 mb-1">{p.cat}</div>
+                <div className="text-[22px] font-extrabold tracking-[-0.03em] text-gray-900 dark:text-white">{p.title}</div>
               </div>
-              <div className="p-6 flex flex-col flex-1 bg-gradient-to-b from-transparent to-gray-50/50 dark:to-white/[0.02]">
-                <p className="text-[14px] leading-[1.7] text-gray-600 dark:text-gray-400 mb-5 flex-1">{p.desc}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
+              <div className="p-6 flex flex-col flex-1 justify-between">
+                <p className="text-[13.5px] leading-relaxed text-gray-600 dark:text-gray-400 mb-6">{p.desc}</p>
+                <div className="flex flex-wrap gap-1.5 pt-4 border-t swiss-line font-mono text-[10px]">
                   {(TAGS[i] || TAGS[0]).map((tag, j) => (
-                    <span key={j} className="text-[11px] font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-full group-hover:bg-cyan-700 group-hover:text-cyan-50 group-hover:border-cyan-700 dark:group-hover:bg-cyan-400 dark:group-hover:text-cyan-950 dark:group-hover:border-cyan-400 transition-all duration-300">{tag}</span>
+                    <span key={j} className="px-2 py-1 border swiss-line bg-[var(--background)] text-gray-700 dark:text-gray-300">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -65,7 +56,7 @@ export default function PortofolioSection() {
 
         <Reveal delay={0.2}>
           <div className="mt-8 flex justify-center">
-          <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button inline-flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-6 py-3 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black hover:border-gray-900 dark:hover:border-white">{t.portfolio.cta}</a>
+          <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button inline-flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-[0.06em] text-gray-900 dark:text-white border swiss-line px-6 py-3.5 bg-[var(--card)] hover:bg-[var(--accent)] hover:text-[#0e0f0d] hover:border-[var(--accent)] transition">{t.portfolio.cta}</a>
           </div>
         </Reveal>
       </div>

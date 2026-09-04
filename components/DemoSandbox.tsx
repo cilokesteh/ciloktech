@@ -349,7 +349,7 @@ export default function DemoSandbox() {
               <div className="bg-white text-gray-950 p-6 rounded-2xl max-w-sm w-full font-mono text-[11.5px] border shadow-2xl animate-in fade-in zoom-in-95">
                 <div className="text-center pb-3 border-b border-dashed border-gray-300">
                   <div className="font-bold text-[14px] uppercase tracking-wider">CHILL LOOK CONCEPT STORE</div>
-                  <div className="text-gray-600 text-[10px]">Semarang, Jawa Tengah</div>
+                  <div className="text-gray-600 text-[10px]">Demo Store · Indonesia</div>
                   <div className="text-[10px] text-gray-500 mt-1">Demo POS oleh CilokTech</div>
                 </div>
 

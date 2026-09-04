@@ -27,33 +27,46 @@ export default function Home() {
       <SpotlightVars />
       <div className="grain-overlay" aria-hidden="true" />
       <Navbar />
-      <main id="main-content" className="pt-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-300">
+      <main id="main-content" className="pt-[72px] bg-[var(--background)] transition-colors duration-200">
         <HeroSection />
+        <div
+          tabIndex={0}
+          role="region"
+          aria-label="Spesifikasi sistem"
+          className="border-b swiss-line py-3 px-5 md:px-7 font-mono text-[11px] uppercase tracking-[0.14em] text-gray-500 overflow-x-auto whitespace-nowrap bg-[var(--card)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+        >
+          <div className="max-w-[1320px] mx-auto flex items-center justify-between gap-6">
+            <span>[ SYSTEM // NEXT.JS 15 ]</span>
+            <span>[ ARCHITECTURE // SWISS GRID ]</span>
+            <span>[ BUILDER // ONE-MAN STUDIO ]</span>
+            <span>[ SLA // HIGH RELIABILITY ]</span>
+          </div>
+        </div>
         <StatsSection />
         <ServicesSection />
         {/* Portofolio Section */}
         <PortofolioSection />
 
         {/* INTERACTIVE DEMO SANDBOX BANNER */}
-        <section className="px-6 py-10 bg-[#fafafa] dark:bg-[#111114] border-y border-gray-200/80 dark:border-white/5">
-          <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent border border-amber-600/30 dark:border-amber-400/20 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <section className="px-5 md:px-7 py-10 bg-[var(--background)] border-b swiss-line">
+          <div className="max-w-[1320px] mx-auto p-7 md:p-9 border swiss-line bg-[var(--card)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 text-[10.5px] font-bold tracking-widest uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full mb-2.5">
-                🎮 Live Interactive Sandbox
+              <div className="inline-flex items-center gap-2 font-mono text-[10px] font-bold tracking-widest uppercase border swiss-line px-2.5 py-1 text-[var(--accent-text)] mb-3 bg-[var(--subtle)]">
+                🎮 LIVE INTERACTIVE SANDBOX
               </div>
-              <h3 className="text-[20px] md:text-[24px] font-black text-gray-900 dark:text-white">
+              <h3 className="text-[22px] md:text-[28px] font-extrabold text-gray-900 dark:text-white tracking-tight">
                 Mau Coba Langsung Sistem Kasir POS &amp; Engine JasaFlow?
               </h3>
-              <p className="text-[13.5px] text-gray-600 dark:text-gray-400 mt-1.5 max-w-xl">
+              <p className="font-mono text-[13px] text-gray-600 dark:text-gray-400 mt-2 max-w-2xl leading-relaxed">
                 Simulasi transaksi kasir, diskon, cetak struk thermal 58mm, dan alur booking antrean barbershop langsung di browser tanpa install aplikasi.
               </p>
             </div>
             <Link
               href="/demo"
-              className="shrink-0 bg-amber-800 hover:bg-amber-900 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13px] px-6 py-3 rounded-xl transition shadow-sm flex items-center gap-2"
+              className="shrink-0 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[11px] font-bold uppercase tracking-[0.08em] px-6 py-3.5 border border-[var(--accent)] hover:opacity-90 transition flex items-center gap-2"
             >
               <span>Buka Demo Sandbox</span>
-              <span>→</span>
+              <span>↗</span>
             </Link>
           </div>
         </section>
@@ -61,44 +74,49 @@ export default function Home() {
         <PricingSection />
 
         {/* Harga explainer CTA */}
-        <section className="px-6 py-8 bg-white dark:bg-[#0a0a0a] border-t border-gray-100 dark:border-white/5">
-          <div className="max-w-5xl mx-auto">
-            <div className="rounded-[20px] border border-cyan-200 dark:border-cyan-900/30 bg-cyan-50/60 dark:bg-cyan-950/10 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-cyan-400 text-white flex items-center justify-center text-[18px] shrink-0">!</div>
+        <section className="px-5 md:px-7 py-10 bg-[var(--background)] border-b swiss-line">
+          <div className="max-w-[1320px] mx-auto">
+            <div className="border swiss-line bg-[var(--card)] p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+              <div className="flex gap-4 items-start">
+                <div className="w-9 h-9 border swiss-line bg-[var(--accent)] text-[#0e0f0d] font-mono font-bold flex items-center justify-center text-[15px] shrink-0">!</div>
                 <div>
-                  <div className="font-extrabold text-[16px] text-gray-900 dark:text-white">{t.homeExtra.priceExplainTitle}</div>
-                  <div className="text-[13.5px] text-gray-700 dark:text-gray-300 leading-relaxed mt-1 max-w-[520px]">{t.homeExtra.priceExplainDesc}</div>
+                  <div className="font-extrabold text-[17px] text-gray-900 dark:text-white">{t.homeExtra.priceExplainTitle}</div>
+                  <div className="font-mono text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed mt-1 max-w-[620px]">{t.homeExtra.priceExplainDesc}</div>
                 </div>
               </div>
-              <Link href="/harga" className="shrink-0 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-full text-[13px] font-bold hover:bg-black dark:hover:bg-cyan-300 transition flex items-center gap-2">
-                {t.homeExtra.priceExplainCta}
+              <Link href="/harga" className="shrink-0 px-6 py-3.5 border swiss-line bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-[#0e0f0d] font-mono text-[11px] font-bold uppercase tracking-[0.08em] transition flex items-center gap-2">
+                {t.homeExtra.priceExplainCta} ↗
               </Link>
             </div>
           </div>
         </section>
 
         {/* BLOG PREVIEW SEO */}
-        <section className="px-6 py-14 md:py-16 bg-[#fafafa] dark:bg-[#111111] border-y border-gray-100 dark:border-white/5">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <section className="px-5 md:px-7 py-14 md:py-20 bg-[var(--background)] border-b swiss-line">
+          <div className="max-w-[1320px] mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b swiss-line">
               <div>
-                <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full mb-4">{t.homeExtra.blogLabel}</div>
-                <h2 className="text-[28px] md:text-[36px] font-extrabold tracking-tight leading-[0.9] text-gray-900 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
+                <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-3 bg-[var(--card)]">{t.homeExtra.blogLabel}</div>
+                <h2 className="text-[32px] md:text-[44px] font-extrabold tracking-[-0.04em] leading-[0.92] text-gray-900 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
               </div>
-              <Link href="/blog" className="inline-flex items-center text-[13.5px] font-bold text-gray-900 dark:text-white border border-gray-200 dark:border-white/20 px-5 py-2.5 rounded-full hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition w-fit">
-                {t.homeExtra.blogViewAll}
+              <Link href="/blog" className="inline-flex items-center font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-gray-900 dark:text-white border swiss-line px-5 py-2.5 bg-[var(--card)] hover:bg-[var(--accent)] hover:text-[#0e0f0d] transition w-fit">
+                {t.homeExtra.blogViewAll} ↗
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-4">
               {latestPosts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group rounded-[18px] bg-white dark:bg-[#171717] border border-gray-200 dark:border-white/10 p-5 hover:border-gray-900 dark:hover:border-white transition flex flex-col">
-                  <div className="flex gap-1.5 flex-wrap mb-3">
-                    {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="text-[10px] font-bold bg-gray-100 dark:bg-white/10 px-2 py-0.5 rounded-full text-gray-600 dark:text-gray-300">{tg}</span>))}
-                    <span className="text-[10px] text-gray-500">{post.readingTime}</span>
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group border swiss-line bg-[var(--card)] p-6 hover:border-[var(--accent)] hover:translate-y-[-2px] transition flex flex-col justify-between">
+                  <div>
+                    <div className="flex gap-2 flex-wrap mb-4 font-mono text-[10px]">
+                      {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="px-2 py-0.5 border swiss-line text-gray-600 dark:text-gray-300">{tg}</span>))}
+                      <span className="text-gray-500">{post.readingTime}</span>
+                    </div>
+                    <div className="font-extrabold text-[17px] leading-snug text-gray-900 dark:text-white group-hover:text-[var(--accent-text)] transition line-clamp-2">{post.title}</div>
+                    <div className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 mt-3 line-clamp-2 leading-relaxed">{post.description}</div>
                   </div>
-                  <div className="font-bold text-[15px] leading-snug text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition line-clamp-2">{post.title}</div>
-                  <div className="text-[12.5px] text-gray-600 dark:text-gray-400 mt-2 line-clamp-2 leading-relaxed">{post.description}</div>
+                  <div className="pt-4 mt-6 border-t swiss-line font-mono text-[10px] text-[var(--accent-text)] uppercase tracking-widest">
+                    Baca Catatan ↗
+                  </div>
                 </Link>
               ))}
             </div>

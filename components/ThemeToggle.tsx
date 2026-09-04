@@ -7,7 +7,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-9 h-9 rounded-full bg-gray-100 dark:bg-white/10 animate-pulse" />
+      <div className="w-10 h-10 border swiss-line bg-[var(--card)] animate-pulse" />
     );
   }
 
@@ -15,7 +15,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      className="group relative w-9 h-9 rounded-full bg-gray-100 dark:bg-white/[0.08] border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all active:scale-95 overflow-hidden"
+      className="group relative w-10 h-10 bg-[var(--card)] border swiss-line flex items-center justify-center hover:border-[var(--accent)] hover:text-[var(--accent-text)] transition-all active:scale-95 overflow-hidden"
       title={theme === "light" ? "Dark mode" : "Light mode"}
     >
       <span className="absolute transition-all duration-300 group-active:scale-75 dark:translate-y-10 dark:opacity-0 dark:rotate-90">

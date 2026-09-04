@@ -33,6 +33,12 @@ test("brand palette stays free of generic aurora/glass patterns", async () => {
   assert.doesNotMatch(source, /from-indigo-[^\s"`]+.*to-(violet|pink|fuchsia)-/);
 });
 
+test("swiss tech minimal design tokens exist", async () => {
+  const css = await read("app/globals.css");
+  assert.match(css, /--accent:\s*#b7f21c/i, "cyber lime accent token must exist");
+  assert.match(css, /--font-mono-tech/i, "technical monospace font variable must exist");
+});
+
 test("every pricing plan has a working Telegram CTA", async () => {
   const pricing = await read("components/PricingSection.tsx");
   const dictionaries = await read("lib/i18n/dictionaries.ts");

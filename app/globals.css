@@ -3,38 +3,47 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --background: #f4f5f0;
+  --foreground: #111111;
   --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --muted: #f5f5f5;
-  --muted-foreground: #737373;
-  --border: #e5e5e5;
-  --border-strong: #171717;
-  --subtle: #fafafa;
-  --section-alt: #f6f6f5;
-  --nav-bg: rgba(255,255,255,0.75);
+  --card-foreground: #111111;
+  --muted: #e7e8e1;
+  --muted-foreground: #4b524b;
+  --border: #161616;
+  --border-strong: #111111;
+  --subtle: #f8f9f5;
+  --section-alt: #eceee6;
+  --nav-bg: rgba(244,245,240,0.85);
+  --accent: #b7f21c;
+  --accent-ink: #0e0f0d;
+  --accent-text: #365e00;
 }
 
 .dark {
-  --background: #08080b;
-  --foreground: #ededed;
-  --card: #141419;
-  --card-foreground: #ededed;
-  --muted: #16161c;
-  --muted-foreground: #a3a3a3;
-  --border: #24242c;
-  --border-strong: #ededed;
-  --subtle: #101014;
-  --section-alt: #0e0e12;
-  --nav-bg: rgba(8,8,11,0.75);
+  --background: #10110f;
+  --foreground: #f5f7ef;
+  --card: #171916;
+  --card-foreground: #f5f7ef;
+  --muted: #1e211c;
+  --muted-foreground: #a8aca0;
+  --border: #575b52;
+  --border-strong: #f5f7ef;
+  --subtle: #131512;
+  --section-alt: #131612;
+  --nav-bg: rgba(16,17,15,0.85);
+  --accent: #b7f21c;
+  --accent-ink: #0e0f0d;
+  --accent-text: #b7f21c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gray-500: #575e6d;
+  --color-gray-400: #9da3b4;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-mono-tech: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
@@ -58,19 +67,19 @@ body {
   overflow-x: hidden;
 }
 
-/* Uiverse-inspired interaction primitives — CilokTech cyan/indigo brand palette. */
+/* Uiverse-inspired interaction primitives — Swiss Tech Minimal palette. */
 .uiverse-button { position: relative; isolation: isolate; overflow: hidden; transition: transform 180ms cubic-bezier(.22,1,.36,1), box-shadow 220ms ease, color 220ms ease, background-color 220ms ease, border-color 220ms ease; }
-.uiverse-button::before { content: ""; position: absolute; inset: 0; z-index: -1; background: #0891b2; opacity: 0; transition: opacity 220ms ease; }
+.uiverse-button::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--accent); opacity: 0; transition: opacity 220ms ease; }
 .uiverse-button:hover::before { opacity: 1; }
 .uiverse-button:active { transform: translateY(1px) scale(.98); }
-.uiverse-card { position: relative; transition: transform 320ms cubic-bezier(.22,1,.36,1), box-shadow 320ms ease, border-color 320ms ease, background-color 320ms ease; }
-@media (hover: hover) and (pointer: fine) { .uiverse-button:hover { transform: translateY(-2px); } .uiverse-card:hover { transform: translateY(-6px); border-color: rgba(6,182,212,0.42); box-shadow: 0 28px 70px rgba(6,182,212,0.08); } }
+.uiverse-card { position: relative; transition: transform 220ms cubic-bezier(.22,1,.36,1), box-shadow 220ms ease, border-color 220ms ease, background-color 220ms ease; }
+@media (hover: hover) and (pointer: fine) { .uiverse-button:hover { transform: translateY(-2px); } .uiverse-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 6px 6px 0 var(--accent); } }
 .uiverse-disclosure { transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease, background-color 220ms ease; }
-@media (hover: hover) and (pointer: fine) { .uiverse-disclosure:hover { transform: translateX(3px); border-color: rgba(6,182,212,0.45); box-shadow: 0 12px 32px rgba(6,182,212,0.05); } }
+@media (hover: hover) and (pointer: fine) { .uiverse-disclosure:hover { transform: translateX(3px); border-color: var(--accent); } }
 
 ::selection {
-  background: #0891b2;
-  color: #ffffff;
+  background: var(--accent);
+  color: #0e0f0d;
 }
 
 ::-webkit-scrollbar {
@@ -80,52 +89,41 @@ body {
   background: var(--muted);
 }
 ::-webkit-scrollbar-thumb {
-  background: #0891b2;
+  background: var(--accent);
   border-radius: 10px;
 }
 
 /* focus ring */
 *:focus-visible {
-  outline: 2px solid #0891b2;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* premium subtle grid texture */
-.bg-grid {
-  background-image: linear-gradient(to right, rgba(120,120,140,0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(120,120,140,0.06) 1px, transparent 1px);
-  background-size: 44px 44px;
-}
-.dark .bg-grid {
-  background-image: linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+/* Swiss technical line and hairline grids */
+.swiss-line {
+  border-color: var(--border);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   VISUAL SYSTEM REFRESH (2026-08-30)
-   - Brand cyan/indigo dipertahankan tanpa gradient-text generik
-   - Hapus aurora-blob (anti-AI §II.3.1)
-   - Hapus glass blur 20px (anti-AI §II.3.1)
-   - Ganti solid accent color untuk emphasis, bukan gradient
-   ═══════════════════════════════════════════════════════════ */
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(120,120,140,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120,120,140,0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+}
 
 /* Solid brand accent (pengganti animated gradient text) */
 .text-accent {
-  color: #0891b2;
-  font-style: italic;
-}
-.dark .text-accent {
-  color: #22d3ee;
+  color: var(--accent-text);
+  font-weight: 800;
 }
 
-/* Subtle elevation (pengganti glass) — sharp, no blur */
+/* Subtle elevation — sharp Swiss panel, high contrast border */
 .surface-elev {
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.dark .surface-elev {
-  background: rgba(20,20,25,0.92);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--card);
+  border: 1px solid var(--border);
 }
 
 /* Hero premium motion: transform/opacity only for smooth, low-cost animation. */
@@ -163,50 +161,33 @@ body {
    ═══════════════════════════════════════════════════════════ */
 
 /* Scrollbar premium */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 99px; border: 2px solid transparent; background-clip: padding-box; }
-::-webkit-scrollbar-thumb:hover { background: #0e7490; background-clip: padding-box; border: 2px solid transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--muted); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); opacity: 0.8; }
 
 /* Selection premium */
-::selection { background: rgba(6, 182, 212, .18); color: inherit; }
+::selection { background: var(--accent); color: #0e0f0d; }
 
 /* Focus ring premium */
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 3px solid rgba(6, 182, 212, .5); outline-offset: 3px; border-radius: 8px;
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
 }
 
-/* Uiverse card: shine sweep on hover */
-.uiverse-card { isolation: isolate; }
-.uiverse-card::before {
-  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  border-radius: inherit;
-  background: linear-gradient(110deg, transparent 32%, rgba(255,255,255,.16) 50%, transparent 68%);
-  transform: translateX(-120%); transition: transform 700ms cubic-bezier(.22,1,.36,1);
-}
-@media (hover: hover) and (pointer: fine) { .uiverse-card:hover::before { transform: translateX(120%); } }
-.dark .uiverse-card::before { background: linear-gradient(110deg, transparent 32%, rgba(255,255,255,.07) 50%, transparent 68%); }
-
-/* Featured pricing: glow pulse — composite-only (animate ::after opacity, BUKAN box-shadow).
-   Box-shadow animation = repaint tiap frame → scroll jank. Opacity = GPU composite. */
-.uiverse-card[data-featured="true"]::after {
-  box-shadow: 0 30px 90px rgba(6,182,212,.26);
-}
-.uiverse-card[data-featured="true"] { animation: card-glow-pulse 5s ease-in-out infinite; }
-@keyframes card-glow-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .88; }
+/* Featured pricing: Swiss border highlight */
+.uiverse-card[data-featured="true"] {
+  border-color: var(--accent) !important;
 }
 
-/* Navbar desktop links: underline premium (selector komponen actual) */
+/* Navbar desktop links: technical indicator */
 @media (min-width: 768px) {
   nav a { position: relative; }
   nav a::after {
     content: ""; position: absolute; left: 50%; bottom: -3px; width: 0; height: 2px;
-    border-radius: 2px; background: #0891b2;
-    transform: translateX(-50%); transition: width 260ms cubic-bezier(.22,1,.36,1);
+    background: var(--accent);
+    transform: translateX(-50%); transition: width 200ms ease;
   }
-  @media (hover: hover) and (pointer: fine) { nav a:hover::after { width: 60%; } }
+  @media (hover: hover) and (pointer: fine) { nav a:hover::after { width: 70%; } }
 }
 
 /* ═══════════════════════════════════════════════════════════

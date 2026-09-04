@@ -51,7 +51,6 @@ test("has no serious accessibility violations", async ({ page }) => {
   await finishMotion(page);
   const result = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa"])
-    .disableRules(["color-contrast"])
     .analyze();
   expect(result.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""))).toEqual([]);
 });

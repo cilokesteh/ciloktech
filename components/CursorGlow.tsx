@@ -60,7 +60,7 @@ export default function CursorGlow() {
         aria-hidden
         className="pointer-events-none fixed z-[60] w-[300px] h-[300px] rounded-full opacity-60 dark:opacity-80"
         style={{
-          background: "radial-gradient(circle, rgba(6,182,212,0.10) 0%, rgba(99,102,241,0.06) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(183,242,28,0.10) 0%, rgba(183,242,28,0.04) 42%, transparent 70%)",
           top: 0, left: 0,
           willChange: "transform",
         }}
@@ -69,7 +69,7 @@ export default function CursorGlow() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed z-[61] w-2 h-2 rounded-full bg-cyan-600/70 dark:bg-cyan-300/80 shadow-[0_0_10px_rgba(6,182,212,0.6)]"
+        className="pointer-events-none fixed z-[61] w-2 h-2 rounded-none bg-[var(--accent)] shadow-[0_0_10px_rgba(183,242,28,0.6)]"
         style={{ top: 0, left: 0 }}
       />
     </>
