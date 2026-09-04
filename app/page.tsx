@@ -29,17 +29,59 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="pt-[72px] bg-[var(--background)] transition-colors duration-200">
         <HeroSection />
+        {/* RUNNING TICKER WITH BLINKING LIME BEACON */}
         <div
           tabIndex={0}
           role="region"
-          aria-label="Cara kerja CilokTech"
-          className="border-b swiss-line py-3 px-5 md:px-7 font-mono text-[11px] uppercase tracking-[0.14em] text-gray-500 overflow-x-auto whitespace-nowrap bg-[var(--card)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          aria-label="Informasi layanan CilokTech"
+          className="border-b swiss-line py-3 overflow-hidden whitespace-nowrap bg-[var(--card)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
-          <div className="max-w-[1320px] mx-auto flex items-center justify-between gap-6">
-            <span>Desain sesuai kebutuhan</span>
-            <span>Tampilan rapi di HP dan desktop</span>
-            <span>Langsung dengan pembuatnya</span>
-            <span>Dibantu setelah website terbit</span>
+          <div className="animate-ticker flex items-center text-gray-600 dark:text-gray-400 font-mono text-[11px] uppercase tracking-[0.15em]">
+            <div className="flex items-center gap-8 shrink-0 pr-8">
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" aria-hidden="true" />
+                Desain khusus sesuai bisnis Anda
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" aria-hidden="true" />
+                Muat cepat &amp; rapi di semua layar
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" aria-hidden="true" />
+                Langsung dikerjakan developer berpengalaman
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" aria-hidden="true" />
+                Bantuan &amp; perbaikan setelah website live
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" aria-hidden="true" />
+                Kode 100% jadi hak milik Anda
+              </span>
+            </div>
+            {/* DUPLICATE SET FOR SEAMLESS INFINITE LOOP */}
+            <div className="flex items-center gap-8 shrink-0 pr-8" aria-hidden="true">
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" />
+                Desain khusus sesuai bisnis Anda
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" />
+                Muat cepat &amp; rapi di semua layar
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" />
+                Langsung dikerjakan developer berpengalaman
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" />
+                Bantuan &amp; perbaikan setelah website live
+              </span>
+              <span className="flex items-center gap-2.5">
+                <span className="lime-beacon" />
+                Kode 100% jadi hak milik Anda
+              </span>
+            </div>
           </div>
         </div>
         <StatsSection />

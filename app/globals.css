@@ -104,6 +104,47 @@ body {
   border-color: var(--border);
 }
 
+/* Running ticker text animation */
+@keyframes ticker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 26s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@keyframes lime-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px #b7f21c, 0 0 20px rgba(183, 242, 28, 0.4);
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: 0 0 2px #b7f21c;
+  }
+}
+
+.lime-beacon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #b7f21c;
+  animation: lime-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker { animation: none !important; }
+  .lime-beacon { animation: none !important; opacity: 1 !important; }
+}
+
 .bg-grid {
   background-image: linear-gradient(to right, rgba(120,120,140,0.08) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(120,120,140,0.08) 1px, transparent 1px);
