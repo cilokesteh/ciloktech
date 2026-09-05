@@ -46,6 +46,7 @@ export default function Footer() {
               <Link href="/#layanan" className="block hover:text-[var(--accent-text)] transition">{t.footer.layanan}</Link>
               <Link href="/#portofolio" className="block hover:text-[var(--accent-text)] transition">{t.footer.portofolio}</Link>
               <Link href="/#harga" className="block hover:text-[var(--accent-text)] transition">{t.footer.harga}</Link>
+              <Link href="/privasi" className="block hover:text-[var(--accent-text)] transition">Kebijakan Privasi</Link>
             </nav>
           </div>
           <div>

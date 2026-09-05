@@ -10,13 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/jasa-pembuatan-website",
     "/harga",
     "/blog",
+    "/privasi",
   ];
 
   const staticRoutes = staticPages.map((p) => ({
     url: `${base}${p}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: p === "" ? 1 : p === "/jasa-pembuatan-website" ? 0.95 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.7,
+    priority: p === "" ? 1 : p === "/jasa-pembuatan-website" ? 0.95 : p === "/harga" ? 0.9 : p === "/blog" ? 0.85 : 0.5,
   }));
 
   const blogRoutes = posts.map((post) => ({

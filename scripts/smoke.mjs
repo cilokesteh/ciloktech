@@ -31,6 +31,8 @@ const checks = [
   ["/ready", 200, '"status":"ready"'],
   ["/robots.txt", 200, "Sitemap:"],
   ["/sitemap.xml", 200, "<urlset"],
+  ["/jasa-pembuatan-website", 200, "Jasa Pembuatan Website"],
+  ["/privasi", 200, "Kebijakan Privasi"],
   ["/path-yang-tidak-ada", 404, "Halaman ini tidak ada"],
 ];
 

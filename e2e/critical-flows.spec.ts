@@ -55,7 +55,7 @@ test("has no serious accessibility violations", async ({ page }) => {
   expect(result.violations.filter((v) => ["serious", "critical"].includes(v.impact ?? ""))).toEqual([]);
 });
 
-for (const route of ["/", "/jasa-pembuatan-website", "/harga", "/demo"]) {
+for (const route of ["/", "/jasa-pembuatan-website", "/harga", "/demo", "/privasi"]) {
   test(`has no horizontal overflow: ${route}`, async ({ page }) => {
     await page.goto(route, { waitUntil: "domcontentloaded" });
     await finishMotion(page);
