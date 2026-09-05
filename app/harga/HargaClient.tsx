@@ -58,6 +58,11 @@ export default function HargaClient() {
             <div className="p-5 bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-between"><span className="font-bold text-[14px]">{hp.totalSeparate}</span><span className="font-extrabold text-[18px]">{hp.totalSeparateVal}</span></div>
             <div className="p-5 bg-cyan-600 dark:bg-cyan-300 text-gray-900 flex items-center justify-between font-bold"><span>{hp.paketCilok}</span><span className="text-[20px]">{hp.paketVal}</span></div>
           </div>
+          <div className="mt-4 text-center">
+            <Link href="/jasa-pembuatan-website" className="text-[13px] font-mono text-cyan-700 dark:text-cyan-300 underline hover:opacity-80">
+              Pelajari detail fitur &amp; alur jasa pembuatan website profesional CilokTech →
+            </Link>
+          </div>
           <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-full"><span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" /> {hp.noHidden}</div>
         </div>
       </section>

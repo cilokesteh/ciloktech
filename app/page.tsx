@@ -100,7 +100,7 @@ export default function Home() {
                 Coba sistem kasir dan booking sebelum memesan.
               </h3>
               <p className="font-mono text-[13px] text-gray-600 dark:text-gray-400 mt-2 max-w-2xl leading-relaxed">
-                Jalankan transaksi kasir, coba diskon, cetak struk, dan buat antrean langsung dari browser. Tidak perlu instal aplikasi.
+                Jalankan transaksi kasir, coba diskon, cetak struk, dan buat antrean langsung dari browser. Tidak perlu instal aplikasi. Lihat juga pilihan paket <Link href="/jasa-pembuatan-website" className="text-[var(--accent-text)] underline hover:opacity-80">jasa pembuatan website profesional</Link> kami.
               </p>
             </div>
             <Link

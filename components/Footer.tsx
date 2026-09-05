@@ -42,6 +42,7 @@ export default function Footer() {
             <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-gray-500 mb-4">{t.footer.nav}</div>
             <nav className="space-y-2.5 font-mono text-[12px]">
               <button onClick={handleHomeClick} className="block hover:text-[var(--accent-text)] transition text-left">{t.nav.beranda} ↺</button>
+              <Link href="/jasa-pembuatan-website" className="block hover:text-[var(--accent-text)] transition">Jasa Website</Link>
               <Link href="/#layanan" className="block hover:text-[var(--accent-text)] transition">{t.footer.layanan}</Link>
               <Link href="/#portofolio" className="block hover:text-[var(--accent-text)] transition">{t.footer.portofolio}</Link>
               <Link href="/#harga" className="block hover:text-[var(--accent-text)] transition">{t.footer.harga}</Link>

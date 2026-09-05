@@ -21,6 +21,7 @@ export default function CommandPalette() {
 
   const staticItems: Item[] = useMemo(() => [
     { id: "home", label: t.cmd.items.home.label, desc: t.cmd.items.home.desc, href: "/", icon: "🏠", keywords: `home ${t.nav.beranda} one-man studio ciloktech`, group: t.cmd.pages },
+    { id: "jasa-website", label: "Jasa Pembuatan Website", desc: "Landing page spesialis jasa website & web app profesional", href: "/jasa-pembuatan-website", icon: "🌐", keywords: "jasa pembuatan website profesional landing page company profile web app", group: t.cmd.pages },
     { id: "layanan", label: t.cmd.items.layanan.label, desc: t.cmd.items.layanan.desc, href: "/#layanan", icon: "⚙️", keywords: `${t.nav.layanan} services`, group: t.cmd.pages },
     { id: "portofolio", label: t.cmd.items.portofolio.label, desc: t.cmd.items.portofolio.desc, href: "/#portofolio", icon: "💼", keywords: `${t.nav.portofolio} portfolio`, group: t.cmd.pages },
     { id: "harga", label: t.cmd.items.harga.label, desc: t.cmd.items.harga.desc, href: "/#harga", icon: "💰", keywords: `${t.nav.harga} pricing paket`, group: t.cmd.pages },
