@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
-    "@next/eslint-plugin-next": "^15.5.22",
+    "@next/eslint-plugin-next": "^16.3.4",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
