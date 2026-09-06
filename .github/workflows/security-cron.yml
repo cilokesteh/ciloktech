@@ -28,4 +28,4 @@ jobs:
         run: pnpm audit --audit-level=high
 
       - name: License Compliance Scan
-        run: pnpm dlx license-checker --onlyAllow "MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;CC0-1.0;Python-2.0" --excludePrivatePackages
+        run: pnpm dlx license-checker --onlyAllow "MIT;Apache-2.0;BSD-2-Clause;BSD-3-Clause;ISC;0BSD;CC0-1.0;Python-2.0;MPL-2.0;OFL-1.1" --excludePrivatePackages
