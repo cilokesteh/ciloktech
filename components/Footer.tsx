@@ -53,9 +53,9 @@ export default function Footer() {
           <div>
             <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-gray-500 mb-4">{t.footer.contact}</div>
             <div className="space-y-2 font-mono text-[12px] text-gray-600 dark:text-gray-400">
-              <div><a href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">WhatsApp +62 813-7355-599 ↗</a></div>
-              <div><a href="https://t.me/ciloktech" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">@ciloktech (Builder) ↗</a></div>
-              <div><a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">{t.footer.telegram} ↗</a></div>
+              <div><a href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">WhatsApp ↗</a></div>
+              <div><a href="https://t.me/ciloktech" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">Builder ↗</a></div>
+              <div><a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent-text)] text-gray-900 dark:text-white">CS 24 Jam ↗</a></div>
               <div><a href="mailto:hi@ciloktech.my.id" className="hover:text-[var(--accent-text)]">hi@ciloktech.my.id</a></div>
               <div className="pt-2 text-[11px]">{t.footer.replyNote}</div>
             </div>
