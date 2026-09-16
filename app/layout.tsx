@@ -131,6 +131,7 @@ export default function RootLayout({
               logo: "https://www.ciloktech.id/logo-oneman-512.png",
               image: "https://www.ciloktech.id/og-oneman.png",
               email: "hi@ciloktech.my.id",
+              telephone: "+628137355599",
               sameAs: [
                 "https://github.com/cilokesteh",
                 "https://t.me/ciloktechcsbot",

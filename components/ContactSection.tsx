@@ -24,7 +24,7 @@ export default function ContactSection() {
           </div>
         </Reveal>
 
-        <RevealGrid className="grid md:grid-cols-3 border-l swiss-line">
+        <RevealGrid className="grid md:grid-cols-2 lg:grid-cols-4 border-l swiss-line">
           <a
             href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20website"
             target="_blank"
@@ -39,6 +39,24 @@ export default function ContactSection() {
             </div>
             <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
               <span>{t.contact.telegramCta}</span>
+              <span className="text-sm">↗</span>
+            </div>
+          </a>
+
+          <a
+            href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp CilokTech — +62 813-7355-599"
+            className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
+          >
+            <div>
+              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Chat Langsung</div>
+              <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">WhatsApp</div>
+              <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">+62 813-7355-599 — konsultasi proyek</div>
+            </div>
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
+              <span>Buka WhatsApp</span>
               <span className="text-sm">↗</span>
             </div>
           </a>
