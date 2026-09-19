@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HeroSection() {
@@ -70,33 +69,110 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Futuristic 3D Emblem Showcase Card */}
-        <div
-          className="relative group p-6 sm:p-8 rounded-3xl border border-sky-500/20 dark:border-cyan-400/25 bg-gradient-to-b from-sky-500/5 via-[var(--card)] to-[var(--card)] tech-panel shadow-2xl flex flex-col items-center text-center overflow-hidden"
-        >
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none" />
-          
-          <div className="relative w-44 h-44 sm:w-56 sm:h-56 my-4 flex items-center justify-center">
-            {/* Ambient halo ring */}
-            <div className="absolute inset-0 rounded-full bg-cyan-500/10 blur-xl group-hover:scale-110 transition duration-500" />
-            <Image
-              src="/logo-mark-512.png"
-              alt="CilokTech 3D Cyber Emblem"
-              width={224}
-              height={224}
-              priority
-              className="relative z-10 w-full h-full object-contain drop-shadow-[0_12px_24px_rgba(42,147,224,0.4)] group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
+        {/* Modern MacBook / Digital Cockpit Mockup Showcase */}
+        <div className="relative group w-full">
+          {/* Ambient Glow */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-[28px] blur-xl opacity-70 group-hover:opacity-100 transition duration-500 pointer-events-none" />
 
-          <div className="w-full pt-4 border-t swiss-line flex items-center justify-between font-mono text-[11px] text-gray-800 dark:text-gray-200">
-            <span className="flex items-center gap-1.5 font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              SYSTEM OPERATIONAL
-            </span>
-            <span className="text-sky-900 dark:text-cyan-300 font-extrabold uppercase tracking-widest">
-              BUILD IDEAS FURTHER
-            </span>
+          <div className="relative rounded-[24px] border border-gray-200 dark:border-white/10 bg-gray-900/90 dark:bg-[#0d1117] p-3 sm:p-4 shadow-2xl backdrop-blur-md overflow-hidden text-left font-sans">
+            {/* MacBook Header / Window Controls */}
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56] inline-block" />
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block" />
+                <span className="w-3 h-3 rounded-full bg-[#27c93f] inline-block" />
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-black/40 border border-white/5 text-[11px] font-mono text-gray-400">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span>analytics.ciloktech.id/live</span>
+              </div>
+              <div className="font-mono text-[10px] text-gray-500">PROD-v3.0</div>
+            </div>
+
+            {/* Dashboard Screen Content */}
+            <div className="space-y-4 p-1">
+              {/* Top Stats Cards in Mockup */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                <div className="p-3 rounded-xl bg-white/[0.04] border border-white/5">
+                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Performance</div>
+                  <div className="text-[18px] sm:text-[22px] font-black text-emerald-400 mt-0.5">99.8%</div>
+                  <div className="text-[9.5px] text-gray-400 mt-0.5">LCP: 0.82s (Fast)</div>
+                </div>
+                <div className="p-3 rounded-xl bg-white/[0.04] border border-white/5">
+                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Conversion</div>
+                  <div className="text-[18px] sm:text-[22px] font-black text-cyan-400 mt-0.5">+42.6%</div>
+                  <div className="text-[9.5px] text-gray-400 mt-0.5">Growth Q3/Q4</div>
+                </div>
+                <div className="p-3 rounded-xl bg-white/[0.04] border border-white/5">
+                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Security</div>
+                  <div className="text-[18px] sm:text-[22px] font-black text-white mt-0.5">Zero Fail</div>
+                  <div className="text-[9.5px] text-emerald-400 mt-0.5">PCI / OWASP Pass</div>
+                </div>
+              </div>
+
+              {/* Main Visual Chart SVG */}
+              <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[12px] font-bold text-white">Real-Time Traffic &amp; Revenue Index</span>
+                    <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold">LIVE TELEMETRY</span>
+                  </div>
+                  <span className="font-mono text-[11px] text-cyan-400 font-bold">Rp 148.500.000</span>
+                </div>
+
+                {/* Simulated Wave / Area Chart */}
+                <div className="relative h-28 sm:h-32 w-full">
+                  <svg className="w-full h-full overflow-visible" viewBox="0 0 400 120" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="cyberChartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    {/* Grid lines */}
+                    <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+                    <line x1="0" y1="70" x2="400" y2="70" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
+                    
+                    {/* Area fill */}
+                    <path
+                      d="M 0 100 Q 60 40 120 70 T 240 30 T 340 50 T 400 15 L 400 120 L 0 120 Z"
+                      fill="url(#cyberChartGrad)"
+                    />
+                    {/* Line path */}
+                    <path
+                      d="M 0 100 Q 60 40 120 70 T 240 30 T 340 50 T 400 15"
+                      fill="none"
+                      stroke="#38bdf8"
+                      strokeWidth="2.5"
+                    />
+                    {/* Peak Glow Point */}
+                    <circle cx="240" cy="30" r="4.5" fill="#38bdf8" className="animate-ping" />
+                    <circle cx="240" cy="30" r="4" fill="#ffffff" stroke="#0284c7" strokeWidth="2" />
+                    <circle cx="400" cy="15" r="4" fill="#38bdf8" />
+                  </svg>
+                </div>
+
+                {/* Chart Bottom Labels */}
+                <div className="flex justify-between font-mono text-[9.5px] text-gray-400 mt-2 pt-2 border-t border-white/5">
+                  <span>08:00</span>
+                  <span>12:00</span>
+                  <span>16:00</span>
+                  <span>20:00</span>
+                  <span className="text-cyan-400 font-bold">Now (Peak)</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mockup Status Bar */}
+            <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between font-mono text-[10.5px] text-gray-400">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-gray-300">Cluster Jakarta-1 (Latency: 12ms)</span>
+              </span>
+              <span className="text-cyan-400 font-bold tracking-wider">
+                AUTO-SCALING: ACTIVE
+              </span>
+            </div>
           </div>
         </div>
       </div>
