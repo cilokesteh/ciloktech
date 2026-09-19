@@ -39,8 +39,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-gray-500: #575e6d;
-  --color-gray-400: #9da3b4;
+  --color-gray-500: #94a3b8;
+  --color-gray-400: #cbd5e1;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-mono-tech: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
