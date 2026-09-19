@@ -38,7 +38,7 @@ export default function FloatingCTA() {
       <button
         onClick={handleScrollTop}
         aria-label={`${t.nav.backToTop} — click again to refresh`}
-        className={`fixed bottom-6 left-6 z-[60] w-11 h-11 rounded-full bg-white dark:bg-white border border-gray-200 dark:border-white shadow-[0_8px_24px_rgba(0,0,0,0.12)] text-gray-900 flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black hover:scale-105 active:scale-95 transition-all duration-300 ${showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+        className={`fixed bottom-6 left-5 z-[60] w-11 h-11 rounded-full bg-white dark:bg-[#12161f] border border-gray-200 dark:border-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.15)] text-gray-900 dark:text-white flex items-center justify-center hover:bg-gray-900 hover:text-white dark:hover:bg-cyan-400 dark:hover:text-black hover:scale-105 active:scale-95 transition-all duration-300 hidden md:flex ${showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={`↑ ${t.nav.backToTop} — click again at top to refresh`}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 15l-6-6-6 6" /></svg>
@@ -48,13 +48,13 @@ export default function FloatingCTA() {
         href={t.floating.promoLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 z-[60] group flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-indigo-600 text-white rounded-full border border-white/20 shadow-[0_12px_32px_rgba(6,182,212,0.35)] hover:from-cyan-500 hover:to-indigo-500 hover:scale-105 active:scale-95 transition-all duration-300 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+        className={`fixed bottom-5 right-4 left-4 sm:left-auto sm:right-6 z-[60] group flex items-center gap-3 bg-gradient-to-r from-sky-600 to-blue-700 text-white rounded-2xl sm:rounded-full border border-white/20 shadow-[0_12px_32px_rgba(14,165,233,0.35)] hover:from-sky-500 hover:to-blue-600 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transition-all duration-300 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={t.floating.promoTitle}
       >
-        <span className="w-12 h-12 rounded-full bg-white text-cyan-700 flex items-center justify-center text-[20px] group-hover:rotate-[10deg] transition shrink-0">⚡</span>
-        <span className="pr-5 text-left leading-tight">
-          <span className="block text-[13px] font-extrabold">{t.floating.promoTitle}</span>
-          <span className="block text-[11px] opacity-90 font-medium">{t.floating.promoSub}</span>
+        <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-full bg-white text-sky-700 flex items-center justify-center text-[18px] sm:text-[20px] group-hover:rotate-[10deg] transition shrink-0 ml-1 sm:ml-0 shadow-sm">⚡</span>
+        <span className="pr-4 sm:pr-5 text-left leading-tight py-2 sm:py-0 flex-1 sm:flex-initial">
+          <span className="block text-[12.5px] sm:text-[13px] font-extrabold">{t.floating.promoTitle}</span>
+          <span className="block text-[10.5px] sm:text-[11px] opacity-90 font-medium">{t.floating.promoSub}</span>
         </span>
       </a>
     </>
