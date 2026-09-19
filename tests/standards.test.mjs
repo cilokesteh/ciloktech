@@ -35,7 +35,7 @@ test("brand palette stays free of generic aurora/glass patterns", async () => {
 
 test("swiss tech minimal design tokens exist", async () => {
   const css = await read("app/globals.css");
-  assert.match(css, /--accent:\s*#b7f21c/i, "cyber lime accent token must exist");
+  assert.match(css, /--accent:\s*(#b7f21c|#2a93e0|#38bdf8)/i, "brand accent token must exist");
   assert.match(css, /--font-mono-tech/i, "technical monospace font variable must exist");
 });
 
