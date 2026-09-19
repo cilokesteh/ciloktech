@@ -147,17 +147,11 @@ body {
 
 .bg-grid {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12), transparent 45%),
-    linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
-  background-size: 100% 100%, 36px 36px, 36px 36px;
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 60%);
 }
 .dark .bg-grid {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(42, 147, 224, 0.18), transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 100% 100%, 36px 36px, 36px 36px;
+    radial-gradient(circle at 50% 0%, rgba(42, 147, 224, 0.22), transparent 65%);
 }
 
 /* Tech badge glow & cyber corner accent */
