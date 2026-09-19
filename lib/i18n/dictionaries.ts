@@ -290,9 +290,9 @@ const idDict = {
     oneManLong: "👨‍💻 One-man • Senior full-stack",
   },
   floating: {
-    promoTitle: "Promo Kemerdekaan — Diskon 50%",
-    promoSub: "Agustus 2026 • semua paket",
-    promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20kemerdekaan%20diskon%2050%25",
+    promoTitle: "Early Bird Q4 2026 — Paket Bundling",
+    promoSub: "Slot Oktober • Bonus 2 Add-on Gratis",
+    promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20early%20bird%20Q4%20paket%20bundling",
   },
   cmd: {
     placeholder: "Cari halaman, blog… (ESC untuk menutup)",
@@ -707,9 +707,9 @@ const enDict: Dict = {
     oneManLong: "👨‍💻 One-man studio • Senior full-stack developer",
   },
   floating: {
-    promoTitle: "Independence Day Promo — 50% Off",
-    promoSub: "August 2026 • all packages",
-    promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20kemerdekaan%20diskon%2050%25",
+    promoTitle: "Q4 2026 Early Bird — Bundle Offer",
+    promoSub: "October slots • 2 free add-ons included",
+    promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20early%20bird%20Q4%20paket%20bundling",
   },
   cmd: {
     placeholder: "Search pages, blog, calculator… (Press ESC to close)",

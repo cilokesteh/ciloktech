@@ -23,7 +23,7 @@ export default function HeroSection() {
           <div className="pt-8">
             <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] px-3 py-1.5 border swiss-line bg-[var(--card)]">
               <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" />
-              <span>{t.common.available} — Slot September Terbuka</span>
+              <span>{t.common.available} — Slot Q4 / Oktober Terbuka</span>
             </div>
           </div>
         </aside>

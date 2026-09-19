@@ -48,13 +48,13 @@ export default function FloatingCTA() {
         href={t.floating.promoLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 z-[60] group flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full border border-white/20 shadow-[0_12px_32px_rgba(220,38,38,0.35)] hover:from-red-500 hover:to-red-600 hover:scale-105 active:scale-95 transition-all duration-300 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+        className={`fixed bottom-6 right-6 z-[60] group flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-indigo-600 text-white rounded-full border border-white/20 shadow-[0_12px_32px_rgba(6,182,212,0.35)] hover:from-cyan-500 hover:to-indigo-500 hover:scale-105 active:scale-95 transition-all duration-300 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={t.floating.promoTitle}
       >
-        <span className="w-12 h-12 rounded-full bg-white text-red-600 flex items-center justify-center text-[20px] group-hover:rotate-[10deg] transition shrink-0">🇮🇩</span>
+        <span className="w-12 h-12 rounded-full bg-white text-cyan-700 flex items-center justify-center text-[20px] group-hover:rotate-[10deg] transition shrink-0">⚡</span>
         <span className="pr-5 text-left leading-tight">
           <span className="block text-[13px] font-extrabold">{t.floating.promoTitle}</span>
-          <span className="block text-[11px] opacity-80 font-medium">{t.floating.promoSub}</span>
+          <span className="block text-[11px] opacity-90 font-medium">{t.floating.promoSub}</span>
         </span>
       </a>
     </>
