@@ -71,16 +71,16 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 3D Isometric Tilt Digital Cockpit */}
+        {/* 3D Isometric Tilt Digital Cockpit with Video Showcase */}
         <div className="relative group w-full perspective-[1200px] lg:pl-4">
           {/* Ambient Studio Backlight */}
           <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-sky-400/30 rounded-[36px] blur-2xl opacity-60 group-hover:opacity-90 transition duration-700 pointer-events-none" />
 
           {/* Isometric Perspective Container */}
-          <div className="relative rounded-[28px] border border-white/20 dark:border-white/15 bg-gradient-to-b from-[#161c28]/95 to-[#0b0e14]/95 p-4 sm:p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-xl text-left font-sans transition-transform duration-700 lg:group-hover:rotate-x-2 lg:group-hover:-rotate-y-2 lg:[transform:rotateY(-4deg)_rotateX(2deg)]">
+          <div className="relative rounded-[28px] border border-white/20 dark:border-white/15 bg-gradient-to-b from-[#161c28]/95 to-[#0b0e14]/95 p-3.5 sm:p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-xl text-left font-sans transition-transform duration-700 lg:group-hover:rotate-x-2 lg:group-hover:-rotate-y-2 lg:[transform:rotateY(-4deg)_rotateX(2deg)] overflow-hidden">
             
             {/* MacBook Header Bar */}
-            <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-white/10">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f56] inline-block shadow-sm" />
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm" />
@@ -88,87 +88,42 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/40 border border-white/10 text-[11px] font-mono text-gray-300">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span>ciloktech.id/telemetry</span>
+                <span>ciloktech.id/showcase</span>
               </div>
-              <div className="font-mono text-[10px] text-gray-400 font-bold">PROD-v3.0</div>
+              <div className="font-mono text-[10px] text-gray-400 font-bold">4K STUDIO REEL</div>
             </div>
 
-            {/* Dashboard Inside */}
-            <div className="space-y-3.5">
-              {/* Top Stats Cards */}
-              <div className="grid grid-cols-3 gap-2.5">
-                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/5 hover:border-cyan-500/30 transition">
-                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Performance</div>
-                  <div className="text-[18px] sm:text-[22px] font-black text-emerald-400 mt-0.5">99.8%</div>
-                  <div className="text-[9.5px] text-gray-400 mt-0.5">LCP: 0.82s (Fast)</div>
+            {/* Video Showcase Player */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/60 border border-white/10 shadow-inner group/video">
+              <video
+                src="/hero-showcase.mp4"
+                poster="/hero-showcase.jpg"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white">
+                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
+                  <span>STUDIO SHOWCASE · LIVE</span>
                 </div>
-                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/5 hover:border-cyan-500/30 transition">
-                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Conversion</div>
-                  <div className="text-[18px] sm:text-[22px] font-black text-cyan-400 mt-0.5">+42.6%</div>
-                  <div className="text-[9.5px] text-gray-400 mt-0.5">Growth Q3/Q4</div>
-                </div>
-                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/5 hover:border-cyan-500/30 transition">
-                  <div className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Security</div>
-                  <div className="text-[18px] sm:text-[22px] font-black text-white mt-0.5">Zero Fail</div>
-                  <div className="text-[9.5px] text-emerald-400 mt-0.5">PCI / OWASP Pass</div>
-                </div>
-              </div>
-
-              {/* Chart Showcase */}
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[12px] font-bold text-white">Live Traffic &amp; Revenue Index</span>
-                    <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30">REALTIME</span>
-                  </div>
-                  <span className="font-mono text-[11px] text-cyan-400 font-bold">Rp 148.500.000</span>
-                </div>
-
-                <div className="relative h-28 sm:h-32 w-full">
-                  <svg className="w-full h-full overflow-visible" viewBox="0 0 400 120" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="studioChartGrad" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" />
-                        <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
-                      </linearGradient>
-                    </defs>
-                    <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
-                    <line x1="0" y1="70" x2="400" y2="70" stroke="rgba(255,255,255,0.06)" strokeDasharray="3 3" />
-                    
-                    <path
-                      d="M 0 100 Q 60 40 120 70 T 240 30 T 340 50 T 400 15 L 400 120 L 0 120 Z"
-                      fill="url(#studioChartGrad)"
-                    />
-                    <path
-                      d="M 0 100 Q 60 40 120 70 T 240 30 T 340 50 T 400 15"
-                      fill="none"
-                      stroke="#38bdf8"
-                      strokeWidth="2.5"
-                    />
-                    <circle cx="240" cy="30" r="5" fill="#38bdf8" className="animate-ping" />
-                    <circle cx="240" cy="30" r="4" fill="#ffffff" stroke="#0284c7" strokeWidth="2" />
-                    <circle cx="400" cy="15" r="4" fill="#38bdf8" />
-                  </svg>
-                </div>
-
-                <div className="flex justify-between font-mono text-[9.5px] text-gray-400 mt-2 pt-2 border-t border-white/5">
-                  <span>08:00</span>
-                  <span>12:00</span>
-                  <span>16:00</span>
-                  <span>20:00</span>
-                  <span className="text-cyan-400 font-bold">Now (Peak)</span>
+                <div className="px-2 py-1 rounded-lg bg-cyan-500/20 backdrop-blur-md border border-cyan-400/30 text-[9.5px] font-mono font-bold text-cyan-300">
+                  FROM CONCEPT TO LAUNCH
                 </div>
               </div>
             </div>
 
             {/* Bottom Telemetry Bar */}
-            <div className="mt-3.5 pt-3.5 border-t border-white/10 flex items-center justify-between font-mono text-[10.5px] text-gray-400">
+            <div className="mt-3.5 pt-3 border-t border-white/10 flex items-center justify-between font-mono text-[10.5px] text-gray-400">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-gray-300">Cluster Jakarta-1 (Latency: 12ms)</span>
+                <span className="text-gray-300">Production Ready Ecosystem</span>
               </span>
               <span className="text-cyan-400 font-bold tracking-wider">
-                AUTO-SCALING: ACTIVE
+                MACBOOK · IPAD · IPHONE
               </span>
             </div>
           </div>
