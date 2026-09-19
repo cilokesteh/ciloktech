@@ -6,7 +6,9 @@ export default function HeroSection() {
   const { t } = useI18n();
   return (
     <section className="relative bg-[var(--background)] pt-24 pb-14 md:pt-32 md:pb-20 px-5 md:px-7 overflow-hidden border-b swiss-line transition-colors duration-200">
-      <div className="absolute inset-0 -z-10 bg-grid opacity-60" />
+      <div className="absolute inset-0 -z-10 bg-grid opacity-80" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-sky-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-0 w-80 h-80 bg-blue-600/10 dark:bg-blue-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-[1320px] mx-auto grid lg:grid-cols-[1fr_1.7fr] gap-10 lg:gap-14 items-stretch">
         <aside className="border-b lg:border-b-0 lg:border-r swiss-line pb-8 lg:pb-0 lg:pr-10 flex flex-col justify-between">
