@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-10 pb-10 border-b swiss-line">
           <div className="space-y-4">
             <button onClick={handleHomeClick} className="flex items-center gap-3 group cursor-pointer text-left font-mono">
-              <Image src="/logo.jpg" alt="Cilok Tech One-Man Studio" width={32} height={32} className="h-8 w-8 rounded-none border swiss-line object-cover" />
+              <Image src="/logo-mark-128.png" alt="Cilok Tech One-Man Studio" width={32} height={32} className="h-8 w-8 rounded-none object-contain" />
               <div className="flex items-baseline gap-1">
                 <span className="font-extrabold text-[16px] tracking-tight text-gray-900 dark:text-white">CILOKTECH</span>
                 <span className="text-[var(--accent-text)] font-bold text-sm">.ID</span>

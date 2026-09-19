@@ -62,11 +62,11 @@ export default function Navbar() {
         >
           <div className="relative">
             <Image
-              src="/logo.jpg"
+              src="/logo-mark-128.png"
               alt="Cilok Tech One-Man Studio"
               width={34}
               height={34}
-              className="h-[34px] w-[34px] rounded-none object-cover border border-black/20 dark:border-white/20 group-hover:border-[var(--accent)] transition-all"
+              className="h-[34px] w-[34px] rounded-none object-contain transition-all"
             />
             <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[var(--accent)]" />
           </div>
