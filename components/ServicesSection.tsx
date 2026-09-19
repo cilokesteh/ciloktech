@@ -44,19 +44,20 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
-              className="tech-panel p-7 md:p-9 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[280px] group"
+              className="tech-panel p-7 md:p-9 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[280px] group cursor-pointer hover:border-cyan-500/40"
             >
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-[12px] font-bold tracking-[0.1em] text-[var(--accent-text)]">
-                    0{i + 1}
+                  <span className="font-mono text-[12px] font-bold tracking-[0.1em] text-[var(--accent-text)] flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
+                    MOD 0{i + 1}
                   </span>
-                  <div className="text-gray-900 dark:text-white opacity-40 hover:opacity-100 transition">
+                  <div className="text-gray-900 dark:text-white opacity-40 group-hover:opacity-100 group-hover:text-cyan-500 transition-all duration-300 transform group-hover:scale-110">
                     {icons[i]}
                   </div>
                 </div>
 
-                <h3 className="text-[22px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white">
+                <h3 className="text-[22px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
                   {s.title}
                 </h3>
                 <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-6">
