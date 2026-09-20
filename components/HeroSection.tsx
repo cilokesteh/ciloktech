@@ -1,9 +1,23 @@
 "use client";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HeroSection() {
   const { t } = useI18n();
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      const nextMuted = !isMuted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+      if (!nextMuted) {
+        videoRef.current.play().catch(() => {});
+      }
+    }
+  };
   return (
     <section className="relative bg-[var(--background)] pt-24 pb-16 md:pt-36 md:pb-28 px-5 md:px-7 overflow-hidden transition-colors duration-200">
       {/* Studio Radial Lighting Stage */}
@@ -96,6 +110,7 @@ export default function HeroSection() {
             {/* Video Showcase Player */}
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black/60 border border-white/10 shadow-inner group/video">
               <video
+                ref={videoRef}
                 src="/hero-showcase.mp4"
                 poster="/hero-showcase.jpg"
                 autoPlay
@@ -105,6 +120,18 @@ export default function HeroSection() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              
+              {/* Audio Toggle Button */}
+              <button
+                type="button"
+                onClick={toggleAudio}
+                aria-label={isMuted ? "Aktifkan audio video showcase" : "Matikan audio video showcase"}
+                className="absolute top-3 right-3 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/70 hover:bg-black/90 backdrop-blur-md border border-white/20 text-white font-mono text-[11px] shadow-lg transition-transform active:scale-95 cursor-pointer"
+              >
+                <span>{isMuted ? "🔇" : "🔊"}</span>
+                <span className="font-bold tracking-wider">{isMuted ? "UNMUTE AUDIO" : "MUTE"}</span>
+              </button>
+
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
                 <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
