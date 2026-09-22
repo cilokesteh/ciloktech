@@ -36,39 +36,46 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        {/* Swiss Grid 3 Columns */}
-        <div className="grid md:grid-cols-3 gap-4 items-stretch max-w-6xl mx-auto">
+        {/* Aerodynamic Triad Grid */}
+        <div className="grid md:grid-cols-[1fr_1.12fr_1fr] gap-6 items-stretch max-w-[1240px] mx-auto">
           {t.pricing.plans.map((plan, idx) => {
-            const featured = idx === 2;
+            const featured = idx === 1; // Company profile is the sweet spot / featured
             return (
               <motion.div
                 key={idx}
                 data-featured={featured ? "true" : "false"}
                 initial={false}
-                className={`relative p-7 md:p-8 flex flex-col justify-between border swiss-line ${
+                className={`aero-panel p-8 md:p-9 flex flex-col justify-between ${
                   featured
-                    ? "bg-[var(--card)] border-[var(--accent)] shadow-[0_0_0_1px_var(--accent)]"
-                    : "bg-[var(--card)]"
+                    ? "border-cyan-400/60 bg-gradient-to-b from-[#162238]/95 to-[#0b101c]/98 shadow-[0_0_40px_-10px_rgba(56,189,248,0.4)] md:-translate-y-2 z-10"
+                    : ""
                 }`}
               >
-                {featured && (
-                  <div className="absolute top-0 right-0 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[10px] font-extrabold tracking-widest uppercase px-3 py-1">
-                    {t.pricing.populer}
-                  </div>
-                )}
-
                 <div>
-                  <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-gray-500 mb-2">
-                    0{idx + 1}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-[11px] uppercase tracking-wider text-gray-400">
+                      PAKET 0{idx + 1}
+                    </span>
+                    {featured && (
+                      <span className="aero-badge-skew">
+                        <span className="font-mono text-[9.5px] font-extrabold uppercase text-cyan-300">
+                          {t.pricing.populer}
+                        </span>
+                      </span>
+                    )}
                   </div>
-                  <h3 className="text-[24px] font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">
+
+                  <h3 className="text-[23px] font-extrabold tracking-tight text-gray-950 dark:text-white mb-2">
                     {plan.name}
                   </h3>
-                  <div className="mt-4 mb-6 pb-6 border-b swiss-line">
-                    <div className="text-[40px] font-extrabold tracking-[-0.05em] leading-none text-gray-900 dark:text-white">
+
+                  <div className="mt-4 mb-6 pb-6 border-b border-gray-200/60 dark:border-white/10">
+                    <div className={`text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
+                      featured ? "text-cyan-500 dark:text-cyan-300 drop-shadow-[0_0_15px_rgba(56,189,248,0.3)]" : "text-gray-950 dark:text-white"
+                    }`}>
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </div>
-                    <div className="font-mono text-[11px] text-gray-500 uppercase tracking-[0.08em] mt-2">
+                    <div className="font-mono text-[11px] text-gray-500 uppercase tracking-wider mt-2">
                       {plan.unit}
                     </div>
                   </div>
@@ -80,7 +87,7 @@ export default function PricingSection() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5 font-mono text-[12px] leading-relaxed text-gray-700 dark:text-gray-300">
-                        <span className="w-1.5 h-1.5 mt-1.5 bg-[var(--accent)] shrink-0" />
+                        <span className="text-cyan-400 font-extrabold mt-0.5 shrink-0">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -92,15 +99,17 @@ export default function PricingSection() {
                     href={PLAN_HREFS[idx]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`uiverse-button w-full py-4 text-center font-mono text-[12px] font-bold uppercase tracking-[0.08em] block transition ${
+                    className={`w-full py-4 text-center font-mono text-[12px] font-extrabold uppercase tracking-wider block transition ${
                       featured
-                        ? "bg-[var(--accent)] text-[#0e0f0d] hover:opacity-90"
-                        : "bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-[#0e0f0d]"
+                        ? "btn-blade-primary"
+                        : "btn-blade-ghost"
                     }`}
+                    style={{ justifyContent: "center" }}
                   >
-                    {plan.cta} ↗
+                    <span>{plan.cta}</span>
+                    <span>↗</span>
                   </a>
-                  <div className="font-mono text-[10px] text-center text-gray-500 mt-3">
+                  <div className="font-mono text-[10.5px] text-center text-gray-500 mt-3">
                     {featured ? t.pricing.footnotes[1] : t.pricing.footnotes[0]}
                   </div>
                 </div>

@@ -3,17 +3,17 @@ import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { useI18n } from "@/lib/i18n/context";
 
-/* Count-up hook — animasi angka dari 0 ke target pas masuk viewport */
-function useCountUp(target: number, active: boolean, duration = 1600): number {
-  const [value, setValue] = useState(0);
+/* Count-up hook — animasi angka dari target default langsung render (SSR-safe), lalu animate jika inView */
+function useCountUp(target: number, active: boolean, duration = 1400): number {
+  const [value, setValue] = useState(target); // Default target agar tidak 0 di SSR / snapshot
   const raf = useRef<number | null>(null);
 
   useEffect(() => {
     if (!active) return;
+    setValue(0);
     const start = performance.now();
     const tick = (now: number) => {
       const p = Math.min((now - start) / duration, 1);
-      // easeOutExpo biar cepet di awal, smooth di akhir
       const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
       setValue(Math.round(target * eased));
       if (p < 1) raf.current = requestAnimationFrame(tick);
@@ -52,8 +52,8 @@ export default function StatsSection() {
       <div className="max-w-[1320px] mx-auto grid grid-cols-2 md:grid-cols-4 border-l swiss-line">
         <div className="border-r border-b md:border-b-0 swiss-line py-5 px-4"><StatItem target={50} suffix="+" label={t.stats.proyek} /></div>
         <div className="border-r border-b md:border-b-0 swiss-line py-5 px-4"><StatItem target={98} suffix="/100" label={t.stats.lighthouse} /></div>
-        <div className="border-r swiss-line py-5 px-4"><StatItem target={3} suffix=" hari" label={t.stats.pengerjaan} /></div>
-        <div className="border-r swiss-line py-5 px-4"><StatItem target={3} suffix="+ thn" label={t.stats.pengalaman} /></div>
+        <div className="border-r swiss-line py-5 px-4"><StatItem target={3} suffix=" Hari" label={t.stats.pengerjaan} /></div>
+        <div className="border-r swiss-line py-5 px-4"><StatItem target={100} suffix="%" label={t.stats.pengalaman || "Hak Milik Kode"} /></div>
       </div>
     </section>
   );

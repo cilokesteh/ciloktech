@@ -24,55 +24,23 @@ export default function ContactSection() {
           </div>
         </Reveal>
 
-        <RevealGrid className="grid md:grid-cols-2 lg:grid-cols-4 border-l swiss-line">
+        <RevealGrid className="grid md:grid-cols-3 gap-6 items-stretch">
           <a
             href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20website"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="CS 24 Jam — Chat sekarang"
-            className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
+            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Paling Cepat Dibalas</div>
-              <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">CS 24 Jam</div>
-              <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">Siap bantu kapan pun, respons cepat</div>
+              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">RESPON CEPAT 24 JAM</div>
+              <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">CS 24 Jam</h3>
+              <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                Asisten bot resmi yang aktif 24 jam nonstop untuk cek estimasi biaya, fitur paket, dan briefing awal.
+              </p>
             </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
-              <span>Buka Chat</span>
-              <span className="text-sm">↗</span>
-            </div>
-          </a>
-
-          <a
-            href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp — Konsultasi Proyek"
-            className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
-          >
-            <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Chat Langsung</div>
-              <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">WhatsApp</div>
-              <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">Konsultasi cepat via WhatsApp resmi</div>
-            </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
-              <span>Buka WhatsApp</span>
-              <span className="text-sm">↗</span>
-            </div>
-          </a>
-
-          <a
-            href="mailto:hi@ciloktech.my.id?subject=Konsultasi%20Website%20CilokTech"
-            aria-label={`${t.contact.emailTitle} — hi@ciloktech.my.id`}
-            className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
-          >
-            <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Untuk Dokumen &amp; Penawaran</div>
-              <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">{t.contact.emailTitle}</div>
-              <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">{t.contact.emailMeta}</div>
-            </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
-              <span>{t.contact.emailCta}</span>
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
+              <span>Buka Bot CS</span>
               <span className="text-sm">↗</span>
             </div>
           </a>
@@ -82,35 +50,58 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Builder — Bicara langsung dengan builder"
-            className="p-8 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[260px] group"
+            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group border-cyan-400/40"
           >
             <div>
-              <div className="font-mono text-[10px] text-gray-500 uppercase tracking-[0.1em] mb-4">Tanya Teknis Langsung</div>
-              <div className="text-[20px] font-extrabold text-gray-900 dark:text-white mb-2">Builder</div>
-              <div className="font-mono text-[12px] text-gray-600 dark:text-gray-400">Bicara langsung dengan builder tanpa perantara</div>
+              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">KONSULTASI LANGSUNG</div>
+              <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">Telegram Builder</h3>
+              <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                Bicara langsung secara teknis dengan senior developer tanpa perantara sales ataupun project manager.
+              </p>
             </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[var(--accent-text)] flex items-center justify-between">
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
               <span>Hubungi Builder</span>
+              <span className="text-sm">↗</span>
+            </div>
+          </a>
+
+          <a
+            href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp — Konsultasi Proyek"
+            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
+          >
+            <div>
+              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">WHATSAPP RESMI</div>
+              <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">WhatsApp Resmi</h3>
+              <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                Jalur chat WhatsApp untuk kirim dokumen penawaran, tanya jawab cepat, dan serah terima proyek resmi.
+              </p>
+            </div>
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
+              <span>Buka WhatsApp</span>
               <span className="text-sm">↗</span>
             </div>
           </a>
         </RevealGrid>
 
         <Reveal delay={0.2}>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis"
               target="_blank"
               rel="noopener noreferrer"
-              className="uiverse-button px-8 py-4 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[12px] font-bold uppercase tracking-[0.08em] flex items-center justify-center gap-2"
+              className="btn-blade-primary"
             >
-              {t.contact.ctaPrimary} ↗
+              <span>{t.contact.ctaPrimary}</span>
+              <span>↗</span>
             </a>
             <a
               href="#harga"
-              className="px-8 py-4 border swiss-line bg-[var(--card)] text-gray-900 dark:text-white font-mono text-[12px] font-bold uppercase tracking-[0.08em] hover:border-[var(--accent)] text-center flex items-center justify-center transition"
+              className="btn-blade-ghost text-center flex items-center justify-center"
             >
-              {t.contact.ctaSecondary}
+              <span>{t.contact.ctaSecondary}</span>
             </a>
           </div>
           <div className="mt-4 font-mono text-[11px] text-gray-500">{t.contact.footerNote}</div>

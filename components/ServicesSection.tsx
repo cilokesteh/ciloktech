@@ -16,9 +16,7 @@ export default function ServicesSection() {
     <section className="py-14 md:py-20 bg-[var(--background)] px-5 md:px-7 border-b swiss-line transition-colors duration-200 relative overflow-hidden" id="layanan">
       <div className="max-w-[1320px] mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={false}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="grid md:grid-cols-[1fr_2fr] gap-6 items-end pb-8 mb-10 border-b swiss-line"
         >
@@ -35,46 +33,51 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Swiss Modular 2x2 grid */}
-        <div className="grid md:grid-cols-2 border-t border-l swiss-line">
-          {t.services.items.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.1 }}
-              className="tech-panel p-7 md:p-9 border-r border-b swiss-line bg-[var(--card)] hover:bg-[var(--subtle)] transition flex flex-col justify-between min-h-[280px] group cursor-pointer hover:border-cyan-500/40"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-mono text-[12px] font-bold tracking-[0.1em] text-[var(--accent-text)] flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
-                    MOD 0{i + 1}
-                  </span>
-                  <div className="text-gray-900 dark:text-white opacity-40 group-hover:opacity-100 group-hover:text-cyan-500 transition-all duration-300 transform group-hover:scale-110">
-                    {icons[i]}
+        {/* Aerodynamic Asymmetric Bento Grid */}
+        <div className="grid md:grid-cols-[1.3fr_1fr] gap-6 items-stretch">
+          {t.services.items.map((s, i) => {
+            const isWide = i === 0 || i === 3;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+                className={`aero-panel p-7 md:p-9 flex flex-col justify-between min-h-[290px] group cursor-pointer ${
+                  isWide ? "md:col-span-1" : "md:col-span-1"
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-cyan-500 dark:text-cyan-300 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                      MOD_0{i + 1}
+                    </span>
+                    <div className="text-gray-900 dark:text-white opacity-40 group-hover:opacity-100 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:scale-110">
+                      {icons[i]}
+                    </div>
                   </div>
+
+                  <h3 className="text-[23px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-6">
+                    {s.desc}
+                  </p>
                 </div>
 
-                <h3 className="text-[22px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
-                  {s.title}
-                </h3>
-                <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-6">
-                  {s.desc}
-                </p>
-              </div>
-
-              <ul className="space-y-2 pt-4 border-t swiss-line">
-                {s.points.map((p, j) => (
-                  <li key={j} className="flex items-center gap-2.5 font-mono text-[11px] text-gray-700 dark:text-gray-300">
-                    <span className="w-1.5 h-1.5 bg-[var(--accent)]" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                <ul className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/60 dark:border-white/10">
+                  {s.points.map((p, j) => (
+                    <li key={j} className="inline-flex items-center gap-1.5 font-mono text-[10.5px] px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded text-gray-700 dark:text-gray-300">
+                      <span className="w-1.5 h-1.5 bg-cyan-400" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

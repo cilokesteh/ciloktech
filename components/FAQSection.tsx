@@ -50,14 +50,14 @@ export default function FAQSection() {
           </div>
         </Reveal>
 
-        <RevealGrid className="max-w-4xl space-y-2">
+        <RevealGrid className="max-w-4xl space-y-3">
           {faqs.map((f, i) => {
             const panelId = `faq-panel-${i}`;
             const btnId = `faq-trigger-${i}`;
             return (
               <div
                 key={i}
-                className={`border swiss-line bg-[var(--card)] transition ${open === i ? "border-[var(--accent)]" : ""}`}
+                className={`aero-card transition ${open === i ? "border-cyan-400/60 shadow-[0_0_20px_-5px_rgba(56,189,248,0.25)]" : ""}`}
               >
                 <button
                   id={btnId}
@@ -66,10 +66,10 @@ export default function FAQSection() {
                   aria-expanded={open === i}
                   aria-controls={panelId}
                 >
-                  <span className="font-mono text-[11px] text-gray-500 mr-4">0{i + 1}</span>
-                  <span className="text-[15px] md:text-[16px] font-extrabold text-gray-900 dark:text-white flex-1 pr-4">{f.q}</span>
+                  <span className="font-mono text-[11px] text-cyan-500 dark:text-cyan-400 font-bold mr-4">0{i + 1}</span>
+                  <span className="text-[15px] md:text-[16px] font-extrabold text-gray-950 dark:text-white flex-1 pr-4">{f.q}</span>
                   <span
-                    className={`font-mono text-sm px-2 py-0.5 border swiss-line transition ${open === i ? "bg-[var(--accent)] text-[#0e0f0d] border-[var(--accent)]" : "text-gray-500"}`}
+                    className={`font-mono text-sm px-2.5 py-1 rounded-sm transition ${open === i ? "bg-cyan-400 text-[#05070a] font-extrabold shadow-[0_0_10px_#38bdf8]" : "text-gray-400 bg-white/5 border border-white/10"}`}
                   >
                     {open === i ? "—" : "+"}
                   </span>
@@ -79,7 +79,7 @@ export default function FAQSection() {
                     id={panelId}
                     role="region"
                     aria-labelledby={btnId}
-                    className="px-6 pb-6 pt-2 font-mono text-[13px] leading-relaxed text-gray-600 dark:text-gray-400 border-t swiss-line"
+                    className="px-6 pb-6 pt-2 font-mono text-[13px] leading-relaxed text-gray-600 dark:text-gray-400 border-t border-gray-200/60 dark:border-white/10"
                   >
                     {f.a}
                   </div>

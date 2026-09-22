@@ -122,9 +122,10 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="uiverse-button px-5 py-3 bg-[var(--accent)] text-[#0e0f0d] font-mono text-[11px] font-bold uppercase tracking-[0.06em] border border-[var(--accent)] flex items-center gap-2"
+              className="btn-blade-primary text-[10.5px] py-2.5 px-5"
             >
-              {t.common.konsultasiGratis} <span className="text-[11px] opacity-80">↗</span>
+              <span>{t.common.konsultasiGratis}</span>
+              <span className="text-[11px] opacity-80">↗</span>
             </a>
           </div>
         </div>
