@@ -69,8 +69,8 @@ export default function PricingSection() {
                     {plan.name}
                   </h3>
 
-                  <div className="mt-4 mb-6 pb-6 border-b border-gray-200/60 dark:border-white/10">
-                    <div className={`text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
+                  <div className="mt-4 mb-6 p-5 neu-well rounded-2xl text-center">
+                    <div className={`text-[38px] md:text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
                       featured ? "text-cyan-500 dark:text-cyan-300 drop-shadow-[0_0_15px_rgba(56,189,248,0.3)]" : "text-gray-950 dark:text-white"
                     }`}>
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
@@ -87,7 +87,7 @@ export default function PricingSection() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5 font-mono text-[12px] leading-relaxed text-gray-700 dark:text-gray-300">
-                        <span className="text-cyan-400 font-extrabold mt-0.5 shrink-0">✓</span>
+                        <span className="neu-socket w-4 h-4 rounded-md text-[10px] text-cyan-400 font-extrabold shrink-0 mt-0.5">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -99,10 +99,10 @@ export default function PricingSection() {
                     href={PLAN_HREFS[idx]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full py-4 text-center font-mono text-[12px] font-extrabold uppercase tracking-wider block transition ${
+                    className={`w-full py-4 text-center font-mono text-[12px] font-extrabold uppercase tracking-wider block transition rounded-xl ${
                       featured
-                        ? "btn-blade-primary"
-                        : "btn-blade-ghost"
+                        ? "neu-btn neu-btn-primary"
+                        : "neu-btn"
                     }`}
                     style={{ justifyContent: "center" }}
                   >

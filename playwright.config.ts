@@ -11,6 +11,10 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:4318",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    launchOptions: {
+      executablePath: process.env.PLAYWRIGHT_CHROME_PATH || "/usr/local/bin/google-chrome",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    },
   },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },

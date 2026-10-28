@@ -60,13 +60,13 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* Blade Action Buttons */}
+          {/* Neumorphic Action Buttons */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <a
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-blade-primary"
+              className="neu-btn neu-btn-primary font-mono text-[12px] py-3.5 px-6 rounded-xl"
             >
               <span>{t.hero.ctaTelegram}</span>
               <span className="text-[15px]">↗</span>
@@ -75,13 +75,13 @@ export default function HeroSection() {
             <div className="flex gap-3">
               <a
                 href="/demo"
-                className="btn-blade-ghost"
+                className="neu-btn font-mono text-[12px] py-3.5 px-5 rounded-xl"
               >
                 🎮 Demo Live
               </a>
               <a
                 href="#portofolio"
-                className="btn-blade-ghost"
+                className="neu-btn font-mono text-[12px] py-3.5 px-5 rounded-xl"
               >
                 Karya →
               </a>
@@ -89,31 +89,31 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* 3D Chamfered Cockpit Showcase */}
+        {/* 3D Neumorphic Cockpit Showcase */}
         <div className="relative group w-full perspective-[1200px] lg:pl-4">
-          <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-sky-400/30 rounded-[36px] blur-2xl opacity-60 group-hover:opacity-90 transition duration-700 pointer-events-none" />
+          <div className="absolute -inset-2 bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-sky-400/20 rounded-[36px] blur-2xl opacity-60 group-hover:opacity-90 transition duration-700 pointer-events-none" />
 
-          {/* Chamfered Hull Frame */}
-          <div className="relative [clip-path:polygon(0_0,calc(100%-24px)_0,100%_24px,100%_100%,24px_100%,0_calc(100%-24px))] border border-cyan-500/30 dark:border-cyan-400/25 bg-gradient-to-b from-[#131a29]/95 to-[#080c14]/98 p-4 sm:p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl text-left font-sans transition-transform duration-700 lg:group-hover:rotate-x-2 lg:group-hover:-rotate-y-2 lg:[transform:rotateY(-4deg)_rotateX(2deg)]">
+          {/* Neumorphic Console Chassis */}
+          <div className="neu-console border border-[var(--neu-border-bevel)] text-left font-sans transition-transform duration-700 lg:group-hover:rotate-x-2 lg:group-hover:-rotate-y-2 lg:[transform:rotateY(-4deg)_rotateX(2deg)]">
             
             {/* Top Cockpit Header Ribbon */}
             <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-cyan-500/20">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+                <div className="neu-socket w-5 h-5 rounded-md p-1"><span className="w-2 h-2 rounded-full bg-[#ff5f56]" /></div>
+                <div className="neu-socket w-5 h-5 rounded-md p-1"><span className="w-2 h-2 rounded-full bg-[#ffbd2e]" /></div>
+                <div className="neu-socket w-5 h-5 rounded-md p-1"><span className="w-2 h-2 rounded-full bg-[#27c93f]" /></div>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-sm bg-black/60 border border-cyan-500/30 text-[10.5px] font-mono text-cyan-300">
+              <div className="flex items-center gap-2 px-3 py-1 rounded-xl bg-black/50 border border-cyan-500/25 text-[10.5px] font-mono text-cyan-300 shadow-inner">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span>ciloktech.id/aero-cockpit</span>
+                <span>ciloktech.id/neu-cockpit</span>
               </div>
               <div className="font-mono text-[10px] text-cyan-400 font-bold tracking-widest">
-                AERO COCKPIT v3
+                NEU COCKPIT v4
               </div>
             </div>
 
-            {/* Video Showcase Player */}
-            <div className="relative w-full aspect-video [clip-path:polygon(0_0,calc(100%-14px)_0,100%_14px,100%_100%,0_100%)] overflow-hidden bg-black/80 border border-cyan-500/20 shadow-inner group/video">
+            {/* Video Showcase Player in Sunken Well */}
+            <div className="relative w-full aspect-video rounded-2xl overflow-hidden neu-well border border-black/50 shadow-inner group/video">
               <video
                 ref={videoRef}
                 src="/hero-showcase.mp4"

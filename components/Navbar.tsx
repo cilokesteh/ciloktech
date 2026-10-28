@@ -60,21 +60,20 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
         >
-          <div className="relative">
+          <div className="relative neu-socket w-10 h-10 rounded-xl p-1 shrink-0">
             <Image
               src="/logo-mark-128.png"
               alt="Cilok Tech One-Man Studio"
-              width={34}
-              height={34}
-              className="h-[34px] w-[34px] rounded-none object-contain transition-all"
+              width={32}
+              height={32}
+              className="h-[32px] w-[32px] rounded-lg object-contain transition-all drop-shadow-[0_0_6px_rgba(0,240,255,0.3)]"
             />
-            <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[var(--accent)]" />
           </div>
           <div className="flex flex-col items-start leading-none font-mono">
             <div className="flex items-baseline gap-[1px]">
               <span className="font-extrabold text-[17px] tracking-[-0.04em] text-gray-900 dark:text-white">CILOK</span>
               <span className="font-extrabold text-[17px] tracking-[-0.04em] text-[var(--accent-text)]">TECH</span>
-              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-bold tracking-[0.14em] uppercase bg-black dark:bg-white text-white dark:text-black px-[5px] py-[2px] leading-none">.ID</span>
+              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-bold tracking-[0.14em] uppercase bg-black dark:bg-white text-white dark:text-black px-[5px] py-[2px] leading-none rounded-sm">.ID</span>
             </div>
             <div className="mt-[3px]">
               <span className="text-[9px] font-semibold tracking-[0.14em] uppercase text-gray-500 dark:text-gray-400">ONE-MAN STUDIO</span>
@@ -83,17 +82,17 @@ export default function Navbar() {
         </Link>
 
         {/* DESKTOP */}
-        <div className="hidden lg:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((l) => {
             if (l.type === "page") {
               return (
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3 py-2 transition ${
+                  className={`font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 rounded-xl transition ${
                     l.highlight
-                      ? "text-[var(--accent-text)]"
-                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                      ? "text-[var(--accent-text)] bg-[var(--neu-base)] shadow-[var(--neu-inset-sm)]"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-[var(--neu-base)] hover:shadow-[var(--neu-inset-sm)]"
                   }`}
                 >
                   {l.highlight ? `💰 ${l.label}` : l.label}
@@ -104,10 +103,10 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3 py-2 transition ${
+                className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 rounded-xl transition ${
                   active && l.href === `/#${active}`
-                    ? "text-[var(--accent-text)]"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                    ? "text-[var(--accent-text)] bg-[var(--neu-base)] shadow-[var(--neu-inset-sm)]"
+                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-[var(--neu-base)] hover:shadow-[var(--neu-inset-sm)]"
                 }`}
               >
                 {l.label}
@@ -122,7 +121,7 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-blade-primary text-[10.5px] py-2.5 px-5"
+              className="neu-btn neu-btn-primary font-mono text-[11px] py-2.5 px-5 rounded-xl"
             >
               <span>{t.common.konsultasiGratis}</span>
               <span className="text-[11px] opacity-80">↗</span>

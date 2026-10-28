@@ -48,13 +48,13 @@ export default function FloatingCTA() {
         href={t.floating.promoLink}
         target="_blank"
         rel="noopener noreferrer"
-        className={`fixed bottom-5 right-4 left-4 sm:left-auto sm:right-6 z-[60] group flex items-center gap-3 bg-gradient-to-r from-sky-600 to-blue-700 text-white rounded-2xl sm:rounded-full border border-white/20 shadow-[0_12px_32px_rgba(14,165,233,0.35)] hover:from-sky-500 hover:to-blue-600 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transition-all duration-300 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+        className={`fixed bottom-5 right-4 left-4 sm:left-auto sm:right-6 z-[60] group flex items-center gap-3 bg-[var(--neu-surface)] text-[var(--foreground)] rounded-2xl sm:rounded-full border border-[var(--neu-border-bevel)] shadow-[var(--neu-convex-lg)] hover:border-cyan-400/40 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transition-all duration-300 p-1.5 sm:p-2 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={t.floating.promoTitle}
       >
-        <span className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-full bg-white text-sky-700 flex items-center justify-center text-[18px] sm:text-[20px] group-hover:rotate-[10deg] transition shrink-0 ml-1 sm:ml-0 shadow-sm">⚡</span>
-        <span className="pr-4 sm:pr-5 text-left leading-tight py-2 sm:py-0 flex-1 sm:flex-initial">
-          <span className="block text-[12.5px] sm:text-[13px] font-extrabold">{t.floating.promoTitle}</span>
-          <span className="block text-[10.5px] sm:text-[11px] opacity-90 font-medium">{t.floating.promoSub}</span>
+        <span className="neu-socket w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-full text-cyan-400 flex items-center justify-center text-[18px] shrink-0">⚡</span>
+        <span className="pr-4 sm:pr-5 text-left leading-tight py-1 sm:py-0 flex-1 sm:flex-initial">
+          <span className="block text-[12.5px] sm:text-[13px] font-extrabold text-[var(--foreground)] group-hover:text-cyan-400 transition-colors">{t.floating.promoTitle}</span>
+          <span className="block text-[10.5px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium">{t.floating.promoSub}</span>
         </span>
       </a>
     </>

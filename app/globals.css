@@ -3,37 +3,73 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f4f6f9;
+  --background: #edf2f7;
   --foreground: #0f172a;
-  --card: #ffffff;
+  --card: #f4f7fb;
   --card-foreground: #0f172a;
   --muted: #e2e8f0;
   --muted-foreground: #475569;
   --border: #cbd5e1;
   --border-strong: #0f172a;
   --subtle: #f8fafc;
-  --section-alt: #edf2f7;
-  --nav-bg: rgba(244,246,249,0.85);
+  --section-alt: #e8eef6;
+  --nav-bg: rgba(237, 242, 247, 0.88);
   --accent: #2a93e0;
   --accent-ink: #ffffff;
   --accent-text: #026aa2;
+
+  /* Neumorphic Tokens (Light Mode) */
+  --neu-base: #edf2f7;
+  --neu-surface: #f4f7fb;
+  --neu-surface-raised: #ffffff;
+  --neu-dark-shadow: #c8d1dc;
+  --neu-light-shadow: #ffffff;
+  --neu-convex: 10px 10px 22px var(--neu-dark-shadow), -10px -10px 22px var(--neu-light-shadow);
+  --neu-convex-sm: 5px 5px 12px var(--neu-dark-shadow), -5px -5px 12px var(--neu-light-shadow);
+  --neu-convex-lg: 16px 16px 36px var(--neu-dark-shadow), -16px -16px 36px var(--neu-light-shadow);
+  --neu-inset: inset 4px 4px 10px var(--neu-dark-shadow), inset -4px -4px 10px var(--neu-light-shadow);
+  --neu-inset-sm: inset 3px 3px 7px var(--neu-dark-shadow), inset -3px -3px 7px var(--neu-light-shadow);
+  --neu-inset-deep: inset 7px 7px 16px var(--neu-dark-shadow), inset -7px -7px 16px var(--neu-light-shadow);
+  --neu-border: 1px solid rgba(255, 255, 255, 0.6);
+  --neu-border-bevel: 1px solid rgba(255, 255, 255, 0.8);
+  --cyan-core: #0284c7;
+  --cyan-bright: #38bdf8;
+  --cyan-glow: rgba(2, 132, 199, 0.25);
 }
 
 .dark {
-  --background: #07090e;
-  --foreground: #f1f5f9;
-  --card: #0d1117;
-  --card-foreground: #f1f5f9;
-  --muted: #1e293b;
+  --background: #12151d;
+  --foreground: #f8fafc;
+  --card: #161a24;
+  --card-foreground: #f8fafc;
+  --muted: #1e2433;
   --muted-foreground: #94a3b8;
-  --border: #334155;
+  --border: #242c3d;
   --border-strong: #f8fafc;
-  --subtle: #0b0e14;
-  --section-alt: #0a0d13;
-  --nav-bg: rgba(7,9,14,0.85);
+  --subtle: #0e1118;
+  --section-alt: #10131a;
+  --nav-bg: rgba(18, 21, 29, 0.88);
   --accent: #38bdf8;
-  --accent-ink: #07090e;
+  --accent-ink: #0a0d14;
   --accent-text: #38bdf8;
+
+  /* Neumorphic Tokens (Dark Mode) */
+  --neu-base: #12151d;
+  --neu-surface: #161a24;
+  --neu-surface-raised: #1c2230;
+  --neu-dark-shadow: #080a0f;
+  --neu-light-shadow: #1e2433;
+  --neu-convex: 10px 10px 24px var(--neu-dark-shadow), -10px -10px 24px var(--neu-light-shadow);
+  --neu-convex-sm: 6px 6px 14px var(--neu-dark-shadow), -6px -6px 14px var(--neu-light-shadow);
+  --neu-convex-lg: 16px 16px 36px var(--neu-dark-shadow), -16px -16px 36px var(--neu-light-shadow);
+  --neu-inset: inset 5px 5px 12px var(--neu-dark-shadow), inset -5px -5px 12px var(--neu-light-shadow);
+  --neu-inset-sm: inset 3px 3px 8px var(--neu-dark-shadow), inset -3px -3px 8px var(--neu-light-shadow);
+  --neu-inset-deep: inset 8px 8px 18px var(--neu-dark-shadow), inset -8px -8px 18px var(--neu-light-shadow);
+  --neu-border: 1px solid rgba(255, 255, 255, 0.05);
+  --neu-border-bevel: 1px solid rgba(255, 255, 255, 0.08);
+  --cyan-core: #00f0ff;
+  --cyan-bright: #38bdf8;
+  --cyan-glow: rgba(0, 240, 255, 0.35);
 }
 
 @theme inline {
@@ -526,4 +562,135 @@ a.uiverse-card {
     transform: none !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CYBER NEUMORPHISM DESIGN SYSTEM (2026-10-28)
+   Tactile Dual-Shadow Surfaces, Bevels & Recessed Wells
+   ═══════════════════════════════════════════════════════════ */
+
+.neu-card {
+  background: var(--neu-surface);
+  border-radius: 20px;
+  box-shadow: var(--neu-convex);
+  border: var(--neu-border);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+
+.neu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 12px 12px 28px var(--neu-dark-shadow), -12px -12px 28px var(--neu-light-shadow);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.neu-well {
+  background: var(--neu-base);
+  border-radius: 16px;
+  box-shadow: var(--neu-inset);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.neu-btn {
+  background: var(--neu-surface);
+  color: var(--foreground);
+  border: var(--neu-border-bevel);
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--neu-convex-sm);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.neu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 18px var(--neu-dark-shadow), -8px -8px 18px var(--neu-light-shadow);
+  color: var(--accent);
+}
+
+.neu-btn:active, .neu-btn.pressed {
+  transform: translateY(1px);
+  box-shadow: var(--neu-inset-sm);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.neu-btn-primary {
+  background: linear-gradient(145deg, #182230, #111a26);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  color: var(--cyan-core) !important;
+  box-shadow: 
+    8px 8px 20px var(--neu-dark-shadow), 
+    -8px -8px 20px var(--neu-light-shadow),
+    0 0 16px var(--cyan-glow);
+}
+
+:root:not(.dark) .neu-btn-primary {
+  background: linear-gradient(145deg, #0284c7, #0369a1);
+  border-color: rgba(2, 132, 199, 0.4);
+  color: #ffffff !important;
+  box-shadow: 
+    6px 6px 16px var(--neu-dark-shadow), 
+    -6px -6px 16px var(--neu-light-shadow),
+    0 0 14px rgba(2, 132, 199, 0.3);
+}
+
+.neu-btn-primary:hover {
+  box-shadow: 
+    10px 10px 24px var(--neu-dark-shadow), 
+    -10px -10px 24px var(--neu-light-shadow),
+    0 0 28px rgba(0, 240, 255, 0.5);
+  color: #ffffff !important;
+}
+
+.neu-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: var(--neu-surface);
+  box-shadow: var(--neu-convex-sm);
+  border: var(--neu-border);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent);
+}
+
+.neu-socket {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--neu-base);
+  box-shadow: var(--neu-inset-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.neu-console {
+  background: var(--neu-surface);
+  border-radius: 28px;
+  box-shadow: var(--neu-convex-lg);
+  border: var(--neu-border-bevel);
+  padding: 16px;
+  position: relative;
+}
+
+/* Elevate aero-panel and aero-card with neumorphic dual-shadow tactile finish */
+.aero-panel, .aero-card {
+  box-shadow: var(--neu-convex);
+  border: var(--neu-border);
+}
+
+.aero-panel:hover, .aero-card:hover {
+  box-shadow: 12px 12px 32px var(--neu-dark-shadow), -12px -12px 32px var(--neu-light-shadow);
+}
+
 

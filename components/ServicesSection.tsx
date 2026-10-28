@@ -54,7 +54,7 @@ export default function ServicesSection() {
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
                       MOD_0{i + 1}
                     </span>
-                    <div className="text-gray-900 dark:text-white opacity-40 group-hover:opacity-100 group-hover:text-cyan-400 transition-all duration-300 transform group-hover:scale-110">
+                    <div className="neu-socket w-11 h-11 rounded-xl text-gray-900 dark:text-white group-hover:text-cyan-400 transition-all duration-300 transform group-hover:scale-105">
                       {icons[i]}
                     </div>
                   </div>
