@@ -121,7 +121,7 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="neu-btn neu-btn-primary font-mono text-[11px] py-2.5 px-5 rounded-xl"
+              className="btn-blade-primary !px-5 !py-2.5"
             >
               <span>{t.common.konsultasiGratis}</span>
               <span className="text-[11px] opacity-80">↗</span>

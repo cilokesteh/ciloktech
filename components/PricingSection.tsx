@@ -27,7 +27,7 @@ export default function PricingSection() {
           <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-4 bg-[var(--card)]">
             {t.pricing.label}
           </div>
-          <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[0.92] text-gray-900 dark:text-white">
+          <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-900 dark:text-white">
             {t.pricing.headline1} <br />
             <span className="text-gray-500">{t.pricing.headline2}</span>
           </h2>
@@ -47,7 +47,7 @@ export default function PricingSection() {
                 initial={false}
                 className={`aero-panel p-8 md:p-9 flex flex-col justify-between ${
                   featured
-                    ? "border-cyan-400/60 bg-gradient-to-b from-[#162238]/95 to-[#0b101c]/98 shadow-[0_0_40px_-10px_rgba(56,189,248,0.4)] md:-translate-y-2 z-10"
+                    ? "border-[var(--accent)] bg-[var(--section-alt)] shadow-[0_0_40px_-12px_rgba(56,189,248,0.45)] md:-translate-y-2 z-10"
                     : ""
                 }`}
               >
@@ -58,7 +58,7 @@ export default function PricingSection() {
                     </span>
                     {featured && (
                       <span className="aero-badge-skew">
-                        <span className="font-mono text-[9.5px] font-extrabold uppercase text-cyan-300">
+                        <span className="font-mono text-[9.5px] font-extrabold uppercase text-[var(--accent-text)]">
                           {t.pricing.populer}
                         </span>
                       </span>
@@ -71,7 +71,7 @@ export default function PricingSection() {
 
                   <div className="mt-4 mb-6 p-5 neu-well rounded-2xl text-center">
                     <div className={`text-[38px] md:text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
-                      featured ? "text-cyan-500 dark:text-cyan-300 drop-shadow-[0_0_15px_rgba(56,189,248,0.3)]" : "text-gray-950 dark:text-white"
+                      featured ? "text-[var(--accent-text)]" : "text-gray-950 dark:text-white"
                     }`}>
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </div>
@@ -87,7 +87,7 @@ export default function PricingSection() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5 font-mono text-[12px] leading-relaxed text-gray-700 dark:text-gray-300">
-                        <span className="neu-socket w-4 h-4 rounded-md text-[10px] text-cyan-400 font-extrabold shrink-0 mt-0.5">✓</span>
+                        <span className="neu-socket w-4 h-4 rounded-md text-[10px] text-[var(--accent-text)] font-extrabold shrink-0 mt-0.5">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -99,12 +99,11 @@ export default function PricingSection() {
                     href={PLAN_HREFS[idx]}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-full py-4 text-center font-mono text-[12px] font-extrabold uppercase tracking-wider block transition rounded-xl ${
+                    className={`w-full justify-center ${
                       featured
-                        ? "neu-btn neu-btn-primary"
-                        : "neu-btn"
+                        ? "btn-blade-primary"
+                        : "btn-blade-ghost"
                     }`}
-                    style={{ justifyContent: "center" }}
                   >
                     <span>{plan.cta}</span>
                     <span>↗</span>

@@ -51,7 +51,7 @@ export default function Footer() {
             </nav>
           </div>
           <div>
-            <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-cyan-400 mb-4">{t.footer.contact}</div>
+            <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--accent-text)] mb-4">{t.footer.contact}</div>
             <div className="space-y-2.5 font-mono text-[12px] text-gray-600 dark:text-gray-400">
               <div><a href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 text-gray-900 dark:text-white">WhatsApp ↗</a></div>
               <div><a href="https://t.me/ciloktech" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 text-gray-900 dark:text-white">Telegram Builder ↗</a></div>

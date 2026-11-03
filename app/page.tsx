@@ -9,9 +9,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
-import CursorGlow from "@/components/CursorGlow";
 import ScrollProgress from "@/components/ScrollProgress";
-import SpotlightVars from "@/components/SpotlightVars";
 import Link from "next/link";
 import { posts } from "./blog/data";
 import { useI18n } from "@/lib/i18n/context";
@@ -23,9 +21,6 @@ export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <CursorGlow />
-      <SpotlightVars />
-      <div className="grain-overlay" aria-hidden="true" />
       <Navbar />
       <main id="main-content" className="pt-[72px] bg-[var(--background)] transition-colors duration-200">
         <HeroSection />
@@ -94,7 +89,7 @@ export default function Home() {
           <div className="max-w-[1320px] mx-auto p-7 md:p-9 aero-card flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <div className="aero-badge-skew mb-3">
-                <span className="font-mono text-[10px] font-extrabold tracking-widest uppercase text-cyan-300">
+                <span className="font-mono text-[10px] font-extrabold tracking-widest uppercase text-[var(--accent-text)]">
                   COBA SANDBOX LIVE INTERAKTIF
                 </span>
               </div>
@@ -142,11 +137,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b swiss-line">
               <div>
                 <div className="aero-badge-skew mb-3">
-                  <span className="font-mono text-[10.5px] font-extrabold tracking-widest uppercase text-cyan-300">
+                  <span className="font-mono text-[10.5px] font-extrabold tracking-widest uppercase text-[var(--accent-text)]">
                     [05] ARTIKEL &amp; CATATAN TEKNIS
                   </span>
                 </div>
-                <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[0.92] text-gray-950 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
+                <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-950 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
               </div>
               <Link href="/blog" className="btn-blade-ghost">
                 <span>{t.homeExtra.blogViewAll}</span>
@@ -164,7 +159,7 @@ export default function Home() {
                     <div className="font-extrabold text-[18px] leading-snug text-gray-950 dark:text-white group-hover:text-cyan-500 transition line-clamp-2">{post.title}</div>
                     <div className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 mt-3 line-clamp-2 leading-relaxed">{post.description}</div>
                   </div>
-                  <div className="pt-4 mt-6 border-t border-gray-200/60 dark:border-white/10 font-mono text-[10.5px] text-cyan-400 font-bold uppercase tracking-wider flex items-center justify-between">
+                  <div className="pt-4 mt-6 border-t border-gray-200/60 dark:border-white/10 font-mono text-[10.5px] text-[var(--accent-text)] font-bold uppercase tracking-wider flex items-center justify-between">
                     <span>Baca Catatan</span>
                     <span>↗</span>
                   </div>

@@ -33,13 +33,13 @@ export default function ContactSection() {
             className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">RESPON CEPAT 24 JAM</div>
+              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">RESPON CEPAT 24 JAM</div>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">CS 24 Jam</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Asisten bot resmi yang aktif 24 jam nonstop untuk cek estimasi biaya, fitur paket, dan briefing awal.
               </p>
             </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-[var(--accent-text)] flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
               <span>Buka Bot CS</span>
               <span className="text-sm">↗</span>
             </div>
@@ -53,13 +53,13 @@ export default function ContactSection() {
             className="aero-card p-8 flex flex-col justify-between min-h-[250px] group border-cyan-400/40"
           >
             <div>
-              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">KONSULTASI LANGSUNG</div>
+              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">KONSULTASI LANGSUNG</div>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">Telegram Builder</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Bicara langsung secara teknis dengan senior developer tanpa perantara sales ataupun project manager.
               </p>
             </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-[var(--accent-text)] flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
               <span>Hubungi Builder</span>
               <span className="text-sm">↗</span>
             </div>
@@ -73,13 +73,13 @@ export default function ContactSection() {
             className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-cyan-400 font-bold uppercase tracking-widest mb-3">WHATSAPP RESMI</div>
+              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">WHATSAPP RESMI</div>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">WhatsApp Resmi</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Jalur chat WhatsApp untuk kirim dokumen penawaran, tanya jawab cepat, dan serah terima proyek resmi.
               </p>
             </div>
-            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
+            <div className="pt-6 font-mono text-[11px] font-bold uppercase tracking-wider text-[var(--accent-text)] flex items-center justify-between border-t border-gray-200/60 dark:border-white/10">
               <span>Buka WhatsApp</span>
               <span className="text-sm">↗</span>
             </div>

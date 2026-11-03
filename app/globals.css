@@ -80,7 +80,6 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-mono-tech: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -377,21 +376,10 @@ a.uiverse-card {
 /* 3. Headline shimmer — REMOVED (anti-AI §II.3.1)
    Ganti ke .text-accent (solid color, italic). Lihat globals.css baris 109. */
 
-/* 4. Film grain — static fixed layer, own compositor layer, no blend mode. */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 39;
-  pointer-events: none;
-  opacity: .026;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 160px 160px;
-}
-.dark .grain-overlay { opacity: .05; }
+/* 4. Film grain — REMOVED (design cleanup 2026-11-04): satu sistem visual, tanpa layer noise. */
 
 /* Perf guards: kill v4 motion/extras on touch + reduced motion */
 @media (hover: none), (pointer: coarse), (max-width: 767px) {
-  .grain-overlay { display: none; }
   .border-beam { animation: none; }
 }
 @media (prefers-reduced-motion: reduce) {

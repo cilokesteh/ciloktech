@@ -36,12 +36,12 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-3">
               <div className="aero-badge-skew">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#38bdf8] animate-pulse" />
-                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-cyan-300">
-                  SLOT Q4 / OKTOBER 2026 TERBUKA
+                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-[var(--accent-text)]">
+                  SLOT Q4 2026 TERBUKA
                 </span>
               </div>
-              <div className="aero-badge-skew border-white/20 bg-white/5">
-                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-gray-200">
+              <div className="aero-badge-skew border-gray-300 bg-white/60 dark:border-white/20 dark:bg-white/5">
+                <span className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-gray-700 dark:text-gray-200">
                   ⚡ DIRECT SENIOR BUILDER
                 </span>
               </div>
@@ -50,7 +50,7 @@ export default function HeroSection() {
             {/* Aerodynamic Dynamic Headline */}
             <h1 className="text-[42px] sm:text-[56px] lg:text-[66px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-950 dark:text-white">
               Arsitektur Web <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 drop-shadow-[0_0_25px_rgba(56,189,248,0.35)]">
+              <span className="text-accent">
                 Aerodinamis &amp; Presisi.
               </span>
             </h1>
@@ -66,7 +66,7 @@ export default function HeroSection() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="neu-btn neu-btn-primary font-mono text-[12px] py-3.5 px-6 rounded-xl"
+              className="btn-blade-primary"
             >
               <span>{t.hero.ctaTelegram}</span>
               <span className="text-[15px]">↗</span>
@@ -75,13 +75,13 @@ export default function HeroSection() {
             <div className="flex gap-3">
               <a
                 href="/demo"
-                className="neu-btn font-mono text-[12px] py-3.5 px-5 rounded-xl"
+                className="btn-blade-ghost"
               >
                 🎮 Demo Live
               </a>
               <a
                 href="#portofolio"
-                className="neu-btn font-mono text-[12px] py-3.5 px-5 rounded-xl"
+                className="btn-blade-ghost"
               >
                 Karya →
               </a>

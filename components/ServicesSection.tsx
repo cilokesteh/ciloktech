@@ -24,7 +24,7 @@ export default function ServicesSection() {
             <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--accent-text)] mb-3">
               {t.services.label}
             </div>
-            <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[0.94] text-gray-900 dark:text-white">
+            <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-900 dark:text-white">
               {t.services.headline1}<br />{t.services.headline2}
             </h2>
           </div>

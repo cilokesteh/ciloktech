@@ -20,12 +20,12 @@ export default function PortofolioSection() {
         <div>
           <div className="flex flex-col gap-3 mb-10 pb-6 border-b swiss-line">
             <div className="aero-badge-skew w-fit">
-              <span className="font-mono text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-cyan-300">
+              <span className="font-mono text-[10.5px] font-extrabold tracking-[0.14em] uppercase text-[var(--accent-text)]">
                 [02] ARSIP REKAYASA PRODUKSI
               </span>
             </div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <h2 className="text-[34px] md:text-[48px] font-extrabold tracking-[-0.04em] leading-[0.95] text-gray-950 dark:text-white max-w-[560px]">
+              <h2 className="text-[34px] md:text-[48px] font-extrabold tracking-[-0.04em] leading-[1.08] text-gray-950 dark:text-white max-w-[560px]">
                 {t.portfolio.headline1}
                 <span className="text-gray-500">{t.portfolio.headline2}</span>{t.portfolio.headline3}
               </h2>

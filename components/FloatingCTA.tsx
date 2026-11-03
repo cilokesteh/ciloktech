@@ -51,9 +51,9 @@ export default function FloatingCTA() {
         className={`fixed bottom-5 right-4 left-4 sm:left-auto sm:right-6 z-[60] group flex items-center gap-3 bg-[var(--neu-surface)] text-[var(--foreground)] rounded-2xl sm:rounded-full border border-[var(--neu-border-bevel)] shadow-[var(--neu-convex-lg)] hover:border-cyan-400/40 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 transition-all duration-300 p-1.5 sm:p-2 ${showPromo ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         title={t.floating.promoTitle}
       >
-        <span className="neu-socket w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-full text-cyan-400 flex items-center justify-center text-[18px] shrink-0">⚡</span>
+        <span className="neu-socket w-10 h-10 sm:w-11 sm:h-11 rounded-xl sm:rounded-full text-[var(--accent-text)] flex items-center justify-center text-[18px] shrink-0">⚡</span>
         <span className="pr-4 sm:pr-5 text-left leading-tight py-1 sm:py-0 flex-1 sm:flex-initial">
-          <span className="block text-[12.5px] sm:text-[13px] font-extrabold text-[var(--foreground)] group-hover:text-cyan-400 transition-colors">{t.floating.promoTitle}</span>
+          <span className="block text-[12.5px] sm:text-[13px] font-extrabold text-[var(--foreground)] group-hover:text-[var(--accent-text)] transition-colors">{t.floating.promoTitle}</span>
           <span className="block text-[10.5px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium">{t.floating.promoSub}</span>
         </span>
       </a>
