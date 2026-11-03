@@ -12,7 +12,12 @@ export default defineConfig({
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
     launchOptions: {
-      executablePath: process.env.PLAYWRIGHT_CHROME_PATH || "/usr/local/bin/google-chrome",
+      // Only override when explicitly set (local dev with system Chrome).
+      // In CI, Playwright's own installed Chromium must be used — a hardcoded
+      // fallback path made every e2e test fail to launch in GitHub Actions.
+      ...(process.env.PLAYWRIGHT_CHROME_PATH
+        ? { executablePath: process.env.PLAYWRIGHT_CHROME_PATH }
+        : {}),
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     },
   },
