@@ -57,7 +57,7 @@ export default function FAQSection() {
             return (
               <div
                 key={i}
-                className={`aero-card transition ${open === i ? "border-cyan-400/60 shadow-[0_0_20px_-5px_rgba(56,189,248,0.25)]" : ""}`}
+                className={`aero-card transition ${open === i ? "border-[var(--accent)]/60 shadow-[0_0_20px_-5px_rgba(183,242,28,0.25)]" : ""}`}
               >
                 <button
                   id={btnId}
@@ -66,10 +66,10 @@ export default function FAQSection() {
                   aria-expanded={open === i}
                   aria-controls={panelId}
                 >
-                  <span className="font-mono text-[11px] text-cyan-500 dark:text-cyan-400 font-bold mr-4">0{i + 1}</span>
+                  <span className="font-mono text-[11px] text-[var(--accent-text)] font-bold mr-4">0{i + 1}</span>
                   <span className="text-[15px] md:text-[16px] font-extrabold text-gray-950 dark:text-white flex-1 pr-4">{f.q}</span>
                   <span
-                    className={`font-mono text-sm px-2.5 py-1 rounded-sm transition ${open === i ? "bg-cyan-400 text-[#05070a] font-extrabold shadow-[0_0_10px_#38bdf8]" : "text-gray-400 bg-white/5 border border-white/10"}`}
+                    className={`font-mono text-sm px-2.5 py-1 rounded-none transition ${open === i ? "bg-[var(--accent)] text-[var(--accent-ink)] font-extrabold shadow-[0_0_10px_rgba(183,242,28,0.7)]" : "text-gray-400 bg-white/5 border border-white/10"}`}
                   >
                     {open === i ? "—" : "+"}
                   </span>

@@ -60,20 +60,20 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
         >
-          <div className="relative neu-socket w-10 h-10 rounded-xl p-1 shrink-0">
+          <div className="relative neu-socket w-10 h-10 p-1 shrink-0">
             <Image
               src="/logo-mark-128.png"
               alt="Cilok Tech One-Man Studio"
               width={32}
               height={32}
-              className="h-[32px] w-[32px] rounded-lg object-contain transition-all drop-shadow-[0_0_6px_rgba(0,240,255,0.3)]"
+              className="h-[32px] w-[32px] rounded-lg object-contain transition-all drop-shadow-[0_0_6px_rgba(183,242,28,0.3)]"
             />
           </div>
           <div className="flex flex-col items-start leading-none font-mono">
             <div className="flex items-baseline gap-[1px]">
               <span className="font-extrabold text-[17px] tracking-[-0.04em] text-gray-900 dark:text-white">CILOK</span>
               <span className="font-extrabold text-[17px] tracking-[-0.04em] text-[var(--accent-text)]">TECH</span>
-              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-bold tracking-[0.14em] uppercase bg-black dark:bg-white text-white dark:text-black px-[5px] py-[2px] leading-none rounded-sm">.ID</span>
+              <span className="ml-1.5 hidden sm:inline-flex text-[8.5px] font-bold tracking-[0.14em] uppercase bg-black dark:bg-white text-white dark:text-black px-[5px] py-[2px] leading-none">.ID</span>
             </div>
             <div className="mt-[3px]">
               <span className="text-[9px] font-semibold tracking-[0.14em] uppercase text-gray-500 dark:text-gray-400">ONE-MAN STUDIO</span>
@@ -89,7 +89,7 @@ export default function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 rounded-xl transition ${
+                  className={`font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 transition ${
                     l.highlight
                       ? "text-[var(--accent-text)] bg-[var(--neu-base)] shadow-[var(--neu-inset-sm)]"
                       : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-[var(--neu-base)] hover:shadow-[var(--neu-inset-sm)]"
@@ -103,7 +103,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 rounded-xl transition ${
+                className={`inline-flex items-center font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-3.5 py-2 transition ${
                   active && l.href === `/#${active}`
                     ? "text-[var(--accent-text)] bg-[var(--neu-base)] shadow-[var(--neu-inset-sm)]"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-[var(--neu-base)] hover:shadow-[var(--neu-inset-sm)]"
@@ -135,7 +135,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
-            className="w-9 h-9 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-900 dark:text-white active:scale-95 transition"
+            className="w-9 h-9 bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-900 dark:text-white active:scale-95 transition"
             onClick={() => setOpen(!open)}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">{open ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}</svg>
@@ -144,22 +144,22 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-white dark:bg-[#111111] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-[var(--card)] border-t border-gray-100 dark:border-white/10 px-6 py-5 space-y-1 max-h-[80vh] overflow-y-auto">
           <div className="flex items-center gap-2 mb-3 px-1">
             <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400">ONE-MAN STUDIO • ONE-MAN OPS</span>
-            <span className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" />
+            <span className="w-1 h-1 bg-[var(--accent)] rounded-full animate-pulse" />
             <span className="text-[10px] text-gray-500">{t.common.available}</span>
           </div>
-          <Link href="/" onClick={() => setOpen(false)} className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-cyan-700 dark:hover:text-cyan-300 transition">
+          <Link href="/" onClick={() => setOpen(false)} className="w-full flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white border-b border-gray-50 dark:border-white/5 hover:text-[var(--accent-text)] transition">
             <span>{t.nav.beranda}</span>
             <span className="text-gray-300 dark:text-white/20 text-[12px]">HOME</span>
           </Link>
           <Link href="/#layanan" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.layanan} <span className="text-gray-300">›</span></Link>
           <Link href="/#portofolio" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.portofolio} <span className="text-gray-300">›</span></Link>
           <Link href="/#harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-gray-700 dark:text-gray-300 border-b border-gray-50 dark:border-white/5">{t.nav.harga} <span className="text-gray-300">›</span></Link>
-          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-cyan-500 dark:text-cyan-300 border-b border-gray-50 dark:border-white/5">💰 {t.nav.breakdown} <span className="text-cyan-300">→</span></Link>
-          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 {t.nav.blog} <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5 rounded-full">11 Artikel</span><span className="text-emerald-500 text-[10px]">●</span></span></Link>
-          <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold rounded-xl">💬 {t.nav.chatStudio}</a>
+          <Link href="/harga" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-medium text-[var(--accent-text)] border-b border-gray-50 dark:border-white/5">💰 {t.nav.breakdown} <span className="text-[var(--accent-text)]">→</span></Link>
+          <Link href="/blog" onClick={() => setOpen(false)} className="flex items-center justify-between py-3 text-[15px] font-bold text-gray-900 dark:text-white">📝 {t.nav.blog} <span className="flex items-center gap-1"><span className="bg-gray-900 dark:bg-white text-white dark:text-black text-[10px] px-2 py-0.5">11 Artikel</span><span className="text-emerald-500 text-[10px]">●</span></span></Link>
+          <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="uiverse-button block mt-4 text-center px-5 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-black text-sm font-bold">💬 {t.nav.chatStudio}</a>
           <div className="flex justify-center pt-3">
             <LanguageSwitcher />
           </div>

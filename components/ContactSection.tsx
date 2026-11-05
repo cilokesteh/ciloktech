@@ -50,7 +50,7 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Builder — Bicara langsung dengan builder"
-            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group border-cyan-400/40"
+            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group border-[var(--accent)]/60"
           >
             <div>
               <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">KONSULTASI LANGSUNG</div>

@@ -117,7 +117,7 @@ export default function Home() {
           <div className="max-w-[1320px] mx-auto">
             <div className="aero-card p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
               <div className="flex gap-4 items-start">
-                <div className="w-9 h-9 [clip-path:polygon(0_0,calc(100%-8px)_0,100%_8px,100%_100%,8px_100%,0_calc(100%-8px))] bg-cyan-500 text-black font-mono font-bold flex items-center justify-center text-[15px] shrink-0 shadow-[0_0_15px_rgba(56,189,248,0.4)]">!</div>
+                <div className="w-9 h-9 bg-[var(--accent)] text-[var(--accent-ink)] font-mono font-bold flex items-center justify-center text-[15px] shrink-0">!</div>
                 <div>
                   <div className="font-extrabold text-[17px] text-gray-950 dark:text-white">{t.homeExtra.priceExplainTitle}</div>
                   <div className="font-mono text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed mt-1 max-w-[620px]">{t.homeExtra.priceExplainDesc}</div>
@@ -153,10 +153,10 @@ export default function Home() {
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="aero-card p-7 group flex flex-col justify-between">
                   <div>
                     <div className="flex gap-2 flex-wrap mb-4 font-mono text-[10.5px]">
-                      {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="px-2 py-0.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 rounded">{tg}</span>))}
+                      {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="px-2 py-0.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300">{tg}</span>))}
                       <span className="text-gray-500">{post.readingTime}</span>
                     </div>
-                    <div className="font-extrabold text-[18px] leading-snug text-gray-950 dark:text-white group-hover:text-cyan-500 transition line-clamp-2">{post.title}</div>
+                    <div className="font-extrabold text-[18px] leading-snug text-gray-950 dark:text-white group-hover:text-[var(--accent-text)] transition line-clamp-2">{post.title}</div>
                     <div className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 mt-3 line-clamp-2 leading-relaxed">{post.description}</div>
                   </div>
                   <div className="pt-4 mt-6 border-t border-gray-200/60 dark:border-white/10 font-mono text-[10.5px] text-[var(--accent-text)] font-bold uppercase tracking-wider flex items-center justify-between">

@@ -24,13 +24,13 @@ export default function NotFound() {
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/"
-            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-sm hover:bg-black dark:hover:bg-cyan-400 transition"
+            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-none text-sm hover:bg-black dark:hover:bg-[var(--accent)] transition"
           >
             ← Kembali ke Beranda
           </Link>
           <Link
             href="/blog"
-            className="uiverse-button px-6 py-3 bg-transparent border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-full text-sm hover:bg-gray-50 dark:hover:bg-white/5 transition"
+            className="uiverse-button px-6 py-3 bg-transparent border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-none text-sm hover:bg-gray-50 dark:hover:bg-white/5 transition"
           >
             Baca Blog
           </Link>

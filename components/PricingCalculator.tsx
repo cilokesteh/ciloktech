@@ -87,10 +87,10 @@ export default function PricingCalculator() {
   const tgHref = "https://t.me/ciloktech";
 
   return (
-    <div className="w-full bg-[#fbfbfb] dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-3xl p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+    <div className="w-full bg-[#fbfbfb] dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-none p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200 dark:border-white/10 pb-8">
         <div>
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full mb-3">
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-none mb-3">
             {isEn ? "Interactive Estimator" : "Kalkulator Estimasi Proyek"}
           </div>
           <h3 className="text-[26px] md:text-[34px] font-black tracking-tight text-gray-900 dark:text-white">
@@ -131,14 +131,14 @@ export default function PricingCalculator() {
                     key={plan.id}
                     type="button"
                     onClick={() => setSelectedPlanId(plan.id)}
-                    className={`text-left p-4 rounded-2xl border transition-all duration-200 relative ${
+                    className={`text-left p-4 rounded-none border transition-all duration-200 relative ${
                       isSelected
                         ? "bg-amber-500/10 dark:bg-amber-400/10 border-amber-600 dark:border-amber-400 shadow-sm ring-1 ring-amber-500/50"
                         : "bg-white dark:bg-[#18181b] border-gray-200 dark:border-white/5 hover:border-gray-300 dark:hover:border-white/20"
                     }`}
                   >
                     {plan.badge && (
-                      <span className="absolute top-3 right-3 text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300">
+                      <span className="absolute top-3 right-3 text-[10px] font-bold uppercase px-2 py-0.5 rounded-none bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300">
                         {plan.badge}
                       </span>
                     )}
@@ -160,7 +160,7 @@ export default function PricingCalculator() {
               <label className="block text-[13px] font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 2. {isEn ? "Select Add-on Modules" : "Pilih Modul & Add-on Tambahan"}
               </label>
-              <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-full">
+              <span className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-none">
                 2 Free Included
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function PricingCalculator() {
                   <div
                     key={addon.id}
                     onClick={() => toggleAddon(addon.id)}
-                    className={`flex items-start justify-between gap-4 p-3.5 rounded-xl border cursor-pointer select-none transition-all ${
+                    className={`flex items-start justify-between gap-4 p-3.5 rounded-none border cursor-pointer select-none transition-all ${
                       isChecked
                         ? "bg-amber-500/5 dark:bg-amber-400/5 border-amber-600/50 dark:border-amber-400/40"
                         : "bg-white dark:bg-[#18181b] border-gray-200 dark:border-white/5 hover:border-gray-300 dark:hover:border-white/15"
@@ -182,13 +182,13 @@ export default function PricingCalculator() {
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => {}}
-                        className="mt-1 w-4 h-4 rounded border-gray-300 text-amber-700 focus:ring-amber-500 accent-amber-700 dark:accent-amber-400 cursor-pointer"
+                        className="mt-1 w-4 h-4 rounded-none border-gray-300 text-amber-700 focus:ring-amber-500 accent-amber-700 dark:accent-amber-400 cursor-pointer"
                       />
                       <div>
                         <div className="text-[13.5px] font-bold text-gray-900 dark:text-white flex items-center gap-2">
                           <span>{addon.name}</span>
                           {addon.isBundledFree && (
-                            <span className="text-[10px] uppercase font-black px-1.5 py-0.2 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 rounded">
+                            <span className="text-[10px] uppercase font-black px-1.5 py-0.2 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 rounded-none">
                               GRATIS
                             </span>
                           )}
@@ -215,7 +215,7 @@ export default function PricingCalculator() {
         </div>
 
         {/* RIGHT: Scope Summary & Live Generated Output Text */}
-        <div className="lg:col-span-5 flex flex-col justify-between bg-white dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-2xl p-6">
+        <div className="lg:col-span-5 flex flex-col justify-between bg-white dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-none p-6">
           <div>
             <div className="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-white/5">
               <span className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
@@ -231,7 +231,7 @@ export default function PricingCalculator() {
             </div>
 
             {/* LIVE AUTO-GENERATED OUTPUT BOX */}
-            <div className="mt-3.5 p-3.5 rounded-xl bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/5 font-mono text-[11.5px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-line max-h-[190px] overflow-y-auto">
+            <div className="mt-3.5 p-3.5 rounded-none bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/5 font-mono text-[11.5px] leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-line max-h-[190px] overflow-y-auto">
               {briefText}
             </div>
 
@@ -265,7 +265,7 @@ export default function PricingCalculator() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleCopyText}
-                className="w-full flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13.5px] py-3 px-4 rounded-xl transition-colors shadow-sm cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13.5px] py-3 px-4 rounded-none transition-colors shadow-sm cursor-pointer"
               >
                 <span>✈️ Salin &amp; Buka Chat Telegram @ciloktech</span>
                 <span>→</span>

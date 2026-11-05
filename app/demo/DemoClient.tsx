@@ -13,7 +13,7 @@ export default function DemoClient() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header Hero Demo */}
         <div className="py-10 md:py-14 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3.5 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] uppercase bg-amber-900/10 dark:bg-amber-400/10 text-amber-800 dark:text-amber-300 px-3.5 py-1.5 rounded-none mb-4">
             {isEn ? "Live Product Sandbox" : "Sandbox Produk Interaktif"}
           </div>
           <h1 className="text-[32px] md:text-[48px] font-black tracking-tight leading-[1.1] text-gray-900 dark:text-white">
@@ -46,7 +46,7 @@ export default function DemoClient() {
         </div>
 
         {/* Bottom Call to Action */}
-        <div className="mt-16 p-8 rounded-3xl bg-gray-50 dark:bg-[#121214] border border-gray-200 dark:border-white/10 text-center max-w-3xl mx-auto">
+        <div className="mt-16 p-8 rounded-none bg-gray-50 dark:bg-[#121214] border border-gray-200 dark:border-white/10 text-center max-w-3xl mx-auto">
           <h2 className="text-[20px] font-black text-gray-900 dark:text-white">
             {isEn ? "Ready to deploy this system for your outlet?" : "Siap menerapkan sistem ini untuk bisnis Anda?"}
           </h2>
@@ -58,7 +58,7 @@ export default function DemoClient() {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/harga"
-              className="bg-amber-800 hover:bg-amber-900 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13px] px-6 py-2.5 rounded-xl transition"
+              className="bg-amber-800 hover:bg-amber-900 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13px] px-6 py-2.5 rounded-none transition"
             >
               Lihat Kalkulator Harga & Scope →
             </Link>
@@ -66,7 +66,7 @@ export default function DemoClient() {
               href="https://t.me/ciloktech"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-gray-300 text-gray-900 dark:text-white font-bold text-[13px] px-6 py-2.5 rounded-xl transition"
+              className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-gray-300 text-gray-900 dark:text-white font-bold text-[13px] px-6 py-2.5 rounded-none transition"
             >
               Chat Telegram @ciloktech
             </a>

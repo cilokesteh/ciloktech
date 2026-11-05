@@ -3,73 +3,73 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #edf2f7;
-  --foreground: #0f172a;
-  --card: #f4f7fb;
-  --card-foreground: #0f172a;
-  --muted: #e2e8f0;
-  --muted-foreground: #475569;
-  --border: #cbd5e1;
-  --border-strong: #0f172a;
-  --subtle: #f8fafc;
-  --section-alt: #e8eef6;
-  --nav-bg: rgba(237, 242, 247, 0.88);
-  --accent: #2a93e0;
-  --accent-ink: #ffffff;
-  --accent-text: #026aa2;
+  --background: #fafaf7;
+  --foreground: #111210;
+  --card: #ffffff;
+  --card-foreground: #111210;
+  --muted: #efefea;
+  --muted-foreground: #5c6058;
+  --border: #e2e2da;
+  --border-strong: #111210;
+  --subtle: #f2f2ed;
+  --section-alt: #f2f2ed;
+  --nav-bg: rgba(250, 250, 247, 0.9);
+  --accent: #b7f21c;
+  --accent-ink: #111210;
+  --accent-text: #4a6b00;
 
-  /* Neumorphic Tokens (Light Mode) */
-  --neu-base: #edf2f7;
-  --neu-surface: #f4f7fb;
+  /* Signal Tokens (Light Mode) — flat surfaces, hairline borders */
+  --neu-base: #fafaf7;
+  --neu-surface: #ffffff;
   --neu-surface-raised: #ffffff;
-  --neu-dark-shadow: #c8d1dc;
-  --neu-light-shadow: #ffffff;
-  --neu-convex: 10px 10px 22px var(--neu-dark-shadow), -10px -10px 22px var(--neu-light-shadow);
-  --neu-convex-sm: 5px 5px 12px var(--neu-dark-shadow), -5px -5px 12px var(--neu-light-shadow);
-  --neu-convex-lg: 16px 16px 36px var(--neu-dark-shadow), -16px -16px 36px var(--neu-light-shadow);
-  --neu-inset: inset 4px 4px 10px var(--neu-dark-shadow), inset -4px -4px 10px var(--neu-light-shadow);
-  --neu-inset-sm: inset 3px 3px 7px var(--neu-dark-shadow), inset -3px -3px 7px var(--neu-light-shadow);
-  --neu-inset-deep: inset 7px 7px 16px var(--neu-dark-shadow), inset -7px -7px 16px var(--neu-light-shadow);
-  --neu-border: 1px solid rgba(255, 255, 255, 0.6);
-  --neu-border-bevel: 1px solid rgba(255, 255, 255, 0.8);
-  --cyan-core: #0284c7;
-  --cyan-bright: #38bdf8;
-  --cyan-glow: rgba(2, 132, 199, 0.25);
+  --neu-dark-shadow: transparent;
+  --neu-light-shadow: transparent;
+  --neu-convex: none;
+  --neu-convex-sm: none;
+  --neu-convex-lg: none;
+  --neu-inset: inset 0 0 0 1px var(--border);
+  --neu-inset-sm: inset 0 0 0 1px var(--border);
+  --neu-inset-deep: inset 0 0 0 1px var(--border);
+  --neu-border: 1px solid var(--border);
+  --neu-border-bevel: 1px solid var(--border);
+  --cyan-core: #4a6b00;
+  --cyan-bright: #b7f21c;
+  --cyan-glow: rgba(183, 242, 28, 0.35);
 }
 
 .dark {
-  --background: #12151d;
-  --foreground: #f8fafc;
-  --card: #161a24;
-  --card-foreground: #f8fafc;
-  --muted: #1e2433;
-  --muted-foreground: #94a3b8;
-  --border: #242c3d;
-  --border-strong: #f8fafc;
-  --subtle: #0e1118;
-  --section-alt: #10131a;
-  --nav-bg: rgba(18, 21, 29, 0.88);
-  --accent: #38bdf8;
-  --accent-ink: #0a0d14;
-  --accent-text: #38bdf8;
+  --background: #0a0b0d;
+  --foreground: #f2f3ef;
+  --card: #101216;
+  --card-foreground: #f2f3ef;
+  --muted: #17191e;
+  --muted-foreground: #9ba1a6;
+  --border: #23262c;
+  --border-strong: #f2f3ef;
+  --subtle: #0d0e11;
+  --section-alt: #0d0e11;
+  --nav-bg: rgba(10, 11, 13, 0.9);
+  --accent: #b7f21c;
+  --accent-ink: #0a0b0d;
+  --accent-text: #b7f21c;
 
-  /* Neumorphic Tokens (Dark Mode) */
-  --neu-base: #12151d;
-  --neu-surface: #161a24;
-  --neu-surface-raised: #1c2230;
-  --neu-dark-shadow: #080a0f;
-  --neu-light-shadow: #1e2433;
-  --neu-convex: 10px 10px 24px var(--neu-dark-shadow), -10px -10px 24px var(--neu-light-shadow);
-  --neu-convex-sm: 6px 6px 14px var(--neu-dark-shadow), -6px -6px 14px var(--neu-light-shadow);
-  --neu-convex-lg: 16px 16px 36px var(--neu-dark-shadow), -16px -16px 36px var(--neu-light-shadow);
-  --neu-inset: inset 5px 5px 12px var(--neu-dark-shadow), inset -5px -5px 12px var(--neu-light-shadow);
-  --neu-inset-sm: inset 3px 3px 8px var(--neu-dark-shadow), inset -3px -3px 8px var(--neu-light-shadow);
-  --neu-inset-deep: inset 8px 8px 18px var(--neu-dark-shadow), inset -8px -8px 18px var(--neu-light-shadow);
-  --neu-border: 1px solid rgba(255, 255, 255, 0.05);
-  --neu-border-bevel: 1px solid rgba(255, 255, 255, 0.08);
-  --cyan-core: #00f0ff;
-  --cyan-bright: #38bdf8;
-  --cyan-glow: rgba(0, 240, 255, 0.35);
+  /* Signal Tokens (Dark Mode) — flat surfaces, hairline borders */
+  --neu-base: #0a0b0d;
+  --neu-surface: #101216;
+  --neu-surface-raised: #16181d;
+  --neu-dark-shadow: transparent;
+  --neu-light-shadow: transparent;
+  --neu-convex: none;
+  --neu-convex-sm: none;
+  --neu-convex-lg: none;
+  --neu-inset: inset 0 0 0 1px var(--border);
+  --neu-inset-sm: inset 0 0 0 1px var(--border);
+  --neu-inset-deep: inset 0 0 0 1px var(--border);
+  --neu-border: 1px solid var(--border);
+  --neu-border-bevel: 1px solid var(--border);
+  --cyan-core: #b7f21c;
+  --cyan-bright: #b7f21c;
+  --cyan-glow: rgba(183, 242, 28, 0.35);
 }
 
 @theme inline {
@@ -89,7 +89,7 @@ html {
 }
 .dark { color-scheme: dark; }
 
-.skip-link { position: fixed; left: 1rem; top: -4rem; z-index: 100; border-radius: 9999px; background: #0891b2; color: #fff; padding: .75rem 1rem; font-weight: 700; transition: top 160ms ease; }
+.skip-link { position: fixed; left: 1rem; top: -4rem; z-index: 100; border-radius: 0; background: var(--accent); color: var(--accent-ink); padding: .75rem 1rem; font-weight: 700; transition: top 160ms ease; }
 .skip-link:focus { top: 1rem; }
 
 body {
@@ -158,11 +158,11 @@ body {
 @keyframes cyan-pulse {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 10px #38bdf8, 0 0 20px rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 10px #b7f21c, 0 0 20px rgba(183, 242, 28, 0.4);
   }
   50% {
     opacity: 0.3;
-    box-shadow: 0 0 2px #38bdf8;
+    box-shadow: 0 0 2px #b7f21c;
   }
 }
 
@@ -181,17 +181,23 @@ body {
 }
 
 .bg-grid {
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 60%);
+  background-image:
+    linear-gradient(rgba(17, 18, 16, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 18, 16, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(183, 242, 28, 0.10), transparent 60%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
 }
 .dark .bg-grid {
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(42, 147, 224, 0.22), transparent 65%);
+  background-image:
+    linear-gradient(rgba(242, 243, 239, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 243, 239, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(183, 242, 28, 0.08), transparent 60%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
 }
 
 /* Tech badge glow & cyber corner accent */
 .tech-glow-subtle {
-  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 25px -5px rgba(183, 242, 28, 0.25);
 }
 
 .tech-panel {
@@ -249,7 +255,7 @@ body {
 @keyframes hero-float { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, 12px, 0) scale(1.025); } }
 @keyframes hero-float-centered { 0%, 100% { transform: translate3d(-50%, 0, 0) scale(1); } 50% { transform: translate3d(-50%, 12px, 0) scale(1.025); } }
 .hero-cta { transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease; }
-.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(6, 182, 212, .16); }
+.hero-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(183, 242, 28, .18); }
 .hero-stat { animation: hero-stat-pulse 4.5s ease-in-out infinite; }
 .hero-stat:nth-child(2) { animation-delay: 700ms; }
 .hero-stat:nth-child(3) { animation-delay: 1400ms; }
@@ -339,11 +345,11 @@ a.uiverse-card {
 @media (hover: hover) and (pointer: fine) {
   .uiverse-card::after {
     background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(42, 147, 224, .16), rgba(56, 189, 248, .08) 42%, transparent 72%);
+      rgba(183, 242, 28, .14), rgba(183, 242, 28, .06) 42%, transparent 72%);
   }
   .dark .uiverse-card::after {
     background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(56, 189, 248, .22), rgba(14, 116, 144, .15) 42%, transparent 72%);
+      rgba(183, 242, 28, .20), rgba(183, 242, 28, .10) 42%, transparent 72%);
   }
 }
 
@@ -363,7 +369,7 @@ a.uiverse-card {
   z-index: 2;
   background: conic-gradient(from var(--beam-angle),
     transparent 0deg, transparent 300deg,
-    rgba(56, 189, 248, .9) 330deg, rgba(42, 147, 224, .9) 345deg,
+    rgba(183, 242, 28, .9) 330deg, rgba(183, 242, 28, .9) 345deg,
     transparent 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -387,107 +393,69 @@ a.uiverse-card {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   AERO-TECH VELOCITY & CHAMFERED SYSTEM (2026-09-22)
-   Aerodynamic Chamfers, Blade Angles & Horizon Streamlines
+   MIDNIGHT SIGNAL SYSTEM (2026-11-06)
+   Flat Signal Panels, Square Buttons & Horizon Glow
    ═══════════════════════════════════════════════════════════ */
 
-/* Chamfer Cut-Corner Panels (Aerospace Structural Hull) */
-.aero-panel {
+/* Signal Panel (Midnight Signal) — flat, hairline border, corner ticks */
+.signal-panel, .aero-panel {
   position: relative;
-  background: linear-gradient(135deg, rgba(16, 23, 38, 0.88) 0%, rgba(9, 13, 22, 0.96) 100%);
+  background: var(--card);
   border: 1px solid var(--border);
-  clip-path: polygon(
-    0 0,
-    calc(100% - 20px) 0,
-    100% 20px,
-    100% 100%,
-    20px 100%,
-    0 calc(100% - 20px)
-  );
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.28s ease, background 0.25s ease;
 }
-
-:root:not(.dark) .aero-panel {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-color: #cbd5e1;
-}
-
-.aero-panel::before {
+.signal-panel::before, .aero-panel::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 32px;
-  height: 2px;
-  background: var(--accent);
-  box-shadow: 0 0 16px var(--accent);
-  transform: rotate(45deg) translate(3px, -10px);
+  top: -1px;
+  left: -1px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--accent);
+  border-left: 2px solid var(--accent);
   pointer-events: none;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
-
-.aero-panel::after {
+.signal-panel::after, .aero-panel::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 32px;
-  height: 2px;
-  background: var(--accent);
-  box-shadow: 0 0 16px var(--accent);
-  transform: rotate(45deg) translate(-10px, 3px);
+  bottom: -1px;
+  right: -1px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
   pointer-events: none;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
-
-.aero-panel:hover {
+.signal-panel:hover, .aero-panel:hover {
   border-color: var(--accent);
-  transform: translateY(-4px) scale(1.008);
-  box-shadow: 0 16px 48px -10px rgba(56, 189, 248, 0.35);
-  background: linear-gradient(135deg, rgba(22, 32, 54, 0.95) 0%, rgba(12, 17, 28, 0.98) 100%);
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 0 var(--accent);
 }
 
-:root:not(.dark) .aero-panel:hover {
-  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-  box-shadow: 0 14px 35px -8px rgba(2, 132, 199, 0.18);
-}
-
-.aero-panel:hover::before,
-.aero-panel:hover::after {
-  opacity: 1;
-  box-shadow: 0 0 20px var(--accent);
-}
-
-/* Aerodynamic Blade Buttons (Directional Slanted Geometry) */
+/* Signal Buttons (Midnight Signal) — square, volt primary, hard shadow */
 .btn-blade-primary {
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-  color: #ffffff !important;
+  background: var(--accent);
+  color: var(--accent-ink) !important;
   padding: 14px 28px;
-  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
   border: 1px solid var(--accent);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 0 25px -4px rgba(56, 189, 248, 0.35);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .btn-blade-primary:hover {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  color: #05070a !important;
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
-  transform: translateY(-2px);
+  background: var(--accent);
+  color: var(--accent-ink) !important;
+  box-shadow: 4px 4px 0 0 var(--foreground);
+  transform: translate(-2px, -2px);
 }
 
 .btn-blade-ghost {
@@ -496,11 +464,10 @@ a.uiverse-card {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--card);
+  background: transparent;
   border: 1px solid var(--border);
   color: var(--foreground) !important;
   padding: 14px 24px;
-  clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -510,37 +477,31 @@ a.uiverse-card {
 
 .btn-blade-ghost:hover {
   border-color: var(--accent);
-  color: var(--accent) !important;
-  background: var(--subtle);
-  box-shadow: 0 0 20px -5px rgba(56, 189, 248, 0.25);
+  color: var(--accent-text) !important;
+  background: transparent;
   transform: translateY(-2px);
 }
 
-/* Skewed Aero Badge */
+/* Signal Chip — square, hairline border */
 .aero-badge-skew {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transform: skewX(-12deg);
-  background: linear-gradient(90deg, rgba(56, 189, 248, 0.12) 0%, rgba(2, 132, 199, 0.05) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  padding: 5px 14px;
-  border-radius: 2px;
-  box-shadow: 0 0 15px -3px rgba(56, 189, 248, 0.2);
-}
-.aero-badge-skew > * {
-  transform: skewX(12deg);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 0;
 }
 
-/* Aerodynamic Ambient Horizon Glow */
+/* Signal Horizon Glow — faint volt wash at the top */
 .aero-horizon-glow {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1200px;
-  background: radial-gradient(ellipse 90% 55% at 50% -5%, rgba(56, 189, 248, 0.16), transparent 70%),
-              radial-gradient(circle at 85% 25%, rgba(14, 165, 233, 0.12), transparent 45%);
+  background: radial-gradient(ellipse 90% 55% at 50% -5%, rgba(183, 242, 28, 0.10), transparent 70%),
+              radial-gradient(circle at 85% 25%, rgba(183, 242, 28, 0.06), transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
@@ -552,14 +513,14 @@ a.uiverse-card {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CYBER NEUMORPHISM DESIGN SYSTEM (2026-10-28)
-   Tactile Dual-Shadow Surfaces, Bevels & Recessed Wells
+   SIGNAL FLAT SYSTEM (2026-11-06) — replaces Cyber Neumorphism
+   Flat surfaces, hairline borders, corner ticks, hard shadows
    ═══════════════════════════════════════════════════════════ */
 
 .neu-card {
   background: var(--neu-surface);
-  border-radius: 20px;
-  box-shadow: var(--neu-convex);
+  border-radius: 0;
+  box-shadow: none;
   border: var(--neu-border);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
@@ -567,22 +528,22 @@ a.uiverse-card {
 
 .neu-card:hover {
   transform: translateY(-3px);
-  box-shadow: 12px 12px 28px var(--neu-dark-shadow), -12px -12px 28px var(--neu-light-shadow);
-  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 6px 6px 0 0 var(--accent);
+  border-color: var(--accent);
 }
 
 .neu-well {
-  background: var(--neu-base);
-  border-radius: 16px;
-  box-shadow: var(--neu-inset);
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: var(--subtle);
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--border);
 }
 
 .neu-btn {
   background: var(--neu-surface);
   color: var(--foreground);
   border: var(--neu-border-bevel);
-  border-radius: 14px;
+  border-radius: 0;
   padding: 12px 24px;
   font-size: 13.5px;
   font-weight: 600;
@@ -591,49 +552,34 @@ a.uiverse-card {
   gap: 8px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: var(--neu-convex-sm);
+  box-shadow: none;
   transition: all 0.2s ease;
   user-select: none;
 }
 
 .neu-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 8px 8px 18px var(--neu-dark-shadow), -8px -8px 18px var(--neu-light-shadow);
-  color: var(--accent);
+  box-shadow: 4px 4px 0 0 var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
 }
 
 .neu-btn:active, .neu-btn.pressed {
   transform: translateY(1px);
-  box-shadow: var(--neu-inset-sm);
-  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: none;
+  border-color: var(--accent);
 }
 
 .neu-btn-primary {
-  background: linear-gradient(145deg, #182230, #111a26);
-  border: 1px solid rgba(0, 240, 255, 0.35);
-  color: var(--cyan-core) !important;
-  box-shadow: 
-    8px 8px 20px var(--neu-dark-shadow), 
-    -8px -8px 20px var(--neu-light-shadow),
-    0 0 16px var(--cyan-glow);
-}
-
-:root:not(.dark) .neu-btn-primary {
-  background: linear-gradient(145deg, #0284c7, #0369a1);
-  border-color: rgba(2, 132, 199, 0.4);
-  color: #ffffff !important;
-  box-shadow: 
-    6px 6px 16px var(--neu-dark-shadow), 
-    -6px -6px 16px var(--neu-light-shadow),
-    0 0 14px rgba(2, 132, 199, 0.3);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--accent-ink) !important;
+  box-shadow: none;
 }
 
 .neu-btn-primary:hover {
-  box-shadow: 
-    10px 10px 24px var(--neu-dark-shadow), 
-    -10px -10px 24px var(--neu-light-shadow),
-    0 0 28px rgba(0, 240, 255, 0.5);
-  color: #ffffff !important;
+  box-shadow: 4px 4px 0 0 var(--foreground);
+  color: var(--accent-ink) !important;
 }
 
 .neu-badge {
@@ -641,44 +587,45 @@ a.uiverse-card {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  border-radius: 9999px;
+  border-radius: 0;
   background: var(--neu-surface);
-  box-shadow: var(--neu-convex-sm);
+  box-shadow: none;
   border: var(--neu-border);
   font-family: var(--font-mono);
   font-size: 11.5px;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .neu-socket {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: var(--neu-base);
-  box-shadow: var(--neu-inset-sm);
+  border-radius: 0;
+  background: var(--card);
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
 }
 
 .neu-console {
-  background: var(--neu-surface);
-  border-radius: 28px;
-  box-shadow: var(--neu-convex-lg);
-  border: var(--neu-border-bevel);
+  background: var(--card);
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--border);
   padding: 16px;
   position: relative;
 }
 
-/* Elevate aero-panel and aero-card with neumorphic dual-shadow tactile finish */
+/* Signal finish for aero-panel / aero-card: flat hairline border */
 .aero-panel, .aero-card {
-  box-shadow: var(--neu-convex);
-  border: var(--neu-border);
+  box-shadow: none;
+  border: 1px solid var(--border);
 }
 
 .aero-panel:hover, .aero-card:hover {
-  box-shadow: 12px 12px 32px var(--neu-dark-shadow), -12px -12px 32px var(--neu-light-shadow);
+  box-shadow: 6px 6px 0 0 var(--accent);
+  border-color: var(--accent);
 }
 
 

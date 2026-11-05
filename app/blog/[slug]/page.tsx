@@ -208,7 +208,7 @@ export default async function BlogDetail({ params }: Props) {
 
           <div className="flex flex-wrap gap-2 mb-5">
             {post.tags.map((t) => (
-              <span key={t} className="text-[11px] font-bold bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-2.5 py-1 rounded-full text-gray-700 dark:text-gray-300">
+              <span key={t} className="text-[11px] font-bold bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 px-2.5 py-1 rounded-none text-gray-700 dark:text-gray-300">
                 {t}
               </span>
             ))}
@@ -219,21 +219,21 @@ export default async function BlogDetail({ params }: Props) {
           <p className="text-[17px] leading-relaxed text-gray-600 dark:text-gray-400 mt-5">{post.description}</p>
 
           {/* OG preview mini */}
-          <div className="mt-6 rounded-xl overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111]">
+          <div className="mt-6 rounded-none overflow-hidden border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-[#111]">
             <Image src={ogUrl} alt={`OG ${post.title}`} width={1200} height={630} className="w-full h-auto" loading="lazy" unoptimized />
           </div>
 
-          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-cyan-700 dark:prose-a:text-cyan-300 prose-strong:text-gray-900 dark:prose-strong:text-white">
+          <div className="mt-10 prose prose-sm dark:prose-invert max-w-none prose-headings:tracking-tight prose-headings:font-extrabold prose-p:leading-[1.8] prose-p:text-[15px] prose-h3:text-[20px] prose-h3:mt-10 prose-a:text-[var(--accent-text)] prose-strong:text-gray-900 dark:prose-strong:text-white">
             {content.body.map((para, i) => {
               if (para.startsWith("### ")) {
                 return <h3 key={i} className="text-[22px] font-extrabold mt-10 mb-4 text-gray-900 dark:text-white">{para.replace("### ", "")}</h3>;
               }
               if (para.startsWith("#### ")) {
                 return (
-                  <div key={i} className="mt-10 p-5 bg-cyan-50 dark:bg-cyan-950/20 border border-cyan-200 dark:border-cyan-900/30 rounded-2xl">
-                    <p className="font-bold text-[14px] text-cyan-900 dark:text-cyan-200 leading-relaxed whitespace-pre-wrap">{para.replace("#### ", "")}</p>
+                  <div key={i} className="mt-10 p-5 bg-[var(--accent)]/10 border border-[var(--accent)]/30 rounded-none">
+                    <p className="font-bold text-[14px] text-[var(--accent-text)] leading-relaxed whitespace-pre-wrap">{para.replace("#### ", "")}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Link href="/harga" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-full hover:bg-black dark:hover:bg-cyan-400 transition">Lihat rincian harga</Link>
+                      <Link href="/harga" className="text-[12px] font-bold bg-gray-900 dark:bg-white text-white dark:text-black px-3 py-1.5 rounded-none hover:bg-black dark:hover:bg-[var(--accent)] transition">Lihat rincian harga</Link>
                     </div>
                   </div>
                 );
@@ -243,7 +243,7 @@ export default async function BlogDetail({ params }: Props) {
                   {para.includes("/harga") ? (
                     <>
                       {para.split("/harga")[0]}
-                      <Link href="/harga" className="font-bold text-cyan-700 dark:text-cyan-300 underline underline-offset-4">/harga</Link>
+                      <Link href="/harga" className="font-bold text-[var(--accent-text)] underline underline-offset-4">/harga</Link>
                       {para.split("/harga").slice(1).join("/harga")}
                     </>
                   ) : (
@@ -263,8 +263,8 @@ export default async function BlogDetail({ params }: Props) {
                 .filter((p) => p.slug !== slug)
                 .slice(0, 2)
                 .map((p) => (
-                  <Link key={p.slug} href={`/blog/${p.slug}`} className="p-4 rounded-xl border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white transition group">
-                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-cyan-700 transition line-clamp-2">{p.title}</div>
+                  <Link key={p.slug} href={`/blog/${p.slug}`} className="p-4 rounded-none border border-gray-200 dark:border-white/10 hover:border-gray-900 dark:hover:border-white transition group">
+                    <div className="font-bold text-[14px] text-gray-900 dark:text-white group-hover:text-[var(--accent-text)] transition line-clamp-2">{p.title}</div>
                     <div className="text-[12px] text-gray-500 mt-1">{p.readingTime} • {p.tags[0]}</div>
                   </Link>
                 ))}

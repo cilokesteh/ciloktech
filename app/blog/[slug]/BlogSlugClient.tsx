@@ -25,13 +25,13 @@ export function BlogDetailCTA({ title }: { title: string }) {
   const { locale } = useI18n();
   const isId = locale === "id";
   return (
-    <div className="mt-16 rounded-[20px] bg-gray-900 dark:bg-white text-white dark:text-black p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+    <div className="mt-16 rounded-none bg-gray-900 dark:bg-white text-white dark:text-black p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
       <div>
         <div className="font-extrabold text-[18px] leading-tight">{isId ? "Mau website kayak yang di artikel ini?" : "Want a website like this article?"}</div>
         <div className="text-[13px] opacity-70 mt-1">{isId ? "One-man studio — konsultasi 15 menit gratis, langsung builder bukan sales." : "One-man studio — 15-min free consult, direct to builder not sales."}</div>
       </div>
       <div className="flex flex-col sm:flex-row gap-2 shrink-0">
-        <a href={`https://t.me/ciloktechcsbot?text=Halo%20CilokTech%20One-Man%20Studio%2C%20abis%20baca%20${encodeURIComponent(title)}%20mau%20konsultasi`} className="px-5 py-3 bg-white dark:bg-black text-gray-900 dark:text-white rounded-full font-bold text-[13px] hover:bg-cyan-400 text-center transition">
+        <a href={`https://t.me/ciloktechcsbot?text=Halo%20CilokTech%20One-Man%20Studio%2C%20abis%20baca%20${encodeURIComponent(title)}%20mau%20konsultasi`} className="px-5 py-3 bg-white dark:bg-black text-gray-900 dark:text-white rounded-none font-bold text-[13px] hover:bg-[var(--accent)] hover:text-[var(--accent-ink)] text-center transition">
           {isId ? "Chat dari artikel ini →" : "Chat from this article →"}
         </a>
       </div>

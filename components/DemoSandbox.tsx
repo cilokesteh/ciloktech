@@ -85,7 +85,7 @@ export default function DemoSandbox() {
         <button
           type="button"
           onClick={() => setActiveTab("pos")}
-          className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-[14px] transition-all ${
+          className={`flex items-center gap-2.5 px-5 py-2.5 rounded-none font-bold text-[14px] transition-all ${
             activeTab === "pos"
               ? "bg-amber-800 text-white dark:bg-amber-400 dark:text-gray-950 shadow-sm"
               : "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10"
@@ -97,7 +97,7 @@ export default function DemoSandbox() {
         <button
           type="button"
           onClick={() => setActiveTab("jasaflow")}
-          className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-bold text-[14px] transition-all ${
+          className={`flex items-center gap-2.5 px-5 py-2.5 rounded-none font-bold text-[14px] transition-all ${
             activeTab === "jasaflow"
               ? "bg-amber-800 text-white dark:bg-amber-400 dark:text-gray-950 shadow-sm"
               : "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10"
@@ -112,7 +112,7 @@ export default function DemoSandbox() {
       {/* TAB 1: POS ENTERPRISE SANDBOX */}
       {/* ========================================================================= */}
       {activeTab === "pos" && (
-        <div className="bg-white dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-3xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-none p-6 md:p-8 shadow-sm">
           {/* Top Bar Sandbox Status */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-100 dark:border-white/5">
             <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ export default function DemoSandbox() {
               <div>
                 <div className="text-[13px] font-bold text-gray-900 dark:text-white flex items-center gap-2">
                   <span>CilokTech POS v11.2 (Interactive Simulation)</span>
-                  <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-full">
+                  <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-none">
                     Sandbox
                   </span>
                 </div>
@@ -131,7 +131,7 @@ export default function DemoSandbox() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-md border border-gray-200 dark:border-white/10">
+              <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-none border border-gray-200 dark:border-white/10">
                 Outlet: Chill Look Concept Store
               </span>
               <button
@@ -155,14 +155,14 @@ export default function DemoSandbox() {
                 {POS_SAMPLE_MENU.map((item) => (
                   <div
                     key={item.id}
-                    className="p-3.5 rounded-2xl border border-gray-200 dark:border-white/5 bg-gray-50/50 dark:bg-[#18181b] hover:border-amber-600/40 transition flex flex-col justify-between"
+                    className="p-3.5 rounded-none border border-gray-200 dark:border-white/5 bg-gray-50/50 dark:bg-[#18181b] hover:border-amber-600/40 transition flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-start justify-between gap-2">
                         <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">
                           {item.category}
                         </span>
-                        <span className="text-[10px] font-mono bg-gray-200 dark:bg-white/10 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300">
+                        <span className="text-[10px] font-mono bg-gray-200 dark:bg-white/10 px-1.5 py-0.5 rounded-none text-gray-600 dark:text-gray-300">
                           Stok: {item.stock}
                         </span>
                       </div>
@@ -178,7 +178,7 @@ export default function DemoSandbox() {
                       <button
                         type="button"
                         onClick={() => addToCart(item)}
-                        className="text-[12px] font-bold bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black px-3 py-1.5 rounded-lg transition"
+                        className="text-[12px] font-bold bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black px-3 py-1.5 rounded-none transition"
                       >
                         + Tambah
                       </button>
@@ -189,7 +189,7 @@ export default function DemoSandbox() {
             </div>
 
             {/* Cart & Billing Checkout */}
-            <div className="lg:col-span-5 bg-gray-50 dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-2xl p-5 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-gray-50 dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-none p-5 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-gray-200 dark:border-white/10">
                   <span className="text-[13px] font-bold text-gray-900 dark:text-white">
@@ -208,7 +208,7 @@ export default function DemoSandbox() {
                     posCart.map(({ item, qty }) => (
                       <div
                         key={item.id}
-                        className="flex items-center justify-between text-[12.5px] bg-white dark:bg-black/30 p-2.5 rounded-xl border border-gray-200/60 dark:border-white/5"
+                        className="flex items-center justify-between text-[12.5px] bg-white dark:bg-black/30 p-2.5 rounded-none border border-gray-200/60 dark:border-white/5"
                       >
                         <div className="flex-1 pr-2">
                           <div className="font-bold text-gray-900 dark:text-white">{item.name}</div>
@@ -220,7 +220,7 @@ export default function DemoSandbox() {
                           <button
                             type="button"
                             onClick={() => updateQty(item.id, -1)}
-                            className="w-6 h-6 rounded bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 font-bold flex items-center justify-center hover:bg-gray-200"
+                            className="w-6 h-6 rounded-none bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 font-bold flex items-center justify-center hover:bg-gray-200"
                           >
                             -
                           </button>
@@ -230,7 +230,7 @@ export default function DemoSandbox() {
                           <button
                             type="button"
                             onClick={() => updateQty(item.id, 1)}
-                            className="w-6 h-6 rounded bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 font-bold flex items-center justify-center hover:bg-gray-200"
+                            className="w-6 h-6 rounded-none bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-200 font-bold flex items-center justify-center hover:bg-gray-200"
                           >
                             +
                           </button>
@@ -251,7 +251,7 @@ export default function DemoSandbox() {
                             key={d}
                             type="button"
                             onClick={() => setDiscountPercent(d)}
-                            className={`px-2 py-0.5 rounded text-[11px] font-bold ${
+                            className={`px-2 py-0.5 rounded-none text-[11px] font-bold ${
                               discountPercent === d
                                 ? "bg-amber-700 text-white dark:bg-amber-400 dark:text-black"
                                 : "bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-gray-300"
@@ -269,7 +269,7 @@ export default function DemoSandbox() {
                         <button
                           type="button"
                           onClick={() => setPaymentMethod("qris")}
-                          className={`px-2.5 py-1 rounded-lg text-[11px] font-bold ${
+                          className={`px-2.5 py-1 rounded-none text-[11px] font-bold ${
                             paymentMethod === "qris"
                               ? "bg-gray-900 text-white dark:bg-white dark:text-black"
                               : "bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-gray-300"
@@ -280,7 +280,7 @@ export default function DemoSandbox() {
                         <button
                           type="button"
                           onClick={() => setPaymentMethod("cash")}
-                          className={`px-2.5 py-1 rounded-lg text-[11px] font-bold ${
+                          className={`px-2.5 py-1 rounded-none text-[11px] font-bold ${
                             paymentMethod === "cash"
                               ? "bg-gray-900 text-white dark:bg-white dark:text-black"
                               : "bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-gray-300"
@@ -298,7 +298,7 @@ export default function DemoSandbox() {
                           type="number"
                           value={cashGiven}
                           onChange={(e) => setCashGiven(Number(e.target.value) || 0)}
-                          className="w-24 px-2 py-1 text-right font-mono text-[12px] rounded border border-gray-300 dark:border-white/10 bg-white dark:bg-black"
+                          className="w-24 px-2 py-1 text-right font-mono text-[12px] rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-black"
                         />
                       </div>
                     )}
@@ -335,7 +335,7 @@ export default function DemoSandbox() {
                   type="button"
                   disabled={posCart.length === 0}
                   onClick={handleCheckout}
-                  className="w-full mt-4 py-3 px-4 rounded-xl font-bold text-[13px] bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                  className="w-full mt-4 py-3 px-4 rounded-none font-bold text-[13px] bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 disabled:opacity-40 disabled:cursor-not-allowed transition"
                 >
                   Bayar & Cetak Struk Thermal →
                 </button>
@@ -346,7 +346,7 @@ export default function DemoSandbox() {
           {/* Receipt Modal Simulation */}
           {isReceiptModalOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-              <div className="bg-white text-gray-950 p-6 rounded-2xl max-w-sm w-full font-mono text-[11.5px] border shadow-2xl animate-in fade-in zoom-in-95">
+              <div className="bg-white text-gray-950 p-6 rounded-none max-w-sm w-full font-mono text-[11.5px] border shadow-2xl animate-in fade-in zoom-in-95">
                 <div className="text-center pb-3 border-b border-dashed border-gray-300">
                   <div className="font-bold text-[14px] uppercase tracking-wider">CHILL LOOK CONCEPT STORE</div>
                   <div className="text-gray-600 text-[10px]">Demo Store · Indonesia</div>
@@ -416,7 +416,7 @@ export default function DemoSandbox() {
                     setIsReceiptModalOpen(false);
                     clearCart();
                   }}
-                  className="w-full mt-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-xl text-[12px] font-sans transition"
+                  className="w-full mt-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-none text-[12px] font-sans transition"
                 >
                   Selesai & Transaksi Baru
                 </button>
@@ -430,15 +430,15 @@ export default function DemoSandbox() {
       {/* TAB 2: JASAFLOW ENGINE SANDBOX */}
       {/* ========================================================================= */}
       {activeTab === "jasaflow" && (
-        <div className="bg-white dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-3xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-[#121214] border border-gray-200/80 dark:border-white/10 rounded-none p-6 md:p-8 shadow-sm">
           {/* Top Bar Sandbox Status */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-100 dark:border-white/5">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] animate-pulse" />
               <div>
                 <div className="text-[13px] font-bold text-gray-900 dark:text-white flex items-center gap-2">
                   <span>JasaFlow Engine (Barbershop & Clinic Booking)</span>
-                  <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 rounded-full">
+                  <span className="text-[10px] uppercase font-extrabold px-2 py-0.5 bg-[var(--accent)]/10 text-[var(--accent-text)] rounded-none">
                     Sandbox
                   </span>
                 </div>
@@ -449,7 +449,7 @@ export default function DemoSandbox() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-md border border-gray-200 dark:border-white/10">
+              <span className="text-[12px] text-gray-500 font-mono bg-gray-50 dark:bg-white/5 px-2.5 py-1 rounded-none border border-gray-200 dark:border-white/10">
                 Outlet: Northside Grooming Studio
               </span>
             </div>
@@ -468,16 +468,16 @@ export default function DemoSandbox() {
                       key={s.id}
                       type="button"
                       onClick={() => setSelectedServiceId(s.id)}
-                      className={`text-left p-3.5 rounded-xl border transition ${
+                      className={`text-left p-3.5 rounded-none border transition ${
                         selectedServiceId === s.id
-                          ? "bg-cyan-500/10 border-cyan-600 dark:border-cyan-400 ring-1 ring-cyan-500/50"
+                          ? "bg-[var(--accent)]/10 border-[var(--accent)] ring-1 ring-[var(--accent)]/50"
                           : "bg-gray-50/50 dark:bg-[#18181b] border-gray-200 dark:border-white/5"
                       }`}
                     >
                       <div className="font-bold text-[13px] text-gray-900 dark:text-white">{s.name}</div>
                       <div className="flex justify-between items-center mt-2 text-[12px]">
                         <span className="text-gray-500">{s.durationMin} menit</span>
-                        <span className="font-bold text-cyan-800 dark:text-cyan-300">
+                        <span className="font-bold text-[var(--accent-text)]">
                           Rp {s.price.toLocaleString("id-ID")}
                         </span>
                       </div>
@@ -494,7 +494,7 @@ export default function DemoSandbox() {
                   <select
                     value={selectedBarber}
                     onChange={(e) => setSelectedBarber(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px] font-medium"
+                    className="w-full px-3.5 py-2.5 rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px] font-medium"
                   >
                     <option value="Bima (Master)">Bima (Master Barber)</option>
                     <option value="Rian (Senior)">Rian (Senior Barber)</option>
@@ -509,7 +509,7 @@ export default function DemoSandbox() {
                   <select
                     value={selectedSlot}
                     onChange={(e) => setSelectedSlot(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px] font-medium"
+                    className="w-full px-3.5 py-2.5 rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px] font-medium"
                   >
                     <option value="13:00">13:00 - 13:30 (Tersedia)</option>
                     <option value="14:30">14:30 - 15:15 (Tersedia)</option>
@@ -527,14 +527,14 @@ export default function DemoSandbox() {
                   type="text"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px]"
+                  className="w-full px-3.5 py-2.5 rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px]"
                   placeholder="Contoh: Bima (@username)"
                 />
               </div>
             </div>
 
             {/* Booking State & Queue Tracker */}
-            <div className="lg:col-span-5 bg-gray-50 dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-2xl p-5 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-gray-50 dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-none p-5 flex flex-col justify-between">
               <div>
                 <div className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
                   Ringkasan Booking
@@ -542,7 +542,7 @@ export default function DemoSandbox() {
 
                 {bookingConfirmed ? (
                   <div className="space-y-4">
-                    <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-300">
+                    <div className="p-4 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-300">
                       <div className="flex items-center justify-between">
                         <span className="text-[11px] font-bold uppercase">Status: Terkonfirmasi</span>
                         <span className="font-mono font-black text-[13px]">{bookingToken}</span>
@@ -553,7 +553,7 @@ export default function DemoSandbox() {
                       </div>
                     </div>
 
-                    <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-3.5 rounded-xl border border-gray-200/50 dark:border-white/5">
+                    <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-3.5 rounded-none border border-gray-200/50 dark:border-white/5">
                       <div className="flex justify-between">
                         <span className="text-gray-500">Nama:</span>
                         <span className="font-bold">{customerName}</span>
@@ -584,7 +584,7 @@ export default function DemoSandbox() {
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-4 rounded-xl border border-gray-200/50 dark:border-white/5">
+                    <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-4 rounded-none border border-gray-200/50 dark:border-white/5">
                       <div className="flex justify-between">
                         <span className="text-gray-500">Layanan:</span>
                         <span className="font-bold">
@@ -601,7 +601,7 @@ export default function DemoSandbox() {
                       </div>
                       <div className="flex justify-between pt-2 border-t border-gray-200/50 dark:border-white/5 font-black text-[14px]">
                         <span>Deposit (DP 50%):</span>
-                        <span className="text-cyan-800 dark:text-cyan-300">
+                        <span className="text-[var(--accent-text)]">
                           Rp{" "}
                           {(
                             (BARBER_SERVICES.find((s) => s.id === selectedServiceId)?.price || 0) / 2
@@ -613,7 +613,7 @@ export default function DemoSandbox() {
                     <button
                       type="button"
                       onClick={handleCreateBooking}
-                      className="w-full py-3 px-4 rounded-xl font-bold text-[13px] bg-cyan-700 hover:bg-cyan-800 dark:bg-cyan-400 dark:hover:bg-cyan-300 text-white dark:text-gray-950 transition"
+                      className="w-full py-3 px-4 rounded-none font-bold text-[13px] bg-[var(--accent)] text-[var(--accent-ink)] transition"
                     >
                       Simulasi Kunci Slot Booking →
                     </button>

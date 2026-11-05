@@ -83,11 +83,11 @@ export default function CommandPalette() {
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[12vh] px-4">
       <button aria-label="Close command palette" className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
-      <div className="relative w-full max-w-[640px] rounded-[20px] bg-white dark:bg-[#111111] border border-gray-200 dark:border-white/10 shadow-[0_24px_72px_rgba(0,0,0,0.35)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-[640px] rounded-none bg-white dark:bg-[#111111] border border-gray-200 dark:border-white/10 shadow-[0_24px_72px_rgba(0,0,0,0.35)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <div className="flex items-center gap-3 px-5 h-[56px] border-b border-gray-100 dark:border-white/5">
           <span className="text-gray-400 text-[16px]">⌘</span>
           <input id="cmd-input" value={q} onChange={(e) => setQ(e.target.value)} placeholder={t.cmd.placeholder} className="flex-1 bg-transparent outline-none text-[15px] text-gray-900 dark:text-white placeholder:text-gray-400" />
-          <span className="text-[11px] font-bold tracking-widest uppercase text-gray-400 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-full">ESC</span>
+          <span className="text-[11px] font-bold tracking-widest uppercase text-gray-400 border border-gray-200 dark:border-white/10 px-2 py-1 rounded-none">ESC</span>
         </div>
         <div className="max-h-[380px] overflow-y-auto p-2">
           {groups.length === 0 ? (
@@ -98,8 +98,8 @@ export default function CommandPalette() {
                 <div className="px-3 py-2 text-[10px] font-bold tracking-[0.14em] uppercase text-gray-400">{group}</div>
                 <div className="space-y-1">
                   {items.map((it) => (
-                    <Link key={it.id} href={it.href} onClick={() => setOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent hover:border-gray-200 dark:hover:border-white/10 transition group">
-                      <span className="w-8 h-8 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center text-[14px] shrink-0 group-hover:bg-gray-900 dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition">{it.icon}</span>
+                    <Link key={it.id} href={it.href} onClick={() => setOpen(false)} className="flex items-center gap-3 px-3 py-3 rounded-none hover:bg-gray-50 dark:hover:bg-white/5 border border-transparent hover:border-gray-200 dark:hover:border-white/10 transition group">
+                      <span className="w-8 h-8 rounded-none bg-gray-100 dark:bg-white/10 flex items-center justify-center text-[14px] shrink-0 group-hover:bg-gray-900 dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-black transition">{it.icon}</span>
                       <div className="min-w-0 flex-1"><div className="text-[13.5px] font-bold text-gray-900 dark:text-white truncate">{it.label}</div><div className="text-[11.5px] text-gray-500 dark:text-gray-400 truncate">{it.desc}</div></div>
                       <span className="text-[11px] text-gray-300 dark:text-white/20 group-hover:text-gray-600 dark:group-hover:text-white/40">↗</span>
                     </Link>
@@ -111,10 +111,10 @@ export default function CommandPalette() {
         </div>
         <div className="flex items-center justify-between px-4 py-2.5 bg-[#fafafa] dark:bg-white/[0.03] border-t border-gray-100 dark:border-white/5 text-[11px] text-gray-500">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded text-[10px]">↑↓</kbd> {t.cmd.navHint}</span>
-            <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded text-[10px]">↵</kbd> {t.cmd.openHint}</span>
+            <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-none text-[10px]">↑↓</kbd> {t.cmd.navHint}</span>
+            <span className="inline-flex items-center gap-1"><kbd className="px-1.5 py-0.5 bg-white dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-none text-[10px]">↵</kbd> {t.cmd.openHint}</span>
           </div>
-          <div className="flex items-center gap-2"><span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" /> One-man studio • ⌘K anywhere</div>
+          <div className="flex items-center gap-2"><span className="w-2 h-2 bg-[var(--accent)] rounded-full animate-pulse" /> One-man studio • ⌘K anywhere</div>
         </div>
       </div>
     </div>

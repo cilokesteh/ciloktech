@@ -47,7 +47,7 @@ export default function PricingSection() {
                 initial={false}
                 className={`aero-panel p-8 md:p-9 flex flex-col justify-between ${
                   featured
-                    ? "border-[var(--accent)] bg-[var(--section-alt)] shadow-[0_0_40px_-12px_rgba(56,189,248,0.45)] md:-translate-y-2 z-10"
+                    ? "border-[var(--accent)] bg-[var(--section-alt)] shadow-[0_0_40px_-12px_rgba(183,242,28,0.45)] md:-translate-y-2 z-10"
                     : ""
                 }`}
               >
@@ -69,7 +69,7 @@ export default function PricingSection() {
                     {plan.name}
                   </h3>
 
-                  <div className="mt-4 mb-6 p-5 neu-well rounded-2xl text-center">
+                  <div className="mt-4 mb-6 p-5 neu-well text-center">
                     <div className={`text-[38px] md:text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
                       featured ? "text-[var(--accent-text)]" : "text-gray-950 dark:text-white"
                     }`}>
@@ -87,7 +87,7 @@ export default function PricingSection() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5 font-mono text-[12px] leading-relaxed text-gray-700 dark:text-gray-300">
-                        <span className="neu-socket w-4 h-4 rounded-md text-[10px] text-[var(--accent-text)] font-extrabold shrink-0 mt-0.5">✓</span>
+                        <span className="neu-socket w-4 h-4 rounded-none text-[10px] text-[var(--accent-text)] font-extrabold shrink-0 mt-0.5">✓</span>
                         <span>{f}</span>
                       </li>
                     ))}

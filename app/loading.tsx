@@ -14,7 +14,7 @@ export default function Loading() {
         {/* Skeleton ring — bukan spinner memusingkan */}
         <div className="relative w-12 h-12">
           <div className="absolute inset-0 rounded-full border-2 border-gray-200 dark:border-white/10" />
-          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-cyan-500 dark:border-t-cyan-400 animate-spin" />
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[var(--accent)] animate-spin" />
         </div>
         <div className="text-[12px] font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400">
           Memuat

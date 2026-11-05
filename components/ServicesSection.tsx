@@ -50,16 +50,16 @@ export default function ServicesSection() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-cyan-500 dark:text-cyan-300 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+                    <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-[var(--accent-text)] flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(183,242,28,0.7)]" />
                       MOD_0{i + 1}
                     </span>
-                    <div className="neu-socket w-11 h-11 rounded-xl text-gray-900 dark:text-white group-hover:text-cyan-400 transition-all duration-300 transform group-hover:scale-105">
+                    <div className="neu-socket w-11 h-11 rounded-none text-gray-900 dark:text-white group-hover:text-[var(--accent-text)] transition-all duration-300 transform group-hover:scale-105">
                       {icons[i]}
                     </div>
                   </div>
 
-                  <h3 className="text-[23px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-[23px] font-extrabold tracking-[-0.03em] mb-3 text-gray-900 dark:text-white group-hover:text-[var(--accent-text)] transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-[14px] leading-relaxed text-gray-600 dark:text-gray-400 mb-6">
@@ -69,8 +69,8 @@ export default function ServicesSection() {
 
                 <ul className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/60 dark:border-white/10">
                   {s.points.map((p, j) => (
-                    <li key={j} className="inline-flex items-center gap-1.5 font-mono text-[10.5px] px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded text-gray-700 dark:text-gray-300">
-                      <span className="w-1.5 h-1.5 bg-cyan-400" />
+                    <li key={j} className="inline-flex items-center gap-1.5 font-mono text-[10.5px] px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-none text-gray-700 dark:text-gray-300">
+                      <span className="w-1.5 h-1.5 bg-[var(--accent)]" />
                       <span>{p}</span>
                     </li>
                   ))}

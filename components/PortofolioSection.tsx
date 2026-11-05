@@ -47,7 +47,7 @@ export default function PortofolioSection() {
                     LIVE DEPLOYED
                   </span>
                 </div>
-                <div className="font-mono text-[11px] font-extrabold text-cyan-600 dark:text-cyan-400 tracking-wider uppercase mb-1">
+                <div className="font-mono text-[11px] font-extrabold text-[var(--accent-text)] tracking-wider uppercase mb-1">
                   {p.cat}
                 </div>
                 <h3 className="text-[22px] font-extrabold tracking-[-0.03em] text-gray-950 dark:text-white mb-3">
@@ -60,7 +60,7 @@ export default function PortofolioSection() {
 
               <div className="flex flex-wrap gap-1.5 pt-4 border-t border-gray-200/60 dark:border-white/10 font-mono text-[10px]">
                 {(TAGS[i] || TAGS[0]).map((tag, j) => (
-                  <span key={j} className="px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200/80 dark:border-white/10 text-gray-700 dark:text-gray-300 rounded">
+                  <span key={j} className="px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200/80 dark:border-white/10 text-gray-700 dark:text-gray-300 rounded-none">
                     {tag}
                   </span>
                 ))}

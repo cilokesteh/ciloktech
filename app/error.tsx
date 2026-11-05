@@ -23,7 +23,7 @@ export default function Error({
   return (
     <main className="min-h-[60vh] flex flex-col items-center justify-center bg-white dark:bg-[#08080b] text-gray-900 dark:text-white px-6 text-center">
       <div className="max-w-md">
-        <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-cyan-500 dark:text-cyan-300 mb-4">
+        <div className="text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] mb-4">
           Terjadi Kesalahan
         </div>
         <h1 className="text-[32px] md:text-[40px] font-extrabold tracking-[-0.03em] leading-[0.95]">
@@ -35,13 +35,13 @@ export default function Error({
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <button
             onClick={reset}
-            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-full text-sm hover:bg-black dark:hover:bg-cyan-400 transition"
+            className="uiverse-button px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-none text-sm hover:bg-black dark:hover:bg-[var(--accent)] transition"
           >
             Muat Ulang
           </button>
           <Link
             href="/"
-            className="uiverse-button px-6 py-3 bg-transparent border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-full text-sm hover:bg-gray-50 dark:hover:bg-white/5 transition"
+            className="uiverse-button px-6 py-3 bg-transparent border border-gray-200 dark:border-white/20 text-gray-900 dark:text-white font-bold rounded-none text-sm hover:bg-gray-50 dark:hover:bg-white/5 transition"
           >
             ← Kembali ke Beranda
           </Link>

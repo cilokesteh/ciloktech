@@ -50,10 +50,10 @@ export default function StatsSection() {
   return (
     <section className="py-10 bg-[var(--background)] px-5 md:px-7 border-b swiss-line transition-colors duration-200">
       <div className="max-w-[1320px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="neu-card p-6 flex flex-col justify-between"><StatItem target={50} suffix="+" label={t.stats.proyek} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between"><StatItem target={98} suffix="/100" label={t.stats.lighthouse} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between"><StatItem target={3} suffix=" Hari" label={t.stats.pengerjaan} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between"><StatItem target={100} suffix="%" label={t.stats.pengalaman || "Hak Milik Kode"} /></div>
+        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={50} suffix="+" label={t.stats.proyek} /></div>
+        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={98} suffix="/100" label={t.stats.lighthouse} /></div>
+        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={3} suffix=" Hari" label={t.stats.pengerjaan} /></div>
+        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={100} suffix="%" label={t.stats.pengalaman || "Hak Milik Kode"} /></div>
       </div>
     </section>
   );
