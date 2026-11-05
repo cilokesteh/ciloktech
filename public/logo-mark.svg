@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- CilokTech Pop Zine mark — chunky volt-lime C, black outline, hard shadow -->
+  <g transform="rotate(-8 60 60)">
+    <path d="M 89.73 33.23 A 40.0 40.0 0 1 0 89.73 86.77 L 74.86 73.38 A 20.0 20.0 0 1 1 74.86 46.62 Z" fill="#000000" transform="translate(5 5)"/>
+    <path d="M 89.73 33.23 A 40.0 40.0 0 1 0 89.73 86.77 L 74.86 73.38 A 20.0 20.0 0 1 1 74.86 46.62 Z" fill="#b7f21c" stroke="#000000" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+</svg>
