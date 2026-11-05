@@ -29,51 +29,51 @@ export default function Home() {
           tabIndex={0}
           role="region"
           aria-label="Informasi layanan CilokTech"
-          className="border-b swiss-line py-3 overflow-hidden whitespace-nowrap bg-[var(--card)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="border-y-2 border-[var(--pop-ink)] py-3.5 overflow-hidden whitespace-nowrap bg-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
-          <div className="animate-ticker flex items-center text-gray-600 dark:text-gray-400 font-mono text-[11px] uppercase tracking-[0.15em]">
+          <div className="animate-ticker flex items-center text-[var(--pop-ink)] font-mono text-[12px] font-bold uppercase tracking-[0.15em]">
             <div className="flex items-center gap-8 shrink-0 pr-8">
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
                 Desain khusus sesuai bisnis Anda
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
                 Muat cepat &amp; rapi di semua layar
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
                 Langsung dikerjakan developer berpengalaman
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
                 Bantuan &amp; perbaikan setelah website live
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" aria-hidden="true" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
                 Kode 100% jadi hak milik Anda
               </span>
             </div>
             {/* DUPLICATE SET FOR SEAMLESS INFINITE LOOP */}
             <div className="flex items-center gap-8 shrink-0 pr-8" aria-hidden="true">
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
                 Desain khusus sesuai bisnis Anda
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
                 Muat cepat &amp; rapi di semua layar
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
                 Langsung dikerjakan developer berpengalaman
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
                 Bantuan &amp; perbaikan setelah website live
               </span>
               <span className="flex items-center gap-2.5">
-                <span className="lime-beacon" />
+                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
                 Kode 100% jadi hak milik Anda
               </span>
             </div>
@@ -86,10 +86,10 @@ export default function Home() {
 
         {/* INTERACTIVE DEMO SANDBOX BANNER */}
         <section className="px-5 md:px-7 py-10 bg-[var(--background)] border-b swiss-line">
-          <div className="max-w-[1320px] mx-auto p-7 md:p-9 aero-card flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-[1320px] mx-auto p-7 md:p-9 pop-card flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <div className="aero-badge-skew mb-3">
-                <span className="font-mono text-[10px] font-extrabold tracking-widest uppercase text-[var(--accent-text)]">
+              <div className="pop-sticker mb-3">
+                <span className="font-mono text-[10px] font-extrabold tracking-widest uppercase">
                   COBA SANDBOX LIVE INTERAKTIF
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function Home() {
             </div>
             <Link
               href="/demo"
-              className="btn-blade-primary shrink-0"
+              className="pop-btn pop-btn-primary shrink-0"
             >
               <span>Coba sekarang</span>
               <span>↗</span>
@@ -115,15 +115,15 @@ export default function Home() {
         {/* Harga explainer CTA */}
         <section className="px-5 md:px-7 py-10 bg-[var(--background)] border-b swiss-line">
           <div className="max-w-[1320px] mx-auto">
-            <div className="aero-card p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <div className="pop-card p-7 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
               <div className="flex gap-4 items-start">
-                <div className="w-9 h-9 bg-[var(--accent)] text-[var(--accent-ink)] font-mono font-bold flex items-center justify-center text-[15px] shrink-0">!</div>
+                <div className="w-9 h-9 rounded-full bg-[var(--accent)] text-[var(--accent-ink)] border-2 border-[var(--pop-ink)] shadow-[2px_2px_0_var(--pop-ink)] font-mono font-bold flex items-center justify-center text-[15px] shrink-0">!</div>
                 <div>
                   <div className="font-extrabold text-[17px] text-gray-950 dark:text-white">{t.homeExtra.priceExplainTitle}</div>
                   <div className="font-mono text-[13px] text-gray-600 dark:text-gray-400 leading-relaxed mt-1 max-w-[620px]">{t.homeExtra.priceExplainDesc}</div>
                 </div>
               </div>
-              <Link href="/harga" className="btn-blade-ghost shrink-0">
+              <Link href="/harga" className="pop-btn shrink-0">
                 <span>{t.homeExtra.priceExplainCta}</span>
                 <span>↗</span>
               </Link>
@@ -136,21 +136,21 @@ export default function Home() {
           <div className="max-w-[1320px] mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b swiss-line">
               <div>
-                <div className="aero-badge-skew mb-3">
-                  <span className="font-mono text-[10.5px] font-extrabold tracking-widest uppercase text-[var(--accent-text)]">
+                <div className="pop-sticker mb-3">
+                  <span className="font-mono text-[10.5px] font-extrabold tracking-widest uppercase">
                     [05] ARTIKEL &amp; CATATAN TEKNIS
                   </span>
                 </div>
                 <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-950 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
               </div>
-              <Link href="/blog" className="btn-blade-ghost">
+              <Link href="/blog" className="pop-btn">
                 <span>{t.homeExtra.blogViewAll}</span>
                 <span>↗</span>
               </Link>
             </div>
             <div className="grid md:grid-cols-3 gap-6 items-stretch">
               {latestPosts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="aero-card p-7 group flex flex-col justify-between">
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="pop-card p-7 group flex flex-col justify-between">
                   <div>
                     <div className="flex gap-2 flex-wrap mb-4 font-mono text-[10.5px]">
                       {post.tags.slice(0, 2).map((tg) => (<span key={tg} className="px-2 py-0.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300">{tg}</span>))}

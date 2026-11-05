@@ -10,7 +10,7 @@ export default function ContactSection() {
         <Reveal>
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10 items-end pb-12 border-b swiss-line">
             <div>
-              <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-4 bg-[var(--card)]">
+              <div className="pop-sticker mb-4">
                 {t.contact.label}
               </div>
               <h2 className="text-[36px] sm:text-[48px] lg:text-[64px] font-extrabold tracking-[-0.05em] leading-[0.92] text-gray-900 dark:text-white">
@@ -30,10 +30,10 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="CS 24 Jam — Chat sekarang"
-            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
+            className="pop-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">RESPON CEPAT 24 JAM</div>
+              <span className="pop-sticker mb-3">RESPON CEPAT 24 JAM</span>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">CS 24 Jam</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Asisten bot resmi yang aktif 24 jam nonstop untuk cek estimasi biaya, fitur paket, dan briefing awal.
@@ -50,10 +50,10 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Builder — Bicara langsung dengan builder"
-            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group border-[var(--accent)]/60"
+            className="pop-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">KONSULTASI LANGSUNG</div>
+              <span className="pop-sticker pop-sticker-pink mb-3">KONSULTASI LANGSUNG</span>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">Telegram Builder</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Bicara langsung secara teknis dengan senior developer tanpa perantara sales ataupun project manager.
@@ -70,10 +70,10 @@ export default function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp — Konsultasi Proyek"
-            className="aero-card p-8 flex flex-col justify-between min-h-[250px] group"
+            className="pop-card p-8 flex flex-col justify-between min-h-[250px] group"
           >
             <div>
-              <div className="font-mono text-[10px] text-[var(--accent-text)] font-bold uppercase tracking-widest mb-3">WHATSAPP RESMI</div>
+              <span className="pop-sticker pop-sticker-yellow mb-3">WHATSAPP RESMI</span>
               <h3 className="text-[22px] font-extrabold text-gray-950 dark:text-white mb-2">WhatsApp Resmi</h3>
               <p className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 leading-relaxed">
                 Jalur chat WhatsApp untuk kirim dokumen penawaran, tanya jawab cepat, dan serah terima proyek resmi.
@@ -92,14 +92,14 @@ export default function ContactSection() {
               href="https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20gratis"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-blade-primary"
+              className="pop-btn pop-btn-primary"
             >
               <span>{t.contact.ctaPrimary}</span>
               <span>↗</span>
             </a>
             <a
               href="#harga"
-              className="btn-blade-ghost text-center flex items-center justify-center"
+              className="pop-btn text-center flex items-center justify-center"
             >
               <span>{t.contact.ctaSecondary}</span>
             </a>

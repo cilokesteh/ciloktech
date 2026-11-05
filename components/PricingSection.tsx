@@ -11,6 +11,8 @@ const PLAN_HREFS = [
   "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20konsultasi%20Custom",
 ];
 
+const CHECK_TINTS = ["pop-tint-lime", "pop-tint-pink", "pop-tint-yellow", "pop-tint-violet", "pop-tint-sky"];
+
 export default function PricingSection() {
   const { t } = useI18n();
 
@@ -24,7 +26,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-4 bg-[var(--card)]">
+          <div className="pop-sticker mb-4">
             {t.pricing.label}
           </div>
           <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-900 dark:text-white">
@@ -45,9 +47,9 @@ export default function PricingSection() {
                 key={idx}
                 data-featured={featured ? "true" : "false"}
                 initial={false}
-                className={`aero-panel p-8 md:p-9 flex flex-col justify-between ${
+                className={`pop-card p-8 md:p-9 flex flex-col justify-between ${
                   featured
-                    ? "border-[var(--accent)] bg-[var(--section-alt)] shadow-[0_0_40px_-12px_rgba(183,242,28,0.45)] md:-translate-y-2 z-10"
+                    ? "md:-translate-y-2 md:rotate-1 z-10"
                     : ""
                 }`}
               >
@@ -57,10 +59,8 @@ export default function PricingSection() {
                       PAKET 0{idx + 1}
                     </span>
                     {featured && (
-                      <span className="aero-badge-skew">
-                        <span className="font-mono text-[9.5px] font-extrabold uppercase text-[var(--accent-text)]">
-                          {t.pricing.populer}
-                        </span>
+                      <span className="pop-sticker pop-sticker-pink">
+                        {t.pricing.populer}
                       </span>
                     )}
                   </div>
@@ -69,13 +69,13 @@ export default function PricingSection() {
                     {plan.name}
                   </h3>
 
-                  <div className="mt-4 mb-6 p-5 neu-well text-center">
+                  <div className={`mt-4 mb-6 p-5 rounded-2xl border-2 border-[var(--border-strong)] text-center ${featured ? "pop-tint-lime" : "bg-[var(--subtle)]"}`}>
                     <div className={`text-[38px] md:text-[42px] font-extrabold tracking-[-0.05em] leading-none ${
-                      featured ? "text-[var(--accent-text)]" : "text-gray-950 dark:text-white"
+                      featured ? "text-[var(--pop-ink)]" : "text-gray-950 dark:text-white"
                     }`}>
                       {plan.price === "Custom" ? "Custom" : plan.price.startsWith("$") ? plan.price : `Rp ${plan.price}`}
                     </div>
-                    <div className="font-mono text-[11px] text-gray-500 uppercase tracking-wider mt-2">
+                    <div className={`font-mono text-[11px] uppercase tracking-wider mt-2 ${featured ? "text-[var(--pop-ink)] opacity-70" : "text-gray-500"}`}>
                       {plan.unit}
                     </div>
                   </div>
@@ -87,7 +87,7 @@ export default function PricingSection() {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f, i) => (
                       <li key={i} className="flex items-start gap-2.5 font-mono text-[12px] leading-relaxed text-gray-700 dark:text-gray-300">
-                        <span className="neu-socket w-4 h-4 rounded-none text-[10px] text-[var(--accent-text)] font-extrabold shrink-0 mt-0.5">✓</span>
+                        <span className={`flex h-5 w-5 items-center justify-center rounded-full border-2 border-[var(--pop-ink)] text-[10px] font-extrabold shrink-0 mt-0.5 ${CHECK_TINTS[idx % CHECK_TINTS.length]}`}>✓</span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -101,8 +101,8 @@ export default function PricingSection() {
                     rel="noopener noreferrer"
                     className={`w-full justify-center ${
                       featured
-                        ? "btn-blade-primary"
-                        : "btn-blade-ghost"
+                        ? "pop-btn pop-btn-primary"
+                        : "pop-btn"
                     }`}
                   >
                     <span>{plan.cta}</span>

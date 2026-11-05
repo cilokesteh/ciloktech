@@ -9,6 +9,10 @@ const icons = [
   <svg key={3} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
 ];
 
+const SERVICE_STICKERS = ["pop-sticker", "pop-sticker pop-sticker-pink", "pop-sticker pop-sticker-yellow", "pop-sticker pop-sticker-violet"];
+const SERVICE_TINTS = ["pop-tint-lime", "pop-tint-pink", "pop-tint-yellow", "pop-tint-violet"];
+const SERVICE_DOTS = ["bg-[var(--accent)]", "bg-[var(--pop-pink)]", "bg-[var(--pop-yellow)]", "bg-[var(--pop-violet)]"];
+
 export default function ServicesSection() {
   const { t } = useI18n();
 
@@ -21,7 +25,7 @@ export default function ServicesSection() {
           className="grid md:grid-cols-[1fr_2fr] gap-6 items-end pb-8 mb-10 border-b swiss-line"
         >
           <div>
-            <div className="font-mono text-[11px] font-bold tracking-[0.14em] uppercase text-[var(--accent-text)] mb-3">
+            <div className="pop-sticker mb-3">
               {t.services.label}
             </div>
             <h2 className="text-[34px] md:text-[50px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-900 dark:text-white">
@@ -44,17 +48,16 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.1 }}
-                className={`aero-panel p-7 md:p-9 flex flex-col justify-between min-h-[290px] group cursor-pointer ${
+                className={`pop-card p-7 md:p-9 flex flex-col justify-between min-h-[290px] group cursor-pointer ${
                   isWide ? "md:col-span-1" : "md:col-span-1"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-[var(--accent-text)] flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(183,242,28,0.7)]" />
+                    <span className={SERVICE_STICKERS[i % SERVICE_STICKERS.length]}>
                       MOD_0{i + 1}
                     </span>
-                    <div className="neu-socket w-11 h-11 rounded-none text-gray-900 dark:text-white group-hover:text-[var(--accent-text)] transition-all duration-300 transform group-hover:scale-105">
+                    <div className={`flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-[var(--border-strong)] shadow-[3px_3px_0_var(--border-strong)] ${SERVICE_TINTS[i % SERVICE_TINTS.length]} transition-all duration-300 transform group-hover:scale-105 group-hover:-rotate-6`}>
                       {icons[i]}
                     </div>
                   </div>
@@ -69,8 +72,8 @@ export default function ServicesSection() {
 
                 <ul className="flex flex-wrap gap-2 pt-4 border-t border-gray-200/60 dark:border-white/10">
                   {s.points.map((p, j) => (
-                    <li key={j} className="inline-flex items-center gap-1.5 font-mono text-[10.5px] px-2.5 py-1 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-none text-gray-700 dark:text-gray-300">
-                      <span className="w-1.5 h-1.5 bg-[var(--accent)]" />
+                    <li key={j} className="inline-flex items-center gap-1.5 font-mono text-[10.5px] px-3 py-1 bg-[var(--subtle)] border-2 border-[var(--border-strong)] rounded-full text-gray-700 dark:text-gray-300">
+                      <span className={`w-1.5 h-1.5 rounded-full ${SERVICE_DOTS[i % SERVICE_DOTS.length]}`} />
                       <span>{p}</span>
                     </li>
                   ))}

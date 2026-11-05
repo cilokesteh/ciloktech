@@ -60,7 +60,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 group cursor-pointer text-left"
         >
-          <div className="relative neu-socket w-10 h-10 p-1 shrink-0">
+          <div className="relative neu-socket w-10 h-10 rounded-2xl p-1 shrink-0">
             <Image
               src="/logo-mark-128.png"
               alt="Cilok Tech One-Man Studio"
@@ -121,7 +121,7 @@ export default function Navbar() {
               href="https://t.me/ciloktechcsbot"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-blade-primary !px-5 !py-2.5"
+              className="pop-btn pop-btn-primary pop-btn-sm"
             >
               <span>{t.common.konsultasiGratis}</span>
               <span className="text-[11px] opacity-80">↗</span>

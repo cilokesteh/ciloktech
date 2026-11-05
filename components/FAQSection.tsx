@@ -41,7 +41,7 @@ export default function FAQSection() {
       <div className="max-w-[1320px] mx-auto">
         <Reveal>
           <div className="max-w-2xl mb-10">
-            <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.15em] uppercase text-[var(--accent-text)] border swiss-line px-3 py-1 mb-3 bg-[var(--card)]">
+            <div className="pop-sticker mb-3">
               {t.faq.label}
             </div>
             <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[0.94] text-gray-900 dark:text-white">
@@ -57,7 +57,7 @@ export default function FAQSection() {
             return (
               <div
                 key={i}
-                className={`aero-card transition ${open === i ? "border-[var(--accent)]/60 shadow-[0_0_20px_-5px_rgba(183,242,28,0.25)]" : ""}`}
+                className={`pop-card ${open === i ? "border-[var(--accent)]" : ""}`}
               >
                 <button
                   id={btnId}
@@ -69,7 +69,7 @@ export default function FAQSection() {
                   <span className="font-mono text-[11px] text-[var(--accent-text)] font-bold mr-4">0{i + 1}</span>
                   <span className="text-[15px] md:text-[16px] font-extrabold text-gray-950 dark:text-white flex-1 pr-4">{f.q}</span>
                   <span
-                    className={`font-mono text-sm px-2.5 py-1 rounded-none transition ${open === i ? "bg-[var(--accent)] text-[var(--accent-ink)] font-extrabold shadow-[0_0_10px_rgba(183,242,28,0.7)]" : "text-gray-400 bg-white/5 border border-white/10"}`}
+                    className={open === i ? "pop-sticker" : "inline-flex items-center justify-center rounded-full border-2 border-[var(--border-strong)] bg-[var(--card)] px-2.5 py-1 font-mono text-sm text-gray-400"}
                   >
                     {open === i ? "—" : "+"}
                   </span>

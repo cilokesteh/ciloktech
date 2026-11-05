@@ -25,7 +25,7 @@ function useCountUp(target: number, active: boolean, duration = 1400): number {
   return value;
 }
 
-function StatItem({ target, suffix, label }: { target: number; suffix: string; label: string }) {
+function StatItem({ target, suffix, label, accent }: { target: number; suffix: string; label: string; accent: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const value = useCountUp(target, inView);
@@ -34,7 +34,7 @@ function StatItem({ target, suffix, label }: { target: number; suffix: string; l
     <div ref={ref} className="text-center px-2 min-w-0">
       <div className="stat-number inline-flex items-baseline justify-center whitespace-nowrap leading-none font-mono">
         <span className="text-[36px] md:text-[46px] font-extrabold tracking-[-0.04em] text-gray-950 dark:text-white">{value}</span>
-        <span className={`font-bold tracking-[-0.02em] text-[var(--accent)] ${suffix === "/100" ? "text-[18px] md:text-[22px] ml-0.5" : "text-[22px] md:text-[26px] ml-0.5"}`}>
+        <span className={`font-bold tracking-[-0.02em] ${accent} ${suffix === "/100" ? "text-[18px] md:text-[22px] ml-0.5" : "text-[22px] md:text-[26px] ml-0.5"}`}>
           {suffix}
         </span>
       </div>
@@ -50,10 +50,10 @@ export default function StatsSection() {
   return (
     <section className="py-10 bg-[var(--background)] px-5 md:px-7 border-b swiss-line transition-colors duration-200">
       <div className="max-w-[1320px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={50} suffix="+" label={t.stats.proyek} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={98} suffix="/100" label={t.stats.lighthouse} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={3} suffix=" Hari" label={t.stats.pengerjaan} /></div>
-        <div className="neu-card p-6 flex flex-col justify-between border-t-2 border-t-[var(--accent)]"><StatItem target={100} suffix="%" label={t.stats.pengalaman || "Hak Milik Kode"} /></div>
+        <div className="pop-card p-6 flex flex-col justify-between"><span aria-hidden="true" className="mx-auto mb-4 block h-2.5 w-12 rounded-full pop-tint-lime" /><StatItem target={50} suffix="+" label={t.stats.proyek} accent="text-[var(--accent)]" /></div>
+        <div className="pop-card p-6 flex flex-col justify-between"><span aria-hidden="true" className="mx-auto mb-4 block h-2.5 w-12 rounded-full pop-tint-pink" /><StatItem target={98} suffix="/100" label={t.stats.lighthouse} accent="text-[var(--pop-pink)]" /></div>
+        <div className="pop-card p-6 flex flex-col justify-between"><span aria-hidden="true" className="mx-auto mb-4 block h-2.5 w-12 rounded-full pop-tint-yellow" /><StatItem target={3} suffix=" Hari" label={t.stats.pengerjaan} accent="text-[var(--pop-yellow)]" /></div>
+        <div className="pop-card p-6 flex flex-col justify-between"><span aria-hidden="true" className="mx-auto mb-4 block h-2.5 w-12 rounded-full pop-tint-violet" /><StatItem target={100} suffix="%" label={t.stats.pengalaman || "Hak Milik Kode"} accent="text-[var(--pop-violet)]" /></div>
       </div>
     </section>
   );

@@ -33,10 +33,10 @@ export default function Footer() {
             </button>
             <p className="font-mono text-[12px] text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">{t.footer.desc}</p>
             <div className="flex gap-2 pt-2 font-mono text-[11px]">
-              <a href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">WhatsApp ↗</a>
-              <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">Telegram ↗</a>
-              <a href="https://github.com/cilokesteh" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">GitHub ↗</a>
-              <a href="mailto:hi@ciloktech.my.id" className="px-3 py-1.5 border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">Email ↗</a>
+              <a href="https://wa.me/628137355599?text=Halo%20CilokTech%2C%20saya%20mau%20konsultasi%20website" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-full border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">WhatsApp ↗</a>
+              <a href="https://t.me/ciloktechcsbot" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-full border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">Telegram ↗</a>
+              <a href="https://github.com/cilokesteh" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-full border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">GitHub ↗</a>
+              <a href="mailto:hi@ciloktech.my.id" className="px-3 py-1.5 rounded-full border swiss-line bg-[var(--card)] hover:border-[var(--accent)]">Email ↗</a>
             </div>
           </div>
           <div>
