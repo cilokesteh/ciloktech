@@ -291,7 +291,7 @@ const idDict = {
   },
   floating: {
     promoTitle: "Early Bird Q4 2026 — Paket Bundling",
-    promoSub: "Slot Oktober • Bonus 2 Add-on Gratis",
+    promoSub: "Slot November • Bonus 2 Add-on Gratis",
     promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20early%20bird%20Q4%20paket%20bundling",
   },
   cmd: {
@@ -708,7 +708,7 @@ const enDict: Dict = {
   },
   floating: {
     promoTitle: "Q4 2026 Early Bird — Bundle Offer",
-    promoSub: "October slots • 2 free add-ons included",
+    promoSub: "November slots • 2 free add-ons included",
     promoLink: "https://t.me/ciloktechcsbot?text=Halo%20CilokTech%2C%20mau%20tanya%20promo%20early%20bird%20Q4%20paket%20bundling",
   },
   cmd: {
