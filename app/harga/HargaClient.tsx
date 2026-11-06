@@ -4,7 +4,8 @@ import PricingCalculator from "@/components/PricingCalculator";
 import { useI18n } from "@/lib/i18n/context";
 
 export default function HargaClient() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isEn = locale === "en";
   const hp = t.hargaPage;
   const comparison = hp.comparison;
   const breakdown = hp.breakdown;
@@ -60,7 +61,9 @@ export default function HargaClient() {
           </div>
           <div className="mt-4 text-center">
             <Link href="/jasa-pembuatan-website" className="text-[13px] font-mono text-[var(--accent-text)] underline hover:opacity-80">
-              Pelajari detail fitur &amp; alur jasa pembuatan website profesional CilokTech →
+              {isEn
+                ? "Learn the features & workflow of CilokTech's professional website development services →"
+                : "Pelajari detail fitur & alur jasa pembuatan website profesional CilokTech →"}
             </Link>
           </div>
           <div className="mt-6 inline-flex items-center gap-2 text-[12px] text-gray-600 dark:text-gray-400 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-2 rounded-none"><span className="w-2 h-2 bg-[var(--accent)] rounded-full animate-pulse" /> {hp.noHidden}</div>

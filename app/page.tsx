@@ -28,55 +28,20 @@ export default function Home() {
         <div
           tabIndex={0}
           role="region"
-          aria-label="Informasi layanan CilokTech"
+          aria-label={t.homeExtra.tickerLabel}
           className="border-y-2 border-[var(--pop-ink)] py-3.5 overflow-hidden whitespace-nowrap bg-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
           <div className="animate-ticker flex items-center text-[var(--pop-ink)] font-mono text-[12px] font-bold uppercase tracking-[0.15em]">
-            <div className="flex items-center gap-8 shrink-0 pr-8">
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
-                Desain khusus sesuai bisnis Anda
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
-                Muat cepat &amp; rapi di semua layar
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
-                Langsung dikerjakan developer berpengalaman
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
-                Bantuan &amp; perbaikan setelah website live
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
-                Kode 100% jadi hak milik Anda
-              </span>
-            </div>
-            {/* DUPLICATE SET FOR SEAMLESS INFINITE LOOP */}
-            <div className="flex items-center gap-8 shrink-0 pr-8" aria-hidden="true">
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
-                Desain khusus sesuai bisnis Anda
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
-                Muat cepat &amp; rapi di semua layar
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
-                Langsung dikerjakan developer berpengalaman
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
-                Bantuan &amp; perbaikan setelah website live
-              </span>
-              <span className="flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" />
-                Kode 100% jadi hak milik Anda
-              </span>
-            </div>
+            {[0, 1].map((set) => (
+              <div key={set} className="flex items-center gap-8 shrink-0 pr-8" aria-hidden={set === 1 ? true : undefined}>
+                {t.homeExtra.tickerItems.map((item) => (
+                  <span key={item} className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] inline-block" aria-hidden="true" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
         <StatsSection />
@@ -90,21 +55,21 @@ export default function Home() {
             <div>
               <div className="pop-sticker mb-3">
                 <span className="font-mono text-[10px] font-extrabold tracking-widest uppercase">
-                  COBA SANDBOX LIVE INTERAKTIF
+                  {t.homeExtra.sandboxLabel}
                 </span>
               </div>
               <h3 className="text-[22px] md:text-[28px] font-extrabold text-gray-950 dark:text-white tracking-tight">
-                Coba sistem kasir dan booking sebelum memesan.
+                {t.homeExtra.sandboxTitle}
               </h3>
               <p className="font-mono text-[13px] text-gray-600 dark:text-gray-400 mt-2 max-w-2xl leading-relaxed">
-                Jalankan transaksi kasir, coba diskon, cetak struk, dan buat antrean langsung dari browser. Tidak perlu instal aplikasi. Lihat juga pilihan paket <Link href="/jasa-pembuatan-website" className="text-[var(--accent-text)] underline hover:opacity-80">jasa pembuatan website profesional</Link> kami.
+                {t.homeExtra.sandboxDescA}<Link href="/jasa-pembuatan-website" className="text-[var(--accent-text)] underline hover:opacity-80">{t.homeExtra.sandboxLink}</Link>{t.homeExtra.sandboxDescB}
               </p>
             </div>
             <Link
               href="/demo"
               className="pop-btn pop-btn-primary shrink-0"
             >
-              <span>Coba sekarang</span>
+              <span>{t.homeExtra.sandboxCta}</span>
               <span>↗</span>
             </Link>
           </div>
@@ -138,7 +103,7 @@ export default function Home() {
               <div>
                 <div className="pop-sticker mb-3">
                   <span className="font-mono text-[10.5px] font-extrabold tracking-widest uppercase">
-                    [05] ARTIKEL &amp; CATATAN TEKNIS
+                    {t.homeExtra.blogSticker}
                   </span>
                 </div>
                 <h2 className="text-[34px] md:text-[46px] font-extrabold tracking-[-0.04em] leading-[1.05] text-gray-950 dark:text-white">{t.homeExtra.blogHeadline1}</h2>
@@ -160,7 +125,7 @@ export default function Home() {
                     <div className="font-mono text-[12.5px] text-gray-600 dark:text-gray-400 mt-3 line-clamp-2 leading-relaxed">{post.description}</div>
                   </div>
                   <div className="pt-4 mt-6 border-t border-gray-200/60 dark:border-white/10 font-mono text-[10.5px] text-[var(--accent-text)] font-bold uppercase tracking-wider flex items-center justify-between">
-                    <span>Baca Catatan</span>
+                    <span>{t.homeExtra.blogReadMore}</span>
                     <span>↗</span>
                   </div>
                 </Link>

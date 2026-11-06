@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="pop-sticker">
               <span className="w-2 h-2 rounded-full bg-[var(--pop-ink)] animate-pulse" />
-              SLOT NOVEMBER 2026 TERBUKA
+              {t.hero.slotBadge}
             </span>
             <span className="pop-sticker pop-sticker-yellow">
               ⚡ DIRECT SENIOR BUILDER
@@ -46,15 +46,15 @@ export default function HeroSection() {
 
           {/* Mega headline — stacked, mixed treatments */}
           <h1 className="mt-8 font-extrabold tracking-[-0.04em] leading-[0.92] text-[54px] sm:text-[84px] lg:text-[118px] text-gray-950 dark:text-white">
-            Arsitektur Web
+            {t.hero.headline1}
             <br />
-            <span className="text-outline">Aerodinamis</span>
+            <span className="text-outline">{t.hero.headline2}</span>
             <br />
-            <span className="text-[var(--accent-text)]">&amp; Presisi.</span>
+            <span className="text-[var(--accent-text)]">{t.hero.headline3}</span>
           </h1>
 
           <p className="mt-7 text-[16px] sm:text-[18px] leading-relaxed text-gray-700 dark:text-gray-300 font-medium max-w-[620px]">
-            Bukan template kaku. Dirancang dengan sudut aerodinamis, kecepatan akses instan, dan stack modern Next.js 15 + React 19 untuk melipatgandakan konversi dan reputasi bisnis Anda.
+            {t.hero.desc}
           </p>
 
           {/* Pill CTAs */}
@@ -69,10 +69,10 @@ export default function HeroSection() {
               <span>↗</span>
             </a>
             <a href="/demo" className="pop-btn">
-              🎮 Demo Live
+              🎮 {t.hero.ctaDemo}
             </a>
             <a href="#portofolio" className="pop-btn">
-              Karya →
+              {t.hero.ctaWork}
             </a>
           </div>
         </motion.div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
               <button
                 type="button"
                 onClick={toggleAudio}
-                aria-label={isMuted ? "Aktifkan audio video showcase" : "Matikan audio video showcase"}
+                aria-label={isMuted ? t.hero.audioUnmute : t.hero.audioMute}
                 className="absolute top-3 right-3 z-20 flex items-center gap-2 px-4 py-2 rounded-full bg-black/80 hover:bg-black backdrop-blur-md border-2 border-white/30 text-white font-mono text-[10.5px] font-bold shadow-lg transition-transform active:scale-95 cursor-pointer"
               >
                 <span>{isMuted ? "🔇" : "🔊"}</span>

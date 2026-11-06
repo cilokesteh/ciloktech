@@ -12,6 +12,21 @@ export default function DemoSandbox() {
   const { locale } = useI18n();
   const isEn = locale === "en";
 
+  // English display names for POS products (names are already English; the map
+  // follows the PLAN_EN / ADDON_EN pattern in PricingCalculator).
+  const POS_NAME_EN: Record<string, string> = {
+    m1: "Overshirt Linen Stone",
+    m2: "Relaxed Tee Charcoal",
+    m3: "Canvas Tote Natural",
+    m4: "Daily Cap Ochre",
+    m5: "Straight Pants Oxblood",
+    m6: "Essential Socks Set",
+  };
+  const POS_CATEGORY_EN: Record<string, string> = {
+    Fashion: "Fashion",
+    Aksesori: "Accessories",
+  };
+
   const [activeTab, setActiveTab] = useState<DemoTab>("pos");
 
   // POS State
@@ -125,7 +140,7 @@ export default function DemoSandbox() {
                   </span>
                 </div>
                 <div className="text-[11.5px] text-gray-500 dark:text-gray-400">
-                  Mode demo interaktif kasir tanpa autentikasi atau instalasi database.
+                  {isEn ? "Interactive cashier demo \u2014 no login or database setup needed." : "Mode demo interaktif kasir tanpa autentikasi atau instalasi database."}
                 </div>
               </div>
             </div>
@@ -149,7 +164,7 @@ export default function DemoSandbox() {
             {/* Menu Catalog */}
             <div className="lg:col-span-7 space-y-4">
               <div className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-                Daftar Produk & Stok
+                {isEn ? "Products & Stock" : "Daftar Produk & Stok"}
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
                 {POS_SAMPLE_MENU.map((item) => (
@@ -160,14 +175,14 @@ export default function DemoSandbox() {
                     <div>
                       <div className="flex items-start justify-between gap-2">
                         <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">
-                          {item.category}
+                          {isEn ? POS_CATEGORY_EN[item.category] ?? item.category : item.category}
                         </span>
                         <span className="text-[10px] font-mono bg-gray-200 dark:bg-white/10 px-1.5 py-0.5 rounded-none text-gray-600 dark:text-gray-300">
-                          Stok: {item.stock}
+                          {isEn ? "Stock" : "Stok"}: {item.stock}
                         </span>
                       </div>
                       <div className="font-bold text-[14px] text-gray-900 dark:text-white mt-1">
-                        {item.name}
+                        {isEn ? POS_NAME_EN[item.id] ?? item.name : item.name}
                       </div>
                     </div>
 
@@ -180,7 +195,7 @@ export default function DemoSandbox() {
                         onClick={() => addToCart(item)}
                         className="text-[12px] font-bold bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-black px-3 py-1.5 rounded-none transition"
                       >
-                        + Tambah
+                        + {isEn ? "Add" : "Tambah"}
                       </button>
                     </div>
                   </div>
@@ -193,7 +208,7 @@ export default function DemoSandbox() {
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-gray-200 dark:border-white/10">
                   <span className="text-[13px] font-bold text-gray-900 dark:text-white">
-                    Keranjang Pesanan ({posCart.reduce((a, b) => a + b.qty, 0)})
+                    {isEn ? "Order Cart" : "Keranjang Pesanan"} ({posCart.reduce((a, b) => a + b.qty, 0)})
                   </span>
                   <span className="text-[11px] font-mono text-gray-500">Order #LIVE-DEMO</span>
                 </div>
@@ -202,7 +217,7 @@ export default function DemoSandbox() {
                 <div className="mt-3 space-y-2.5 max-h-[220px] overflow-y-auto pr-1">
                   {posCart.length === 0 ? (
                     <div className="py-8 text-center text-[12px] text-gray-400">
-                      Keranjang kosong. Klik produk di sebelah kiri untuk simulasi order.
+                      {isEn ? "Cart is empty. Click a product on the left to simulate an order." : "Keranjang kosong. Klik produk di sebelah kiri untuk simulasi order."}
                     </div>
                   ) : (
                     posCart.map(({ item, qty }) => (
@@ -211,7 +226,7 @@ export default function DemoSandbox() {
                         className="flex items-center justify-between text-[12.5px] bg-white dark:bg-black/30 p-2.5 rounded-none border border-gray-200/60 dark:border-white/5"
                       >
                         <div className="flex-1 pr-2">
-                          <div className="font-bold text-gray-900 dark:text-white">{item.name}</div>
+                          <div className="font-bold text-gray-900 dark:text-white">{isEn ? POS_NAME_EN[item.id] ?? item.name : item.name}</div>
                           <div className="text-[11px] text-gray-500">
                             Rp {item.price.toLocaleString("id-ID")}
                           </div>
@@ -244,7 +259,7 @@ export default function DemoSandbox() {
                 {posCart.length > 0 && (
                   <div className="mt-4 pt-3 border-t border-gray-200 dark:border-white/10 space-y-3">
                     <div className="flex items-center justify-between text-[12px]">
-                      <span className="text-gray-600 dark:text-gray-400">Diskon Member:</span>
+                      <span className="text-gray-600 dark:text-gray-400">{isEn ? "Member Discount:" : "Diskon Member:"}</span>
                       <div className="flex gap-1.5">
                         {[0, 10, 20].map((d) => (
                           <button
@@ -264,7 +279,7 @@ export default function DemoSandbox() {
                     </div>
 
                     <div className="flex items-center justify-between text-[12px]">
-                      <span className="text-gray-600 dark:text-gray-400">Metode Bayar:</span>
+                      <span className="text-gray-600 dark:text-gray-400">{isEn ? "Payment Method:" : "Metode Bayar:"}</span>
                       <div className="flex gap-2">
                         <button
                           type="button"
@@ -286,14 +301,14 @@ export default function DemoSandbox() {
                               : "bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-gray-300"
                           }`}
                         >
-                          💵 Tunai
+                          💵 {isEn ? "Cash" : "Tunai"}
                         </button>
                       </div>
                     </div>
 
                     {paymentMethod === "cash" && (
                       <div className="flex items-center justify-between text-[12px]">
-                        <span className="text-gray-600 dark:text-gray-400">Nominal Diterima:</span>
+                        <span className="text-gray-600 dark:text-gray-400">{isEn ? "Cash Received:" : "Nominal Diterima:"}</span>
                         <input
                           type="number"
                           value={cashGiven}
@@ -315,17 +330,17 @@ export default function DemoSandbox() {
                   </div>
                   {discountPercent > 0 && (
                     <div className="flex justify-between text-emerald-600 dark:text-emerald-400 font-semibold">
-                      <span>Diskon ({discountPercent}%):</span>
+                      <span>{isEn ? "Discount" : "Diskon"} ({discountPercent}%):</span>
                       <span>- Rp {discountAmount.toLocaleString("id-ID")}</span>
                     </div>
                   )}
                   <div className="flex justify-between text-[15px] font-black text-gray-900 dark:text-white pt-1">
-                    <span>Total Tagihan:</span>
+                    <span>{isEn ? "Total Due:" : "Total Tagihan:"}</span>
                     <span>Rp {grandTotal.toLocaleString("id-ID")}</span>
                   </div>
                   {paymentMethod === "cash" && (
                     <div className="flex justify-between text-[11px] text-gray-500 font-mono">
-                      <span>Kembalian:</span>
+                      <span>{isEn ? "Change:" : "Kembalian:"}</span>
                       <span>Rp {changeAmount.toLocaleString("id-ID")}</span>
                     </div>
                   )}
@@ -337,7 +352,7 @@ export default function DemoSandbox() {
                   onClick={handleCheckout}
                   className="w-full mt-4 py-3 px-4 rounded-none font-bold text-[13px] bg-amber-700 hover:bg-amber-800 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 disabled:opacity-40 disabled:cursor-not-allowed transition"
                 >
-                  Bayar & Cetak Struk Thermal →
+                  {isEn ? "Pay & Print Thermal Receipt \u2192" : "Bayar & Cetak Struk Thermal \u2192"}
                 </button>
               </div>
             </div>
@@ -350,24 +365,24 @@ export default function DemoSandbox() {
                 <div className="text-center pb-3 border-b border-dashed border-gray-300">
                   <div className="font-bold text-[14px] uppercase tracking-wider">CHILL LOOK CONCEPT STORE</div>
                   <div className="text-gray-600 text-[10px]">Demo Store · Indonesia</div>
-                  <div className="text-[10px] text-gray-500 mt-1">Demo POS oleh CilokTech</div>
+                  <div className="text-[10px] text-gray-500 mt-1">{isEn ? "POS Demo by CilokTech" : "Demo POS oleh CilokTech"}</div>
                 </div>
 
                 <div className="py-2.5 border-b border-dashed border-gray-300 space-y-0.5 text-[10px] text-gray-600">
                   <div className="flex justify-between">
                     <span>No: {lastOrderTrxId}</span>
-                    <span>Kasir: Rani</span>
+                    <span>{isEn ? "Cashier" : "Kasir"}: Rani</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Tgl: {new Date().toLocaleDateString("id-ID")}</span>
-                    <span>Metode: {paymentMethod.toUpperCase()}</span>
+                    <span>{isEn ? "Date" : "Tgl"}: {new Date().toLocaleDateString(isEn ? "en-US" : "id-ID")}</span>
+                    <span>{isEn ? "Method" : "Metode"}: {paymentMethod.toUpperCase()}</span>
                   </div>
                 </div>
 
                 <div className="py-3 border-b border-dashed border-gray-300 space-y-1.5">
                   {posCart.map(({ item, qty }) => (
                     <div key={item.id}>
-                      <div className="font-semibold">{item.name}</div>
+                      <div className="font-semibold">{isEn ? POS_NAME_EN[item.id] ?? item.name : item.name}</div>
                       <div className="flex justify-between text-gray-600 text-[10px]">
                         <span>{qty} x Rp {item.price.toLocaleString("id-ID")}</span>
                         <span>Rp {(qty * item.price).toLocaleString("id-ID")}</span>
@@ -383,7 +398,7 @@ export default function DemoSandbox() {
                   </div>
                   {discountAmount > 0 && (
                     <div className="flex justify-between text-emerald-700">
-                      <span>Diskon ({discountPercent}%)</span>
+                      <span>{isEn ? "Discount" : "Diskon"} ({discountPercent}%)</span>
                       <span>- Rp {discountAmount.toLocaleString("id-ID")}</span>
                     </div>
                   )}
@@ -394,11 +409,11 @@ export default function DemoSandbox() {
                   {paymentMethod === "cash" && (
                     <>
                       <div className="flex justify-between text-[10px] text-gray-600 font-normal">
-                        <span>Bayar Tunai</span>
+                        <span>{isEn ? "Cash Paid" : "Bayar Tunai"}</span>
                         <span>Rp {cashGiven.toLocaleString("id-ID")}</span>
                       </div>
                       <div className="flex justify-between text-[10px] text-gray-600 font-normal">
-                        <span>Kembali</span>
+                        <span>{isEn ? "Change" : "Kembali"}</span>
                         <span>Rp {changeAmount.toLocaleString("id-ID")}</span>
                       </div>
                     </>
@@ -406,8 +421,8 @@ export default function DemoSandbox() {
                 </div>
 
                 <div className="text-center pt-3 text-[9.5px] text-gray-500">
-                  <div>Terima kasih atas kunjungan Anda!</div>
-                  <div className="font-bold text-[9px] mt-1">SIMULASI ENGINE POS ENTERPRISE</div>
+                  <div>{isEn ? "Thank you for visiting!" : "Terima kasih atas kunjungan Anda!"}</div>
+                  <div className="font-bold text-[9px] mt-1">{isEn ? "POS ENTERPRISE ENGINE SIMULATION" : "SIMULASI ENGINE POS ENTERPRISE"}</div>
                 </div>
 
                 <button
@@ -418,7 +433,7 @@ export default function DemoSandbox() {
                   }}
                   className="w-full mt-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-none text-[12px] font-sans transition"
                 >
-                  Selesai & Transaksi Baru
+                  {isEn ? "Done & New Transaction" : "Selesai & Transaksi Baru"}
                 </button>
               </div>
             </div>
@@ -443,7 +458,7 @@ export default function DemoSandbox() {
                   </span>
                 </div>
                 <div className="text-[11.5px] text-gray-500 dark:text-gray-400">
-                  Simulasi alur booking slot anti-overlap, pemilihan kapster, dan status token antrean.
+                  {isEn ? "Simulate anti-overlap slot booking, barber selection, and queue token status." : "Simulasi alur booking slot anti-overlap, pemilihan kapster, dan status token antrean."}
                 </div>
               </div>
             </div>
@@ -460,7 +475,7 @@ export default function DemoSandbox() {
             <div className="lg:col-span-7 space-y-5">
               <div>
                 <label className="block text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
-                  1. Pilih Layanan
+                  {isEn ? "1. Choose a Service" : "1. Pilih Layanan"}
                 </label>
                 <div className="grid sm:grid-cols-2 gap-2.5">
                   {BARBER_SERVICES.map((s) => (
@@ -476,7 +491,7 @@ export default function DemoSandbox() {
                     >
                       <div className="font-bold text-[13px] text-gray-900 dark:text-white">{s.name}</div>
                       <div className="flex justify-between items-center mt-2 text-[12px]">
-                        <span className="text-gray-500">{s.durationMin} menit</span>
+                        <span className="text-gray-500">{s.durationMin} {isEn ? "min" : "menit"}</span>
                         <span className="font-bold text-[var(--accent-text)]">
                           Rp {s.price.toLocaleString("id-ID")}
                         </span>
@@ -489,7 +504,7 @@ export default function DemoSandbox() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
-                    2. Pilih Kapster / Barber
+                    {isEn ? "2. Choose Your Barber" : "2. Pilih Kapster / Barber"}
                   </label>
                   <select
                     value={selectedBarber}
@@ -504,31 +519,31 @@ export default function DemoSandbox() {
 
                 <div>
                   <label className="block text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
-                    3. Slot Waktu Hari Ini
+                    {isEn ? "3. Today\u2019s Time Slot" : "3. Slot Waktu Hari Ini"}
                   </label>
                   <select
                     value={selectedSlot}
                     onChange={(e) => setSelectedSlot(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px] font-medium"
                   >
-                    <option value="13:00">13:00 - 13:30 (Tersedia)</option>
-                    <option value="14:30">14:30 - 15:15 (Tersedia)</option>
-                    <option value="16:00">16:00 - 16:45 (Tersedia)</option>
-                    <option value="19:30">19:30 - 20:00 (Tersedia)</option>
+                    <option value="13:00">13:00 - 13:30 ({isEn ? "Available" : "Tersedia"})</option>
+                    <option value="14:30">14:30 - 15:15 ({isEn ? "Available" : "Tersedia"})</option>
+                    <option value="16:00">16:00 - 16:45 ({isEn ? "Available" : "Tersedia"})</option>
+                    <option value="19:30">19:30 - 20:00 ({isEn ? "Available" : "Tersedia"})</option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label className="block text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400 mb-2">
-                  4. Nama Pemesan &amp; Username Telegram
+                  {isEn ? "4. Your Name & Telegram Username" : "4. Nama Pemesan & Username Telegram"}
                 </label>
                 <input
                   type="text"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-none border border-gray-300 dark:border-white/10 bg-white dark:bg-[#18181b] text-[13px]"
-                  placeholder="Contoh: Bima (@username)"
+                  placeholder={isEn ? "e.g. Alex (@username)" : "Contoh: Bima (@username)"}
                 />
               </div>
             </div>
@@ -537,40 +552,40 @@ export default function DemoSandbox() {
             <div className="lg:col-span-5 bg-gray-50 dark:bg-[#18181b] border border-gray-200 dark:border-white/10 rounded-none p-5 flex flex-col justify-between">
               <div>
                 <div className="text-[12px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">
-                  Ringkasan Booking
+                  {isEn ? "Booking Summary" : "Ringkasan Booking"}
                 </div>
 
                 {bookingConfirmed ? (
                   <div className="space-y-4">
                     <div className="p-4 rounded-none bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-300">
                       <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-bold uppercase">Status: Terkonfirmasi</span>
+                        <span className="text-[11px] font-bold uppercase">{isEn ? "Status: Confirmed" : "Status: Terkonfirmasi"}</span>
                         <span className="font-mono font-black text-[13px]">{bookingToken}</span>
                       </div>
-                      <div className="text-[16px] font-black mt-1">Slot Berhasil Diamankan!</div>
+                      <div className="text-[16px] font-black mt-1">{isEn ? "Slot Secured!" : "Slot Berhasil Diamankan!"}</div>
                       <div className="text-[11px] opacity-80 mt-0.5">
-                        Tunjukkan token ini saat tiba di outlet.
+                        {isEn ? "Show this token when you arrive at the outlet." : "Tunjukkan token ini saat tiba di outlet."}
                       </div>
                     </div>
 
                     <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-3.5 rounded-none border border-gray-200/50 dark:border-white/5">
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Nama:</span>
+                        <span className="text-gray-500">{isEn ? "Name:" : "Nama:"}</span>
                         <span className="font-bold">{customerName}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Layanan:</span>
+                        <span className="text-gray-500">{isEn ? "Service:" : "Layanan:"}</span>
                         <span className="font-bold">
                           {BARBER_SERVICES.find((s) => s.id === selectedServiceId)?.name}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Kapster:</span>
+                        <span className="text-gray-500">{isEn ? "Barber:" : "Kapster:"}</span>
                         <span className="font-bold">{selectedBarber}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Waktu:</span>
-                        <span className="font-bold font-mono">Hari ini, jam {selectedSlot}</span>
+                        <span className="text-gray-500">{isEn ? "Time:" : "Waktu:"}</span>
+                        <span className="font-bold font-mono">{isEn ? "Today, " : "Hari ini, jam "}{selectedSlot}</span>
                       </div>
                     </div>
 
@@ -579,28 +594,28 @@ export default function DemoSandbox() {
                       onClick={() => setBookingConfirmed(false)}
                       className="text-[11.5px] text-gray-500 underline text-center w-full block hover:text-gray-800"
                     >
-                      Ubah / Buat Booking Baru
+                      {isEn ? "Change / Create a New Booking" : "Ubah / Buat Booking Baru"}
                     </button>
                   </div>
                 ) : (
                   <div className="space-y-4">
                     <div className="space-y-2 text-[12.5px] bg-white dark:bg-black/30 p-4 rounded-none border border-gray-200/50 dark:border-white/5">
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Layanan:</span>
+                        <span className="text-gray-500">{isEn ? "Service:" : "Layanan:"}</span>
                         <span className="font-bold">
                           {BARBER_SERVICES.find((s) => s.id === selectedServiceId)?.name}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Kapster:</span>
+                        <span className="text-gray-500">{isEn ? "Barber:" : "Kapster:"}</span>
                         <span className="font-bold">{selectedBarber}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Slot Waktu:</span>
-                        <span className="font-bold font-mono">Jam {selectedSlot}</span>
+                        <span className="text-gray-500">{isEn ? "Time Slot:" : "Slot Waktu:"}</span>
+                        <span className="font-bold font-mono">{isEn ? "" : "Jam "}{selectedSlot}</span>
                       </div>
                       <div className="flex justify-between pt-2 border-t border-gray-200/50 dark:border-white/5 font-black text-[14px]">
-                        <span>Deposit (DP 50%):</span>
+                        <span>{isEn ? "Deposit (50% DP):" : "Deposit (DP 50%):"}</span>
                         <span className="text-[var(--accent-text)]">
                           Rp{" "}
                           {(
@@ -615,7 +630,7 @@ export default function DemoSandbox() {
                       onClick={handleCreateBooking}
                       className="w-full py-3 px-4 rounded-none font-bold text-[13px] bg-[var(--accent)] text-[var(--accent-ink)] transition"
                     >
-                      Simulasi Kunci Slot Booking →
+                      {isEn ? "Lock In This Slot \u2192" : "Simulasi Kunci Slot Booking \u2192"}
                     </button>
                   </div>
                 )}
@@ -626,7 +641,7 @@ export default function DemoSandbox() {
                   href="/#harga"
                   className="text-[12px] text-gray-500 hover:text-gray-900 dark:hover:text-white font-medium underline underline-offset-4"
                 >
-                  Tertarik pasang sistem ini di bisnis Anda? Lihat Paket JasaFlow
+                  {isEn ? "Want this system for your business? See JasaFlow Plans" : "Tertarik pasang sistem ini di bisnis Anda? Lihat Paket JasaFlow"}
                 </Link>
               </div>
             </div>

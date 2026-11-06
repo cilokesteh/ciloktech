@@ -17,18 +17,19 @@ type Item = {
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const isEn = locale === "en";
 
   const staticItems: Item[] = useMemo(() => [
     { id: "home", label: t.cmd.items.home.label, desc: t.cmd.items.home.desc, href: "/", icon: "🏠", keywords: `home ${t.nav.beranda} one-man studio ciloktech`, group: t.cmd.pages },
-    { id: "jasa-website", label: "Jasa Pembuatan Website", desc: "Landing page spesialis jasa website & web app profesional", href: "/jasa-pembuatan-website", icon: "🌐", keywords: "jasa pembuatan website profesional landing page company profile web app", group: t.cmd.pages },
+    { id: "jasa-website", label: isEn ? "Website Development Services" : "Jasa Pembuatan Website", desc: isEn ? "Specialist landing pages & professional web apps" : "Landing page spesialis jasa website & web app profesional", href: "/jasa-pembuatan-website", icon: "🌐", keywords: "jasa pembuatan website profesional landing page company profile web app website development services", group: t.cmd.pages },
     { id: "layanan", label: t.cmd.items.layanan.label, desc: t.cmd.items.layanan.desc, href: "/#layanan", icon: "⚙️", keywords: `${t.nav.layanan} services`, group: t.cmd.pages },
     { id: "portofolio", label: t.cmd.items.portofolio.label, desc: t.cmd.items.portofolio.desc, href: "/#portofolio", icon: "💼", keywords: `${t.nav.portofolio} portfolio`, group: t.cmd.pages },
     { id: "harga", label: t.cmd.items.harga.label, desc: t.cmd.items.harga.desc, href: "/#harga", icon: "💰", keywords: `${t.nav.harga} pricing paket`, group: t.cmd.pages },
     { id: "breakdown", label: t.cmd.items.breakdown.label, desc: t.cmd.items.breakdown.desc, href: "/harga", icon: "📊", keywords: `breakdown ${t.nav.harga} jujur anti nawar one-man`, group: t.cmd.pages },
     { id: "blog", label: t.cmd.items.blog.label, desc: t.cmd.items.blog.desc, href: "/blog", icon: "📝", keywords: `blog artikel tips umkm seo nextjs`, group: t.cmd.pages },
     { id: "cta-telegram", label: t.cmd.items.cta.label, desc: t.cmd.items.cta.desc, href: "https://t.me/ciloktechcsbot", icon: "💬", keywords: `chat telegram konsultasi`, group: t.cmd.actions },
-  ], [t]);
+  ], [t, isEn]);
 
   const allItems = useMemo<Item[]>(() => {
     const blogItems: Item[] = posts.map((p) => ({

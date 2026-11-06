@@ -29,13 +29,13 @@ export default function DemoClient() {
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[12px] text-gray-500 font-medium">
             <span className="flex items-center gap-1.5">
-              <span className="text-emerald-500 font-bold">✓</span> Zero Account Required
+              <span className="text-emerald-500 font-bold">✓</span> {isEn ? "Zero Account Required" : "Tanpa Perlu Akun"}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-emerald-500 font-bold">✓</span> Instant Thermal Preview
+              <span className="text-emerald-500 font-bold">✓</span> {isEn ? "Instant Thermal Preview" : "Preview Struk Thermal Instan"}
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="text-emerald-500 font-bold">✓</span> Realtime State Sync
+              <span className="text-emerald-500 font-bold">✓</span> {isEn ? "Realtime State Sync" : "Sinkronisasi State Real-time"}
             </span>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function DemoClient() {
               href="/harga"
               className="bg-amber-800 hover:bg-amber-900 dark:bg-amber-400 dark:hover:bg-amber-300 text-white dark:text-gray-950 font-bold text-[13px] px-6 py-2.5 rounded-none transition"
             >
-              Lihat Kalkulator Harga & Scope →
+              {isEn ? "View Price & Scope Calculator →" : "Lihat Kalkulator Harga & Scope →"}
             </Link>
             <a
               href="https://t.me/ciloktech"
